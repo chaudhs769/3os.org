@@ -1137,22 +1137,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edgerouter_openvpn_configuration_443tcp" title="Edgerouter OpenVPN Configuration 443/TCP" class="md-nav__link">
-    Edgerouter OpenVPN Configuration 443/TCP
+  <a href="#edgerouter_openvpn_configuration_443tcp" title="EdgeRouter OpenVPN Configuration 443/TCP" class="md-nav__link">
+    EdgeRouter OpenVPN Configuration 443/TCP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#edgerouter_free_up_space_by_cleaning_old_fireware" title="Edgerouter Free Up space by Cleaning Old Fireware" class="md-nav__link">
-    Edgerouter Free Up space by Cleaning Old Fireware
+  <a href="#edgerouter_free_up_space_by_cleaning_old_firmware" title="EdgeRouter Free Up space by Cleaning Old Firmware" class="md-nav__link">
+    EdgeRouter Free Up space by Cleaning Old Firmware
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#edgerouer_task-scheduler" title="EdgeRouer task-scheduler" class="md-nav__link">
-    EdgeRouer task-scheduler
+  <a href="#edgerouter_task-scheduler" title="EdgeRouter task-scheduler" class="md-nav__link">
+    EdgeRouter task-scheduler
   </a>
   
 </li>
@@ -1515,22 +1515,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edgerouter_openvpn_configuration_443tcp" title="Edgerouter OpenVPN Configuration 443/TCP" class="md-nav__link">
-    Edgerouter OpenVPN Configuration 443/TCP
+  <a href="#edgerouter_openvpn_configuration_443tcp" title="EdgeRouter OpenVPN Configuration 443/TCP" class="md-nav__link">
+    EdgeRouter OpenVPN Configuration 443/TCP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#edgerouter_free_up_space_by_cleaning_old_fireware" title="Edgerouter Free Up space by Cleaning Old Fireware" class="md-nav__link">
-    Edgerouter Free Up space by Cleaning Old Fireware
+  <a href="#edgerouter_free_up_space_by_cleaning_old_firmware" title="EdgeRouter Free Up space by Cleaning Old Firmware" class="md-nav__link">
+    EdgeRouter Free Up space by Cleaning Old Firmware
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#edgerouer_task-scheduler" title="EdgeRouer task-scheduler" class="md-nav__link">
-    EdgeRouer task-scheduler
+  <a href="#edgerouter_task-scheduler" title="EdgeRouter task-scheduler" class="md-nav__link">
+    EdgeRouter task-scheduler
   </a>
   
 </li>
@@ -1577,7 +1577,7 @@ commit <span class="p">;</span> save
 
 <h2 id="hardening_edgerouter">Hardening EdgeRouter<a class="headerlink" href="#hardening_edgerouter" title="Permanent link">&para;</a></h2>
 <p>This will change the GUI to port 8443, disable old cyphers, Only will listen on internal Network.
-Assumming your Edge Router IP is 192.168.1.1, if not change it accordingly.</p>
+assuming your Edge Router IP is 192.168.1.1, if not change it accordingly.</p>
 <p>SSH to the Edge Router</p>
 <div class="codehilite"><pre><span></span>configure
 <span class="nb">set</span> service gui listen-address <span class="m">192</span>.168.1.1
@@ -1587,7 +1587,7 @@ Assumming your Edge Router IP is 192.168.1.1, if not change it accordingly.</p>
 commit <span class="p">;</span> save
 </pre></div>
 
-<h2 id="edgerouter_openvpn_configuration_443tcp">Edgerouter OpenVPN Configuration 443/TCP<a class="headerlink" href="#edgerouter_openvpn_configuration_443tcp" title="Permanent link">&para;</a></h2>
+<h2 id="edgerouter_openvpn_configuration_443tcp">EdgeRouter OpenVPN Configuration 443/TCP<a class="headerlink" href="#edgerouter_openvpn_configuration_443tcp" title="Permanent link">&para;</a></h2>
 <p>This Guide is based on <a href="https://help.ubnt.com/hc/en-us/articles/115015971688-EdgeRouter-OpenVPN-Server">Original guide form ubnt support</a> with modifications to the VPN port and protocol</p>
 <p>For the purpose of this article, it is assumed that the routing and interface configurations are already in place and that reachability has been tested.</p>
 <p>ssh to the EdgeRouter</p>
@@ -1746,14 +1746,14 @@ cert client1.pem
 key client1.key
 </pre></div>
 
-<h2 id="edgerouter_free_up_space_by_cleaning_old_fireware">Edgerouter Free Up space by Cleaning Old Fireware<a class="headerlink" href="#edgerouter_free_up_space_by_cleaning_old_fireware" title="Permanent link">&para;</a></h2>
+<h2 id="edgerouter_free_up_space_by_cleaning_old_firmware">EdgeRouter Free Up space by Cleaning Old Firmware<a class="headerlink" href="#edgerouter_free_up_space_by_cleaning_old_firmware" title="Permanent link">&para;</a></h2>
 <p>ssh to the EdgeRouter:</p>
 <div class="codehilite"><pre><span></span>delete system image
 </pre></div>
 
-<h2 id="edgerouer_task-scheduler">EdgeRouer task-scheduler<a class="headerlink" href="#edgerouer_task-scheduler" title="Permanent link">&para;</a></h2>
+<h2 id="edgerouter_task-scheduler">EdgeRouter task-scheduler<a class="headerlink" href="#edgerouter_task-scheduler" title="Permanent link">&para;</a></h2>
 <p><strong><code>Work In Progress</code></strong></p>
-<div class="codehilite"><pre><span></span>configue
+<div class="codehilite"><pre><span></span>configure
 show system task-scheduler
 <span class="nb">set</span> system task-scheduler task SSL_UPDATE interval 1d
 </pre></div>
@@ -1770,8 +1770,9 @@ sudo update-rc.d haveged defaults
 reboot
 </pre></div>
 
-<p>Interface:
-https://[serversAdress]:8443</p>
+<p>Interface:</p>
+<div class="codehilite"><pre><span></span>https://&lt;serversAdress&gt;:8443
+</pre></div>
                 
                   
                 

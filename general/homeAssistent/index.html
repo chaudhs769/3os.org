@@ -1137,6 +1137,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Home Assistent
@@ -1150,16 +1152,11 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#home-assistantio_installation_on_ubuntu_1804" title="Home-Assistant.io Installation on Ubuntu 18.04" class="md-nav__link">
-    Home-Assistant.io Installation on Ubuntu 18.04
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#update_home-assistantio_based_on_installation_above" title="Update Home-Assistant.io (Based on Installation Above)" class="md-nav__link">
@@ -1462,16 +1459,11 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#home-assistantio_installation_on_ubuntu_1804" title="Home-Assistant.io Installation on Ubuntu 18.04" class="md-nav__link">
-    Home-Assistant.io Installation on Ubuntu 18.04
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#update_home-assistantio_based_on_installation_above" title="Update Home-Assistant.io (Based on Installation Above)" class="md-nav__link">
@@ -1499,16 +1491,14 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/docs/general/homeAssistent.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Home Assistent</h1>
-                
-                <h2 id="home-assistantio_installation_on_ubuntu_1804"><a href="https://www.home-assistant.io/">Home-Assistant.io</a> Installation on Ubuntu 18.04<a class="headerlink" href="#home-assistantio_installation_on_ubuntu_1804" title="Permanent link">&para;</a></h2>
+                <h1 id="home-assistantio_installation_on_ubuntu_1804"><a href="https://www.home-assistant.io/">Home-Assistant.io</a> Installation on Ubuntu 18.04<a class="headerlink" href="#home-assistantio_installation_on_ubuntu_1804" title="Permanent link">&para;</a></h1>
 <div class="codehilite"><pre><span></span>sudo apt-get update
 sudo apt-get install -y python3-dev python3-pip python3-venv
 sudo -H pip3 install --upgrade virtualenv
 python3 --version
 </pre></div>
 
-<p>Make Shure Python &gt;= 3.5.3</p>
+<p>Make sure Python &gt;= 3.5.3</p>
 <p>Create a user and group "homeassistant". Give the user access to serial lines (zwave, insteon, etc)</p>
 <div class="codehilite"><pre><span></span>sudo adduser --system homeassistant
 sudo addgroup homeassistant

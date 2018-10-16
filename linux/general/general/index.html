@@ -557,15 +557,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update_date_and_time_on_linux_server" title="Update date and time on Linux server" class="md-nav__link">
-    Update date and time on Linux server
+  <a href="#update_date_and_time_on_linux_server" title="Update Date and Time on Linux Server" class="md-nav__link">
+    Update Date and Time on Linux Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clone_linux_user" title="Clone Linux user" class="md-nav__link">
-    Clone Linux user
+  <a href="#clone_linux_user" title="Clone Linux User" class="md-nav__link">
+    Clone Linux User
   </a>
   
 </li>
@@ -1634,15 +1634,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update_date_and_time_on_linux_server" title="Update date and time on Linux server" class="md-nav__link">
-    Update date and time on Linux server
+  <a href="#update_date_and_time_on_linux_server" title="Update Date and Time on Linux Server" class="md-nav__link">
+    Update Date and Time on Linux Server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clone_linux_user" title="Clone Linux user" class="md-nav__link">
-    Clone Linux user
+  <a href="#clone_linux_user" title="Clone Linux User" class="md-nav__link">
+    Clone Linux User
   </a>
   
 </li>
@@ -1780,11 +1780,11 @@ systemctl <span class="nb">enable</span> rpcbind.socket
 </pre></div>
 
 <p>Reboot the server</p>
-<h2 id="update_date_and_time_on_linux_server">Update date and time on Linux server<a class="headerlink" href="#update_date_and_time_on_linux_server" title="Permanent link">&para;</a></h2>
+<h2 id="update_date_and_time_on_linux_server">Update Date and Time on Linux Server<a class="headerlink" href="#update_date_and_time_on_linux_server" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo ntpd -qg<span class="p">;</span> sudo hwclock -w
 </pre></div>
 
-<h2 id="clone_linux_user">Clone Linux user<a class="headerlink" href="#clone_linux_user" title="Permanent link">&para;</a></h2>
+<h2 id="clone_linux_user">Clone Linux User<a class="headerlink" href="#clone_linux_user" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="nv">SRC</span><span class="o">=</span><span class="nv">$1</span>
 <span class="nv">DEST</span><span class="o">=</span><span class="nv">$2</span>
@@ -1810,7 +1810,7 @@ passwd <span class="si">${</span><span class="nv">DEST</span><span class="si">}<
 <div class="codehilite"><pre><span></span>openssl genrsa -out private.key <span class="m">2048</span>
 </pre></div>
 
-<p>Gemnerate CSR:</p>
+<p>Generate CSR:</p>
 <div class="codehilite"><pre><span></span>openssl req -new -sha256 -key private.key -out mycsr.csr
 </pre></div>
                 

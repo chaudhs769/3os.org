@@ -1495,7 +1495,7 @@
                 
                 <h1 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h1>
 <h2 id="apache_memory_usage">Apache memory usage<a class="headerlink" href="#apache_memory_usage" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>ps -ylC httpd <span class="p">|</span> awk <span class="s1">&#39;{x += $8;y += 1} END {print &quot;Apache Memory Usage (MB): &quot;x/1024; print &quot;Average Proccess Size (MB): &quot;x/((y-1)*1024)}&#39;</span>
+<div class="codehilite"><pre><span></span>ps -ylC httpd <span class="p">|</span> awk <span class="s1">&#39;{x += $8;y += 1} END {print &quot;Apache Memory Usage (MB): &quot;x/1024; print &quot;Average Process Size (MB): &quot;x/((y-1)*1024)}&#39;</span>
 </pre></div>
                 
                   

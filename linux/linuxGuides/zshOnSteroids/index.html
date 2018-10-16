@@ -556,8 +556,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" title="Requirements:" class="md-nav__link">
-    Requirements:
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
@@ -577,22 +577,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add_plugins_to_zshrc" title="Add plugins to ~/.zshrc:" class="md-nav__link">
-    Add plugins to ~/.zshrc:
+  <a href="#add_plugins_to_zshrc" title="Add plugins to ~/.zshrc" class="md-nav__link">
+    Add plugins to ~/.zshrc
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#make_zsh_default_shell" title="Make Zsh default shell:" class="md-nav__link">
-    Make Zsh default shell:
+  <a href="#make_zsh_default_shell" title="Make Zsh default shell" class="md-nav__link">
+    Make Zsh default shell
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional" title="Optional:" class="md-nav__link">
-    Optional:
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
   </a>
   
     <nav class="md-nav">
@@ -1516,8 +1516,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" title="Requirements:" class="md-nav__link">
-    Requirements:
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
   </a>
   
 </li>
@@ -1537,22 +1537,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add_plugins_to_zshrc" title="Add plugins to ~/.zshrc:" class="md-nav__link">
-    Add plugins to ~/.zshrc:
+  <a href="#add_plugins_to_zshrc" title="Add plugins to ~/.zshrc" class="md-nav__link">
+    Add plugins to ~/.zshrc
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#make_zsh_default_shell" title="Make Zsh default shell:" class="md-nav__link">
-    Make Zsh default shell:
+  <a href="#make_zsh_default_shell" title="Make Zsh default shell" class="md-nav__link">
+    Make Zsh default shell
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional" title="Optional:" class="md-nav__link">
-    Optional:
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
   </a>
   
     <nav class="md-nav">
@@ -1591,7 +1591,7 @@
                 
                 <h1 id="zsh_shell_on_steroids">Zsh (shell) on Steroids<a class="headerlink" href="#zsh_shell_on_steroids" title="Permanent link">&para;</a></h1>
 <p>This will Install oh-my-zsh shell with fish shell like history, auto suggestions and syntax highlighting.</p>
-<h2 id="requirements">Requirements:<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>apt-get install git wget zsh
 </pre></div>
 
@@ -1606,7 +1606,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-zsh-history-substring-search
 </pre></div>
 
-<h2 id="add_plugins_to_zshrc">Add plugins to ~/.zshrc:<a class="headerlink" href="#add_plugins_to_zshrc" title="Permanent link">&para;</a></h2>
+<h2 id="add_plugins_to_zshrc">Add plugins to ~/.zshrc<a class="headerlink" href="#add_plugins_to_zshrc" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
 <span class="nb">echo</span> <span class="s2">&quot;source ~/.zsh/zsh-zsh-history-substring-search/zsh-history-substring-search.zsh&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
 <span class="nb">echo</span> <span class="s2">&quot;source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
@@ -1614,11 +1614,11 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-z
 
 <p><code>Note: make sure zsh-syntax-highlighting is the last one in the above list.</code></p>
 <p>Restart zsh</p>
-<h2 id="make_zsh_default_shell">Make Zsh default shell:<a class="headerlink" href="#make_zsh_default_shell" title="Permanent link">&para;</a></h2>
+<h2 id="make_zsh_default_shell">Make Zsh default shell<a class="headerlink" href="#make_zsh_default_shell" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>chsh -s <span class="k">$(</span>which zsh<span class="k">)</span>
 </pre></div>
 
-<h2 id="optional">Optional:<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h2>
+<h2 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h2>
 <h3 id="fix_background_theme_issuesnot_necessary_depends_on_your_theme">Fix background theme issues(not necessary depends on your theme.)<a class="headerlink" href="#fix_background_theme_issuesnot_necessary_depends_on_your_theme" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=&#39;fg=white&#39;&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
 </pre></div>
