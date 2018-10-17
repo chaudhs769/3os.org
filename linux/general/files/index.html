@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
+        <meta name="description" content="Linux - Files Handling how to, guides, examples, and simple usage">
       
       
         <link rel="canonical" href="https://3os.org/linux/general/files/">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Files - 3os.org</title>
+        <title>Linux Files Handling</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#linux_files" tabindex="1" class="md-skip">
+      <a href="../../../#linux_files_handling" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1545,7 +1545,7 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/linux/general/files.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="linux_files">Linux Files<a class="headerlink" href="#linux_files" title="Permanent link">&para;</a></h1>
+                <h1 id="linux_files_handling">Linux Files Handling<a class="headerlink" href="#linux_files_handling" title="Permanent link">&para;</a></h1>
 <h2 id="find_big_files_and_folders">Find big files and folders<a class="headerlink" href="#find_big_files_and_folders" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>find / -mount -type f -print0 <span class="m">2</span>&gt;/dev/null <span class="p">|</span> xargs -0 du <span class="m">2</span>&gt;/dev/null <span class="p">|</span> sort -n <span class="p">|</span> tail -40 <span class="p">|</span> cut -f2 <span class="p">|</span> xargs -I<span class="o">{}</span> du -sh <span class="m">2</span>&gt;/dev/null <span class="o">{}</span> <span class="p">|</span> uniq<span class="p">;</span> <span class="nb">printf</span> <span class="s1">&#39;+%.0s&#39;</span> <span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span> echo<span class="p">;</span> <span class="se">\</span>
 find / -mount -type d -print0 <span class="m">2</span>&gt;/dev/null <span class="p">|</span> xargs -0 du <span class="m">2</span>&gt;/dev/null <span class="p">|</span> sort -n <span class="p">|</span> tail -40 <span class="p">|</span> cut -f2 <span class="p">|</span> xargs -I<span class="o">{}</span> du -sh <span class="m">2</span>&gt;/dev/null <span class="o">{}</span> <span class="p">|</span> uniq<span class="p">;</span> <span class="nb">printf</span> <span class="s1">&#39;+%.0s&#39;</span> <span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span> echo<span class="p">;</span> <span class="se">\</span>

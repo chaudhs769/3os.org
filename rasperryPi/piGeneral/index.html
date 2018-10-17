@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
+        <meta name="description" content="Raspberry Pi Tips & Tricks how to, guides, examples, and simple usage">
       
       
         <link rel="canonical" href="https://3os.org/rasperryPi/piGeneral/">
@@ -42,7 +42,7 @@
     
     
       
-        <title>General - 3os.org</title>
+        <title>Linux - Raspberry Pi Tips & Tricks</title>
       
     
     
@@ -806,8 +806,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic_raspbin_configuration" title="Basic Raspbin Configuration" class="md-nav__link">
-    Basic Raspbin Configuration
+  <a href="#basic_raspbian_configuration" title="Basic Raspbian Configuration" class="md-nav__link">
+    Basic Raspbian Configuration
   </a>
   
 </li>
@@ -841,8 +841,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#show_respberry_temperature" title="Show Respberry Temperature" class="md-nav__link">
-    Show Respberry Temperature
+  <a href="#show_raspberry_temperature" title="Show Raspberry Temperature" class="md-nav__link">
+    Show Raspberry Temperature
   </a>
   
 </li>
@@ -1588,8 +1588,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic_raspbin_configuration" title="Basic Raspbin Configuration" class="md-nav__link">
-    Basic Raspbin Configuration
+  <a href="#basic_raspbian_configuration" title="Basic Raspbian Configuration" class="md-nav__link">
+    Basic Raspbian Configuration
   </a>
   
 </li>
@@ -1623,8 +1623,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#show_respberry_temperature" title="Show Respberry Temperature" class="md-nav__link">
-    Show Respberry Temperature
+  <a href="#show_raspberry_temperature" title="Show Raspberry Temperature" class="md-nav__link">
+    Show Raspberry Temperature
   </a>
   
 </li>
@@ -1715,7 +1715,7 @@
 Password: raspberry
 </pre></div>
 
-<h2 id="basic_raspbin_configuration">Basic Raspbin Configuration<a class="headerlink" href="#basic_raspbin_configuration" title="Permanent link">&para;</a></h2>
+<h2 id="basic_raspbian_configuration">Basic Raspbian Configuration<a class="headerlink" href="#basic_raspbian_configuration" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo raspi-config
 </pre></div>
 
@@ -1742,7 +1742,7 @@ Setting fishy skin:</p>
 <div class="codehilite"><pre><span></span>sudo sed -i <span class="s1">&#39;s/robbyrussell/fishy/g&#39;</span> ~/.zshrc
 </pre></div>
 
-<p>Its Preffered to reboot after installation:</p>
+<p>Its preferred to reboot after installation:</p>
 <div class="codehilite"><pre><span></span>sudo reboot
 </pre></div>
 
@@ -1762,7 +1762,7 @@ perl: warning: Falling back to a fallback locale <span class="o">(</span><span c
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export LC_ALL=C&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
 </pre></div>
 
-<h2 id="show_respberry_temperature">Show Respberry Temperature<a class="headerlink" href="#show_respberry_temperature" title="Permanent link">&para;</a></h2>
+<h2 id="show_raspberry_temperature">Show Raspberry Temperature<a class="headerlink" href="#show_raspberry_temperature" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>/opt/vc/bin/vcgencmd measure_temp
 </pre></div>
 
@@ -1814,7 +1814,7 @@ sudo nano /etc/samba/smb.conf
 <h4 id="option_1">Option 1<a class="headerlink" href="#option_1" title="Permanent link">&para;</a></h4>
 <p>On Windows, you can use the reverse process that you used when flashing the SD card.</p>
 <p>You can use <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a>, which is the preferred tool for flashing a SD card of the Foundation. Just enter the filename (the location and name of the backup image file to be saved), select the device (the SD card) and press read:</p>
-<p><img alt="" src="https://i.stack.imgur.com/89CMl.png" /></p>
+<p><img alt="89CMl.png" src="https://i.stack.imgur.com/89CMl.png" /></p>
 <p>Of course, you can also use <a href="http://www.chrysocome.net/rawwrite">RawWrite</a>, <a href="http://www.chrysocome.net/dd">dd for Windows</a> or similar tools, the process is quite similar.</p>
 <h4 id="option_2">Option 2<a class="headerlink" href="#option_2" title="Permanent link">&para;</a></h4>
 <p>If you don't want to back up your entire system, but only specific files, I suggest you connect to your Raspberry Pi via SFTP and copy the files to your local computer (You can use the <a href="http://winscp.net/eng/index.php">WinScp</a> client). If you have SSH enabled, SFTP usually requires no special configuration on the Raspberry Pi side.</p>

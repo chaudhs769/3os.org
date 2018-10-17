@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
+        <meta name="description" content="Linux - Installing oh-my-zsh Shell how to, guides, examples, and simple usage">
       
       
         <link rel="canonical" href="https://3os.org/linux/linuxGuides/zshOnSteroids/">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Installing Oh My zsh - 3os.org</title>
+        <title>Linux - Installing oh-my-zsh Shell</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#zsh_shell_on_steroids" tabindex="1" class="md-skip">
+      <a href="../../../#installing_oh-my-zsh_shell" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -582,20 +582,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install_plugins" title="Install Plugins" class="md-nav__link">
-    Install Plugins
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add_plugins_to_zshrc" title="Add plugins to ~/.zshrc" class="md-nav__link">
-    Add plugins to ~/.zshrc
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#make_zsh_default_shell" title="Make Zsh default shell" class="md-nav__link">
     Make Zsh default shell
   </a>
@@ -603,22 +589,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional" title="Optional" class="md-nav__link">
-    Optional
+  <a href="#bonus" title="Bonus" class="md-nav__link">
+    Bonus
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fix_background_theme_issuesnot_necessary_depends_on_your_theme" title="Fix background theme issues(not necessary depends on your theme.)" class="md-nav__link">
-    Fix background theme issues(not necessary depends on your theme.)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1542,20 +1515,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install_plugins" title="Install Plugins" class="md-nav__link">
-    Install Plugins
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add_plugins_to_zshrc" title="Add plugins to ~/.zshrc" class="md-nav__link">
-    Add plugins to ~/.zshrc
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#make_zsh_default_shell" title="Make Zsh default shell" class="md-nav__link">
     Make Zsh default shell
   </a>
@@ -1563,22 +1522,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional" title="Optional" class="md-nav__link">
-    Optional
+  <a href="#bonus" title="Bonus" class="md-nav__link">
+    Bonus
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fix_background_theme_issuesnot_necessary_depends_on_your_theme" title="Fix background theme issues(not necessary depends on your theme.)" class="md-nav__link">
-    Fix background theme issues(not necessary depends on your theme.)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1601,7 +1547,7 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/linux/linuxGuides/zshOnSteroids.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="zsh_shell_on_steroids">Zsh (shell) on Steroids<a class="headerlink" href="#zsh_shell_on_steroids" title="Permanent link">&para;</a></h1>
+                <h1 id="installing_oh-my-zsh_shell">Installing oh-my-zsh Shell<a class="headerlink" href="#installing_oh-my-zsh_shell" title="Permanent link">&para;</a></h1>
 <p>This will Install oh-my-zsh shell with fish shell like history, auto suggestions and syntax highlighting.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>apt-get install git wget zsh
@@ -1611,31 +1557,24 @@
 <div class="codehilite"><pre><span></span>sh -c <span class="s2">&quot;</span><span class="k">$(</span>wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 
-<h2 id="install_plugins">Install Plugins<a class="headerlink" href="#install_plugins" title="Permanent link">&para;</a></h2>
-<p>This will create ~/.zsh folder and clone plugins from git:</p>
-<div class="codehilite"><pre><span></span>git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-history-substring-search ~/.zsh/zsh-zsh-history-substring-search
-</pre></div>
-
-<h2 id="add_plugins_to_zshrc">Add plugins to ~/.zshrc<a class="headerlink" href="#add_plugins_to_zshrc" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
-<span class="nb">echo</span> <span class="s2">&quot;source ~/.zsh/zsh-zsh-history-substring-search/zsh-history-substring-search.zsh&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
-<span class="nb">echo</span> <span class="s2">&quot;source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
-</pre></div>
-
-<p><code>Note: make sure zsh-syntax-highlighting is the last one in the above list.</code></p>
-<p>Restart zsh</p>
 <h2 id="make_zsh_default_shell">Make Zsh default shell<a class="headerlink" href="#make_zsh_default_shell" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>chsh -s <span class="k">$(</span>which zsh<span class="k">)</span>
 </pre></div>
 
-<h2 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h2>
-<h3 id="fix_background_theme_issuesnot_necessary_depends_on_your_theme">Fix background theme issues(not necessary depends on your theme.)<a class="headerlink" href="#fix_background_theme_issuesnot_necessary_depends_on_your_theme" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=&#39;fg=white&#39;&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
+<h2 id="bonus">Bonus<a class="headerlink" href="#bonus" title="Permanent link">&para;</a></h2>
+<p>Edit <code>zshrc</code>
+ and choose one of those themes from this <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes" title="oh-my-zsh themes">list</a><br />
+My favorite one is <code>fishy</code></p>
+<div class="codehilite"><pre><span></span>nano ~/.zshrc
 </pre></div>
 
-<p>Restart zsh</p>
+<p>look for the <code>ZSH_THEME=""</code> it should look like this:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Set name of the theme to load --- if set to &quot;random&quot;, it will</span>
+<span class="c1"># load a random theme each time oh-my-zsh is loaded, in which case,</span>
+<span class="c1"># to know which specific one was loaded, run: echo $RANDOM_THEME</span>
+<span class="c1"># See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes</span>
+<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;fishy&quot;</span>
+</pre></div>
                 
                   
                 
