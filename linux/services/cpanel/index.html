@@ -13,7 +13,7 @@
         <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
       
       
-        <link rel="canonical" href="https://3os.org/linux/Services/apache/">
+        <link rel="canonical" href="https://3os.org/linux/services/cpanel/">
       
       
         <meta name="author" content="Stas Kosatuhin">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Apache - 3os.org</title>
+        <title>cPanel & WHM - 3os.org</title>
       
     
     
@@ -62,8 +62,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#apache" tabindex="1" class="md-skip">
+      <a href="../../../#cpanel_whm" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 3os.org
               </span>
               <span class="md-header-nav__topic">
-                Apache
+                cPanel & WHM
               </span>
             
           
@@ -575,11 +575,119 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../cpanel/" title="cPanel & WHM" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        cPanel & WHM
+      </label>
+    
+    <a href="./" title="cPanel & WHM" class="md-nav__link md-nav__link--active">
       cPanel & WHM
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whm_replica" title="WHM replica" class="md-nav__link">
+    WHM replica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_core_files_in_cpanel_account" title="Disable core files in CPanel account" class="md-nav__link">
+    Disable core files in CPanel account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix_installatron_-_error_500_or_missing_listinstall" title="Fix Installatron - error 500 or missing list/install" class="md-nav__link">
+    Fix Installatron - error 500 or missing list/install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add_hsts_support_in_cpanel" title="Add HSTS support in CPANEL" class="md-nav__link">
+    Add HSTS support in CPANEL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install_mod_pagespeed_on_whm" title="Install mod_pagespeed on WHM" class="md-nav__link">
+    Install mod_pagespeed on WHM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix_whmcpanel_templates" title="Fix WHM/CPanel templates" class="md-nav__link">
+    Fix WHM/CPanel templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login_to_whm_with_link" title="Login to WHM with link" class="md-nav__link">
+    Login to WHM with link
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size_of_suspended_accounts_in_whm" title="Size of suspended accounts in WHM" class="md-nav__link">
+    Size of suspended accounts in WHM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpanel_resources_consumption_history_per_user" title="Cpanel resources consumption history per user" class="md-nav__link">
+    Cpanel resources consumption history per user
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpini_upload_big_files" title="PHP.INI upload big files" class="md-nav__link">
+    PHP.INI upload big files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#most_accessed_sites_in_the_last_minute" title="Most accessed sites in the last minute" class="md-nav__link">
+    Most accessed sites in the last minute
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -611,49 +719,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Apache
-      </label>
-    
-    <a href="./" title="Apache" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../apache/" title="Apache" class="md-nav__link">
       Apache
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#apache_memory_usage" title="Apache memory usage" class="md-nav__link">
-    Apache memory usage
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1480,8 +1550,78 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#apache_memory_usage" title="Apache memory usage" class="md-nav__link">
-    Apache memory usage
+  <a href="#whm_replica" title="WHM replica" class="md-nav__link">
+    WHM replica
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_core_files_in_cpanel_account" title="Disable core files in CPanel account" class="md-nav__link">
+    Disable core files in CPanel account
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix_installatron_-_error_500_or_missing_listinstall" title="Fix Installatron - error 500 or missing list/install" class="md-nav__link">
+    Fix Installatron - error 500 or missing list/install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add_hsts_support_in_cpanel" title="Add HSTS support in CPANEL" class="md-nav__link">
+    Add HSTS support in CPANEL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install_mod_pagespeed_on_whm" title="Install mod_pagespeed on WHM" class="md-nav__link">
+    Install mod_pagespeed on WHM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix_whmcpanel_templates" title="Fix WHM/CPanel templates" class="md-nav__link">
+    Fix WHM/CPanel templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login_to_whm_with_link" title="Login to WHM with link" class="md-nav__link">
+    Login to WHM with link
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#size_of_suspended_accounts_in_whm" title="Size of suspended accounts in WHM" class="md-nav__link">
+    Size of suspended accounts in WHM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpanel_resources_consumption_history_per_user" title="Cpanel resources consumption history per user" class="md-nav__link">
+    Cpanel resources consumption history per user
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpini_upload_big_files" title="PHP.INI upload big files" class="md-nav__link">
+    PHP.INI upload big files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#most_accessed_sites_in_the_last_minute" title="Most accessed sites in the last minute" class="md-nav__link">
+    Most accessed sites in the last minute
   </a>
   
 </li>
@@ -1502,12 +1642,162 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/linux/Services/apache.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/linux/services/cpanel.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h1>
-<h2 id="apache_memory_usage">Apache memory usage<a class="headerlink" href="#apache_memory_usage" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>ps -ylC httpd <span class="p">|</span> awk <span class="s1">&#39;{x += $8;y += 1} END {print &quot;Apache Memory Usage (MB): &quot;x/1024; print &quot;Average Process Size (MB): &quot;x/((y-1)*1024)}&#39;</span>
+                <h1 id="cpanel_whm">cPanel &amp; WHM<a class="headerlink" href="#cpanel_whm" title="Permanent link">&para;</a></h1>
+<h2 id="whm_replica">WHM replica<a class="headerlink" href="#whm_replica" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>rsync -avz <span class="m">192</span>.168.1.122:/home/ /home/ --exclude<span class="o">=</span><span class="s2">&quot;virtfs&quot;</span> --exclude<span class="o">=</span><span class="s2">&quot;\.cp*&quot;</span> --exclude<span class="o">=</span><span class="s2">&quot;cpeasyapache&quot;</span>
+rsync -avz <span class="m">192</span>.168.1.122:/usr/local/apache/conf/ /usr/local/apache/conf/
+rsync -avz <span class="m">192</span>.168.1.122:/var/named/ /var/named/
+rsync -avz <span class="m">192</span>.168.1.122:/usr/local/cpanel/ /usr/local/cpanel/
+rsync -avz <span class="m">192</span>.168.1.122:/var/cpanel/ /var/cpanel
+</pre></div>
+
+<div class="codehilite"><pre><span></span>chkconfig cpanel off
+chkconfig exim off
+chkconfig dovecot off
+chkconfig pure-ftpd off
+chkconfig named off
+chkconfig mysql off
+chkconfig csf off
+chkconfig iptables off
+</pre></div>
+
+<div class="codehilite"><pre><span></span>hostname: /etc/sysconfig/network
+</pre></div>
+
+<div class="codehilite"><pre><span></span>change shared ip - You can change it in /etc/wwwacct.conf infront of ADDR parameter.
+change ip - Usage: /usr/local/cpanel/bin/setsiteip <span class="o">[</span>-u user <span class="p">|</span> domain<span class="o">]</span> ip   <span class="o">(</span>/etc/trueuserowners<span class="o">)</span>
+rebuild httpd conf
+restart apache
+</pre></div>
+
+<h2 id="disable_core_files_in_cpanel_account">Disable core files in CPanel account<a class="headerlink" href="#disable_core_files_in_cpanel_account" title="Permanent link">&para;</a></h2>
+<p>Add this in /etc/sysctl.conf</p>
+<div class="codehilite"><pre><span></span>kernel.core_uses_pid <span class="o">=</span> <span class="m">0</span>
+kernel.core_pattern <span class="o">=</span> /dev/null
+</pre></div>
+
+<p>And then run:</p>
+<div class="codehilite"><pre><span></span>sysctl -p
+</pre></div>
+
+<h2 id="fix_installatron_-_error_500_or_missing_listinstall">Fix Installatron - error 500 or missing list/install<a class="headerlink" href="#fix_installatron_-_error_500_or_missing_listinstall" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>/usr/local/installatron/repair -f --release --quick
+</pre></div>
+
+<p><a href="https://installatron.com/docs/admin/troubleshooting#missinginstalls">Installatron FIX</a></p>
+<h2 id="add_hsts_support_in_cpanel">Add HSTS support in CPANEL<a class="headerlink" href="#add_hsts_support_in_cpanel" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>cp -p /var/cpanel/templates/apache2_4/ssl_vhost.default /var/cpanel/templates/apache2_4/ssl_vhost.local
+vi /var/cpanel/templates/apache2_4/ssl_vhost.local
+</pre></div>
+
+<p>Edit:</p>
+<div class="codehilite"><pre><span></span>&lt;VirtualHost<span class="o">[</span>% FOREACH ipblock IN vhost.ips %<span class="o">]</span> <span class="o">[</span>% ipblock.ip %<span class="o">]</span>:<span class="o">[</span>% ipblock.port %<span class="o">][</span>% END %<span class="o">]</span>&gt;
+ <span class="c1"># Enable HTTP Strict Transport Security</span>
+ Header always <span class="nb">set</span> Strict-Transport-Security <span class="s2">&quot;max-age=63072000; includeSubdomains;&quot;</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>cp -p /var/cpanel/templates/apache2_4/main.default /var/cpanel/templates/apache2_4/main.local
+vi /var/cpanel/templates/apache2_4/main.local
+</pre></div>
+
+<p>Edit:</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span>% IF main.sslprotocol.item.sslprotocol.length %<span class="o">]</span>SSLProtocol <span class="o">[</span>% main.sslprotocol.item.sslprotocol %<span class="o">][</span>% END %<span class="o">]</span>
+SSLHonorCipherOrder on
+</pre></div>
+
+<p>Run:</p>
+<div class="codehilite"><pre><span></span>/scripts/rebuildhttpdconf
+service httpd restart
+</pre></div>
+
+<h2 id="install_mod_pagespeed_on_whm">Install mod_pagespeed on WHM<a class="headerlink" href="#install_mod_pagespeed_on_whm" title="Permanent link">&para;</a></h2>
+<p>With EA3:</p>
+<div class="codehilite"><pre><span></span>/usr/local/cpanel/3rdparty/bin/git clone https://github.com/pagespeed/cpanel.git /tmp/pagespeed/
+<span class="nb">cd</span> /tmp/pagespeed/Easy
+tar -zcvf Speed.pm.tar.gz pagespeed
+mkdir -p /var/cpanel/easy/apache/custom_opt_mods/Cpanel/Easy
+mv Speed.pm Speed.pm.tar.gz -t /var/cpanel/easy/apache/custom_opt_mods/Cpanel/Easy/
+<span class="nb">cd</span> <span class="o">&amp;&amp;</span> rm -rf /tmp/pagespeed
+</pre></div>
+
+<p>With EA4:
+Create file /etc/rpm/macros.apache2 and add the following lines of code exactly as below</p>
+<div class="codehilite"><pre><span></span>%_httpd_mmn 20120211x8664
+%_httpd_apxs /usr/bin/apxs
+%_httpd_dir /etc/apache2
+%_httpd_bindir %<span class="o">{</span>_httpd_dir<span class="o">}</span>/bin
+%_httpd_modconfdir %<span class="o">{</span>_httpd_dir<span class="o">}</span>/conf.modules.d
+%_httpd_confdir %<span class="o">{</span>_httpd_dir<span class="o">}</span>/conf.d
+%_httpd_contentdir /usr/share/apache2
+%_httpd_moddir /usr/lib64/apache2/modules
+</pre></div>
+
+<p>Next run the following commands in order, make sure you run each command on it’s own</p>
+<div class="codehilite"><pre><span></span>rm -rf /root/rpmbuild/RPMS/x86_64/
+wget https://github.com/pagespeed/cpanel/raw/master/EA4/ea-apache24-mod_pagespeed-latest-stable.src.rpm
+rpmbuild --rebuild ea-apache24-mod_pagespeed-latest-stable.src.rpm
+rpm -Uvh /root/rpmbuild/RPMS/x86_64/ea-apache24-mod_pagespeed*.rpm
+/etc/init.d/httpd restart
+</pre></div>
+
+<h2 id="fix_whmcpanel_templates">Fix WHM/CPanel templates<a class="headerlink" href="#fix_whmcpanel_templates" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>cp /usr/local/apache/conf/httpd.conf<span class="o">{</span>,.cptech-<span class="sb">`</span>date +%Y%m%d<span class="sb">`</span><span class="o">}</span>
+mv /var/cpanel/templates/apache2_4/vhost.local /var/cpanel/templates/apache2_4/vhost.local.bak
+mv /var/cpanel/templates/apache2_4/ssl_vhost.local /var/cpanel/templates/apache2_4/ssl_vhost.local.bak
+/scripts/rebuildhttpdconf
+/scripts/restartsrv_httpd
+</pre></div>
+
+<h2 id="login_to_whm_with_link">Login to WHM with link<a class="headerlink" href="#login_to_whm_with_link" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>whmapi1 create_user_session <span class="nv">user</span><span class="o">=</span>root <span class="nv">service</span><span class="o">=</span>whostmgrd <span class="nv">locale</span><span class="o">=</span>en
+</pre></div>
+
+<h2 id="size_of_suspended_accounts_in_whm">Size of suspended accounts in WHM<a class="headerlink" href="#size_of_suspended_accounts_in_whm" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">for</span> i in <span class="sb">`</span>whmapi1 listsuspended<span class="p">|</span>grep user<span class="p">|</span>cut -d: -f2<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;Suspended account: </span><span class="nv">$i</span><span class="s2"> - using&quot;</span> <span class="sb">`</span>whmapi1 listaccts <span class="nv">search</span><span class="o">=</span><span class="nv">$i</span> <span class="nv">searchtype</span><span class="o">=</span>user<span class="p">|</span>grep diskused<span class="p">|</span>cut -d: -f2<span class="sb">`</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+
+<h2 id="cpanel_resources_consumption_history_per_user">Cpanel resources consumption history per user<a class="headerlink" href="#cpanel_resources_consumption_history_per_user" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="nv">OUT</span><span class="o">=</span><span class="k">$(</span>/usr/local/cpanel/bin/dcpumonview <span class="p">|</span> grep -v Top <span class="p">|</span> sed -e <span class="s1">&#39;s#&lt;[^&gt;]*&gt;# #g&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> i <span class="p">;</span> <span class="k">do</span> <span class="nv">NF</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$i</span> <span class="p">|</span> awk <span class="o">{</span><span class="s1">&#39;print NF&#39;</span><span class="o">}</span><span class="sb">`</span> <span class="p">;</span> <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$NF</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;5&quot;</span> <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span> <span class="nv">USER</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$i</span> <span class="p">|</span> awk <span class="o">{</span><span class="s1">&#39;print $1&#39;</span><span class="o">}</span><span class="sb">`</span><span class="p">;</span> <span class="nv">OWNER</span><span class="o">=</span><span class="sb">`</span>grep -e <span class="s2">&quot;^OWNER=&quot;</span> /var/cpanel/users/<span class="nv">$USER</span> <span class="p">|</span> cut -d<span class="o">=</span> -f2<span class="sb">`</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$OWNER</span><span class="s2"> </span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">fi</span> <span class="p">;</span> <span class="k">done)</span> <span class="p">;</span> <span class="o">(</span><span class="nb">echo</span> <span class="s2">&quot;USER CPU&quot;</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$OUT</span><span class="s2">&quot;</span> <span class="p">|</span> sort -nrk4 <span class="p">|</span> awk <span class="s1">&#39;{printf &quot;%s %s%\n&quot;,$2,$4}&#39;</span> <span class="p">|</span> head -5<span class="o">)</span> <span class="p">|</span> column -t <span class="p">;</span>echo<span class="p">;</span><span class="o">(</span><span class="nb">echo</span> -e <span class="s2">&quot;USER MEMORY&quot;</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$OUT</span><span class="s2">&quot;</span> <span class="p">|</span> sort -nrk5 <span class="p">|</span> awk <span class="s1">&#39;{printf &quot;%s %s%\n&quot;,$2,$5}&#39;</span> <span class="p">|</span> head -5<span class="o">)</span> <span class="p">|</span> column -t <span class="p">;</span>echo<span class="p">;</span><span class="o">(</span><span class="nb">echo</span> -e <span class="s2">&quot;USER MYSQL&quot;</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$OUT</span><span class="s2">&quot;</span> <span class="p">|</span> sort -nrk6 <span class="p">|</span> awk <span class="s1">&#39;{printf &quot;%s %s%\n&quot;,$2,$6}&#39;</span> <span class="p">|</span> head -5<span class="o">)</span> <span class="p">|</span> column -t <span class="p">;</span>
+</pre></div>
+
+<h2 id="phpini_upload_big_files">PHP.INI upload big files<a class="headerlink" href="#phpini_upload_big_files" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>ini_set<span class="o">(</span><span class="s1">&#39;upload_max_filesize&#39;</span>, <span class="s1">&#39;10M&#39;</span><span class="o">)</span><span class="p">;</span>
+ini_set<span class="o">(</span><span class="s1">&#39;post_max_size&#39;</span>, <span class="s1">&#39;10M&#39;</span><span class="o">)</span><span class="p">;</span>
+ini_set<span class="o">(</span><span class="s1">&#39;max_input_time&#39;</span>, <span class="m">300</span><span class="o">)</span><span class="p">;</span>
+ini_set<span class="o">(</span><span class="s1">&#39;max_execution_time&#39;</span>, <span class="m">300</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+
+<h2 id="most_accessed_sites_in_the_last_minute">Most accessed sites in the last minute<a class="headerlink" href="#most_accessed_sites_in_the_last_minute" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>cat <span class="s">&lt;&lt;&#39;SCRIPT&#39; &gt;&gt;/root/sitesLoad.sh</span>
+
+<span class="s">#!/bin/bash</span>
+<span class="s">if [[ `netstat -ntalp | grep :80 | awk &#39;$4 ~ /:80/ {print $0;exit}&#39; | grep -q httpd; echo $?` -ne 0 ]]; then echo &quot;Main web server is not Apache. Exiting...&quot;; exit 1; fi</span>
+
+<span class="s">log=/tmp/hostPop</span>
+<span class="s">i=0</span>
+<span class="s">find /usr/local/apache/domlogs/ -type f -mmin -1 ! -group root -exec ls -l {} \+ | awk &#39;{print $4, $9}&#39; | column -t&gt;$log</span>
+
+<span class="s">while read line; do</span>
+<span class="s">((++i))</span>
+<span class="s">       arr[$i]=$i</span>
+<span class="s">       arr[$i*1000]=$(printf &quot;$line&quot; | awk &#39;{print $1}&#39;)</span>
+<span class="s">       arr[$i*1001]=$(printf &quot;$line&quot; | awk &#39;{print $2}&#39;)</span>
+<span class="s">       arr[$i*1002]=$(wc -l `echo $line | awk &#39;{print $NF}&#39;` | cut -d&#39; &#39; -f 1)</span>
+<span class="s">done &lt; &lt;(cat $log)</span>
+
+<span class="s">echo &quot;Analyzing apache logs in realtime for 1 minute...&quot;; sleep 60</span>
+
+<span class="s">for (( var=1 ; var&lt;=$i ; var++ ))</span>
+<span class="s">do</span>
+<span class="s">       printf &quot;${arr[$var*1000]} ${arr[$var*1001]} &quot;</span>
+<span class="s">       echo $((`wc -l $(echo ${arr[$var*1001]}) | cut -d&#39; &#39; -f 1` - ${arr[$var*1002]}));</span>
+<span class="s">done | sed -e &#39;s/\/usr\/local\/apache\/domlogs\///g&#39; | sort -nrk 3 | column -t</span>
+
+<span class="s">SCRIPT</span>
+chmod <span class="m">700</span> /root/sitesLoad.sh <span class="o">&amp;&amp;</span> /root/sitesLoad.sh
 </pre></div>
                 
                   
@@ -1529,7 +1819,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../nginx/" title="Nginx" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../linuxGuides/zshOnSteroids/" title="Installing Oh My zsh" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1538,19 +1828,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Nginx
+                Installing Oh My zsh
               </span>
             </div>
           </a>
         
         
-          <a href="../sophos/" title="Sophos Firewall" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../csf/" title="CSF Firewall" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Sophos Firewall
+                CSF Firewall
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
