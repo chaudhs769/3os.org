@@ -16,6 +16,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://3os.org/linux/centos7/</loc>
+     <lastmod>2018-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://3os.org/linux/general/general/</loc>
      <lastmod>2018-10-17</lastmod>
      <changefreq>daily</changefreq>

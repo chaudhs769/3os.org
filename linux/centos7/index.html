@@ -10,10 +10,10 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Editing Meta Data for each page for mkdocs.">
+        <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
       
       
-        <link rel="canonical" href="https://3os.org/markdownCheatSheet/metaData/">
+        <link rel="canonical" href="https://3os.org/linux/centos7/">
       
       
         <meta name="author" content="Stas Kosatuhin">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Meta Data</title>
+        <title>Centos 7 - 3os.org</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#metadata" tabindex="1" class="md-skip">
+      <a href="../../#centos_7" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 3os.org
               </span>
               <span class="md-header-nav__topic">
-                Metadata per Page
+                Centos 7
               </span>
             
           
@@ -225,7 +225,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../linux/SSH_Service_Security/" title="Linux" class="md-tabs__link">
+        <a href="../SSH_Service_Security/" title="Linux" class="md-tabs__link md-tabs__link--active">
           Linux
         </a>
       
@@ -342,7 +342,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../welcome/" title="Markdown CheatSheet" class="md-tabs__link md-tabs__link--active">
+        <a href="../../markdownCheatSheet/welcome/" title="Markdown CheatSheet" class="md-tabs__link">
           Markdown CheatSheet
         </a>
       
@@ -425,10 +425,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Linux
@@ -446,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/SSH_Service_Security/" title="SSH Service Security" class="md-nav__link">
+    <a href="../SSH_Service_Security/" title="SSH Service Security" class="md-nav__link">
       SSH Service Security
     </a>
   </li>
@@ -456,11 +458,131 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../linux/centos7/" title="Centos 7" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Centos 7
+      </label>
+    
+    <a href="./" title="Centos 7" class="md-nav__link md-nav__link--active">
       Centos 7
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#service_control" title="Service Control" class="md-nav__link">
+    Service Control
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check_service_status" title="Check Service Status" class="md-nav__link">
+    Check Service Status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start_service" title="Start Service" class="md-nav__link">
+    Start Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop_service" title="Stop Service" class="md-nav__link">
+    Stop Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling_a_service_on_boot" title="Enabling A Service On Boot" class="md-nav__link">
+    Enabling A Service On Boot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_if_the_service_starts_on_boot" title="Check If The Service Starts On Boot" class="md-nav__link">
+    Check If The Service Starts On Boot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_which_services_failed_to_start_on_boot" title="Check Which Services Failed To Start On Boot" class="md-nav__link">
+    Check Which Services Failed To Start On Boot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling_automatic_updates_in_centos_7_rhel_7" title="Enabling Automatic Updates In Centos 7 &amp; rhel 7" class="md-nav__link">
+    Enabling Automatic Updates In Centos 7 &amp; rhel 7
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install_yum-cron" title="Install yum-cron" class="md-nav__link">
+    Install yum-cron
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure_yum-cron_for_auto-update" title="Configure yum-cron for auto-update" class="md-nav__link">
+    Configure yum-cron for auto-update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yum-cron_service_startstopstatusenable_on_boot" title="Yum-Cron Service: Start/Stop/Status/Enable on Boot" class="md-nav__link">
+    Yum-Cron Service: Start/Stop/Status/Enable on Boot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -470,7 +592,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/general/general/" title="General" class="md-nav__link">
+    <a href="../general/general/" title="General" class="md-nav__link">
       General
     </a>
   </li>
@@ -482,7 +604,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/general/files/" title="Files" class="md-nav__link">
+    <a href="../general/files/" title="Files" class="md-nav__link">
       Files
     </a>
   </li>
@@ -494,7 +616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/general/memorySwap/" title="Memory & Swap" class="md-nav__link">
+    <a href="../general/memorySwap/" title="Memory & Swap" class="md-nav__link">
       Memory & Swap
     </a>
   </li>
@@ -525,7 +647,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/linuxGuides/ResizeRootPartitionWithoutReboot/" title="Resize Root PartitionWithout Reboot" class="md-nav__link">
+    <a href="../linuxGuides/ResizeRootPartitionWithoutReboot/" title="Resize Root PartitionWithout Reboot" class="md-nav__link">
       Resize Root PartitionWithout Reboot
     </a>
   </li>
@@ -537,7 +659,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/linuxGuides/zshOnSteroids/" title="Installing Oh My zsh" class="md-nav__link">
+    <a href="../linuxGuides/zshOnSteroids/" title="Installing Oh My zsh" class="md-nav__link">
       Installing Oh My zsh
     </a>
   </li>
@@ -573,7 +695,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/cpanel/" title="cPanel & WHM" class="md-nav__link">
+    <a href="../Services/cpanel/" title="cPanel & WHM" class="md-nav__link">
       cPanel & WHM
     </a>
   </li>
@@ -585,7 +707,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/csf/" title="CSF Firewall" class="md-nav__link">
+    <a href="../Services/csf/" title="CSF Firewall" class="md-nav__link">
       CSF Firewall
     </a>
   </li>
@@ -597,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/nginx/" title="Nginx" class="md-nav__link">
+    <a href="../Services/nginx/" title="Nginx" class="md-nav__link">
       Nginx
     </a>
   </li>
@@ -609,7 +731,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/apache/" title="Apache" class="md-nav__link">
+    <a href="../Services/apache/" title="Apache" class="md-nav__link">
       Apache
     </a>
   </li>
@@ -621,7 +743,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/sophos/" title="Sophos Firewall" class="md-nav__link">
+    <a href="../Services/sophos/" title="Sophos Firewall" class="md-nav__link">
       Sophos Firewall
     </a>
   </li>
@@ -633,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/wordpress/" title="Wordpress" class="md-nav__link">
+    <a href="../Services/wordpress/" title="Wordpress" class="md-nav__link">
       Wordpress
     </a>
   </li>
@@ -645,7 +767,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/esxi/" title="Esxi" class="md-nav__link">
+    <a href="../Services/esxi/" title="Esxi" class="md-nav__link">
       Esxi
     </a>
   </li>
@@ -657,7 +779,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/Services/plesk/" title="Plesk" class="md-nav__link">
+    <a href="../Services/plesk/" title="Plesk" class="md-nav__link">
       Plesk
     </a>
   </li>
@@ -1157,12 +1279,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       Markdown CheatSheet
@@ -1180,7 +1300,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../welcome/" title="Welcome" class="md-nav__link">
+    <a href="../../markdownCheatSheet/welcome/" title="Welcome" class="md-nav__link">
       Welcome
     </a>
   </li>
@@ -1192,7 +1312,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../headings/" title="Headings" class="md-nav__link">
+    <a href="../../markdownCheatSheet/headings/" title="Headings" class="md-nav__link">
       Headings
     </a>
   </li>
@@ -1204,7 +1324,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../emphasis/" title="Emphasis" class="md-nav__link">
+    <a href="../../markdownCheatSheet/emphasis/" title="Emphasis" class="md-nav__link">
       Emphasis
     </a>
   </li>
@@ -1216,7 +1336,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../lineBreaks/" title="Line Breaks" class="md-nav__link">
+    <a href="../../markdownCheatSheet/lineBreaks/" title="Line Breaks" class="md-nav__link">
       Line Breaks
     </a>
   </li>
@@ -1228,7 +1348,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../lists/" title="Lists" class="md-nav__link">
+    <a href="../../markdownCheatSheet/lists/" title="Lists" class="md-nav__link">
       Lists
     </a>
   </li>
@@ -1240,7 +1360,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tables/" title="Tables" class="md-nav__link">
+    <a href="../../markdownCheatSheet/tables/" title="Tables" class="md-nav__link">
       Tables
     </a>
   </li>
@@ -1252,7 +1372,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../links/" title="Links" class="md-nav__link">
+    <a href="../../markdownCheatSheet/links/" title="Links" class="md-nav__link">
       Links
     </a>
   </li>
@@ -1264,7 +1384,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../images/" title="Images" class="md-nav__link">
+    <a href="../../markdownCheatSheet/images/" title="Images" class="md-nav__link">
       Images
     </a>
   </li>
@@ -1276,7 +1396,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../admonition/" title="Admonition" class="md-nav__link">
+    <a href="../../markdownCheatSheet/admonition/" title="Admonition" class="md-nav__link">
       Admonition
     </a>
   </li>
@@ -1288,7 +1408,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../blockQuotes/" title="Block Quotes" class="md-nav__link">
+    <a href="../../markdownCheatSheet/blockQuotes/" title="Block Quotes" class="md-nav__link">
       Block Quotes
     </a>
   </li>
@@ -1300,7 +1420,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../emoji/" title="Emojis List" class="md-nav__link">
+    <a href="../../markdownCheatSheet/emoji/" title="Emojis List" class="md-nav__link">
       Emojis List
     </a>
   </li>
@@ -1331,7 +1451,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../embedGists/" title="Gists" class="md-nav__link">
+    <a href="../../markdownCheatSheet/embedGists/" title="Gists" class="md-nav__link">
       Gists
     </a>
   </li>
@@ -1343,7 +1463,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../embedYouTubeVideos/" title="YouTube Videos" class="md-nav__link">
+    <a href="../../markdownCheatSheet/embedYouTubeVideos/" title="YouTube Videos" class="md-nav__link">
       YouTube Videos
     </a>
   </li>
@@ -1355,7 +1475,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../embedLucidChart/" title="Lucid Chart" class="md-nav__link">
+    <a href="../../markdownCheatSheet/embedLucidChart/" title="Lucid Chart" class="md-nav__link">
       Lucid Chart
     </a>
   </li>
@@ -1370,12 +1490,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-13" type="checkbox" id="nav-12-13" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-13" type="checkbox" id="nav-12-13">
     
     <label class="md-nav__link" for="nav-12-13">
       Extra
@@ -1391,83 +1509,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Metadata per Page
-      </label>
-    
-    <a href="./" title="Metadata per Page" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../markdownCheatSheet/metaData/" title="Metadata per Page" class="md-nav__link">
       Metadata per Page
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" title="Usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#overriding_the_title" title="Overriding the title" class="md-nav__link">
-    Overriding the title
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#overriding_the_description" title="Overriding the description" class="md-nav__link">
-    Overriding the description
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#linking_sources" title="Linking sources" class="md-nav__link">
-    Linking sources
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1514,37 +1560,85 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usage" title="Usage" class="md-nav__link">
-    Usage
+  <a href="#service_control" title="Service Control" class="md-nav__link">
+    Service Control
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#overriding_the_title" title="Overriding the title" class="md-nav__link">
-    Overriding the title
+  <a href="#check_service_status" title="Check Service Status" class="md-nav__link">
+    Check Service Status
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#overriding_the_description" title="Overriding the description" class="md-nav__link">
-    Overriding the description
+  <a href="#start_service" title="Start Service" class="md-nav__link">
+    Start Service
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#linking_sources" title="Linking sources" class="md-nav__link">
-    Linking sources
+  <a href="#stop_service" title="Stop Service" class="md-nav__link">
+    Stop Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling_a_service_on_boot" title="Enabling A Service On Boot" class="md-nav__link">
+    Enabling A Service On Boot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_if_the_service_starts_on_boot" title="Check If The Service Starts On Boot" class="md-nav__link">
+    Check If The Service Starts On Boot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_which_services_failed_to_start_on_boot" title="Check Which Services Failed To Start On Boot" class="md-nav__link">
+    Check Which Services Failed To Start On Boot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling_automatic_updates_in_centos_7_rhel_7" title="Enabling Automatic Updates In Centos 7 &amp; rhel 7" class="md-nav__link">
+    Enabling Automatic Updates In Centos 7 &amp; rhel 7
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install_yum-cron" title="Install yum-cron" class="md-nav__link">
+    Install yum-cron
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure_yum-cron_for_auto-update" title="Configure yum-cron for auto-update" class="md-nav__link">
+    Configure yum-cron for auto-update
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yum-cron_service_startstopstatusenable_on_boot" title="Yum-Cron Service: Start/Stop/Status/Enable on Boot" class="md-nav__link">
+    Yum-Cron Service: Start/Stop/Status/Enable on Boot
   </a>
   
 </li>
@@ -1570,74 +1664,100 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/markdownCheatSheet/metaData.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/linux/centos7.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h1>
-<p>The <a href="https://pythonhosted.org/Markdown/extensions/meta_data.html">Metadata</a> extension makes it possible to add metadata to a document
-which gives more control over the theme in a page-specific context.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>Add the following lines to your <code>mkdocs.yml</code>:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">markdown_extensions</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">meta</span>
+                <h1 id="centos_7">Centos 7<a class="headerlink" href="#centos_7" title="Permanent link">&para;</a></h1>
+<h2 id="service_control">Service Control<a class="headerlink" href="#service_control" title="Permanent link">&para;</a></h2>
+<p>In the following examples we will use <ins>httpd</ins> as a service</p>
+<h3 id="check_service_status">Check Service Status<a class="headerlink" href="#check_service_status" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>systemctl status httpd
 </pre></div>
 
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>Metadata is written as a series of key-value pairs at the beginning of the
-Markdown document, delimited by a blank line which ends the metadata context.
-Naturally, the metadata is stripped from the document before rendering the
-actual page content and made available to the theme.</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span>title: Lorem ipsum dolor sit amet
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-path: path/to/file
-source: file.js
-
-# Headline
-
-...
+<h3 id="start_service">Start Service<a class="headerlink" href="#start_service" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>systemctl start httpd
 </pre></div>
 
-<p>See the next section which covers the metadata that is supported by Material.</p>
-<h3 id="overriding_the_title">Overriding the title<a class="headerlink" href="#overriding_the_title" title="Permanent link">&para;</a></h3>
-<p>The page title can be overridden on a per-document level:</p>
-<div class="codehilite"><pre><span></span>title: Lorem ipsum dolor sit amet
+<h3 id="stop_service">Stop Service<a class="headerlink" href="#stop_service" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>systemctl stop httpd
 </pre></div>
 
-<p>This will set the <code>title</code> tag inside the document <code>head</code> for the current page
-to the provided value. It will also override the default behavior of Material
-for MkDocs which appends the site title using a dash as a separator to the page
-title.</p>
-<h3 id="overriding_the_description">Overriding the description<a class="headerlink" href="#overriding_the_description" title="Permanent link">&para;</a></h3>
-<p>The page description can also be overridden on a per-document level:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Nullam urna elit, malesuada eget finibus ut, ac tortor.</span>
+<h3 id="enabling_a_service_on_boot">Enabling A Service On Boot<a class="headerlink" href="#enabling_a_service_on_boot" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span> systemctl <span class="nb">enable</span> httpd
 </pre></div>
 
-<p>This will set the <code>meta</code> tag containing the site description inside the
-document <code>head</code> for the current page to the provided value.</p>
-<h3 id="linking_sources">Linking sources<a class="headerlink" href="#linking_sources" title="Permanent link">&para;</a></h3>
-<p>When a document is related to a specific set of source files and the <code>repo_url</code>
-is defined inside the project's <code>mkdocs.yml</code>, the files can be linked using the
-<code>source</code> key:</p>
-<div class="codehilite"><pre><span></span>source: file.js
+<h3 id="check_if_the_service_starts_on_boot">Check If The Service Starts On Boot<a class="headerlink" href="#check_if_the_service_starts_on_boot" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>systemctl status httpd
 </pre></div>
 
-<p>A new entry at the bottom of the table of contents is generated that is linking
-to the section listing the linked source files. Multiple files can be linked by
-adding filenames on separate lines:</p>
-<div class="codehilite"><pre><span></span>source: file.js
-        file.css
+<p>for <ins>enabled</ins> service should be printed:</p>
+<div class="codehilite"><pre><span></span>httpd.service - The Apache HTTP Server
+   Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/httpd.service<span class="p">;</span> enabled<span class="o">)</span>
 </pre></div>
 
-<p>The filenames are appended to the <code>repo_url</code> set in your <code>mkdocs.yml</code>, but can
-be prefixed with a <code>path</code> to ensure correct path resolving:</p>
-<p>Example:</p>
-<div class="codehilite"><pre><span></span>path: tree/master/docs/extensions
-source: metadata.md
+<p>for <ins>disabled</ins> service should be printed:</p>
+<div class="codehilite"><pre><span></span>httpd.service - The Apache HTTP Server
+   Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/httpd.service<span class="p">;</span> disabled<span class="o">)</span>
 </pre></div>
 
-<p>Result:</p>
-<p>See the <a href="#__source">source</a> section for the resulting output.</p>
+<h3 id="check_which_services_failed_to_start_on_boot">Check Which Services Failed To Start On Boot<a class="headerlink" href="#check_which_services_failed_to_start_on_boot" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>systemctl --failed
+</pre></div>
+
+<p>exmaple:</p>
+<div class="codehilite"><pre><span></span>$ systemctl --failed
+UNIT            LOAD   ACTIVE SUB    DESCRIPTION
+kdump.service   loaded failed failed Crash recovery kernel arming
+php-fpm.service loaded failed failed The PHP FastCGI Process Manager
+
+<span class="nv">LOAD</span>   <span class="o">=</span> Reflects whether the unit definition was properly loaded.
+<span class="nv">ACTIVE</span> <span class="o">=</span> The high-level unit activation state, i.e. generalization of SUB.
+<span class="nv">SUB</span>    <span class="o">=</span> The low-level unit activation state, values depend on unit type.
+</pre></div>
+
+<h2 id="enabling_automatic_updates_in_centos_7_rhel_7">Enabling Automatic Updates In Centos 7 &amp; rhel 7<a class="headerlink" href="#enabling_automatic_updates_in_centos_7_rhel_7" title="Permanent link">&para;</a></h2>
+<h3 id="install_yum-cron">Install yum-cron<a class="headerlink" href="#install_yum-cron" title="Permanent link">&para;</a></h3>
+<p>The package that allows us to do automatic updates via yum is yum-cron, to do this just open a terminal as root and run the command:</p>
+<div class="codehilite"><pre><span></span>yum -y install yum-cron
+</pre></div>
+
+<p>This will install the yum-cron package, now it’s time to configure it, the default configuration file it’s /etc/yum/yum-cron.conf.</p>
+<h3 id="configure_yum-cron_for_auto-update">Configure yum-cron for auto-update<a class="headerlink" href="#configure_yum-cron_for_auto-update" title="Permanent link">&para;</a></h3>
+<p>As you can see the default it’s to upgrade all your packages, the same you’d obtain with the command yum upgrade, but there are also other options and now you can decide to just do security upgrade or even just the most critical security, this add a lot of flexibility and options.</p>
+<div class="codehilite"><pre><span></span>#  What kind of update to use:
+# default                            = yum upgrade
+# security                           = yum --security upgrade
+# security-severity:Critical         = yum --sec-severity=Critical upgrade
+# minimal                            = yum --bugfix upgrade-minimal
+# minimal-security                   = yum --security upgrade-minimal
+# minimal-security-severity:Critical =  --sec-severity=Critical upgrade-minimal
+update_cmd = default
+
+# Whether a message should be emitted when updates are available,
+# were downloaded, or applied.
+update_messages = yes
+
+# Whether updates should be downloaded when they are available.
+download_updates = yes
+
+# Whether updates should be applied when they are available.  Note
+# that download_updates must also be yes for the update to be applied.
+apply_updates = no
+
+# Maximum amount of time to randomly sleep, in minutes.  The program
+# will sleep for a random amount of time between 0 and random_sleep
+# minutes before running.  This is useful for e.g. staggering the
+# times that multiple systems will access update servers.  If
+# random_sleep is 0 or negative, the program will run immediately.
+# 6*60 = 360
+random_sleep = 360
+</pre></div>
+
+<h3 id="yum-cron_service_startstopstatusenable_on_boot">Yum-Cron Service: Start/Stop/Status/Enable on Boot<a class="headerlink" href="#yum-cron_service_startstopstatusenable_on_boot" title="Permanent link">&para;</a></h3>
+<p>Follow <a href="#service_control">Service Control</a> for more details. Use service <code>yum-cron.service</code><br />
+For example:</p>
+<div class="codehilite"><pre><span></span>systemctl <span class="nb">enable</span> yum-cron.service
+</pre></div>
                 
                   
                 
@@ -1658,7 +1778,7 @@ source: metadata.md
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../embedLucidChart/" title="Lucid Chart" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../SSH_Service_Security/" title="SSH Service Security" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1667,19 +1787,19 @@ source: metadata.md
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Lucid Chart
+                SSH Service Security
               </span>
             </div>
           </a>
         
         
-          <a href="../../about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../general/general/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                General
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
