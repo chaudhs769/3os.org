@@ -926,8 +926,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add_program_to_startup_-_windows_7810_servers" title="Add Program to Startup - Windows 7/8/10 &amp; Servers" class="md-nav__link">
-    Add Program to Startup - Windows 7/8/10 &amp; Servers
+  <a href="#add_program_to_startup_-_windows_7810_servers" title="Add Program to Startup - Windows 7,8,10 &amp; Servers" class="md-nav__link">
+    Add Program to Startup - Windows 7,8,10 &amp; Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reboot_or_shutdown_windows_from_command_line_cmd" title="Reboot or Shutdown Windows From Command Line (CMD)" class="md-nav__link">
+    Reboot or Shutdown Windows From Command Line (CMD)
   </a>
   
 </li>
@@ -1510,8 +1517,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add_program_to_startup_-_windows_7810_servers" title="Add Program to Startup - Windows 7/8/10 &amp; Servers" class="md-nav__link">
-    Add Program to Startup - Windows 7/8/10 &amp; Servers
+  <a href="#add_program_to_startup_-_windows_7810_servers" title="Add Program to Startup - Windows 7,8,10 &amp; Servers" class="md-nav__link">
+    Add Program to Startup - Windows 7,8,10 &amp; Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reboot_or_shutdown_windows_from_command_line_cmd" title="Reboot or Shutdown Windows From Command Line (CMD)" class="md-nav__link">
+    Reboot or Shutdown Windows From Command Line (CMD)
   </a>
   
 </li>
@@ -1553,7 +1567,7 @@ At run dialog enter <code>netplwiz</code>:</p>
 </ul>
 <p><img alt="usersAccounts" src="../../assets/images/windows/2018-10-21_09-23-36_usersAccounts.png" title="usersAccounts" /></p>
 <p>The next time you restart the computer, it will automatically log on with the local user account you selected. Configuring automatic logon stores the user’s password in the registry unencrypted, where someone might be able to retrieve it.</p>
-<h2 id="add_program_to_startup_-_windows_7810_servers">Add Program to Startup - Windows &#8542;/10 &amp; Servers<a class="headerlink" href="#add_program_to_startup_-_windows_7810_servers" title="Permanent link">&para;</a></h2>
+<h2 id="add_program_to_startup_-_windows_7810_servers">Add Program to Startup - Windows 7,8,10 &amp; Servers<a class="headerlink" href="#add_program_to_startup_-_windows_7810_servers" title="Permanent link">&para;</a></h2>
 <p>Hit WIN+R or from start menu search <code>run</code> and press enter.<br />
 At run dialog enter <code>shell:common startup</code>:</p>
 <p><img alt="shell:common startup" src="../../assets/images/windows/2018-10-21_09-52-21_runStartup.png" title="shell:common startup" /></p>
@@ -1561,6 +1575,19 @@ At run dialog enter <code>shell:common startup</code>:</p>
 <li>Create shortcut for the program you want to auto startup when Windows boots.</li>
 <li>Move the shortcut to the <code>Startup</code> folder that opened before.</li>
 </ul>
+<h2 id="reboot_or_shutdown_windows_from_command_line_cmd">Reboot or Shutdown Windows From Command Line (CMD)<a class="headerlink" href="#reboot_or_shutdown_windows_from_command_line_cmd" title="Permanent link">&para;</a></h2>
+<p>Reboot windows computer
+This command will set a time out of 10 seconds to close the applications. After 10 seconds, windows reboot will start.</p>
+<div class="codehilite"><pre><span></span>shutdown /r /t 10
+</pre></div>
+
+<p>Force reboot</p>
+<div class="codehilite"><pre><span></span>shutdown /r /f /t 0
+</pre></div>
+
+<p>Force Shutdown</p>
+<div class="codehilite"><pre><span></span>shutdown /s /f /t 0
+</pre></div>
                 
                   
                 
