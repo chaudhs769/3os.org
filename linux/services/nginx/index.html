@@ -1448,15 +1448,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../../markdownCheatSheet/template/" title="Simple Template" class="md-nav__link">
+      Simple Template
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13-13" type="checkbox" id="nav-13-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13-14" type="checkbox" id="nav-13-14">
     
-    <label class="md-nav__link" for="nav-13-13">
+    <label class="md-nav__link" for="nav-13-14">
       Extra
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-13-13">
+      <label class="md-nav__title" for="nav-13-14">
         Extra
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1551,6 +1563,12 @@
 <h2 id="engintron_generate_custom_rules_for_all_domains_on_the_server">Engintron generate custom_rules for all domains on the server<a class="headerlink" href="#engintron_generate_custom_rules_for_all_domains_on_the_server" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="nv">ip</span><span class="o">=</span><span class="sb">`</span>hostname -i<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="k">for</span> domain in <span class="sb">`</span>httpd -S <span class="p">|</span>  grep www. <span class="p">|</span> awk -F <span class="s1">&#39;www.&#39;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span><span class="p">;</span><span class="k">do</span> <span class="nb">printf</span> <span class="s2">&quot;if ( \$host ~ \&quot;%s\&quot;) {set \$PROXY_DOMAIN_OR_IP \&quot;</span><span class="nv">$ip</span><span class="s2">\&quot;;}\n&quot;</span> <span class="nv">$domain</span> <span class="p">;</span><span class="k">done</span> &gt;&gt; /etc/nginx/custom_rules <span class="o">&amp;&amp;</span> service nginx reload
 </pre></div>
+
+<!-- Donation Button -->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="220px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
+
+<!-- Donation Button -->
                 
                   
                 
