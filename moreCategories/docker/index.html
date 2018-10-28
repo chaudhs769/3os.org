@@ -130,7 +130,7 @@
                 3os.org
               </span>
               <span class="md-header-nav__topic">
-                Docker useful commands tips
+                Docker
               </span>
             
           
@@ -202,14 +202,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -318,7 +320,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../generalLinks/" title="More Categories" class="md-tabs__link">
+        <a href="../generalLinks/" title="More Categories" class="md-tabs__link md-tabs__link--active">
           More Categories
         </a>
       
@@ -1037,10 +1039,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
     <label class="md-nav__link" for="nav-12">
       More Categories
@@ -1068,11 +1072,55 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../moreCategories.docker.md" title="Docker" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker
+      </label>
+    
+    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
       Docker
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#update_all_downloaded_images" title="Update All Downloaded Images" class="md-nav__link">
+    Update All Downloaded Images
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1558,12 +1606,12 @@
 <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <p>This is a simple template for a basic structure for markdowns.</p>
 <h2 id="update_all_downloaded_images">Update All Downloaded Images<a class="headerlink" href="#update_all_downloaded_images" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>docker images <span class="p">|</span>grep -v REPOSITORY<span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>xargs -L1 docker pull 
+<div class="codehilite"><pre><span></span>docker images <span class="p">|</span>grep -v REPOSITORY<span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>xargs -L1 docker pull
 </pre></div>
 
 <!-- Donation Button -->
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>
 
 <!-- Donation Button -->
                 
@@ -1598,6 +1646,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../generalLinks/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                General
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../browsers/chromeExtensions/" title="Chrome" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Chrome
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
