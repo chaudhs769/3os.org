@@ -537,6 +537,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#smb_mount_on_linux_with_credentials" title="SMB Mount on Linux With Credentials" class="md-nav__link">
+    SMB Mount on Linux With Credentials
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#find_big_files_and_folders" title="Find big files and folders" class="md-nav__link">
     Find big files and folders
   </a>
@@ -1591,6 +1598,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#smb_mount_on_linux_with_credentials" title="SMB Mount on Linux With Credentials" class="md-nav__link">
+    SMB Mount on Linux With Credentials
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#find_big_files_and_folders" title="Find big files and folders" class="md-nav__link">
     Find big files and folders
   </a>
@@ -1644,6 +1658,31 @@
                 
                 
                 <h1 id="linux_files_handling">Linux Files Handling<a class="headerlink" href="#linux_files_handling" title="Permanent link">&para;</a></h1>
+<h2 id="smb_mount_on_linux_with_credentials">SMB Mount on Linux With Credentials<a class="headerlink" href="#smb_mount_on_linux_with_credentials" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sudo apt-get install cifs-utils
+nano ~/.smbcredentials
+</pre></div>
+
+<p>add this to the config.</p>
+<div class="codehilite"><pre><span></span><span class="nv">username</span><span class="o">=</span>msusername
+<span class="nv">password</span><span class="o">=</span>mspassword
+</pre></div>
+
+<p>Save the file, exit the editor.
+Change the permissions of the file to prevent unwanted access to your credentials:</p>
+<div class="codehilite"><pre><span></span>chmod <span class="m">600</span> ~/.smbcredentials
+</pre></div>
+
+<p>Then edit your /etc/fstab file (with root privileges) to add this line (replacing the insecure line in the example above, if you added it):</p>
+<div class="codehilite"><pre><span></span>//servername/sharename /media/windowsshare cifs <span class="nv">vers</span><span class="o">=</span><span class="m">1</span>.0,credentials<span class="o">=</span>/home/ubuntuusername/.smbcredentials,iocharset<span class="o">=</span>utf8,sec<span class="o">=</span>ntlm <span class="m">0</span> <span class="m">0</span>
+</pre></div>
+
+<p>Save the file, exit the editor.</p>
+<p>Finally, test the fstab entry by issuing:</p>
+<div class="codehilite"><pre><span></span>sudo mount -a
+</pre></div>
+
+<p>If there are no errors, you should test how it works after a reboot. Your remote share should mount automatically.</p>
 <h2 id="find_big_files_and_folders">Find big files and folders<a class="headerlink" href="#find_big_files_and_folders" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>find / -mount -type f -print0 <span class="m">2</span>&gt;/dev/null <span class="p">|</span> xargs -0 du <span class="m">2</span>&gt;/dev/null <span class="p">|</span> sort -n <span class="p">|</span> tail -40 <span class="p">|</span> cut -f2 <span class="p">|</span> xargs -I<span class="o">{}</span> du -sh <span class="m">2</span>&gt;/dev/null <span class="o">{}</span> <span class="p">|</span> uniq<span class="p">;</span> <span class="nb">printf</span> <span class="s1">&#39;+%.0s&#39;</span> <span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span> echo<span class="p">;</span> <span class="se">\</span>
 find / -mount -type d -print0 <span class="m">2</span>&gt;/dev/null <span class="p">|</span> xargs -0 du <span class="m">2</span>&gt;/dev/null <span class="p">|</span> sort -n <span class="p">|</span> tail -40 <span class="p">|</span> cut -f2 <span class="p">|</span> xargs -I<span class="o">{}</span> du -sh <span class="m">2</span>&gt;/dev/null <span class="o">{}</span> <span class="p">|</span> uniq<span class="p">;</span> <span class="nb">printf</span> <span class="s1">&#39;+%.0s&#39;</span> <span class="o">{</span><span class="m">1</span>..100<span class="o">}</span><span class="p">;</span> echo<span class="p">;</span> <span class="se">\</span>

@@ -808,8 +808,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add_macbook_keybourd_layout_for_ubuntu" title="Add Macbook Keybourd Layout for ubuntu" class="md-nav__link">
-    Add Macbook Keybourd Layout for ubuntu
+  <a href="#disableenable_sip_system_integrity_protection" title="Disable/Enable SIP (System Integrity Protection)" class="md-nav__link">
+    Disable/Enable SIP (System Integrity Protection)
   </a>
   
 </li>
@@ -1680,8 +1680,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add_macbook_keybourd_layout_for_ubuntu" title="Add Macbook Keybourd Layout for ubuntu" class="md-nav__link">
-    Add Macbook Keybourd Layout for ubuntu
+  <a href="#disableenable_sip_system_integrity_protection" title="Disable/Enable SIP (System Integrity Protection)" class="md-nav__link">
+    Disable/Enable SIP (System Integrity Protection)
   </a>
   
 </li>
@@ -1808,31 +1808,21 @@ Drug the original application to the icon in the left corner of the "get info"</
 <p>Save AS As: <code>Firefox Profile Manager</code>
 Where: <code>Applications</code>
 File Format: <code>Application</code></p>
-<p>Right Click on the new "Burp Multi Session" application.
+<p>Right Click on the new "Firefox Profile Manager" application.
 Drug the original application to the icon in the left corner of the "get info"</p>
-<h2 id="add_macbook_keybourd_layout_for_ubuntu">Add Macbook Keybourd Layout for ubuntu<a class="headerlink" href="#add_macbook_keybourd_layout_for_ubuntu" title="Permanent link">&para;</a></h2>
-<p>for desktop:</p>
-<div class="codehilite"><pre><span></span>gsettings <span class="nb">set</span> org.gnome.desktop.input-sources xkb-options <span class="s2">&quot;[&#39;apple:badmap&#39;]&quot;</span>
+<h2 id="disableenable_sip_system_integrity_protection">Disable/Enable SIP (System Integrity Protection)<a class="headerlink" href="#disableenable_sip_system_integrity_protection" title="Permanent link">&para;</a></h2>
+<p>Reboot your Mac into Recovery Mode by restarting your computer and holding down <strong>Command+R</strong> until the Apple logo appears on your screen.<br />
+Click <em>Utilities &gt; Terminal.</em><br />
+In the Terminal window, type in:</p>
+<p>To Disable:</p>
+<div class="codehilite"><pre><span></span>csrutil disable
 </pre></div>
 
-<p>Terminal command to disable the option:</p>
-<div class="codehilite"><pre><span></span>gsettings reset org.gnome.desktop.input-sources xkb-options
+<p>To Enable:</p>
+<div class="codehilite"><pre><span></span>csrutil <span class="nb">enable</span>
 </pre></div>
 
-<!-- for headless (server):
-
-wzxhzdk:14
-
--> MacBook / MacBookPro (Intl)
-
--> English
-
--> English
-
--> Right Alt (AltGr)
-
--> No Compose Key -->
-
+<p>Press Enter and restart your Mac.</p>
 <!-- Donation Button -->
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>
