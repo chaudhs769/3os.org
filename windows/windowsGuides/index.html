@@ -953,6 +953,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send_emails_from_the_windows_task_scheduler" title="Send Emails From The Windows Task Scheduler" class="md-nav__link">
+    Send Emails From The Windows Task Scheduler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server_options" title="Server Options" class="md-nav__link">
+    Server Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destination_options" title="Destination Options" class="md-nav__link">
+    Destination Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email_options" title="Email Options" class="md-nav__link">
+    Email Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1604,6 +1638,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send_emails_from_the_windows_task_scheduler" title="Send Emails From The Windows Task Scheduler" class="md-nav__link">
+    Send Emails From The Windows Task Scheduler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server_options" title="Server Options" class="md-nav__link">
+    Server Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destination_options" title="Destination Options" class="md-nav__link">
+    Destination Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email_options" title="Email Options" class="md-nav__link">
+    Email Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1663,6 +1731,55 @@ This command will set a time out of 10 seconds to close the applications. After 
 <div class="codehilite"><pre><span></span>shutdown /s /f /t 0
 </pre></div>
 
+<h2 id="send_emails_from_the_windows_task_scheduler">Send Emails From The Windows Task Scheduler<a class="headerlink" href="#send_emails_from_the_windows_task_scheduler" title="Permanent link">&para;</a></h2>
+<p>First, <a href="https://github.com/fire1ce/sendEmail-windwos-v1.56/archive/master.zip" title="SendEmail">download SendEmail</a>, a free (and open source) tool for sending emails from the command line. Extract the downloaded archive into a folder on your computer.</p>
+<p><img alt="SendEmails" src="../../assets/images/windows/sendMail/sendMail1.png" /></p>
+<p>Next, launch the Windows Task Scheduler and create a new task – consult our guide to creating scheduled tasks for more information. You can create a task that automatically sends an email at a specific time or a task that sends an email in response to a specific event.</p>
+<p>When you reach the Action window, select Start a program instead of Send an e-mail.</p>
+<p><img alt="SendEmails" src="../../assets/images/windows/sendMail/sendMail2.png" /></p>
+<p>In the Program/script box, use the Browse button and navigate to the SendEmail.exe file on your computer.</p>
+<p><img alt="SendEmails" src="../../assets/images/windows/sendMail/sendMail3.png" /></p>
+<p>Finally, you’ll have to add the arguments required to authenticate with your SMTP server and construct your email. Here’s a list of the options you can use with SendEmail:</p>
+<h3 id="server_options">Server Options<a class="headerlink" href="#server_options" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>-f EMAIL – The email address you’re sending from.  </li>
+<li>-s SERVER:PORT – The SMTP server and port it requires.  </li>
+<li>-xu USERNAME – The username you need to authenticate with the SMTP server.  </li>
+<li>-xp PASSWORD – The password you need to authenticate with the SMTP server.  </li>
+<li>-o tls=yes – Enables TLS encryption. May be necessary for some SMTP servers.  </li>
+</ul>
+</blockquote>
+<p><strong>If you’re using Gmail’s SMTP servers, these are the server options you’ll need:</strong></p>
+<blockquote>
+<ul>
+<li>-s smtp.gmail.com:587 -xu <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#121;&#111;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#121;&#111;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a> -xp password -o tls=yes</li>
+</ul>
+</blockquote>
+<p>Of course, you’ll have to enter your own email address and password here.</p>
+<h3 id="destination_options">Destination Options<a class="headerlink" href="#destination_options" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>-t EMAIL – The destination email address. You can send an email to multiple addresses by including a space between each address after the -t option.  </li>
+<li>-cc EMAIL – Any addresses you’d like to CC on the email. You can specify multiple addresses by placing a space between each email address, just as with the -t command above.  </li>
+<li>-bcc EMAIL – The BCC version of the CC option above.  </li>
+</ul>
+</blockquote>
+<h3 id="email_options">Email Options<a class="headerlink" href="#email_options" title="Permanent link">&para;</a></h3>
+<blockquote>
+<ul>
+<li>-u SUBJECT – The subject of your email  </li>
+<li>-m BODY – The message body text of your email.  </li>
+<li>-a ATTACHMENT – The path of a file you’d like to attach. This is optional.  </li>
+</ul>
+</blockquote>
+<p>For example, let’s say your email address is <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#121;&#111;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#121;&#111;&#117;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a> and you’d like to send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#101;&#114;&#115;&#111;&#110;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#112;&#101;&#114;&#115;&#111;&#110;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a>. You’d use the following options:</p>
+<div class="codehilite"><pre><span></span>-f you@gmail.com -t person@example.com -u Subject -m This is the body text! -s smtp.gmail.com:587 -xu you@gmail.com -xp password -o tls=yes
+</pre></div>
+
+<p>Once you’ve put together your options, copy and paste them into the Add arguments box.</p>
+<p><img alt="SendEmails" src="../../assets/images/windows/sendMail/sendMail4.png" /></p>
+<p>Save your task and you’re done. Your task will automatically send email on the schedule (or in response to the event) you specified.</p>
 <!-- Donation Button -->
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>
