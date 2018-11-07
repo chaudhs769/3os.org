@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Ubiquiti Networks how to, guides, examples, and simple usage">
+        <meta name="description" content="Ubiquiti UNMS, UNIFI,Networks how to, guides, examples, and simple usage">
       
       
         <link rel="canonical" href="https://3os.org/moreCategories/ubiquiti/">
@@ -1233,6 +1233,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enable_netflow_on_edgerouter_to_unms" title="Enable NetFlow on EdgeRouter to UNMS" class="md-nav__link">
+    Enable NetFlow on EdgeRouter to UNMS
+  </a>
+  
+</li>
+      
       
       
       
@@ -1660,6 +1667,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enable_netflow_on_edgerouter_to_unms" title="Enable NetFlow on EdgeRouter to UNMS" class="md-nav__link">
+    Enable NetFlow on EdgeRouter to UNMS
+  </a>
+  
+</li>
+      
       
       
       
@@ -1904,6 +1918,7 @@ jacobalberty/unifi:latest
 --volume<span class="o">=</span>/volume1/docker/unms:/config <span class="se">\</span>
 -p <span class="m">9080</span>:80 <span class="se">\</span>
 -p <span class="m">9443</span>:443 <span class="se">\</span>
+-p <span class="m">2055</span>:2055/udp <span class="se">\</span>
 -e <span class="nv">PUBLIC_HTTPS_PORT</span><span class="o">=</span><span class="m">9443</span> <span class="se">\</span>
 -e <span class="nv">PUBLIC_WS_PORT</span><span class="o">=</span><span class="m">9443</span> <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
@@ -1922,6 +1937,34 @@ chmod +x speedtest-cli
 </pre></div>
 
 <p>based on <a href="https://github.com/sivel/speedtest-cli" title="speedtest-cli">https://github.com/sivel/speedtest-cli</a></p>
+<h2 id="enable_netflow_on_edgerouter_to_unms">Enable NetFlow on EdgeRouter to UNMS<a class="headerlink" href="#enable_netflow_on_edgerouter_to_unms" title="Permanent link">&para;</a></h2>
+<p>The most suitable place to enable NetFlow is your Default gateway router. UNMS supports NetFlow version 5 and 9. UNMS only record flow data for IP ranges defined below. Whenever UNMS receives any data from a router, the status of NetFlow changes to <code>Active</code>.</p>
+<p>To show interfaces and pick the right interface:\</p>
+<div class="codehilite"><pre><span></span>show interfaces
+</pre></div>
+
+<p>Example configuration for EdgeRouter:</p>
+<div class="codehilite"><pre><span></span>configure
+<span class="nb">set</span> system flow-accounting interface pppoe0
+<span class="nb">set</span> system flow-accounting ingress-capture post-dnat
+<span class="nb">set</span> system flow-accounting disable-memory-table
+<span class="nb">set</span> system flow-accounting netflow server <span class="m">192</span>.168.1.10 port <span class="m">2055</span>
+<span class="nb">set</span> system flow-accounting netflow version <span class="m">9</span>
+<span class="nb">set</span> system flow-accounting netflow engine-id <span class="m">0</span>
+<span class="nb">set</span> system flow-accounting netflow enable-egress engine-id <span class="m">1</span>
+<span class="nb">set</span> system flow-accounting netflow timeout expiry-interval <span class="m">60</span>
+<span class="nb">set</span> system flow-accounting netflow timeout flow-generic <span class="m">60</span>
+<span class="nb">set</span> system flow-accounting netflow timeout icmp <span class="m">60</span>
+<span class="nb">set</span> system flow-accounting netflow timeout max-active-life <span class="m">60</span>
+<span class="nb">set</span> system flow-accounting netflow timeout tcp-fin <span class="m">10</span>
+<span class="nb">set</span> system flow-accounting netflow timeout tcp-generic <span class="m">60</span>
+<span class="nb">set</span> system flow-accounting netflow timeout tcp-rst <span class="m">10</span>
+<span class="nb">set</span> system flow-accounting netflow timeout udp <span class="m">60</span>
+commit
+save
+</pre></div>
+
+<p>10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,100.64.0.0/10</p>
 <!-- Donation Button -->
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>
