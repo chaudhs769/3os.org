@@ -568,6 +568,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installing_network_tools" title="Installing Network Tools" class="md-nav__link">
+    Installing Network Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_and_stop_firewall_on_centos_7" title="Disable and stop Firewall on Centos 7" class="md-nav__link">
+    Disable and stop Firewall on Centos 7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change_default_port_for_ssh_with_selinux_enabled" title="Change Default Port for SSH with SElinux Enabled" class="md-nav__link">
+    Change Default Port for SSH with SElinux Enabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_selinux_on_centos_7" title="Disable SELinux on CentOS 7" class="md-nav__link">
+    Disable SELinux on CentOS 7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enabling_automatic_updates_in_centos_7_rhel_7" title="Enabling Automatic Updates In Centos 7 &amp; rhel 7" class="md-nav__link">
     Enabling Automatic Updates In Centos 7 &amp; rhel 7
   </a>
@@ -598,6 +626,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix_locals_error_in_bash" title="Fix Locals Error In Bash" class="md-nav__link">
+    Fix Locals Error In Bash
+  </a>
   
 </li>
       
@@ -1707,6 +1742,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installing_network_tools" title="Installing Network Tools" class="md-nav__link">
+    Installing Network Tools
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_and_stop_firewall_on_centos_7" title="Disable and stop Firewall on Centos 7" class="md-nav__link">
+    Disable and stop Firewall on Centos 7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change_default_port_for_ssh_with_selinux_enabled" title="Change Default Port for SSH with SElinux Enabled" class="md-nav__link">
+    Change Default Port for SSH with SElinux Enabled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_selinux_on_centos_7" title="Disable SELinux on CentOS 7" class="md-nav__link">
+    Disable SELinux on CentOS 7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#enabling_automatic_updates_in_centos_7_rhel_7" title="Enabling Automatic Updates In Centos 7 &amp; rhel 7" class="md-nav__link">
     Enabling Automatic Updates In Centos 7 &amp; rhel 7
   </a>
@@ -1737,6 +1800,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix_locals_error_in_bash" title="Fix Locals Error In Bash" class="md-nav__link">
+    Fix Locals Error In Bash
+  </a>
   
 </li>
       
@@ -1813,6 +1883,38 @@ php-fpm.service loaded failed failed The PHP FastCGI Process Manager
 <span class="nv">SUB</span>    <span class="o">=</span> The low-level unit activation state, values depend on unit type.
 </pre></div>
 
+<h2 id="installing_network_tools">Installing Network Tools<a class="headerlink" href="#installing_network_tools" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>yum install net-tools -y
+</pre></div>
+
+<h2 id="disable_and_stop_firewall_on_centos_7">Disable and stop Firewall on Centos 7<a class="headerlink" href="#disable_and_stop_firewall_on_centos_7" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>Disable Firewalld
+systemctl stop firewalld
+</pre></div>
+
+<h2 id="change_default_port_for_ssh_with_selinux_enabled">Change Default Port for SSH with SElinux Enabled<a class="headerlink" href="#change_default_port_for_ssh_with_selinux_enabled" title="Permanent link">&para;</a></h2>
+<p>you will need semanage, find what package contains it:</p>
+<div class="codehilite"><pre><span></span>yum whatprovides /usr/sbin/semanage
+</pre></div>
+
+<p>Usually it's <em>policycoreutils-python</em></p>
+<div class="codehilite"><pre><span></span>yum install policycoreutils-python
+</pre></div>
+
+<p>Add new allowed port for SSH for SElinux</p>
+<div class="codehilite"><pre><span></span>semanage port -a -t ftp_port_t -p tcp &lt;YOUR PORT&gt;
+</pre></div>
+
+<h2 id="disable_selinux_on_centos_7">Disable SELinux on CentOS 7<a class="headerlink" href="#disable_selinux_on_centos_7" title="Permanent link">&para;</a></h2>
+<p>change <strong>SELINUX=enforcing</strong> to <strong>SELINUX=disabled</strong></p>
+<div class="codehilite"><pre><span></span>sudo nano /etc/selinux/config
+</pre></div>
+
+<p>reboot.</p>
+<p>Check status</p>
+<div class="codehilite"><pre><span></span>sestatus
+</pre></div>
+
 <h2 id="enabling_automatic_updates_in_centos_7_rhel_7">Enabling Automatic Updates In Centos 7 &amp; rhel 7<a class="headerlink" href="#enabling_automatic_updates_in_centos_7_rhel_7" title="Permanent link">&para;</a></h2>
 <h3 id="install_yum-cron">Install yum-cron<a class="headerlink" href="#install_yum-cron" title="Permanent link">&para;</a></h3>
 <p>The package that allows us to do automatic updates via yum is yum-cron, to do this just open a terminal as root and run the command:</p>
@@ -1855,6 +1957,13 @@ random_sleep = 360
 <p>Follow <a href="#service_control">Service Control</a> for more details. Use service <code>yum-cron.service</code><br />
 For example:</p>
 <div class="codehilite"><pre><span></span>systemctl <span class="nb">enable</span> yum-cron.service
+</pre></div>
+
+<h2 id="fix_locals_error_in_bash">Fix Locals Error In Bash<a class="headerlink" href="#fix_locals_error_in_bash" title="Permanent link">&para;</a></h2>
+<p>Error :"bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory"</p>
+<p>add these lines to <em>/etc/environment</em> (create it, if it doesn't exist):</p>
+<div class="codehilite"><pre><span></span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
 </pre></div>
 
 <!-- Donation Button -->

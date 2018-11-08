@@ -1671,8 +1671,13 @@
                 
                 <h1 id="synology">Synology<a class="headerlink" href="#synology" title="Permanent link">&para;</a></h1>
 <h2 id="installing_vm_tools_on_linux_vm">Installing VM Tools on Linux VM<a class="headerlink" href="#installing_vm_tools_on_linux_vm" title="Permanent link">&para;</a></h2>
+<p>On Debian:</p>
 <div class="codehilite"><pre><span></span>sudo add-apt-repository universe
 sudo apt-get install qemu-guest-agent
+</pre></div>
+
+<p>On Centos:</p>
+<div class="codehilite"><pre><span></span>yum install qemu-guest-agent -y
 </pre></div>
 
 <h2 id="automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script">Automated SSL Using Let's Encrypt, CloudFlare API, acme.sh Script<a class="headerlink" href="#automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script" title="Permanent link">&para;</a></h2>
