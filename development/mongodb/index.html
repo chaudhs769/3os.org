@@ -1668,21 +1668,21 @@
                 <h1 id="mongodb">MongoDB<a class="headerlink" href="#mongodb" title="Permanent link">&para;</a></h1>
 <h2 id="secure_mongodb_replica_setup">Secure MongoDB Replica Setup<a class="headerlink" href="#secure_mongodb_replica_setup" title="Permanent link">&para;</a></h2>
 <p>ssh to server1
-edit /etc/hosts to contain other two servers server2, server3
+edit <code>/etc/hosts</code> to contain other two servers server2, server3<br />
 repeat action for all servers respectively</p>
 <h3 id="server_setup">Server Setup<a class="headerlink" href="#server_setup" title="Permanent link">&para;</a></h3>
 <p>ssh to server</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> to home directory
-openssl rand -base64 <span class="m">756</span> &gt; keyfile
+<p><div class="codehilite"><pre><span></span><span class="nb">cd</span> <span class="o">&amp;&amp;</span>
+openssl rand -base64 <span class="m">756</span> &gt; keyfile <span class="o">&amp;&amp;</span>
 chmod <span class="m">400</span> keyfile
+
 scp keyfile user@server2:~/
 scp keyfile user@server3:~/
 
 sudo chown mongodb:mongodb keyfile
 sudo mv keyfile /var/lib/mongodb/
-edit /etc/mongod.conf
 </pre></div>
-
+edit <code>/etc/mongod.conf</code></p>
 <p>Replace <em>#security</em> with:</p>
 <div class="codehilite"><pre><span></span>#security:
   #keyFile: /var/lib/mongodb/keyfile
@@ -1699,16 +1699,15 @@ edit /etc/mongod.conf
 
 <p>ssh to server2,server3 and repeat the <a href="#server_setup">Server Setup</a> section</p>
 <h3 id="initiate_connection">Initiate Connection<a class="headerlink" href="#initiate_connection" title="Permanent link">&para;</a></h3>
-<p>ssh to the server
-On server open mongo shell</p>
-<div class="codehilite"><pre><span></span>rs.initiate<span class="o">()</span>
-rs.add<span class="o">(</span><span class="s1">&#39;server2:27017&#39;</span><span class="o">)</span>
-rs.add<span class="o">(</span><span class="s1">&#39;server3:27017&#39;</span><span class="o">)</span>
+<p>ssh to server1</p>
+<div class="codehilite"><pre><span></span>mongo
+&gt; rs.initiate<span class="o">()</span>
+&gt; rs.add<span class="o">(</span><span class="s1">&#39;server2:27017&#39;</span><span class="o">)</span>
+&gt; rs.add<span class="o">(</span><span class="s1">&#39;server3:27017&#39;</span><span class="o">)</span>
 </pre></div>
 
 <p>Now one of the servers should be the PRIMARY and others should be SECONDARY</p>
-<p>On the same server,</p>
-<p>edit /etc/mongod.conf</p>
+<p>On the same server, edit <code>/etc/mongod.conf</code></p>
 <p>Replace:</p>
 <div class="codehilite"><pre><span></span>#security:
   #keyFile: /var/lib/mongodb/keyfile
@@ -1723,40 +1722,45 @@ rs.add<span class="o">(</span><span class="s1">&#39;server3:27017&#39;</span><sp
 <div class="codehilite"><pre><span></span>sudo systemctl restart mongod.service
 </pre></div>
 
-<p>ssh to server2,server3 and repeat the <a href="#initiate_connection">Initiate Connection</a> section</p>
-<p>again one of the servers should be the PRIMARY and others should be SECONDARY
-ssh to the PRIMARY server</p>
-<p>run mongo shell</p>
-<div class="codehilite"><pre><span></span>use admin
-db.createUser<span class="o">({</span>user: <span class="s2">&quot;yourUsernameHere&quot;</span>, pwd: <span class="s2">&quot;yourPasswordHere&quot;</span>, roles: <span class="o">[{</span>role: <span class="s2">&quot;userAdminAnyDatabase&quot;</span>, db: <span class="s2">&quot;admin&quot;</span><span class="o">}</span>, <span class="o">{</span>role: <span class="s2">&quot;clusterAdmin&quot;</span>, db: <span class="s2">&quot;admin&quot;</span><span class="o">}]})</span>
-use myDB
-db.createUser<span class="o">({</span>user: <span class="s2">&quot;databaseUsernameHere&quot;</span>, pwd: <span class="s2">&quot;databasePasswordHere&quot;</span>, roles: <span class="o">[{</span>role: <span class="s2">&quot;readWrite&quot;</span>, db: <span class="s2">&quot;myDB&quot;</span><span class="o">}]})</span>
+<p>ssh to server2, server3 and repeat the <a href="#initiate_connection">Initiate Connection</a> section</p>
+<p>again one of the servers should be the PRIMARY and others should be SECONDARY</p>
+<p>ssh to the PRIMARY server</p>
+<div class="codehilite"><pre><span></span>mongo
+&gt; use admin
+&gt; db.createUser<span class="o">({</span>user: <span class="s2">&quot;yourUsernameHere&quot;</span>, pwd: <span class="s2">&quot;yourPasswordHere&quot;</span>, roles: <span class="o">[{</span>role: <span class="s2">&quot;userAdminAnyDatabase&quot;</span>, db: <span class="s2">&quot;admin&quot;</span><span class="o">}</span>, <span class="o">{</span>role: <span class="s2">&quot;clusterAdmin&quot;</span>, db: <span class="s2">&quot;admin&quot;</span><span class="o">}]})</span>
+&gt; use myDB
+&gt; db.createUser<span class="o">({</span>user: <span class="s2">&quot;databaseUsernameHere&quot;</span>, pwd: <span class="s2">&quot;databasePasswordHere&quot;</span>, roles: <span class="o">[{</span>role: <span class="s2">&quot;readWrite&quot;</span>, db: <span class="s2">&quot;myDB&quot;</span><span class="o">}]})</span>
 </pre></div>
 
+<p>ssh to SECONDARY
+<div class="codehilite"><pre><span></span>mongo
+&gt; rs.slaveOk<span class="o">()</span>
+</pre></div></p>
+<p>ssh to other SECONDARY
+<div class="codehilite"><pre><span></span>mongo
+&gt; rs.slaveOk<span class="o">()</span>
+</pre></div></p>
 <hr />
 <p>to verify everything was done correctly</p>
-<p>ssh to PRIMARY
-run mongo shell</p>
-<div class="codehilite"><pre><span></span>use admin
-db.auth<span class="o">(</span><span class="s2">&quot;yourUsernameHere&quot;</span>, <span class="s2">&quot;yourPasswordHere&quot;</span><span class="o">)</span>
-</pre></div>
-
-<p>OUTPUT SHOULD BE 1</p>
-<div class="codehilite"><pre><span></span>use myDB
-db.auth<span class="o">(</span><span class="s2">&quot;databaseUsernameHere&quot;</span>, <span class="s2">&quot;databasePasswordHere&quot;</span><span class="o">)</span>
-OUTPUT SHOULD BE <span class="m">1</span>
+<p>ssh to PRIMARY</p>
+<div class="codehilite"><pre><span></span>mongo
+&gt; use admin
+&gt; db.auth<span class="o">(</span><span class="s2">&quot;yourUsernameHere&quot;</span>, <span class="s2">&quot;yourPasswordHere&quot;</span><span class="o">)</span>
+<span class="m">1</span>
+&gt; use myDB
+&gt; db.auth<span class="o">(</span><span class="s2">&quot;databaseUsernameHere&quot;</span>, <span class="s2">&quot;databasePasswordHere&quot;</span><span class="o">)</span>
+<span class="m">1</span>
 &gt; <span class="k">for</span> <span class="o">(</span>var <span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> i&lt;<span class="o">=</span> <span class="m">10</span><span class="p">;</span> i++<span class="o">)</span> db.replicaTestCollection.insert<span class="o">(</span> <span class="o">{</span> x : i <span class="o">}</span> <span class="o">)</span>
+WriteResult<span class="o">({</span> <span class="s2">&quot;nInserted&quot;</span> : <span class="m">1</span> <span class="o">})</span>
 &gt; <span class="nb">exit</span>
 </pre></div>
 
 <p>ssh to any SECONDARY</p>
 <div class="codehilite"><pre><span></span>&gt; use myDB
 &gt; db.auth<span class="o">(</span><span class="s2">&quot;databaseUsernameHere&quot;</span>, <span class="s2">&quot;databasePasswordHere&quot;</span><span class="o">)</span>
-</pre></div>
-
-<p>OUTPUT SHOULD BE 1</p>
-<div class="codehilite"><pre><span></span>&gt; db.replicaTestCollection.count<span class="o">()</span>
-OUTPUT SHOULD BE <span class="m">10</span>
+<span class="m">1</span>
+&gt; db.replicaTestCollection.count<span class="o">()</span>
+<span class="m">11</span>
 </pre></div>
 
 <p>Credit to <a href="https://github.com/bergerg" title="github.com/bergerg">bergerg</a> for this guide.</p>
