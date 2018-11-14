@@ -42,7 +42,7 @@
     
     
       
-        <title>Linux General</title>
+        <title>Linux General Topics</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#linux_general" tabindex="1" class="md-skip">
+      <a href="#linux_general_topics" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -229,7 +229,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../SSH_Service_Security/" title="Linux" class="md-tabs__link md-tabs__link--active">
+        <a href="./" title="Linux" class="md-tabs__link md-tabs__link--active">
           Linux
         </a>
       
@@ -472,30 +472,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../../SSH_Service_Security/" title="SSH Service Security" class="md-nav__link">
-      SSH Service Security
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../centos7/" title="Centos 7" class="md-nav__link">
-      Centos 7
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -525,8 +501,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#redirect_output_to_a_file_and_stdout" title="Redirect Output to a File and Stdout" class="md-nav__link">
+    Redirect Output to a File and Stdout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add_permanent_path_to_application" title="Add Permanent Path to Application" class="md-nav__link">
     Add Permanent Path to Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create_symbolic_links" title="Create Symbolic Links" class="md-nav__link">
+    Create Symbolic Links
   </a>
   
 </li>
@@ -553,15 +543,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rescan_drives" title="Rescan drives" class="md-nav__link">
-    Rescan drives
+  <a href="#rescan_drives_for_the_os" title="Rescan Drives for the OS" class="md-nav__link">
+    Rescan Drives for the OS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#find_ptr_owner_-_reversal" title="Find PTR owner - reversal" class="md-nav__link">
-    Find PTR owner - reversal
+  <a href="#find_ptr_owner_-_reversal_look_up" title="Find PTR Owner - Reversal Look Up" class="md-nav__link">
+    Find PTR Owner - Reversal Look Up
   </a>
   
 </li>
@@ -574,22 +564,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#open_last_edited_file" title="Open last edited file" class="md-nav__link">
-    Open last edited file
+  <a href="#open_last_edited_file" title="Open Last Edited File" class="md-nav__link">
+    Open Last Edited File
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#kill_process_that_runs_more_than_x_time" title="Kill process that runs more than X time" class="md-nav__link">
-    Kill process that runs more than X time
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix_nfs_mount_on_boot_-_centos_7" title="Fix NFS mount on boot - Centos 7" class="md-nav__link">
-    Fix NFS mount on boot - Centos 7
+  <a href="#kill_process_that_runs_more_than_x_time" title="Kill Process That Runs More Than X Time" class="md-nav__link">
+    Kill Process That Runs More Than X Time
   </a>
   
 </li>
@@ -602,29 +585,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clone_linux_user" title="Clone Linux User" class="md-nav__link">
-    Clone Linux User
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clear_boot_on_ubuntu_when_100" title="Clear BOOT on Ubuntu when 100%" class="md-nav__link">
-    Clear BOOT on Ubuntu when 100%
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find_root_of_a_site_and_cd_to_it" title="Find root of a site and CD to it" class="md-nav__link">
-    Find root of a site and CD to it
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generate_csr_with_openssl" title="Generate CSR with OPENSSL" class="md-nav__link">
-    Generate CSR with OPENSSL
+  <a href="#generate_csr_with_openssl" title="Generate CSR with OpenSSL" class="md-nav__link">
+    Generate CSR with OpenSSL
   </a>
   
 </li>
@@ -643,6 +605,42 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../SSH_Service_Security/" title="SSH Service Security" class="md-nav__link">
+      SSH Service Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../centos7/" title="Centos 7" class="md-nav__link">
+      Centos 7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ubuntu/" title="Ubuntu" class="md-nav__link">
+      Ubuntu
+    </a>
   </li>
 
         
@@ -689,13 +687,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-7" type="checkbox" id="nav-5-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8">
     
-    <label class="md-nav__link" for="nav-5-7">
+    <label class="md-nav__link" for="nav-5-8">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-7">
+      <label class="md-nav__title" for="nav-5-8">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -737,13 +735,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9">
     
-    <label class="md-nav__link" for="nav-5-8">
+    <label class="md-nav__link" for="nav-5-9">
       Linux Services
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-8">
+      <label class="md-nav__title" for="nav-5-9">
         Linux Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1692,8 +1690,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#redirect_output_to_a_file_and_stdout" title="Redirect Output to a File and Stdout" class="md-nav__link">
+    Redirect Output to a File and Stdout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add_permanent_path_to_application" title="Add Permanent Path to Application" class="md-nav__link">
     Add Permanent Path to Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create_symbolic_links" title="Create Symbolic Links" class="md-nav__link">
+    Create Symbolic Links
   </a>
   
 </li>
@@ -1720,15 +1732,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rescan_drives" title="Rescan drives" class="md-nav__link">
-    Rescan drives
+  <a href="#rescan_drives_for_the_os" title="Rescan Drives for the OS" class="md-nav__link">
+    Rescan Drives for the OS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#find_ptr_owner_-_reversal" title="Find PTR owner - reversal" class="md-nav__link">
-    Find PTR owner - reversal
+  <a href="#find_ptr_owner_-_reversal_look_up" title="Find PTR Owner - Reversal Look Up" class="md-nav__link">
+    Find PTR Owner - Reversal Look Up
   </a>
   
 </li>
@@ -1741,22 +1753,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#open_last_edited_file" title="Open last edited file" class="md-nav__link">
-    Open last edited file
+  <a href="#open_last_edited_file" title="Open Last Edited File" class="md-nav__link">
+    Open Last Edited File
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#kill_process_that_runs_more_than_x_time" title="Kill process that runs more than X time" class="md-nav__link">
-    Kill process that runs more than X time
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix_nfs_mount_on_boot_-_centos_7" title="Fix NFS mount on boot - Centos 7" class="md-nav__link">
-    Fix NFS mount on boot - Centos 7
+  <a href="#kill_process_that_runs_more_than_x_time" title="Kill Process That Runs More Than X Time" class="md-nav__link">
+    Kill Process That Runs More Than X Time
   </a>
   
 </li>
@@ -1769,29 +1774,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#clone_linux_user" title="Clone Linux User" class="md-nav__link">
-    Clone Linux User
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clear_boot_on_ubuntu_when_100" title="Clear BOOT on Ubuntu when 100%" class="md-nav__link">
-    Clear BOOT on Ubuntu when 100%
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find_root_of_a_site_and_cd_to_it" title="Find root of a site and CD to it" class="md-nav__link">
-    Find root of a site and CD to it
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generate_csr_with_openssl" title="Generate CSR with OPENSSL" class="md-nav__link">
-    Generate CSR with OPENSSL
+  <a href="#generate_csr_with_openssl" title="Generate CSR with OpenSSL" class="md-nav__link">
+    Generate CSR with OpenSSL
   </a>
   
 </li>
@@ -1821,7 +1805,25 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/linux/general/general.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="linux_general">Linux General<a class="headerlink" href="#linux_general" title="Permanent link">&para;</a></h1>
+                <h1 id="linux_general_topics">Linux General Topics<a class="headerlink" href="#linux_general_topics" title="Permanent link">&para;</a></h1>
+<h2 id="redirect_output_to_a_file_and_stdout">Redirect Output to a File and Stdout<a class="headerlink" href="#redirect_output_to_a_file_and_stdout" title="Permanent link">&para;</a></h2>
+<p>The command you want is named <code>tee</code>:</p>
+<div class="codehilite"><pre><span></span>foo <span class="p">|</span> tee output.file
+</pre></div>
+
+<p>For example, if you only care about stdout:</p>
+<div class="codehilite"><pre><span></span>ls -a <span class="p">|</span> tee output.file
+</pre></div>
+
+<p>If you want to include stderr, do:</p>
+<div class="codehilite"><pre><span></span>program <span class="o">[</span>arguments...<span class="o">]</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee outfile
+</pre></div>
+
+<p>2&gt;&amp;1 redirects channel 2 (stderr/standard error) into channel 1 (stdout/standard output), such that both is written as stdout. It is also directed to the given output file as of the tee command.</p>
+<p>Furthermore, if you want to append to the log file, use tee -a as:</p>
+<div class="codehilite"><pre><span></span>program <span class="o">[</span>arguments...<span class="o">]</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee -a outfile
+</pre></div>
+
 <h2 id="add_permanent_path_to_application">Add Permanent Path to Application<a class="headerlink" href="#add_permanent_path_to_application" title="Permanent link">&para;</a></h2>
 <p>First find the location of the Application/Service:</p>
 <div class="codehilite"><pre><span></span>find / -name ApplicationName
@@ -1843,6 +1845,12 @@
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;&#39;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s1">&#39;:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
 </pre></div>
 
+<h2 id="create_symbolic_links">Create Symbolic Links<a class="headerlink" href="#create_symbolic_links" title="Permanent link">&para;</a></h2>
+<p>To create a symbolic link in Unix/Linux, at the terminal prompt, enter:</p>
+<div class="codehilite"><pre><span></span>ln -s source_file target_file
+</pre></div>
+
+<p>to remove symbolic link use the <code>rm</code> command on the link</p>
 <h2 id="update_time_zone">Update Time Zone<a class="headerlink" href="#update_time_zone" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo dpkg-reconfigure tzdata
 </pre></div>
@@ -1869,12 +1877,12 @@ net.core.somaxconn <span class="o">=</span> <span class="m">1024</span>
 net.core.netdev_max_backlog <span class="o">=</span> <span class="m">2000</span>
 </pre></div>
 
-<h2 id="rescan_drives">Rescan drives<a class="headerlink" href="#rescan_drives" title="Permanent link">&para;</a></h2>
+<h2 id="rescan_drives_for_the_os">Rescan Drives for the OS<a class="headerlink" href="#rescan_drives_for_the_os" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;- - -&quot;</span> &gt; /sys/class/scsi_host/host0/scan
 <span class="nb">echo</span> <span class="m">1</span> &gt; /sys/class/scsi_device/2<span class="se">\:</span><span class="m">0</span><span class="se">\:</span><span class="m">0</span><span class="se">\:</span><span class="m">0</span>/device/rescan
 </pre></div>
 
-<h2 id="find_ptr_owner_-_reversal">Find PTR owner - reversal<a class="headerlink" href="#find_ptr_owner_-_reversal" title="Permanent link">&para;</a></h2>
+<h2 id="find_ptr_owner_-_reversal_look_up">Find PTR Owner - Reversal Look Up<a class="headerlink" href="#find_ptr_owner_-_reversal_look_up" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>dig <span class="m">0</span>.168.192.in-addr.arpa. NS
 </pre></div>
 
@@ -1887,59 +1895,20 @@ net.core.netdev_max_backlog <span class="o">=</span> <span class="m">2000</span>
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export LC_ALL=C&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
 </pre></div>
 
-<h2 id="open_last_edited_file">Open last edited file<a class="headerlink" href="#open_last_edited_file" title="Permanent link">&para;</a></h2>
+<h2 id="open_last_edited_file">Open Last Edited File<a class="headerlink" href="#open_last_edited_file" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>less <span class="sb">`</span>ls -dx1tr /usr/local/cpanel/logs/cpbackup/*<span class="p">|</span>tail -1<span class="sb">`</span>
 </pre></div>
 
-<h2 id="kill_process_that_runs_more_than_x_time">Kill process that runs more than X time<a class="headerlink" href="#kill_process_that_runs_more_than_x_time" title="Permanent link">&para;</a></h2>
+<h2 id="kill_process_that_runs_more_than_x_time">Kill Process That Runs More Than X Time<a class="headerlink" href="#kill_process_that_runs_more_than_x_time" title="Permanent link">&para;</a></h2>
 <p>Kill cgi after 30 secs:</p>
 <div class="codehilite"><pre><span></span><span class="k">for</span> i in <span class="sb">`</span>ps -eo pid,etime,cmd<span class="p">|</span>grep cgi<span class="p">|</span>awk <span class="s1">&#39;$2 &gt; &quot;00:30&quot; {print $1}&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nb">kill</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
 </pre></div>
 
-<h2 id="fix_nfs_mount_on_boot_-_centos_7">Fix NFS mount on boot - Centos 7<a class="headerlink" href="#fix_nfs_mount_on_boot_-_centos_7" title="Permanent link">&para;</a></h2>
-<p>Append text to the end of /usr/lib/systemd/system/nfs-idmap.service</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span>Install<span class="o">]</span>
-<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</pre></div>
-
-<p>Append text to the end of /usr/lib/systemd/system/nfs-lock.service</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span>Install<span class="o">]</span>
-<span class="nv">WantedBy</span><span class="o">=</span>nfs.target
-</pre></div>
-
-<p>Enable related services</p>
-<div class="codehilite"><pre><span></span>systemctl <span class="nb">enable</span> nfs-idmapd.service
-systemctl <span class="nb">enable</span> rpc-statd.service
-systemctl <span class="nb">enable</span> rpcbind.socket
-</pre></div>
-
-<p>Reboot the server</p>
 <h2 id="update_date_and_time_on_linux_server">Update Date and Time on Linux Server<a class="headerlink" href="#update_date_and_time_on_linux_server" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo ntpd -qg<span class="p">;</span> sudo hwclock -w
 </pre></div>
 
-<h2 id="clone_linux_user">Clone Linux User<a class="headerlink" href="#clone_linux_user" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">SRC</span><span class="o">=</span><span class="nv">$1</span>
-<span class="nv">DEST</span><span class="o">=</span><span class="nv">$2</span>
-
-<span class="nv">SRC_GROUPS</span><span class="o">=</span><span class="k">$(</span>id -Gn <span class="si">${</span><span class="nv">SRC</span><span class="si">}</span> <span class="p">|</span> sed <span class="s2">&quot;s/</span><span class="si">${</span><span class="nv">SRC</span><span class="si">}</span><span class="s2"> //g&quot;</span> <span class="p">|</span> sed <span class="s2">&quot;s/ </span><span class="si">${</span><span class="nv">SRC</span><span class="si">}</span><span class="s2">//g&quot;</span> <span class="p">|</span> sed <span class="s2">&quot;s/ /,/g&quot;</span><span class="k">)</span>
-<span class="nv">SRC_SHELL</span><span class="o">=</span><span class="k">$(</span>awk -F : -v <span class="nv">name</span><span class="o">=</span><span class="si">${</span><span class="nv">SRC</span><span class="si">}</span> <span class="s1">&#39;(name == $1) { print $7 }&#39;</span> /etc/passwd<span class="k">)</span>
-
-useradd --groups <span class="si">${</span><span class="nv">SRC_GROUPS</span><span class="si">}</span> --shell <span class="si">${</span><span class="nv">SRC_SHELL</span><span class="si">}</span> --create-home <span class="si">${</span><span class="nv">DEST</span><span class="si">}</span>
-passwd <span class="si">${</span><span class="nv">DEST</span><span class="si">}</span>
-</pre></div>
-
-<h2 id="clear_boot_on_ubuntu_when_100">Clear BOOT on Ubuntu when 100%<a class="headerlink" href="#clear_boot_on_ubuntu_when_100" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>dpkg --purge <span class="sb">`</span>dpkg --list<span class="p">|</span>grep <span class="s2">&quot;linux-&quot;</span><span class="p">|</span>grep -v <span class="se">\`</span>uname -r<span class="p">|</span>sed <span class="s1">&#39;s/-generic//g&#39;</span><span class="se">\`</span><span class="p">|</span>cut -d<span class="s2">&quot; &quot;</span> -f3<span class="p">|</span>grep <span class="s2">&quot;[0-9]-&quot;</span><span class="p">|</span>paste -sd <span class="s2">&quot; &quot;</span> -<span class="sb">`</span>
-</pre></div>
-
-<h2 id="find_root_of_a_site_and_cd_to_it">Find root of a site and CD to it<a class="headerlink" href="#find_root_of_a_site_and_cd_to_it" title="Permanent link">&para;</a></h2>
-<p>Replace domain.com with desired domain</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> <span class="sb">`</span>grep <span class="s2">&quot;domain.com&quot;</span> /etc/apache2/conf/httpd.conf -A7<span class="p">|</span>grep Root<span class="p">|</span>head -1<span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
-</pre></div>
-
-<h2 id="generate_csr_with_openssl">Generate CSR with OPENSSL<a class="headerlink" href="#generate_csr_with_openssl" title="Permanent link">&para;</a></h2>
+<h2 id="generate_csr_with_openssl">Generate CSR with OpenSSL<a class="headerlink" href="#generate_csr_with_openssl" title="Permanent link">&para;</a></h2>
 <p>Generate key:</p>
 <div class="codehilite"><pre><span></span>openssl genrsa -out private.key <span class="m">2048</span>
 </pre></div>
@@ -1989,7 +1958,7 @@ passwd <span class="si">${</span><span class="nv">DEST</span><span class="si">}<
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../centos7/" title="Centos 7" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../../donation/" title="Donate" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1998,19 +1967,19 @@ passwd <span class="si">${</span><span class="nv">DEST</span><span class="si">}<
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Centos 7
+                Donate
               </span>
             </div>
           </a>
         
         
-          <a href="../files/" title="Files" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../SSH_Service_Security/" title="SSH Service Security" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Files
+                SSH Service Security
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

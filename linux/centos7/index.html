@@ -229,7 +229,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../SSH_Service_Security/" title="Linux" class="md-tabs__link md-tabs__link--active">
+        <a href="../general/general/" title="Linux" class="md-tabs__link md-tabs__link--active">
           Linux
         </a>
       
@@ -474,6 +474,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../general/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../SSH_Service_Security/" title="SSH Service Security" class="md-nav__link">
       SSH Service Security
     </a>
@@ -636,6 +648,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fix_nfs_mount_on_boot_-_centos_7" title="Fix NFS mount on Boot - Centos 7" class="md-nav__link">
+    Fix NFS mount on Boot - Centos 7
+  </a>
+  
+</li>
+      
       
       
       
@@ -659,8 +678,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../general/general/" title="General" class="md-nav__link">
-      General
+    <a href="../ubuntu/" title="Ubuntu" class="md-nav__link">
+      Ubuntu
     </a>
   </li>
 
@@ -708,13 +727,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-7" type="checkbox" id="nav-5-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8">
     
-    <label class="md-nav__link" for="nav-5-7">
+    <label class="md-nav__link" for="nav-5-8">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-7">
+      <label class="md-nav__title" for="nav-5-8">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -756,13 +775,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9">
     
-    <label class="md-nav__link" for="nav-5-8">
+    <label class="md-nav__link" for="nav-5-9">
       Linux Services
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-8">
+      <label class="md-nav__title" for="nav-5-9">
         Linux Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1834,6 +1853,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fix_nfs_mount_on_boot_-_centos_7" title="Fix NFS mount on Boot - Centos 7" class="md-nav__link">
+    Fix NFS mount on Boot - Centos 7
+  </a>
+  
+</li>
+      
       
       
       
@@ -1990,6 +2016,24 @@ For example:</p>
 <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
 </pre></div>
 
+<h2 id="fix_nfs_mount_on_boot_-_centos_7">Fix NFS mount on Boot - Centos 7<a class="headerlink" href="#fix_nfs_mount_on_boot_-_centos_7" title="Permanent link">&para;</a></h2>
+<p>Append text to the end of /usr/lib/systemd/system/nfs-idmap.service</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</pre></div>
+
+<p>Append text to the end of /usr/lib/systemd/system/nfs-lock.service</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>nfs.target
+</pre></div>
+
+<p>Enable related services</p>
+<div class="codehilite"><pre><span></span>systemctl <span class="nb">enable</span> nfs-idmapd.service
+systemctl <span class="nb">enable</span> rpc-statd.service
+systemctl <span class="nb">enable</span> rpcbind.socket
+</pre></div>
+
+<p>Reboot the server</p>
 <!-- Donation Button -->
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>
@@ -2046,13 +2090,13 @@ For example:</p>
           </a>
         
         
-          <a href="../general/general/" title="General" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ubuntu/" title="Ubuntu" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                General
+                Ubuntu
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

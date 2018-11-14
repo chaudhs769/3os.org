@@ -229,7 +229,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../SSH_Service_Security/" title="Linux" class="md-tabs__link md-tabs__link--active">
+        <a href="../../general/general/" title="Linux" class="md-tabs__link md-tabs__link--active">
           Linux
         </a>
       
@@ -474,6 +474,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../general/general/" title="General" class="md-nav__link">
+      General
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../SSH_Service_Security/" title="SSH Service Security" class="md-nav__link">
       SSH Service Security
     </a>
@@ -498,8 +510,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../general/general/" title="General" class="md-nav__link">
-      General
+    <a href="../../ubuntu/" title="Ubuntu" class="md-nav__link">
+      Ubuntu
     </a>
   </li>
 
@@ -547,13 +559,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-7" type="checkbox" id="nav-5-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8">
     
-    <label class="md-nav__link" for="nav-5-7">
+    <label class="md-nav__link" for="nav-5-8">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-7">
+      <label class="md-nav__title" for="nav-5-8">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -597,13 +609,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9" checked>
     
-    <label class="md-nav__link" for="nav-5-8">
+    <label class="md-nav__link" for="nav-5-9">
       Linux Services
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-8">
+      <label class="md-nav__title" for="nav-5-9">
         Linux Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -680,6 +692,13 @@
         <li class="md-nav__item">
   <a href="#apache_memory_usage" title="Apache Memory Usage" class="md-nav__link">
     Apache Memory Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find_root_of_a_site_and_cd_to_it" title="Find Root of a Site and CD to it" class="md-nav__link">
+    Find Root of a Site and CD to it
   </a>
   
 </li>
@@ -1602,6 +1621,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#find_root_of_a_site_and_cd_to_it" title="Find Root of a Site and CD to it" class="md-nav__link">
+    Find Root of a Site and CD to it
+  </a>
+  
+</li>
+      
       
       
       
@@ -1630,6 +1656,11 @@
                 <h1 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h1>
 <h2 id="apache_memory_usage">Apache Memory Usage<a class="headerlink" href="#apache_memory_usage" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>ps -ylC httpd <span class="p">|</span> awk <span class="s1">&#39;{x += $8;y += 1} END {print &quot;Apache Memory Usage (MB): &quot;x/1024; print &quot;Average Process Size (MB): &quot;x/((y-1)*1024)}&#39;</span>
+</pre></div>
+
+<h2 id="find_root_of_a_site_and_cd_to_it">Find Root of a Site and CD to it<a class="headerlink" href="#find_root_of_a_site_and_cd_to_it" title="Permanent link">&para;</a></h2>
+<p>Replace domain.com with desired domain</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> <span class="sb">`</span>grep <span class="s2">&quot;domain.com&quot;</span> /etc/apache2/conf/httpd.conf -A7<span class="p">|</span>grep Root<span class="p">|</span>head -1<span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
 </pre></div>
 
 <!-- Donation Button -->
