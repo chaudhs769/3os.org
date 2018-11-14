@@ -176,6 +176,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://3os.org/penTesting/nmap/</loc>
+     <lastmod>2018-11-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://3os.org/penTesting/IDD_Generator/</loc>
      <lastmod>2018-11-14</lastmod>
      <changefreq>daily</changefreq>
