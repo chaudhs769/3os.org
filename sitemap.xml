@@ -166,11 +166,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/android/androidApps/</loc>
-     <lastmod>2018-11-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://3os.org/penTesting/penTestingGeneral/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
@@ -216,11 +211,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/moreCategories/gmailMarkAsRead/</loc>
-     <lastmod>2018-11-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://3os.org/moreCategories/synology/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
@@ -231,17 +221,22 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://3os.org/moreCategories/android/</loc>
+     <lastmod>2018-11-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://3os.org/moreCategories/wifiQrGenerator/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/moreCategories/vscode/</loc>
+     <loc>https://3os.org/moreCategories/homeAssistent/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/moreCategories/homeAssistent/</loc>
+     <loc>https://3os.org/moreCategories/gmailMarkAsRead/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
