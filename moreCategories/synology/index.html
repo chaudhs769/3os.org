@@ -13,7 +13,7 @@
         <meta name="description" content="Synology how to, guides, examples, and simple usage">
       
       
-        <link rel="canonical" href="https://3os.org/moreCategories/synologyGeneral/">
+        <link rel="canonical" href="https://3os.org/moreCategories/synology/">
       
       
         <meta name="author" content="Stas Kosatuhin">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Synology</title>
+        <title>Synology DSM</title>
       
     
     
@@ -892,6 +892,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../development/docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../development/python/" title="Python" class="md-nav__link">
       Python
     </a>
@@ -1133,27 +1145,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../docker/" title="Docker" class="md-nav__link">
-      Docker
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-2" type="checkbox" id="nav-12-2">
     
-    <label class="md-nav__link" for="nav-12-3">
+    <label class="md-nav__link" for="nav-12-2">
       Browsers Extensions
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-3">
+      <label class="md-nav__title" for="nav-12-2">
         Browsers Extensions
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1231,6 +1231,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#allow_ssh_with_rsa_key" title="Allow SSH With RSA KEY" class="md-nav__link">
+    Allow SSH With RSA KEY
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#installing_vm_tools_on_linux_vm" title="Installing VM Tools on Linux VM" class="md-nav__link">
@@ -1664,6 +1671,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#allow_ssh_with_rsa_key" title="Allow SSH With RSA KEY" class="md-nav__link">
+    Allow SSH With RSA KEY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installing_vm_tools_on_linux_vm" title="Installing VM Tools on Linux VM" class="md-nav__link">
     Installing VM Tools on Linux VM
   </a>
@@ -1726,10 +1740,40 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/moreCategories/synologyGeneral.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/moreCategories/synology.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="synology">Synology<a class="headerlink" href="#synology" title="Permanent link">&para;</a></h1>
+<h2 id="allow_ssh_with_rsa_key">Allow SSH With RSA KEY<a class="headerlink" href="#allow_ssh_with_rsa_key" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Log into Synology web UI as an administrator user</li>
+<li>Enable “User Home”</li>
+<li>Control Panel / User / Advanced, scroll down to “User Home”</li>
+<li>Check “Enable user home service”, select an appropriate Location (i.e. volume1)</li>
+<li>Click “Apply”</li>
+</ul>
+<p>SSH into Synology as <code>Admin User</code></p>
+<div class="codehilite"><pre><span></span>sudo chmod <span class="m">755</span> /volume1/homes/*youruser*
+mkdir ~/.ssh <span class="o">&amp;&amp;</span> chmod <span class="m">0700</span> ~/.ssh
+touch ~/.ssh/authorized_keys <span class="o">&amp;&amp;</span> chmod <span class="m">0644</span> ~/.ssh/authorized_keys
+<span class="nb">echo</span> PUCLICK_Key_STRING &gt;&gt; ~/.ssh/authorized_keys
+</pre></div>
+
+<p>Configure the Synology’s SSH service to allow login by key</p>
+<div class="codehilite"><pre><span></span>sudo vi /etc/ssh/sshd_config
+</pre></div>
+
+<ul>
+<li>Uncomment line that says: #PubkeyAuthentication yes</li>
+<li>Uncomment the line that says: #AuthorizedKeyFiles .ssh/authorized_keys</li>
+<li>Add a line: PasswordAuthentication no</li>
+<li>Make sure that line is uncommented that says: ChallengeResponseAuthentication no</li>
+<li>Save the file and exit the editor</li>
+</ul>
+<div class="codehilite"><pre><span></span>sudo synoservicectl --restart sshd
+</pre></div>
+
+<p>You should now connect with rsa key.</p>
 <h2 id="installing_vm_tools_on_linux_vm">Installing VM Tools on Linux VM<a class="headerlink" href="#installing_vm_tools_on_linux_vm" title="Permanent link">&para;</a></h2>
 <p>On Debian:</p>
 <div class="codehilite"><pre><span></span>sudo add-apt-repository universe
@@ -1878,9 +1922,9 @@ cloudflaredns.sh <span class="o">(</span><span class="m">7</span><span class="o"
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://3os.org/moreCategories/synologyGeneral/";
+      this.page.url = "https://3os.org/moreCategories/synology/";
       this.page.identifier =
-        "moreCategories/synologyGeneral/";
+        "moreCategories/synology/";
     };
     (function() {
       var d = document, s = d.createElement("script");

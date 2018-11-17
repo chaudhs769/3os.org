@@ -146,6 +146,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://3os.org/development/docker/</loc>
+     <lastmod>2018-11-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://3os.org/development/python/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
@@ -206,11 +211,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/moreCategories/docker/</loc>
-     <lastmod>2018-11-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://3os.org/moreCategories/browsers/chromeExtensions/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
@@ -226,7 +226,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/moreCategories/synologyGeneral/</loc>
+     <loc>https://3os.org/moreCategories/synology/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
