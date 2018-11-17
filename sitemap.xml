@@ -151,6 +151,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://3os.org/development/npm/</loc>
+     <lastmod>2018-11-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://3os.org/development/mongodb/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
@@ -317,11 +322,6 @@
     </url>
     <url>
      <loc>https://3os.org/markdownCheatSheet/metaData/</loc>
-     <lastmod>2018-11-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://3os.org/donation/</loc>
      <lastmod>2018-11-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
