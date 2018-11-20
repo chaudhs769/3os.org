@@ -910,6 +910,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#macos_error_fix_curl_is_configured_to_use_ssl_but_we_have_not_been_able_to_determine_which_ssl_backend_it_is_using_please_see_pycurl_documentation_for_how_to_specify_the_ssl_backend_manually" title="MacOS Error Fix: Curl is configured to use SSL, but we have not been able to determine which SSL backend it is using. Please see PycURL documentation for how to specify the SSL backend manually." class="md-nav__link">
+    MacOS Error Fix: Curl is configured to use SSL, but we have not been able to determine which SSL backend it is using. Please see PycURL documentation for how to specify the SSL backend manually.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#simple_http_python_web_server" title="Simple HTTP Python Web Server" class="md-nav__link">
     Simple HTTP Python Web Server
   </a>
@@ -1561,6 +1568,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#macos_error_fix_curl_is_configured_to_use_ssl_but_we_have_not_been_able_to_determine_which_ssl_backend_it_is_using_please_see_pycurl_documentation_for_how_to_specify_the_ssl_backend_manually" title="MacOS Error Fix: Curl is configured to use SSL, but we have not been able to determine which SSL backend it is using. Please see PycURL documentation for how to specify the SSL backend manually." class="md-nav__link">
+    MacOS Error Fix: Curl is configured to use SSL, but we have not been able to determine which SSL backend it is using. Please see PycURL documentation for how to specify the SSL backend manually.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#simple_http_python_web_server" title="Simple HTTP Python Web Server" class="md-nav__link">
     Simple HTTP Python Web Server
   </a>
@@ -1600,6 +1614,11 @@
 <h2 id="generate_requirementstxt_for_a_project">Generate requirements.txt For a Project<a class="headerlink" href="#generate_requirementstxt_for_a_project" title="Permanent link">&para;</a></h2>
 <p>Run this command at terminal at the root of the project:</p>
 <div class="codehilite"><pre><span></span>pip freeze &gt; requirements.txt
+</pre></div>
+
+<h2 id="macos_error_fix_curl_is_configured_to_use_ssl_but_we_have_not_been_able_to_determine_which_ssl_backend_it_is_using_please_see_pycurl_documentation_for_how_to_specify_the_ssl_backend_manually">MacOS Error Fix: <em>Curl is configured to use SSL, but we have not been able to determine which SSL backend it is using. Please see PycURL documentation for how to specify the SSL backend manually.</em><a class="headerlink" href="#macos_error_fix_curl_is_configured_to_use_ssl_but_we_have_not_been_able_to_determine_which_ssl_backend_it_is_using_please_see_pycurl_documentation_for_how_to_specify_the_ssl_backend_manually" title="Permanent link">&para;</a></h2>
+<p>This command will install pycurl on macOS system. This should fix the SSL Error</p>
+<div class="codehilite"><pre><span></span><span class="nv">PYCURL_SSL_LIBRARY</span><span class="o">=</span>openssl <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/usr/local/opt/openssl/lib&quot;</span> <span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/usr/local/opt/openssl/include&quot;</span> pip install --no-cache-dir pycurl
 </pre></div>
 
 <h2 id="simple_http_python_web_server">Simple HTTP Python Web Server<a class="headerlink" href="#simple_http_python_web_server" title="Permanent link">&para;</a></h2>
