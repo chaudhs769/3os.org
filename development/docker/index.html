@@ -897,6 +897,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#find_container_ip" title="Find Container IP" class="md-nav__link">
+    Find Container IP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iperf3_server_container" title="iperf3 Server Container" class="md-nav__link">
+    iperf3 Server Container
+  </a>
+  
+</li>
+      
       
       
       
@@ -1553,6 +1567,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#find_container_ip" title="Find Container IP" class="md-nav__link">
+    Find Container IP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iperf3_server_container" title="iperf3 Server Container" class="md-nav__link">
+    iperf3 Server Container
+  </a>
+  
+</li>
+      
       
       
       
@@ -1587,6 +1615,21 @@
 
 <h2 id="portainerio_docker_ui_management">Portainer.io Docker UI management<a class="headerlink" href="#portainerio_docker_ui_management" title="Permanent link">&para;</a></h2>
 <p><a href="https://portainer.io/">Portainer.io</a></p>
+<h2 id="find_container_ip">Find Container IP<a class="headerlink" href="#find_container_ip" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>docker inspect -f <span class="s1">&#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> container_name_or_id
+</pre></div>
+
+<h2 id="iperf3_server_container">iperf3 Server Container<a class="headerlink" href="#iperf3_server_container" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name<span class="o">=</span>iperf3-server <span class="se">\</span>
+-h iperf <span class="se">\</span>
+-p <span class="m">5201</span>:5201 <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+networkstatic/iperf3:latest -s
+</pre></div>
+
 <!-- Donation Button -->
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>
