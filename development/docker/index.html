@@ -891,6 +891,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#list_all_images" title="List all Images" class="md-nav__link">
+    List all Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_images" title="Docker Images" class="md-nav__link">
+    Docker Images
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list_all_images_1" title="List All Images" class="md-nav__link">
+    List All Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_all_unused_images" title="Remove All Unused Images" class="md-nav__link">
+    Remove All Unused Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#portainerio_docker_ui_management" title="Portainer.io Docker UI management" class="md-nav__link">
     Portainer.io Docker UI management
   </a>
@@ -1056,6 +1090,18 @@
   <li class="md-nav__item">
     <a href="../../penTesting/clickJacking/" title="Click-Jacking Test" class="md-nav__link">
       Click-Jacking Test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../penTesting/cors.md" title="Cross Orign Test" class="md-nav__link">
+      Cross Orign Test
     </a>
   </li>
 
@@ -1561,6 +1607,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#list_all_images" title="List all Images" class="md-nav__link">
+    List all Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_images" title="Docker Images" class="md-nav__link">
+    Docker Images
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list_all_images_1" title="List All Images" class="md-nav__link">
+    List All Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_all_unused_images" title="Remove All Unused Images" class="md-nav__link">
+    Remove All Unused Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#portainerio_docker_ui_management" title="Portainer.io Docker UI management" class="md-nav__link">
     Portainer.io Docker UI management
   </a>
@@ -1611,6 +1691,19 @@
 <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <h2 id="update_all_downloaded_images">Update All Downloaded Images<a class="headerlink" href="#update_all_downloaded_images" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>docker images <span class="p">|</span>grep -v REPOSITORY<span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>xargs -L1 docker pull
+</pre></div>
+
+<h2 id="list_all_images">List all Images<a class="headerlink" href="#list_all_images" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>docker images -a
+</pre></div>
+
+<h2 id="docker_images">Docker Images<a class="headerlink" href="#docker_images" title="Permanent link">&para;</a></h2>
+<h3 id="list_all_images_1">List All Images<a class="headerlink" href="#list_all_images_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>docker images -a
+</pre></div>
+
+<h3 id="remove_all_unused_images">Remove All Unused Images<a class="headerlink" href="#remove_all_unused_images" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>docker images purge
 </pre></div>
 
 <h2 id="portainerio_docker_ui_management">Portainer.io Docker UI management<a class="headerlink" href="#portainerio_docker_ui_management" title="Permanent link">&para;</a></h2>
