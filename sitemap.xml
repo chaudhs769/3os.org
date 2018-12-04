@@ -181,11 +181,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://3os.org/penTesting/nmap/</loc>
      <lastmod>2018-12-04</lastmod>
      <changefreq>daily</changefreq>
