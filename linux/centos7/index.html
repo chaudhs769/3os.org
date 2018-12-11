@@ -624,6 +624,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#disable_ipv6" title="Disable IPv6" class="md-nav__link">
+    Disable IPv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fix_nfs_mount_on_boot_-_centos_7" title="Fix NFS mount on Boot - Centos 7" class="md-nav__link">
     Fix NFS mount on Boot - Centos 7
   </a>
@@ -1781,6 +1788,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#disable_ipv6" title="Disable IPv6" class="md-nav__link">
+    Disable IPv6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fix_nfs_mount_on_boot_-_centos_7" title="Fix NFS mount on Boot - Centos 7" class="md-nav__link">
     Fix NFS mount on Boot - Centos 7
   </a>
@@ -1941,6 +1955,11 @@ For example:</p>
 <p>add these lines to <em>/etc/environment</em> (create it, if it doesn't exist):</p>
 <div class="codehilite"><pre><span></span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
 <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+</pre></div>
+
+<h2 id="disable_ipv6">Disable IPv6<a class="headerlink" href="#disable_ipv6" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sysctl -w net.ipv6.conf.all.disable_ipv6<span class="o">=</span><span class="m">1</span>
+sysctl -w net.ipv6.conf.default.disable_ipv6<span class="o">=</span><span class="m">1</span>
 </pre></div>
 
 <h2 id="fix_nfs_mount_on_boot_-_centos_7">Fix NFS mount on Boot - Centos 7<a class="headerlink" href="#fix_nfs_mount_on_boot_-_centos_7" title="Permanent link">&para;</a></h2>

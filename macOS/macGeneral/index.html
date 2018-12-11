@@ -820,6 +820,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#syntax_highlighting_in_nano_on_mac_os_x" title="Syntax Highlighting In Nano on Mac OS X" class="md-nav__link">
+    Syntax Highlighting In Nano on Mac OS X
+  </a>
+  
+</li>
+      
       
       
       
@@ -1663,6 +1670,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#syntax_highlighting_in_nano_on_mac_os_x" title="Syntax Highlighting In Nano on Mac OS X" class="md-nav__link">
+    Syntax Highlighting In Nano on Mac OS X
+  </a>
+  
+</li>
+      
       
       
       
@@ -1808,6 +1822,47 @@ In the Terminal window, type in:</p>
 </pre></div>
 
 <p>Press Enter and restart your Mac.</p>
+<h2 id="syntax_highlighting_in_nano_on_mac_os_x">Syntax Highlighting In Nano on Mac OS X<a class="headerlink" href="#syntax_highlighting_in_nano_on_mac_os_x" title="Permanent link">&para;</a></h2>
+<p>Install Nano from homebrew
+Create <em>nanorc</em> file with the syntax below</p>
+<div class="codehilite"><pre><span></span>brew install nano
+nano ~/.nanorc
+</pre></div>
+
+<p>nanorc:</p>
+<div class="codehilite"><pre><span></span>include /usr/local/share/nano/asm.nanorc
+include /usr/local/share/nano/awk.nanorc
+include /usr/local/share/nano/c.nanorc
+include /usr/local/share/nano/cmake.nanorc
+include /usr/local/share/nano/css.nanorc
+include /usr/local/share/nano/debian.nanorc
+include /usr/local/share/nano/fortran.nanorc
+include /usr/local/share/nano/gentoo.nanorc
+include /usr/local/share/nano/groff.nanorc
+include /usr/local/share/nano/html.nanorc
+include /usr/local/share/nano/java.nanorc
+include /usr/local/share/nano/makefile.nanorc
+include /usr/local/share/nano/man.nanorc
+include /usr/local/share/nano/mgp.nanorc
+include /usr/local/share/nano/mutt.nanorc
+include /usr/local/share/nano/nanorc.nanorc
+include /usr/local/share/nano/objc.nanorc
+include /usr/local/share/nano/ocaml.nanorc
+include /usr/local/share/nano/patch.nanorc
+include /usr/local/share/nano/perl.nanorc
+include /usr/local/share/nano/php.nanorc
+include /usr/local/share/nano/pov.nanorc
+include /usr/local/share/nano/python.nanorc
+include /usr/local/share/nano/ruby.nanorc
+include /usr/local/share/nano/sh.nanorc
+include /usr/local/share/nano/tcl.nanorc
+include /usr/local/share/nano/tex.nanorc
+</pre></div>
+
+<p>Save &amp; Exit</p>
+<div class="codehilite"><pre><span></span><span class="nb">source</span> ~/.zshrc
+</pre></div>
+
 <!-- Donation Button -->
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>

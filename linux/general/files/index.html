@@ -524,6 +524,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#smb_mount_with_autofs" title="SMB Mount With autofs" class="md-nav__link">
+    SMB Mount With autofs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#smb_mount_on_linux_with_credentials" title="SMB Mount on Linux With Credentials" class="md-nav__link">
     SMB Mount on Linux With Credentials
   </a>
@@ -1561,6 +1568,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#smb_mount_with_autofs" title="SMB Mount With autofs" class="md-nav__link">
+    SMB Mount With autofs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#smb_mount_on_linux_with_credentials" title="SMB Mount on Linux With Credentials" class="md-nav__link">
     SMB Mount on Linux With Credentials
   </a>
@@ -1621,6 +1635,45 @@
                 
                 
                 <h1 id="linux_files_handling">Linux Files Handling<a class="headerlink" href="#linux_files_handling" title="Permanent link">&para;</a></h1>
+<h2 id="smb_mount_with_autofs">SMB Mount With autofs<a class="headerlink" href="#smb_mount_with_autofs" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>yum install autofs samba-client samba-common
+touch /etc/auto.cifs
+</pre></div>
+
+<p>Add this to the file: ("meida" - is any name for your mount)</p>
+<div class="codehilite"><pre><span></span>media    -fstype<span class="o">=</span>cifs,rw,noperm,vers<span class="o">=</span><span class="m">1</span>.0,credentials<span class="o">=</span>/etc/.credentials.txt    ://oscar.3os.re/ActiveShare/Media
+</pre></div>
+
+<p>Exit and save:</p>
+<div class="codehilite"><pre><span></span>touch /etc/.credentials.txt
+nano /etc/.credentials.txt
+</pre></div>
+
+<p>Add you credentials for the smb mount:</p>
+<div class="codehilite"><pre><span></span><span class="nv">username</span><span class="o">=</span>YourUser
+<span class="nv">password</span><span class="o">=</span>YourPassword
+</pre></div>
+
+<p>Exit and save:</p>
+<div class="codehilite"><pre><span></span>nano /etc/auto.master
+</pre></div>
+
+<p>At the end of the file add: ("/mnt" - mount location, /etc/auto.cifs your config for mounting the SMB Share)</p>
+<div class="codehilite"><pre><span></span>/mnt    /etc/auto.cifs --timeout<span class="o">=</span><span class="m">600</span> --ghost
+</pre></div>
+
+<p>Save end exit.
+Test the mounting.</p>
+<div class="codehilite"><pre><span></span>systemctl start autofs
+<span class="nb">cd</span> to the /mnt/media/
+ls
+</pre></div>
+
+<p>You should see the mount over there.
+Enable autofs on boot:</p>
+<div class="codehilite"><pre><span></span>systemctl <span class="nb">enable</span> autofs
+</pre></div>
+
 <h2 id="smb_mount_on_linux_with_credentials">SMB Mount on Linux With Credentials<a class="headerlink" href="#smb_mount_on_linux_with_credentials" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo apt-get install cifs-utils
 nano ~/.smbcredentials
