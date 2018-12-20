@@ -131,7 +131,7 @@
                 3os.org
               </span>
               <span class="md-header-nav__topic">
-                Development - Ruby
+                Ruby
               </span>
             
           
@@ -203,14 +203,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -267,7 +269,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../git/" title="Development" class="md-tabs__link">
+        <a href="../git/" title="Development" class="md-tabs__link md-tabs__link--active">
           Development
         </a>
       
@@ -733,7 +735,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/BetterTerminal" title="BetterTerminal Fule Gide" class="md-nav__link">
+    <a href="../../macOS/BetterTerminal/" title="BetterTerminal Fule Gide" class="md-nav__link">
       BetterTerminal Fule Gide
     </a>
   </li>
@@ -832,10 +834,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Development
@@ -887,11 +891,62 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="." title="Ruby" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Ruby
+      </label>
+    
+    <a href="./" title="Ruby" class="md-nav__link md-nav__link--active">
       Ruby
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get_gem_ruby_environment_information" title="Get Gem &amp; Ruby Environment Information" class="md-nav__link">
+    Get Gem &amp; Ruby Environment Information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update_all_the_gems" title="Update All the Gems" class="md-nav__link">
+    Update All the Gems
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1593,6 +1648,41 @@ gem update --system
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../python/" title="Python" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Python
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../npm/" title="npm" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                npm
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
