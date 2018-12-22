@@ -1748,6 +1748,11 @@ Common Name: <code>root</code>
 Email Address: <code>support@ubnt.com</code></p>
 <p><strong><code>NOTE: The Common Name needs to be unique for all certificates.</code></strong></p>
 <p>Copy the newly created certificate + key to the /config/auth directory.</p>
+<div class="codehilite"><pre><span></span>cp demoCA/cacert.pem /config/auth
+cp demoCA/private/cakey.pem /config/auth
+</pre></div>
+
+<p>Generate the server certificate.</p>
 <div class="codehilite"><pre><span></span>./CA.sh -newreq
 </pre></div>
 
