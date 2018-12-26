@@ -1847,9 +1847,11 @@ commit <span class="p">;</span> save
 <span class="nb">set</span> interfaces openvpn vtun0 server push-route <span class="m">192</span>.168.1.0/24
 <span class="nb">set</span> interfaces openvpn vtun0 server name-server <span class="m">192</span>.168.1.1
 <span class="nb">set</span> interfaces openvpn vtun0 openvpn-option --duplicate-cn
-<span class="nb">set</span> openvpn vtun0 local-port <span class="m">443</span>
+<span class="nb">set</span> interfaces openvpn vtun0 local-port <span class="m">443</span>
+edit interfaces openvpn vtun0
 <span class="nb">set</span> openvpn-option <span class="s2">&quot;--push redirect-gateway&quot;</span>
 <span class="nb">set</span> protocol tcp-passive
+commit <span class="p">;</span> save
 </pre></div>
 
 <p>Link the server certificate/keys and DH key to the virtual tunnel interface.</p>
