@@ -1660,8 +1660,9 @@
                 
                 <h1 id="linux_files_handling">Linux Files Handling<a class="headerlink" href="#linux_files_handling" title="Permanent link">&para;</a></h1>
 <h2 id="smb_mount_with_autofs">SMB Mount With autofs<a class="headerlink" href="#smb_mount_with_autofs" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>yum install autofs samba-client samba-common
+<div class="codehilite"><pre><span></span>yum install autofs samba-client samba-common cifs-utils
 touch /etc/auto.cifs
+nano /etc/auto.cifs
 </pre></div>
 
 <p>Add this to the file: ("meida" - is any name for your mount)</p>
@@ -1689,7 +1690,7 @@ nano /etc/.credentials.txt
 <p>Save end exit.
 Test the mounting.</p>
 <div class="codehilite"><pre><span></span>systemctl start autofs
-<span class="nb">cd</span> to the /mnt/media/
+<span class="nb">cd</span> /mnt/media/
 ls
 </pre></div>
 
