@@ -1724,7 +1724,38 @@ fc-cache -fv ~/.fonts
 </pre></div>
 
 <p>Add this to the the end of ~/.zshrc</p>
-<div class="codehilite"><pre><span></span><span class="c1">## Fix for Slow zsh-autosuggestions copy&amp;paste</span>
+<div class="codehilite"><pre><span></span><span class="c1">### Theme and Plugins</span>
+<span class="c1">## POWERLEVEL9K Config</span>
+<span class="nv">POWERLEVEL9K_PROMPT_ADD_NEWLINE</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>
+  <span class="c1"># time</span>
+  custom_hostname
+  custom_username
+  dir
+  vcs
+  newline
+<span class="o">)</span>
+<span class="nv">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="o">=(</span>
+  status
+  <span class="c1"># root_indicator</span>
+  <span class="c1"># background_jobs</span>
+  <span class="c1"># history</span>
+  <span class="nb">time</span>
+<span class="o">)</span>
+
+<span class="c1"># Custom Hostname &amp; Username prompt segment</span>
+<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;echo -n </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> | sed &#39;s/\..*</span>$<span class="s2">//&#39; &quot;</span>
+<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_FOREGROUND</span><span class="o">=</span><span class="s2">&quot;black&quot;</span>
+<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_BACKGROUND</span><span class="o">=</span><span class="s2">&quot;white&quot;</span>
+<span class="nv">POWERLEVEL9K_CUSTOM_USERNAME</span><span class="o">=</span><span class="s2">&quot;echo -n </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_FOREGROUND</span><span class="o">=</span><span class="s2">&quot;black&quot;</span>
+<span class="nv">POWERLEVEL9K_CUSTOM_USERNAME_BACKGROUND</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span>
+
+<span class="c1">## Shell Integration and plugins</span>
+<span class="nb">source</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.iterm2_shell_integration.zsh&quot;</span>
+<span class="nb">source</span> /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+<span class="nb">source</span> /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+<span class="c1">## Fix for Slow zsh-autosuggestions copy&amp;paste</span>
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
 zstyle <span class="s1">&#39;:bracketed-paste-magic&#39;</span> active-widgets <span class="s1">&#39;.self-*&#39;</span>
