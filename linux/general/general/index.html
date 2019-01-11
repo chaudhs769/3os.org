@@ -525,6 +525,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#run_script_on_boot_-_crontab" title="Run Script On Boot - Crontab" class="md-nav__link">
+    Run Script On Boot - Crontab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#redirect_output_to_a_file_and_stdout_with_tee" title="Redirect Output to a File and Stdout With tee" class="md-nav__link">
     Redirect Output to a File and Stdout With tee
   </a>
@@ -1678,6 +1685,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#run_script_on_boot_-_crontab" title="Run Script On Boot - Crontab" class="md-nav__link">
+    Run Script On Boot - Crontab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#redirect_output_to_a_file_and_stdout_with_tee" title="Redirect Output to a File and Stdout With tee" class="md-nav__link">
     Redirect Output to a File and Stdout With tee
   </a>
@@ -1794,6 +1808,15 @@
                 
                 
                 <h1 id="linux_general_topics">Linux General Topics<a class="headerlink" href="#linux_general_topics" title="Permanent link">&para;</a></h1>
+<h2 id="run_script_on_boot_-_crontab">Run Script On Boot - Crontab<a class="headerlink" href="#run_script_on_boot_-_crontab" title="Permanent link">&para;</a></h2>
+<p>Only add sudo if your script needs superuser privileges. Then add this to your crontab:</p>
+<div class="codehilite"><pre><span></span><span class="o">(</span>sudo<span class="o">)</span> crontab -e
+</pre></div>
+
+<p>Add to the end of the Cront tab:</p>
+<div class="codehilite"><pre><span></span>@reboot /path/to/script.sh
+</pre></div>
+
 <h2 id="redirect_output_to_a_file_and_stdout_with_tee">Redirect Output to a File and Stdout With <em>tee</em><a class="headerlink" href="#redirect_output_to_a_file_and_stdout_with_tee" title="Permanent link">&para;</a></h2>
 <p>The command you want is named <code>tee</code>:</p>
 <div class="codehilite"><pre><span></span>foo <span class="p">|</span> tee output.file
