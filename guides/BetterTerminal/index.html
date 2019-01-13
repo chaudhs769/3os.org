@@ -105,7 +105,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#better_terminal_experience_-_oh-my-zsh_powerlevel9k_theme_font-awesome-terminal" tabindex="1" class="md-skip">
+      <a href="#better_terminal_experience_-_oh-my-zsh_bira_theme_font-awesome-terminal" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -489,8 +489,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#work_in_progress" title="WORK IN PROGRESS" class="md-nav__link">
-    WORK IN PROGRESS
+  <a href="#work_in_progress_outdated_pics" title="WORK IN PROGRESS (Outdated pics)" class="md-nav__link">
+    WORK IN PROGRESS (Outdated pics)
   </a>
   
 </li>
@@ -1634,8 +1634,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#work_in_progress" title="WORK IN PROGRESS" class="md-nav__link">
-    WORK IN PROGRESS
+  <a href="#work_in_progress_outdated_pics" title="WORK IN PROGRESS (Outdated pics)" class="md-nav__link">
+    WORK IN PROGRESS (Outdated pics)
   </a>
   
 </li>
@@ -1705,8 +1705,8 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/guides/BetterTerminal.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="better_terminal_experience_-_oh-my-zsh_powerlevel9k_theme_font-awesome-terminal">Better Terminal Experience - Oh-My-Zsh + Powerlevel9k Theme + Font-Awesome-Terminal<a class="headerlink" href="#better_terminal_experience_-_oh-my-zsh_powerlevel9k_theme_font-awesome-terminal" title="Permanent link">&para;</a></h1>
-<h2 id="work_in_progress">WORK IN PROGRESS<a class="headerlink" href="#work_in_progress" title="Permanent link">&para;</a></h2>
+                <h1 id="better_terminal_experience_-_oh-my-zsh_bira_theme_font-awesome-terminal">Better Terminal Experience - Oh-My-Zsh + Bira Theme + Font-Awesome-Terminal<a class="headerlink" href="#better_terminal_experience_-_oh-my-zsh_bira_theme_font-awesome-terminal" title="Permanent link">&para;</a></h1>
+<h2 id="work_in_progress_outdated_pics">WORK IN PROGRESS (Outdated pics)<a class="headerlink" href="#work_in_progress_outdated_pics" title="Permanent link">&para;</a></h2>
 <p>Linux Terminal:</p>
 <p><img alt="Linux Terminal" src="../../assets/images/guides/betterTerminal/linuxTerminal.png" /></p>
 <h2 id="macos_installation_with_iterm2_and_homebrew">MacOS Installation with iTerm2 and Homebrew<a class="headerlink" href="#macos_installation_with_iterm2_and_homebrew" title="Permanent link">&para;</a></h2>
@@ -1726,39 +1726,11 @@ brew cask install iterm2 font-awesome-terminal-fonts font-firacode-nerd-font
 
 <h3 id="zshrc_config_modifications_for_macos">~/.zshrc Config Modifications for MacOS<a class="headerlink" href="#zshrc_config_modifications_for_macos" title="Permanent link">&para;</a></h3>
 <p>Set theme and fonts:</p>
-<div class="codehilite"><pre><span></span><span class="nv">POWERLEVEL9K_MODE</span><span class="o">=</span><span class="s1">&#39;awesome-fontconfig&#39;</span>
-<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel9k/powerlevel9k&quot;</span>
+<div class="codehilite"><pre><span></span><span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;bira&quot;</span>
 </pre></div>
 
 <p>Add this to the the end of ~/.zshrc</p>
-<div class="codehilite"><pre><span></span><span class="c1">### Theme and Plugins</span>
-<span class="c1">## POWERLEVEL9K Config</span>
-<span class="nv">POWERLEVEL9K_PROMPT_ADD_NEWLINE</span><span class="o">=</span><span class="nb">true</span>
-<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>
-  <span class="c1"># time</span>
-  custom_hostname
-  custom_username
-  dir
-  vcs
-  newline
-<span class="o">)</span>
-<span class="nv">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="o">=(</span>
-  status
-  <span class="c1"># root_indicator</span>
-  <span class="c1"># background_jobs</span>
-  <span class="c1"># history</span>
-  <span class="nb">time</span>
-<span class="o">)</span>
-
-<span class="c1"># Custom Hostname &amp; Username prompt segment</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;echo -n </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> | sed &#39;s/\..*</span>$<span class="s2">//&#39; &quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_FOREGROUND</span><span class="o">=</span><span class="s2">&quot;black&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_BACKGROUND</span><span class="o">=</span><span class="s2">&quot;white&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_USERNAME</span><span class="o">=</span><span class="s2">&quot;echo -n </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_FOREGROUND</span><span class="o">=</span><span class="s2">&quot;black&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_USERNAME_BACKGROUND</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span>
-
-<span class="c1">## Shell Integration and plugins</span>
+<div class="codehilite"><pre><span></span><span class="c1">## Shell Integration and plugins</span>
 <span class="nb">source</span> /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 <span class="nb">source</span> /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 <span class="c1">## Fix for Slow zsh-autosuggestions copy&amp;paste</span>
@@ -1771,10 +1743,6 @@ zstyle <span class="s1">&#39;:bracketed-paste-magic&#39;</span> active-widgets <
 <p>Requirements: git, zsh</p>
 <p>Install <a href="https://github.com/robbyrussell/oh-my-zsh"><strong>Oh-My-Zsh</strong></a></p>
 <div class="codehilite"><pre><span></span>sh -c <span class="s2">&quot;</span><span class="k">$(</span>wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="k">)</span><span class="s2">&quot;</span>
-</pre></div>
-
-<p>Install Powerlevel9k Theme for Oh-My-Zsh</p>
-<div class="codehilite"><pre><span></span>git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 </pre></div>
 
 <p>Install Autosuggestions, Syntax-Highlighting Plugins</p>
@@ -1793,8 +1761,7 @@ fc-cache -fv ~/.fonts
 
 <h3 id="zshrc_config_modifications_for_linux">~/.zshrc Config Modifications for Linux<a class="headerlink" href="#zshrc_config_modifications_for_linux" title="Permanent link">&para;</a></h3>
 <p>Set theme and fonts:</p>
-<div class="codehilite"><pre><span></span><span class="nv">POWERLEVEL9K_MODE</span><span class="o">=</span><span class="s1">&#39;awesome-fontconfig&#39;</span>
-<span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;powerlevel9k/powerlevel9k&quot;</span>
+<div class="codehilite"><pre><span></span><span class="nv">ZSH_THEME</span><span class="o">=</span><span class="s2">&quot;bira&quot;</span>
 </pre></div>
 
 <p>Activate the plugins</p>
@@ -1806,34 +1773,7 @@ fc-cache -fv ~/.fonts
 </pre></div>
 
 <p>Add this to the the end of ~/.zshrc</p>
-<div class="codehilite"><pre><span></span><span class="c1">### Theme and Plugins</span>
-<span class="c1">## POWERLEVEL9K Config</span>
-<span class="nv">POWERLEVEL9K_PROMPT_ADD_NEWLINE</span><span class="o">=</span><span class="nb">true</span>
-<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>
-  <span class="c1"># time</span>
-  custom_hostname
-  custom_username
-  dir
-  vcs
-  newline
-<span class="o">)</span>
-<span class="nv">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="o">=(</span>
-  status
-  <span class="c1"># root_indicator</span>
-  <span class="c1"># background_jobs</span>
-  <span class="c1"># history</span>
-  <span class="nb">time</span>
-<span class="o">)</span>
-
-<span class="c1"># Custom Hostname &amp; Username prompt segment</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME</span><span class="o">=</span><span class="s2">&quot;echo -n </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> | sed &#39;s/\..*</span>$<span class="s2">//&#39; &quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_FOREGROUND</span><span class="o">=</span><span class="s2">&quot;black&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_BACKGROUND</span><span class="o">=</span><span class="s2">&quot;white&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_USERNAME</span><span class="o">=</span><span class="s2">&quot;echo -n </span><span class="si">${</span><span class="nv">USER</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_HOSTNAME_FOREGROUND</span><span class="o">=</span><span class="s2">&quot;black&quot;</span>
-<span class="nv">POWERLEVEL9K_CUSTOM_USERNAME_BACKGROUND</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span>
-
-<span class="c1">## Fix for Slow zsh-autosuggestions copy&amp;paste</span>
+<div class="codehilite"><pre><span></span><span class="c1">## Fix for Slow zsh-autosuggestions copy&amp;paste</span>
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
 zstyle <span class="s1">&#39;:bracketed-paste-magic&#39;</span> active-widgets <span class="s1">&#39;.self-*&#39;</span>
