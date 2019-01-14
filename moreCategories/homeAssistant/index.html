@@ -13,7 +13,7 @@
         <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
       
       
-        <link rel="canonical" href="https://3os.org/moreCategories/homeAssistent/">
+        <link rel="canonical" href="https://3os.org/moreCategories/homeAssistant/">
       
       
         <meta name="author" content="Stas Kosatuhin">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Home Assistent - 3os.org</title>
+        <title>Home-Assistant - 3os.org</title>
       
     
     
@@ -105,7 +105,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#home-assistantio_installation_on_ubuntu_1804" tabindex="1" class="md-skip">
+      <a href="#home-assistant" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -131,7 +131,7 @@
                 3os.org
               </span>
               <span class="md-header-nav__topic">
-                Home Assistent
+                Home-Assistant
               </span>
             
           
@@ -1251,11 +1251,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home Assistent
+        Home-Assistant
       </label>
     
-    <a href="./" title="Home Assistent" class="md-nav__link md-nav__link--active">
-      Home Assistent
+    <a href="./" title="Home-Assistant" class="md-nav__link md-nav__link--active">
+      Home-Assistant
     </a>
     
       
@@ -1267,6 +1267,20 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker_installation" title="Docker Installation" class="md-nav__link">
+    Docker Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#home-assistantio_installation_on_ubuntu_1804" title="Home-Assistant.io Installation on Ubuntu 18.04" class="md-nav__link">
+    Home-Assistant.io Installation on Ubuntu 18.04
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#update_home-assistantio_based_on_installation_above" title="Update Home-Assistant.io (Based on Installation Above)" class="md-nav__link">
@@ -1594,6 +1608,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#docker_installation" title="Docker Installation" class="md-nav__link">
+    Docker Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#home-assistantio_installation_on_ubuntu_1804" title="Home-Assistant.io Installation on Ubuntu 18.04" class="md-nav__link">
+    Home-Assistant.io Installation on Ubuntu 18.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update_home-assistantio_based_on_installation_above" title="Update Home-Assistant.io (Based on Installation Above)" class="md-nav__link">
     Update Home-Assistant.io (Based on Installation Above)
   </a>
@@ -1622,10 +1650,24 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/moreCategories/homeAssistent.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/moreCategories/homeAssistant.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="home-assistantio_installation_on_ubuntu_1804"><a href="https://www.home-assistant.io/">Home-Assistant.io</a> Installation on Ubuntu 18.04<a class="headerlink" href="#home-assistantio_installation_on_ubuntu_1804" title="Permanent link">&para;</a></h1>
+                <h1 id="home-assistant">Home-Assistant<a class="headerlink" href="#home-assistant" title="Permanent link">&para;</a></h1>
+<h2 id="docker_installation">Docker Installation<a class="headerlink" href="#docker_installation" title="Permanent link">&para;</a></h2>
+<p>Download The laters container: <em>homeassistant/home-assistant</em></p>
+<p>Change the volume for you approprite directory</p>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--name<span class="o">=</span>homeassistant <span class="se">\</span>
+--restart always <span class="se">\</span>
+-v /volume1/docker/homeassistant:/config <span class="se">\</span>
+-p <span class="m">8123</span>:8123 <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+homeassistant/home-assistant:latest
+</pre></div>
+
+<h2 id="home-assistantio_installation_on_ubuntu_1804"><a href="https://www.home-assistant.io/">Home-Assistant.io</a> Installation on Ubuntu 18.04<a class="headerlink" href="#home-assistantio_installation_on_ubuntu_1804" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo apt-get update
 sudo apt-get install -y python3-dev python3-pip python3-venv
 sudo -H pip3 install --upgrade virtualenv
@@ -1765,9 +1807,9 @@ sudo systemctl status homeassistant
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://3os.org/moreCategories/homeAssistent/";
+      this.page.url = "https://3os.org/moreCategories/homeAssistant/";
       this.page.identifier =
-        "moreCategories/homeAssistent/";
+        "moreCategories/homeAssistant/";
     };
     (function() {
       var d = document, s = d.createElement("script");
