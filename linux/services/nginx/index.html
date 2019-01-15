@@ -308,7 +308,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../penTesting/penTestingGeneral/" title="Penetration-Testing" class="md-tabs__link">
+        <a href="../../../penTesting/tools/" title="Penetration-Testing" class="md-tabs__link">
           Penetration-Testing
         </a>
       
@@ -1091,8 +1091,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../penTesting/penTestingGeneral/" title="General" class="md-nav__link">
-      General
+    <a href="../../../penTesting/tools/" title="Tools" class="md-nav__link">
+      Tools
     </a>
   </li>
 
@@ -1105,18 +1105,6 @@
   <li class="md-nav__item">
     <a href="../../../penTesting/clickJacking/" title="Click-Jacking Test" class="md-nav__link">
       Click-Jacking Test
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../penTesting/IDD_Generator/" title="Israel ID Generator & Validator" class="md-nav__link">
-      Israel ID Generator & Validator
     </a>
   </li>
 
@@ -1649,12 +1637,6 @@
 <h2 id="engintron_generate_custom_rules_for_all_domains_on_the_server">Engintron generate custom_rules for all domains on the server<a class="headerlink" href="#engintron_generate_custom_rules_for_all_domains_on_the_server" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="nv">ip</span><span class="o">=</span><span class="sb">`</span>hostname -i<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="k">for</span> domain in <span class="sb">`</span>httpd -S <span class="p">|</span>  grep www. <span class="p">|</span> awk -F <span class="s1">&#39;www.&#39;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span><span class="p">;</span><span class="k">do</span> <span class="nb">printf</span> <span class="s2">&quot;if ( \$host ~ \&quot;%s\&quot;) {set \$PROXY_DOMAIN_OR_IP \&quot;</span><span class="nv">$ip</span><span class="s2">\&quot;;}\n&quot;</span> <span class="nv">$domain</span> <span class="p">;</span><span class="k">done</span> &gt;&gt; /etc/nginx/custom_rules <span class="o">&amp;&amp;</span> service nginx reload
 </pre></div>
-
-<!-- Donation Button -->
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" align="center"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="Q94AU5RUD4X6A"><input type="image" src="https://raw.githubusercontent.com/fire1ce/3os.org/gh-pages/assets/images/beerDonation.png" width="150px" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"></form>
-
-<!-- Donation Button -->
                 
                   
                 
