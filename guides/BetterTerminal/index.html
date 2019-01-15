@@ -105,7 +105,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#better_terminal_experience_-_oh-my-zsh_bira_theme_font-awesome-terminal" tabindex="1" class="md-skip">
+      <a href="#better_terminal_experience_-_oh-my-zsh_bira_theme_autosuggestions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1693,7 +1693,7 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/guides/BetterTerminal.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="better_terminal_experience_-_oh-my-zsh_bira_theme_font-awesome-terminal">Better Terminal Experience - Oh-My-Zsh + Bira Theme + Font-Awesome-Terminal<a class="headerlink" href="#better_terminal_experience_-_oh-my-zsh_bira_theme_font-awesome-terminal" title="Permanent link">&para;</a></h1>
+                <h1 id="better_terminal_experience_-_oh-my-zsh_bira_theme_autosuggestions">Better Terminal Experience - Oh-My-Zsh + Bira Theme + Autosuggestions<a class="headerlink" href="#better_terminal_experience_-_oh-my-zsh_bira_theme_autosuggestions" title="Permanent link">&para;</a></h1>
 <h2 id="work_in_progress_outdated_pics">WORK IN PROGRESS (Outdated pics)<a class="headerlink" href="#work_in_progress_outdated_pics" title="Permanent link">&para;</a></h2>
 <p>Linux Terminal:</p>
 <p><img alt="Linux Terminal" src="../../assets/images/guides/betterTerminal/linuxTerminal.png" /></p>
@@ -1705,7 +1705,7 @@
 <p>This will install all the necessary requirements:</p>
 <div class="codehilite"><pre><span></span>brew tap homebrew/cask-fonts
 brew install zsh-autosuggestions zsh-syntax-highlighting git wget zsh
-brew cask install iterm2 font-awesome-terminal-fonts font-firacode-nerd-font
+brew cask install iterm2 font-firacode-nerd-font
 </pre></div>
 
 <p>Install <a href="https://github.com/robbyrussell/oh-my-zsh"><strong>Oh-My-Zsh</strong></a></p>
@@ -1728,7 +1728,7 @@ zstyle <span class="s1">&#39;:bracketed-paste-magic&#39;</span> active-widgets <
 </pre></div>
 
 <h2 id="linux_installation">Linux Installation<a class="headerlink" href="#linux_installation" title="Permanent link">&para;</a></h2>
-<p>Requirements: git, zsh</p>
+<p>Requirements: git, zsh, wget</p>
 <p>Install <a href="https://github.com/robbyrussell/oh-my-zsh"><strong>Oh-My-Zsh</strong></a></p>
 <div class="codehilite"><pre><span></span>sh -c <span class="s2">&quot;</span><span class="k">$(</span>wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
@@ -1737,14 +1737,6 @@ zstyle <span class="s1">&#39;:bracketed-paste-magic&#39;</span> active-widgets <
 <div class="codehilite"><pre><span></span>git clone https://github.com/zsh-users/zsh-autosuggestions <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
-</pre></div>
-
-<p>Install Awesome-Terminal-Fonts</p>
-<div class="codehilite"><pre><span></span>git clone https://github.com/gabrielelana/awesome-terminal-fonts.git
-cp -r awesome-terminal-fonts/build ~/.fonts
-rm -rf awesome-terminal-fonts
-<span class="nb">cd</span> ~/.fonts
-fc-cache -fv ~/.fonts
 </pre></div>
 
 <h3 id="zshrc_config_modifications_for_linux">~/.zshrc Config Modifications for Linux<a class="headerlink" href="#zshrc_config_modifications_for_linux" title="Permanent link">&para;</a></h3>
