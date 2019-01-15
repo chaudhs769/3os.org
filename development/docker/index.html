@@ -940,29 +940,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_images" title="Docker Images" class="md-nav__link">
-    Docker Images
+  <a href="#purging_all_unused_or_dangling_images" title="Purging All Unused or Dangling Images" class="md-nav__link">
+    Purging All Unused or Dangling Images
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list_all_images" title="List All Images" class="md-nav__link">
-    List All Images
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_all_unused_images" title="Remove All Unused Images" class="md-nav__link">
-    Remove All Unused Images
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1637,29 +1617,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_images" title="Docker Images" class="md-nav__link">
-    Docker Images
+  <a href="#purging_all_unused_or_dangling_images" title="Purging All Unused or Dangling Images" class="md-nav__link">
+    Purging All Unused or Dangling Images
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#list_all_images" title="List All Images" class="md-nav__link">
-    List All Images
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove_all_unused_images" title="Remove All Unused Images" class="md-nav__link">
-    Remove All Unused Images
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1716,13 +1676,14 @@
 <div class="codehilite"><pre><span></span>docker images <span class="p">|</span>grep -v REPOSITORY<span class="p">|</span>awk <span class="s1">&#39;{print $1}&#39;</span><span class="p">|</span>xargs -L1 docker pull
 </pre></div>
 
-<h2 id="docker_images">Docker Images<a class="headerlink" href="#docker_images" title="Permanent link">&para;</a></h2>
-<h3 id="list_all_images">List All Images<a class="headerlink" href="#list_all_images" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>docker images -a
+<h2 id="purging_all_unused_or_dangling_images">Purging All Unused or Dangling Images<a class="headerlink" href="#purging_all_unused_or_dangling_images" title="Permanent link">&para;</a></h2>
+<p>Purging All Unused or Dangling Images, Containers, Volumes, and Networks
+Docker provides a single command that will clean up any resources — images, containers, volumes, and networks — that are dangling (not associated with a container):</p>
+<div class="codehilite"><pre><span></span>docker system prune
 </pre></div>
 
-<h3 id="remove_all_unused_images">Remove All Unused Images<a class="headerlink" href="#remove_all_unused_images" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>docker images purge
+<p>To additionally remove any stopped containers and all unused images (not just dangling images), add the -a flag to the command:</p>
+<div class="codehilite"><pre><span></span>docker system prune -a
 </pre></div>
 
 <h2 id="portainerio_docker_ui_management">Portainer.io Docker UI management<a class="headerlink" href="#portainerio_docker_ui_management" title="Permanent link">&para;</a></h2>
