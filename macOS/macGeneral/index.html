@@ -883,6 +883,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#import_rsa_keys" title="Import RSA Keys" class="md-nav__link">
+    Import RSA Keys
+  </a>
+  
+</li>
+      
       
       
       
@@ -1740,6 +1747,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#import_rsa_keys" title="Import RSA Keys" class="md-nav__link">
+    Import RSA Keys
+  </a>
+  
+</li>
+      
       
       
       
@@ -1929,6 +1943,31 @@ include /usr/local/share/nano/tex.nanorc
 <h2 id="reset_launchpad_icons_sort">Reset Launchpad Icons Sort<a class="headerlink" href="#reset_launchpad_icons_sort" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>defaults write com.apple.dock ResetLaunchPad -bool true<span class="p">;</span> killall Dock
 </pre></div>
+
+<h2 id="import_rsa_keys">Import RSA Keys<a class="headerlink" href="#import_rsa_keys" title="Permanent link">&para;</a></h2>
+<p>Copy your id_rsa, id_rsa.pub to <em>~/.ssh/</em> folder</p>
+<p>Step 1 - Store the key in the keychain
+Just do this once:</p>
+<div class="codehilite"><pre><span></span>ssh-add -K ~/.ssh/<span class="o">[</span>your-private-key<span class="o">]</span>
+</pre></div>
+
+<p>Enter your key passphrase, and you won't be asked for it again.</p>
+<p>(If you're on a pre-Sierra version of OSX, you're done, Step 2 is not required.)</p>
+<p>Step 2 - Configure SSH to always use the keychain
+It seems that OSX Sierra removed the convenient behavior of persisting your keys between logins, and the update to ssh no longer uses the keychain by default. Because of this, you will get prompted to enter the passphrase for a key after you upgrade, and again after each restart.</p>
+<p>The solution is fairly simple, and is outlined in this github thread comment. Here's how you set it up:</p>
+<p>Ensure you've completed Step 1 above to store the key in the keychain.</p>
+<p>If you haven't already, create an ~/.ssh/config file. In other words, in the .ssh directory in your home dir, make a file called config.</p>
+<p>In that .ssh/config file, add the following lines:</p>
+<div class="codehilite"><pre><span></span>Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+</pre></div>
+
+<p>Change ~/.ssh/id_rsa to the actual filename of your private key. If you have other private keys in your ~.ssh directory, also add an IdentityFile line for each of them. For example, I have one additional line that reads IdentityFile ~/.ssh/id_ed25519 for a 2<sup>nd</sup> private key.</p>
+<p>The UseKeychain yes is the key part, which tells SSH to look in your OSX keychain for the key passphrase.</p>
+<p>That's it! Next time you load any ssh connection, it will try the private keys you've specified, and it will look for their passphrase in the OSX keychain. No passphrase typing required.</p>
                 
                   
                 
