@@ -545,6 +545,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#copy_publik_key_ot_the_server" title="Copy Publik Key ot The Server" class="md-nav__link">
+    Copy Publik Key ot The Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure_sshd_service" title="Configure sshd Service" class="md-nav__link">
+    Configure sshd Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#optional_change_ssh_port" title="Optional: change ssh port" class="md-nav__link">
     Optional: change ssh port
   </a>
@@ -1623,6 +1637,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#copy_publik_key_ot_the_server" title="Copy Publik Key ot The Server" class="md-nav__link">
+    Copy Publik Key ot The Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure_sshd_service" title="Configure sshd Service" class="md-nav__link">
+    Configure sshd Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#optional_change_ssh_port" title="Optional: change ssh port" class="md-nav__link">
     Optional: change ssh port
   </a>
@@ -1681,6 +1709,11 @@
                 
                 <h1 id="ssh_service_security">SSH Service Security<a class="headerlink" href="#ssh_service_security" title="Permanent link">&para;</a></h1>
 <h2 id="ssh_login_with_rsa_keys">SSH Login With RSA Keys<a class="headerlink" href="#ssh_login_with_rsa_keys" title="Permanent link">&para;</a></h2>
+<h3 id="copy_publik_key_ot_the_server">Copy Publik Key ot The Server<a class="headerlink" href="#copy_publik_key_ot_the_server" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
+</pre></div>
+
+<p><strong>Or Do It Manualy:</strong></p>
 <p>ssh to the host (<code>do not close this connection</code>)</p>
 <div class="codehilite"><pre><span></span>mkdir -p ~/.ssh <span class="o">&amp;&amp;</span> touch .ssh/authorized_keys
 </pre></div>
@@ -1689,6 +1722,7 @@
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> PUCLICK_Key_STRING &gt;&gt; ~/.ssh/authorized_keys
 </pre></div>
 
+<h3 id="configure_sshd_service">Configure sshd Service<a class="headerlink" href="#configure_sshd_service" title="Permanent link">&para;</a></h3>
 <p>edit <code>/etc/ssh/sshd_config</code>
 change:</p>
 <div class="codehilite"><pre><span></span><span class="c1">#PasswordAuthentication yes</span>
