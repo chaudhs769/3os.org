@@ -1277,6 +1277,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hassio_installion_under_ubuntu_docker" title="Hass.io installion Under Ubuntu Docker" class="md-nav__link">
+    Hass.io installion Under Ubuntu Docker
+  </a>
+  
+</li>
+      
       
       
       
@@ -1616,6 +1623,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hassio_installion_under_ubuntu_docker" title="Hass.io installion Under Ubuntu Docker" class="md-nav__link">
+    Hass.io installion Under Ubuntu Docker
+  </a>
+  
+</li>
+      
       
       
       
@@ -1777,6 +1791,33 @@ pip3 install --upgrade homeassistant
 <div class="codehilite"><pre><span></span>sudo systemctl start homeassistant
 sudo systemctl status homeassistant
 </pre></div>
+
+<h2 id="hassio_installion_under_ubuntu_docker">Hass.io installion Under Ubuntu Docker<a class="headerlink" href="#hassio_installion_under_ubuntu_docker" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade --yes
+sudo apt-get -y install apparmor-utils apt-transport-https avahi-daemon ca-certificates curl dbus jq network-manager socat software-properties-common bash openssh-server
+curl -sSL https://get.docker.com <span class="p">|</span> sh
+curl -sL https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install <span class="p">|</span> sudo bash -s
+</pre></div>
+
+<p>sudo -s
+add-apt-repository universe
+apt-get upgrade
+apt-get update
+apt-get install -y bash jq curl avahi-daemon dbus network-manager apparmor-utils
+apt-get install -y apt-transport-https ca-certificates curl software-properties-common </p>
+<p>curl -fsSL <a href="https://download.docker.com/linux/ubuntu/gpg">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -</p>
+<p>add-apt-repository \
+"deb [arch=amd64] <a href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a> \
+$(lsb_release -cs) \
+stable"</p>
+<p>curl -sL <a href="https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install">https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install</a> | bash -s</p>
+<p>docker pull portainer/portainer
+docker run \
+-d \
+--name=portainer \
+--restart always \
+-p 9000:9000 \
+-v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</p>
                 
                   
                 
