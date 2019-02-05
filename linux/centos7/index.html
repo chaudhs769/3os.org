@@ -2007,8 +2007,13 @@ For example:</p>
 </pre></div>
 
 <h2 id="disable_ipv6">Disable IPv6<a class="headerlink" href="#disable_ipv6" title="Permanent link">&para;</a></h2>
+<p>Append below lines in /etc/sysctl.conf:</p>
 <div class="codehilite"><pre><span></span>sysctl -w net.ipv6.conf.all.disable_ipv6<span class="o">=</span><span class="m">1</span>
 sysctl -w net.ipv6.conf.default.disable_ipv6<span class="o">=</span><span class="m">1</span>
+</pre></div>
+
+<p>To make the settings affective, execute :</p>
+<div class="codehilite"><pre><span></span>sysctl -p
 </pre></div>
 
 <h2 id="fix_nfs_mount_on_boot_-_centos_7">Fix NFS mount on Boot - Centos 7<a class="headerlink" href="#fix_nfs_mount_on_boot_-_centos_7" title="Permanent link">&para;</a></h2>
