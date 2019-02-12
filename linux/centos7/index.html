@@ -686,6 +686,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set_timezone" title="Set TimeZone" class="md-nav__link">
+    Set TimeZone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove_old_kernels" title="Remove Old Kernels" class="md-nav__link">
+    Remove Old Kernels
+  </a>
+  
+</li>
+      
       
       
       
@@ -1850,6 +1864,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set_timezone" title="Set TimeZone" class="md-nav__link">
+    Set TimeZone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove_old_kernels" title="Remove Old Kernels" class="md-nav__link">
+    Remove Old Kernels
+  </a>
+  
+</li>
+      
       
       
       
@@ -2008,8 +2036,8 @@ For example:</p>
 
 <h2 id="disable_ipv6">Disable IPv6<a class="headerlink" href="#disable_ipv6" title="Permanent link">&para;</a></h2>
 <p>Append below lines in /etc/sysctl.conf:</p>
-<div class="codehilite"><pre><span></span>sysctl -w net.ipv6.conf.all.disable_ipv6<span class="o">=</span><span class="m">1</span>
-sysctl -w net.ipv6.conf.default.disable_ipv6<span class="o">=</span><span class="m">1</span>
+<div class="codehilite"><pre><span></span>net.ipv6.conf.all.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
+net.ipv6.conf.default.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
 </pre></div>
 
 <p>To make the settings affective, execute :</p>
@@ -2034,6 +2062,15 @@ systemctl <span class="nb">enable</span> rpcbind.socket
 </pre></div>
 
 <p>Reboot the server</p>
+<h2 id="set_timezone">Set TimeZone<a class="headerlink" href="#set_timezone" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>timedatectl set-timezone Asia/Jerusalem
+</pre></div>
+
+<h2 id="remove_old_kernels">Remove Old Kernels<a class="headerlink" href="#remove_old_kernels" title="Permanent link">&para;</a></h2>
+<p>If your /boot partition is getting filled, you may wish to automatically remove old kernels. I find the best way to do this is to install the yum utilities package and then use a command to delete all but 2 kernels (just in case there is a problem with the latest one).</p>
+<div class="codehilite"><pre><span></span>sudo yum install yum-utils -y
+sudo package-cleanup --oldkernels --count<span class="o">=</span><span class="m">2</span>
+</pre></div>
                 
                   
                 

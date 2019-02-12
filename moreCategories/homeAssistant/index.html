@@ -1257,29 +1257,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker_installation" title="Docker Installation" class="md-nav__link">
-    Docker Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#home-assistantio_installation_on_ubuntu_1804" title="Home-Assistant.io Installation on Ubuntu 18.04" class="md-nav__link">
-    Home-Assistant.io Installation on Ubuntu 18.04
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update_home-assistantio_based_on_installation_above" title="Update Home-Assistant.io (Based on Installation Above)" class="md-nav__link">
-    Update Home-Assistant.io (Based on Installation Above)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hassio_installion_under_ubuntu_docker" title="Hass.io installion Under Ubuntu Docker" class="md-nav__link">
-    Hass.io installion Under Ubuntu Docker
+  <a href="#home-assistantio_installation_on_ubuntu_1804_host_docker" title="Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker" class="md-nav__link">
+    Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker
   </a>
   
 </li>
@@ -1603,29 +1582,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker_installation" title="Docker Installation" class="md-nav__link">
-    Docker Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#home-assistantio_installation_on_ubuntu_1804" title="Home-Assistant.io Installation on Ubuntu 18.04" class="md-nav__link">
-    Home-Assistant.io Installation on Ubuntu 18.04
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update_home-assistantio_based_on_installation_above" title="Update Home-Assistant.io (Based on Installation Above)" class="md-nav__link">
-    Update Home-Assistant.io (Based on Installation Above)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hassio_installion_under_ubuntu_docker" title="Hass.io installion Under Ubuntu Docker" class="md-nav__link">
-    Hass.io installion Under Ubuntu Docker
+  <a href="#home-assistantio_installation_on_ubuntu_1804_host_docker" title="Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker" class="md-nav__link">
+    Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker
   </a>
   
 </li>
@@ -1656,168 +1614,38 @@
                 
                 
                 <h1 id="home-assistant">Home-Assistant<a class="headerlink" href="#home-assistant" title="Permanent link">&para;</a></h1>
-<h2 id="docker_installation">Docker Installation<a class="headerlink" href="#docker_installation" title="Permanent link">&para;</a></h2>
-<p>Download The laters container: <em>homeassistant/home-assistant</em></p>
-<p>Change the volume for you approprite directory</p>
-<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
--d <span class="se">\</span>
---name<span class="o">=</span>homeassistant <span class="se">\</span>
---restart always <span class="se">\</span>
--v /volume1/docker/homeassistant:/config <span class="se">\</span>
--p <span class="m">8123</span>:8123 <span class="se">\</span>
--e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
-homeassistant/home-assistant:latest
-</pre></div>
-
-<h2 id="home-assistantio_installation_on_ubuntu_1804"><a href="https://www.home-assistant.io/">Home-Assistant.io</a> Installation on Ubuntu 18.04<a class="headerlink" href="#home-assistantio_installation_on_ubuntu_1804" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo apt-get update
-sudo apt-get install -y python3-dev python3-pip python3-venv
-sudo -H pip3 install --upgrade virtualenv
-python3 --version
-</pre></div>
-
-<p>Make sure Python &gt;= 3.5.3</p>
-<p>Create a user and group "homeassistant". Give the user access to serial lines (zwave, insteon, etc)</p>
-<div class="codehilite"><pre><span></span>sudo adduser --system homeassistant
-sudo addgroup homeassistant
-sudo adduser homeassistant dialout
-</pre></div>
-
-<p>Create a directory to install Home-Assistant in and set it’s ownership and permissions.</p>
-<div class="codehilite"><pre><span></span>sudo mkdir /sbin/homeassistant
-<span class="nb">cd</span> /sbin/
-sudo chown homeassistant:homeassistant homeassistant
-</pre></div>
-
-<p>Change to "homeassistant" user to do the installs.</p>
-<div class="codehilite"><pre><span></span>sudo su -s /bin/bash homeassistant
-</pre></div>
-
-<p>Install a virtual env to sandbox the Home-Assistant software and dependencies and activate it so further installs are done here.</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> /sbin/homeassistant
-python3 -m venv .
-<span class="nb">source</span> bin/activate
-python3 -m pip install wheel
-</pre></div>
-
-<p>Install Home-Assistant from pip.</p>
-<div class="codehilite"><pre><span></span>pip3 install homeassistant
-</pre></div>
-
-<p>Change config files and logs tho the instal;ation directory (rather than having them in /home/homassistant).</p>
-<div class="codehilite"><pre><span></span>mkdir config
-/sbin/homeassistant/bin/hass -c /sbin/homeassistant/config --log-file /sbin/homeassistant/home-assistant.log
-</pre></div>
-
-<p>Home-Assistant should install a few things and make a default config file (let it run for a little while - it takes a bit on the first start up). Hit ctrl-c to stop it. The config directory now contains a bunch of sample config files for you to edit.</p>
-<p>You should have those files and folders in the config folder:</p>
-<ul>
-<li>automations.yaml</li>
-<li>configuration.yaml</li>
-<li>customize.yaml</li>
-<li>deps groups.yaml</li>
-<li>home-assistant_v2.db</li>
-<li>scripts.yaml</li>
-<li>secrets.yaml</li>
-<li>tts</li>
-</ul>
-<p>You also should have home-assistant.log at homeassistant folder</p>
-<p>Now start Home-Assistant</p>
-<div class="codehilite"><pre><span></span>/sbin/homeassistant/bin/hass -c /sbin/homeassistant/config --log-file /sbin/homeassistant/home-assistant.log
-</pre></div>
-
-<p>The Home-Assistant should be accessible at:
-<strong><code>http://[ServerIP]:8123</code></strong></p>
-<p>Assuming it works, now make a service to start hass automatically. Create the following systemd init file. The serivce name ‘hass’ can be ‘homeassistant’ or whatever you want.</p>
-<div class="codehilite"><pre><span></span>touch homeassistant.service
-nano homeassistant.service
-</pre></div>
-
-<p>Copy and Save</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span>Unit<span class="o">]</span>
-<span class="nv">Description</span><span class="o">=</span>Home Assistant
-<span class="nv">After</span><span class="o">=</span>network.target
-
-<span class="o">[</span>Service<span class="o">]</span>
-<span class="nv">Type</span><span class="o">=</span>simple
-<span class="nv">User</span><span class="o">=</span>homeassistant
-<span class="nv">ExecStart</span><span class="o">=</span>/sbin/homeassistant/bin/hass -c /sbin/homeassistant/config --log-file /sbin/homeassistant/home-assistant.log
-
-<span class="o">[</span>Install<span class="o">]</span>
-<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
-</pre></div>
-
-<p>Exit the homeassistant user, copy the service file to the system, and update systemd to run the service.</p>
-<div class="codehilite"><pre><span></span><span class="nb">exit</span>
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> /sbin/homeassistant/
-sudo cp homeassistant.service /etc/systemd/system/
-sudo systemctl --system daemon-reload
-sudo systemctl <span class="nb">enable</span> homeassistant
-sudo systemctl start homeassistant
-</pre></div>
-
-<p>check the logs for the service to start nad running:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl status homeassistant
-</pre></div>
-
-<p>Finally, to make it easier to edit config files and try out code changes, I gave my regular user write permissions in the HA directory. (I’m running ACL’s on my drives which makes this simple)</p>
-<div class="codehilite"><pre><span></span>sudo setfacl -R -m u:<span class="s2">&quot;</span><span class="nv">$USER</span><span class="s2">&quot;</span>:rwx /sbin/homeassistant
-</pre></div>
-
-<p>reboot the server and test for Home-Assistant running at <strong><code>http://[ServerIP]:8123</code></strong> after boot.</p>
-<h2 id="update_home-assistantio_based_on_installation_above">Update <a href="https://www.home-assistant.io/">Home-Assistant.io</a> (Based on Installation Above)<a class="headerlink" href="#update_home-assistantio_based_on_installation_above" title="Permanent link">&para;</a></h2>
-<p>SSH to the ubuntu server</p>
-<p>Stop the homeassistant service:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl stop homeassistant
-</pre></div>
-
-<p>Change User to homeassistant:</p>
-<div class="codehilite"><pre><span></span>sudo su -s /bin/bash homeassistant
-<span class="nb">cd</span> /sbin/homeassistant
-</pre></div>
-
-<p>Run the update</p>
-<div class="codehilite"><pre><span></span><span class="nb">source</span> bin/activate
-pip3 install --upgrade homeassistant
-</pre></div>
-
-<p>When Update is done exit homeassistant user</p>
-<div class="codehilite"><pre><span></span><span class="nb">exit</span>
-</pre></div>
-
-<p>start homeassistant service and check for status:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl start homeassistant
-sudo systemctl status homeassistant
-</pre></div>
-
-<h2 id="hassio_installion_under_ubuntu_docker">Hass.io installion Under Ubuntu Docker<a class="headerlink" href="#hassio_installion_under_ubuntu_docker" title="Permanent link">&para;</a></h2>
+<h2 id="home-assistantio_installation_on_ubuntu_1804_host_docker"><a href="https://www.home-assistant.io/">Home-Assistant.io</a> Installation on Ubuntu 18.04 (host) &amp; Docker<a class="headerlink" href="#home-assistantio_installation_on_ubuntu_1804_host_docker" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade --yes
 sudo apt-get -y install apparmor-utils apt-transport-https avahi-daemon ca-certificates curl dbus jq network-manager socat software-properties-common bash openssh-server
 curl -sSL https://get.docker.com <span class="p">|</span> sh
 curl -sL https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install <span class="p">|</span> sudo bash -s
 </pre></div>
 
-<p>sudo -s
+<div class="codehilite"><pre><span></span>sudo -s
 add-apt-repository universe
 apt-get upgrade
 apt-get update
 apt-get install -y bash jq curl avahi-daemon dbus network-manager apparmor-utils
-apt-get install -y apt-transport-https ca-certificates curl software-properties-common </p>
-<p>curl -fsSL <a href="https://download.docker.com/linux/ubuntu/gpg">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -</p>
-<p>add-apt-repository \
-"deb [arch=amd64] <a href="https://download.docker.com/linux/ubuntu">https://download.docker.com/linux/ubuntu</a> \
-$(lsb_release -cs) \
-stable"</p>
-<p>curl -sL <a href="https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install">https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install</a> | bash -s</p>
-<p>docker pull portainer/portainer
-docker run \
--d \
---name=portainer \
---restart always \
--p 9000:9000 \
--v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</p>
+apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+
+add-apt-repository <span class="se">\</span>
+<span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
+<span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \</span>
+<span class="s2">stable&quot;</span>
+
+curl -sL https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install <span class="p">|</span> bash -s
+</pre></div>
+
+<div class="codehilite"><pre><span></span>docker pull portainer/portainer
+docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--name<span class="o">=</span>portainer <span class="se">\</span>
+--restart always <span class="se">\</span>
+-p <span class="m">9000</span>:9000 <span class="se">\</span>
+-v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+</pre></div>
                 
                   
                 
