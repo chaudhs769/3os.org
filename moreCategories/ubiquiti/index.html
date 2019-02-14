@@ -1867,13 +1867,16 @@ commit <span class="p">;</span> save
 
 <h2 id="hardening_edgerouter">Hardening EdgeRouter<a class="headerlink" href="#hardening_edgerouter" title="Permanent link">&para;</a></h2>
 <p>This will change the GUI to port 8443, disable old cyphers, Only will listen on internal Network.
-assuming your Edge Router IP is 192.168.1.1, if not change it accordingly.</p>
+assuming your EdgeRouter IP is 192.168.1.1, if not change it accordingly.</p>
 <p>SSH to the Edge Router</p>
 <div class="codehilite"><pre><span></span>configure
 <span class="nb">set</span> service gui listen-address <span class="m">192</span>.168.1.1
 <span class="nb">set</span> service gui https-port <span class="m">8443</span>
 <span class="nb">set</span> service gui older-ciphers disable
+<span class="nb">set</span> service ssh listen-address <span class="m">192</span>.168.1.1
 <span class="nb">set</span> service ssh protocol-version v2
+<span class="nb">set</span> service ubnt-discover disable
+<span class="nb">set</span> firewall all-ping disable
 commit <span class="p">;</span> save
 </pre></div>
 
