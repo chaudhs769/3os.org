@@ -999,6 +999,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubiquiti_unifi_controller_on_synology_nas" title="Ubiquiti Unifi Controller On Synology NAS" class="md-nav__link">
+    Ubiquiti Unifi Controller On Synology NAS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubiquiti_controller_on_synology_nas" title="Ubiquiti Controller On Synology NAS" class="md-nav__link">
+    Ubiquiti Controller On Synology NAS
+  </a>
+  
+</li>
+      
       
       
       
@@ -1680,6 +1694,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubiquiti_unifi_controller_on_synology_nas" title="Ubiquiti Unifi Controller On Synology NAS" class="md-nav__link">
+    Ubiquiti Unifi Controller On Synology NAS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubiquiti_controller_on_synology_nas" title="Ubiquiti Controller On Synology NAS" class="md-nav__link">
+    Ubiquiti Controller On Synology NAS
+  </a>
+  
+</li>
+      
       
       
       
@@ -1742,6 +1770,42 @@ networkstatic/iperf3:latest -s
 -e <span class="nv">PROXY</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 joshuaavalon/cloudflare-ddns:latest
+</pre></div>
+
+<h2 id="ubiquiti_unifi_controller_on_synology_nas">Ubiquiti Unifi Controller On Synology NAS<a class="headerlink" href="#ubiquiti_unifi_controller_on_synology_nas" title="Permanent link">&para;</a></h2>
+<p>based on <em>jacobalberty/unifi:latest</em> image</p>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name<span class="o">=</span>unifi-controller <span class="se">\</span>
+--net<span class="o">=</span>host <span class="se">\</span>
+-h unifi <span class="se">\</span>
+-v /volume1/docker/unifi:/var/lib/unifi <span class="se">\</span>
+-p <span class="m">8080</span>:8080/tcp <span class="se">\</span>
+-p <span class="m">8081</span>:8081/tcp <span class="se">\</span>
+-p <span class="m">8443</span>:8443/tcp <span class="se">\</span>
+-p <span class="m">8843</span>:8843/tcp <span class="se">\</span>
+-p <span class="m">8880</span>:8880/tcp <span class="se">\</span>
+-p <span class="m">3478</span>:3478/udp <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+jacobalberty/unifi:latest
+</pre></div>
+
+<h2 id="ubiquiti_controller_on_synology_nas">Ubiquiti Controller On Synology NAS<a class="headerlink" href="#ubiquiti_controller_on_synology_nas" title="Permanent link">&para;</a></h2>
+<p>Based on <em>oznu/unms:latest</em> image</p>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name<span class="o">=</span>unms-controller <span class="se">\</span>
+-h unms <span class="se">\</span>
+-v /volume1/docker/unms:/config <span class="se">\</span>
+-p <span class="m">9080</span>:80 <span class="se">\</span>
+-p <span class="m">9443</span>:443 <span class="se">\</span>
+-p <span class="m">2055</span>:2055/udp <span class="se">\</span>
+-e <span class="nv">PUBLIC_HTTPS_PORT</span><span class="o">=</span><span class="m">9443</span> <span class="se">\</span>
+-e <span class="nv">PUBLIC_WS_PORT</span><span class="o">=</span><span class="m">9443</span> <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+oznu/unms:latest
 </pre></div>
                 
                   
