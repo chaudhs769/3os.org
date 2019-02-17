@@ -953,6 +953,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#logrotate_installation" title="Logrotate Installation" class="md-nav__link">
+    Logrotate Installation
+  </a>
+  
+</li>
+      
       
       
       
@@ -1712,6 +1719,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#logrotate_installation" title="Logrotate Installation" class="md-nav__link">
+    Logrotate Installation
+  </a>
+  
+</li>
+      
       
       
       
@@ -1917,6 +1931,14 @@ pm2 stop mm
 pm2 start mm
 pm2 log
 pm2 show mm
+</pre></div>
+
+<h2 id="logrotate_installation">Logrotate Installation<a class="headerlink" href="#logrotate_installation" title="Permanent link">&para;</a></h2>
+<p>This will Retain for 14 days compress the logs.</p>
+<div class="codehilite"><pre><span></span>pm2 install pm2-logrotate
+pm2 <span class="nb">set</span> pm2-logrotate:compress <span class="nb">true</span>
+pm2 <span class="nb">set</span> pm2-logrotate:retain <span class="m">14</span>
+pm2 <span class="nb">set</span> pm2-logrotate:max_size 10M
 </pre></div>
                 
                   
