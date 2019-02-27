@@ -1013,6 +1013,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#zabbix_monitoring_contianer" title="Zabbix Monitoring Contianer" class="md-nav__link">
+    Zabbix Monitoring Contianer
+  </a>
+  
+</li>
+      
       
       
       
@@ -1708,6 +1715,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#zabbix_monitoring_contianer" title="Zabbix Monitoring Contianer" class="md-nav__link">
+    Zabbix Monitoring Contianer
+  </a>
+  
+</li>
+      
       
       
       
@@ -1760,6 +1774,7 @@ networkstatic/iperf3:latest -s
 <h3 id="running_the_container">Running the Container<a class="headerlink" href="#running_the_container" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
+-h cloudflareddns <span class="se">\</span>
 --restart always <span class="se">\</span>
 --name<span class="o">=</span>cloudflare-ddns <span class="se">\</span>
 -e <span class="nv">ZONE</span><span class="o">=</span>example.com <span class="se">\</span>
@@ -1773,7 +1788,7 @@ joshuaavalon/cloudflare-ddns:latest
 </pre></div>
 
 <h2 id="ubiquiti_unifi_controller_on_synology_nas">Ubiquiti Unifi Controller On Synology NAS<a class="headerlink" href="#ubiquiti_unifi_controller_on_synology_nas" title="Permanent link">&para;</a></h2>
-<p>based on <em>jacobalberty/unifi:latest</em> image</p>
+<p>based on <em>jacobalberty/unifi:latest</em> image for Synology NAS</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
@@ -1792,7 +1807,7 @@ jacobalberty/unifi:latest
 </pre></div>
 
 <h2 id="ubiquiti_unms_controller_on_synology_nas">Ubiquiti UNMS Controller On Synology NAS<a class="headerlink" href="#ubiquiti_unms_controller_on_synology_nas" title="Permanent link">&para;</a></h2>
-<p>Based on <em>oznu/unms:latest</em> image</p>
+<p>Based on <em>oznu/unms:latest</em> image for Synology NAS</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
@@ -1806,6 +1821,23 @@ jacobalberty/unifi:latest
 -e <span class="nv">PUBLIC_WS_PORT</span><span class="o">=</span><span class="m">9443</span> <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 oznu/unms:latest
+</pre></div>
+
+<h2 id="zabbix_monitoring_contianer">Zabbix Monitoring Contianer<a class="headerlink" href="#zabbix_monitoring_contianer" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--name zabbix-appliance <span class="se">\</span>
+--restart always <span class="se">\</span>
+-h zabbix <span class="se">\</span>
+-p <span class="m">10051</span>:10051 <span class="se">\</span>
+-p <span class="m">5060</span>:80 <span class="se">\</span>
+-v /volume1/docker/zabbix:/var/lib/zabbix <span class="se">\</span>
+-v /volume1/docker/zabbix/mysql:/var/lib/mysql <span class="se">\</span>
+-v /volume1/docker/zabbix/nginx:/etc/ssl/nginx <span class="se">\</span>
+-e <span class="nv">ZBX_SERVER_NAME</span><span class="o">=</span>zabbix.3os.re <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-e <span class="nv">PHP_TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+zabbix/zabbix-appliance:latest
 </pre></div>
                 
                   
