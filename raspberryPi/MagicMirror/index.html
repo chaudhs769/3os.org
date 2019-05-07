@@ -1902,13 +1902,16 @@
 options 8192cu <span class="nv">rtw_power_mgnt</span><span class="o">=</span><span class="m">0</span> <span class="nv">rtw_enusbss</span><span class="o">=</span><span class="m">1</span> <span class="nv">rtw_ips_mode</span><span class="o">=</span><span class="m">1</span>
 </pre></div>
 
-<p>For Raspberry Pi 3 (Jesse and below)
+<p>For Raspberry Pi 3
 Edit /etc/network/interfaces</p>
 <div class="codehilite"><pre><span></span>sudo nano /etc/network/interfaces
 </pre></div>
 
 <p>Add the following line under the wlan0 section</p>
-<div class="codehilite"><pre><span></span>wireless-power off
+<div class="codehilite"><pre><span></span>allow-hotplug wlan0
+iface wlan0 inet manual
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+wireless-power off
 </pre></div>
 
 <p>Reboot your PI</p>
