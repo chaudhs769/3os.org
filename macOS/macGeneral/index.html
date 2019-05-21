@@ -903,6 +903,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#google_drive_file_sync_fix" title="Google Drive File Sync Fix" class="md-nav__link">
+    Google Drive File Sync Fix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flush_dns" title="Flush DNS" class="md-nav__link">
+    Flush DNS
+  </a>
+  
+</li>
+      
       
       
       
@@ -1810,6 +1824,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#google_drive_file_sync_fix" title="Google Drive File Sync Fix" class="md-nav__link">
+    Google Drive File Sync Fix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flush_dns" title="Flush DNS" class="md-nav__link">
+    Flush DNS
+  </a>
+  
+</li>
+      
       
       
       
@@ -2008,6 +2036,16 @@ It seems that OSX Sierra removed the convenient behavior of persisting your keys
 
 <p>Rename new picture to <strong>Mojave.heic</strong></p>
 <p>Move the new picture to <em>/Library/Desktop Pictures/</em></p>
+<h2 id="google_drive_file_sync_fix">Google Drive File Sync Fix<a class="headerlink" href="#google_drive_file_sync_fix" title="Permanent link">&para;</a></h2>
+<p>quit Google Drive</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Google
+mv DriveFS DriveFS.old
+</pre></div>
+
+<p>relaunch Google Drive</p>
+<h2 id="flush_dns">Flush DNS<a class="headerlink" href="#flush_dns" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sudo killall -HUP mDNSResponder<span class="p">;</span>sudo killall mDNSResponderHelper<span class="p">;</span>sudo dscacheutil -flushcache
+</pre></div>
                 
                   
                 
