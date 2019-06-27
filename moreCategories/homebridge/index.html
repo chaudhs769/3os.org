@@ -13,7 +13,7 @@
         <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
       
       
-        <link rel="canonical" href="https://3os.org/moreCategories/homeAssistant/">
+        <link rel="canonical" href="https://3os.org/moreCategories/homebridge/">
       
       
         <meta name="author" content="Stas Kosatuhin">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Home-Assistant - 3os.org</title>
+        <title>Homebridge - 3os.org</title>
       
     
     
@@ -133,7 +133,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#home-assistant" tabindex="1" class="md-skip">
+      <a href="#homebridge" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -158,7 +158,7 @@
               3os.org
             </span>
             <span class="md-header-nav__topic">
-              Home-Assistant
+              Homebridge
             </span>
           
         </div>
@@ -1281,11 +1281,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home-Assistant
+        Homebridge
       </label>
     
-    <a href="./" title="Home-Assistant" class="md-nav__link md-nav__link--active">
-      Home-Assistant
+    <a href="./" title="Homebridge" class="md-nav__link md-nav__link--active">
+      Homebridge
     </a>
     
       
@@ -1299,8 +1299,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#home-assistantio_installation_on_ubuntu_1804_host_docker" title="Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker" class="md-nav__link">
-    Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker
+  <a href="#symlink_for_config_file" title="Symlink for config file" class="md-nav__link">
+    Symlink for config file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run_homebridge_as_a_service_on_boot_centos7" title="Run Homebridge as a service on boot (centos7)" class="md-nav__link">
+    Run Homebridge as a service on boot (centos7)
   </a>
   
 </li>
@@ -1624,8 +1631,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#home-assistantio_installation_on_ubuntu_1804_host_docker" title="Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker" class="md-nav__link">
-    Home-Assistant.io Installation on Ubuntu 18.04 (host) &amp; Docker
+  <a href="#symlink_for_config_file" title="Symlink for config file" class="md-nav__link">
+    Symlink for config file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run_homebridge_as_a_service_on_boot_centos7" title="Run Homebridge as a service on boot (centos7)" class="md-nav__link">
+    Run Homebridge as a service on boot (centos7)
   </a>
   
 </li>
@@ -1652,41 +1666,66 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/moreCategories/homeAssistant.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/moreCategories/homebridge.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="home-assistant">Home-Assistant<a class="headerlink" href="#home-assistant" title="Permanent link">&para;</a></h1>
-<h2 id="home-assistantio_installation_on_ubuntu_1804_host_docker"><a href="https://www.home-assistant.io/">Home-Assistant.io</a> Installation on Ubuntu 18.04 (host) &amp; Docker<a class="headerlink" href="#home-assistantio_installation_on_ubuntu_1804_host_docker" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade --yes
-sudo apt-get -y install apparmor-utils apt-transport-https avahi-daemon ca-certificates curl dbus jq network-manager socat software-properties-common bash openssh-server
-curl -sSL https://get.docker.com <span class="p">|</span> sh
-curl -sL https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install <span class="p">|</span> sudo bash -s
+                <h1 id="homebridge">Homebridge<a class="headerlink" href="#homebridge" title="Permanent link">&para;</a></h1>
+<h2 id="symlink_for_config_file">Symlink for config file<a class="headerlink" href="#symlink_for_config_file" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>ln -s /root/.homebridge /root/homebridge
 </pre></div>
 
-<div class="codehilite"><pre><span></span>sudo -s
-add-apt-repository universe
-apt-get upgrade
-apt-get update
-apt-get install -y bash jq curl avahi-daemon dbus network-manager apparmor-utils
-apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
-
-add-apt-repository <span class="se">\</span>
-<span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
-<span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \</span>
-<span class="s2">stable&quot;</span>
-
-curl -sL https://raw.githubusercontent.com/home-assistant/hassio-build/master/install/hassio_install <span class="p">|</span> bash -s
+<h2 id="run_homebridge_as_a_service_on_boot_centos7">Run Homebridge as a service on boot (centos7)<a class="headerlink" href="#run_homebridge_as_a_service_on_boot_centos7" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>nano /etc/default/homebridge
 </pre></div>
 
-<div class="codehilite"><pre><span></span>docker pull portainer/portainer
-docker run <span class="se">\</span>
--d <span class="se">\</span>
---name<span class="o">=</span>portainer <span class="se">\</span>
---restart always <span class="se">\</span>
--p <span class="m">9000</span>:9000 <span class="se">\</span>
--v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+<p>Pase the content:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Defaults / Configuration options for homebridge</span>
+<span class="c1"># The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)</span>
+<span class="nv">HOMEBRIDGE_OPTS</span><span class="o">=</span>-U /root/homebridge
+
+<span class="c1"># If you uncomment the following line, homebridge will log more</span>
+<span class="c1"># You can display this via systemd’s journalctl: journalctl -f -u homebridge</span>
+<span class="c1"># DEBUG=*</span>
+</pre></div>
+
+<p>Save and Exit</p>
+<div class="codehilite"><pre><span></span>sudo nano /etc/systemd/system/homebridge.service
+</pre></div>
+
+<p>Pase the content:</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>Node.js HomeKit Server
+<span class="nv">After</span><span class="o">=</span>syslog.target network-online.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">User</span><span class="o">=</span>homebridge
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/local/bin/homebridge- I <span class="nv">$HOMEBRIDGE_OPTS</span>
+<span class="nv">Restart</span><span class="o">=</span>on-failure
+<span class="nv">RestartSec</span><span class="o">=</span><span class="m">10</span>
+<span class="nv">KillMode</span><span class="o">=</span>process
+<span class="nv">User</span><span class="o">=</span>root
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</pre></div>
+
+<p>I had to remove local from:  ExecStart=/usr/local/bin/homebridge $HOMEBRIDGE_OPTS  because my homebridge installed in /usr/bin/</p>
+<p>This copies your current user’s config. This assumes you have already added accessories etc.</p>
+<div class="codehilite"><pre><span></span>mkdir /var/homebridge
+cp ~/.homebridge/config.json /root/homebridge
+sudo cp -r ~/.homebridge/persist /root/homebridge
+</pre></div>
+
+<p>Enable Serice at boot, start it, see the status of the homebridge service:</p>
+<div class="codehilite"><pre><span></span>systemctl daemon-reload
+systemctl <span class="nb">enable</span> homebridge
+systemctl start homebridge
+systemctl status homebridge
+</pre></div>
+
+<p>To view the logs:</p>
+<div class="codehilite"><pre><span></span>journalctl -f -u homebridge
 </pre></div>
                 
                   
@@ -1700,9 +1739,9 @@ docker run <span class="se">\</span>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://3os.org/moreCategories/homeAssistant/";
+      this.page.url = "https://3os.org/moreCategories/homebridge/";
       this.page.identifier =
-        "moreCategories/homeAssistant/";
+        "moreCategories/homebridge/";
     };
     (function() {
       var d = document, s = d.createElement("script");

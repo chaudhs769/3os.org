@@ -927,6 +927,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#untrack_files_already_added_to_git_repository_based_on_gitignore" title="Untrack files already added to git repository based on .gitignore" class="md-nav__link">
+    Untrack files already added to git repository based on .gitignore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use_gist_as_repository" title="Use Gist as Repository" class="md-nav__link">
     Use Gist as Repository
   </a>
@@ -1316,8 +1323,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../moreCategories/homeAssistant/" title="Home-Assistant" class="md-nav__link">
-      Home-Assistant
+    <a href="../../moreCategories/homebridge/" title="Homebridge" class="md-nav__link">
+      Homebridge
     </a>
   </li>
 
@@ -1624,6 +1631,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#untrack_files_already_added_to_git_repository_based_on_gitignore" title="Untrack files already added to git repository based on .gitignore" class="md-nav__link">
+    Untrack files already added to git repository based on .gitignore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#use_gist_as_repository" title="Use Gist as Repository" class="md-nav__link">
     Use Gist as Repository
   </a>
@@ -1656,6 +1670,20 @@
                 
                 
                 <h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+<h2 id="untrack_files_already_added_to_git_repository_based_on_gitignore">Untrack files already added to git repository based on .gitignore<a class="headerlink" href="#untrack_files_already_added_to_git_repository_based_on_gitignore" title="Permanent link">&para;</a></h2>
+<p>Commit all your changes. Before proceeding, make sure all your changes are committed, including your .gitignore file.
+Remove everything from the repository. To clear your repo, use:</p>
+<div class="codehilite"><pre><span></span>git rm -r --cached .
+</pre></div>
+
+<p>Re add everything.</p>
+<div class="codehilite"><pre><span></span>git add .
+</pre></div>
+
+<p>Commit.</p>
+<div class="codehilite"><pre><span></span>git commit -m <span class="s2">&quot;.gitignore fix&quot;</span>
+</pre></div>
+
 <h2 id="use_gist_as_repository">Use Gist as Repository<a class="headerlink" href="#use_gist_as_repository" title="Permanent link">&para;</a></h2>
 <p>It's probably easiest if you just start by cloning the gist, so that <code>origin</code> (a "remote" that refers to the original repository) is set up for you. Then you can just do <code>git push origin master</code>. For example:</p>
 <div class="codehilite"><pre><span></span>git clone git@gist.github.com:869085.git mygist

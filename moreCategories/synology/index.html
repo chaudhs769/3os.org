@@ -1273,8 +1273,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#automate_the_certificate_renewal" title="Automate The Certificate Renewal" class="md-nav__link">
-    Automate The Certificate Renewal
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating_the_certificate" title="Creating the Certificate" class="md-nav__link">
+    Creating the Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring_certificate_renewal_by_etccrontab" title="Configuring Certificate Renewal by /etc/crontab" class="md-nav__link">
+    Configuring Certificate Renewal by /etc/crontab
   </a>
   
 </li>
@@ -1357,8 +1371,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../homeAssistant/" title="Home-Assistant" class="md-nav__link">
-      Home-Assistant
+    <a href="../homebridge/" title="Homebridge" class="md-nav__link">
+      Homebridge
     </a>
   </li>
 
@@ -1687,8 +1701,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#automate_the_certificate_renewal" title="Automate The Certificate Renewal" class="md-nav__link">
-    Automate The Certificate Renewal
+  <a href="#requirements" title="Requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating_the_certificate" title="Creating the Certificate" class="md-nav__link">
+    Creating the Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring_certificate_renewal_by_etccrontab" title="Configuring Certificate Renewal by /etc/crontab" class="md-nav__link">
+    Configuring Certificate Renewal by /etc/crontab
   </a>
   
 </li>
@@ -1779,66 +1807,45 @@ sudo apt-get install qemu-guest-agent
 </pre></div>
 
 <h2 id="automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script">Automated SSL Using Let's Encrypt, CloudFlare API, acme.sh Script<a class="headerlink" href="#automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script" title="Permanent link">&para;</a></h2>
+<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
+<p>Synology ssh enabled and sudo permission
+Cloudflare API key</p>
 <p>ssh to synology nas</p>
-<div class="codehilite"><pre><span></span>wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz
+<div class="codehilite"><pre><span></span>sudo -i
+wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz
 tar xvf master.tar.gz
 <span class="nb">cd</span> acme.sh-master/
-./acme.sh --install --nocron --home /usr/local/share/acme.sh
-<span class="nb">cd</span> /usr/local/share/acme.sh
+./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail <span class="s2">&quot;email@example.com&quot;</span>
 </pre></div>
 
 <p>CF_Key= <code>your cloudflare Global API key</code>
 CF_Email= <code>your cloudflare email account</code>
 CERT_DOMAIN= <code>your domain managed on cloudflare dns</code>, you can use wilde card domain like <code>*.your-domain.tld</code></p>
 <div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">CF_Key</span><span class="o">=</span><span class="s2">&quot;MY_SECRET_KEY_SUCH_SECRET&quot;</span>
-<span class="nb">export</span> <span class="nv">CF_Email</span><span class="o">=</span><span class="s2">&quot;&lt;myEmail@example.com&gt;&quot;</span>
-<span class="nb">export</span> <span class="nv">CERT_DOMAIN</span><span class="o">=</span><span class="s2">&quot;your-domain.tld&quot;</span>
+<span class="nb">export</span> <span class="nv">CF_Email</span><span class="o">=</span><span class="s2">&quot;myEmail@example.com&quot;</span>
+<span class="nb">export</span> <span class="nv">CERT_DOMAIN</span><span class="o">=</span><span class="s2">&quot;*.your-domain.tld&quot;</span>
 <span class="nb">export</span> <span class="nv">CERT_DNS</span><span class="o">=</span><span class="s2">&quot;dns_cf&quot;</span>
 </pre></div>
 
 <p>This Will Generate, Sing and install the Certificate</p>
-<div class="codehilite"><pre><span></span>./acme.sh --issue -d <span class="s2">&quot;</span><span class="nv">$CERT_DOMAIN</span><span class="s2">&quot;</span> --dns <span class="s2">&quot;</span><span class="nv">$CERT_DNS</span><span class="s2">&quot;</span> <span class="se">\</span>
-      --cert-file /usr/syno/etc/certificate/system/default/cert.pem <span class="se">\</span>
-      --key-file /usr/syno/etc/certificate/system/default/privkey.pem <span class="se">\</span>
-      --fullchain-file /usr/syno/etc/certificate/system/default/fullchain.pem <span class="se">\</span>
-      --reloadcmd <span class="s2">&quot;/usr/syno/sbin/synoservicectl --reload nginx&quot;</span> <span class="se">\</span>
-      --dnssleep <span class="m">20</span>
+<h3 id="creating_the_certificate">Creating the Certificate<a class="headerlink" href="#creating_the_certificate" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> /usr/local/share/acme.sh
+./acme.sh --issue -d <span class="s2">&quot;</span><span class="nv">$CERT_DOMAIN</span><span class="s2">&quot;</span> --dns <span class="s2">&quot;</span><span class="nv">$CERT_DNS</span><span class="s2">&quot;</span> <span class="se">\</span>
+      --certpath /usr/syno/etc/certificate/system/default/cert.pem <span class="se">\</span>
+      --keypath /usr/syno/etc/certificate/system/default/privkey.pem <span class="se">\</span>
+      --fullchainpath /usr/syno/etc/certificate/system/default/fullchain.pem <span class="se">\</span>
+      --capath /usr/syno/etc/certificate/system/default/chain.pem <span class="se">\</span>
+      --reloadcmd <span class="s2">&quot;cp -a /usr/syno/etc/certificate/system/default/* `find /usr/syno/etc/certificate/_archive/ -maxdepth 1 -mindepth 1 -type d` &amp;&amp; /usr/syno/sbin/synoservicectl --reload nginx&quot;</span> <span class="se">\</span>
+      --dnssleep <span class="m">20</span> <span class="se">\</span>
+      --config-home <span class="s2">&quot;/volume1/activeShare/Dropbox/SettingsConfigs/SSL_Certificates&quot;</span>
 </pre></div>
 
-<h3 id="automate_the_certificate_renewal">Automate The Certificate Renewal<a class="headerlink" href="#automate_the_certificate_renewal" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Login to DSM</li>
-<li>Go to Control Panel - Task Scheduler</li>
-<li>Create - Scheduled Task - User-defined script</li>
-<li>Name it something like that: <code>Lets-Encrypt Auto Renew</code></li>
-<li>Run it under user root</li>
-<li>At Schedule define it to run dayily at night (so you won't have expierd certificate)</li>
-<li>at Task setting at this to the <code>user defined script</code> window:</li>
-</ul>
-<div class="codehilite"><pre><span></span> /usr/local/share/acme.sh/acme.sh --cron --home /usr/local/share/acme.sh/
+<h3 id="configuring_certificate_renewal_by_etccrontab">Configuring Certificate Renewal by /etc/crontab<a class="headerlink" href="#configuring_certificate_renewal_by_etccrontab" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>vi /etc/crontab
 </pre></div>
 
-<ul>
-<li>You can check if the script runs ok by ticking the <code>Send run details by mail</code> and provide your mail</li>
-<li>Close the window</li>
-<li>Select you newly created Task and Run it.</li>
-<li>Check you email, you should get massage like that:</li>
-</ul>
-<div class="codehilite"><pre><span></span>Dear user,
-
-Task Scheduler has completed a scheduled task.
-
-Task: Task 8
-Start time: Tue, 04 Sep 2018 19:54:09 GMT
-Stop time: Tue, 04 Sep 2018 19:54:09 GMT
-Current status: 0 (Normal)
-Standard output/error:
-[Tue Sep 4 19:54:09 IDT 2018] ===Starting cron===
-[Tue Sep 4 19:54:09 IDT 2018] Renew: &#39;*.your-domain.tld&#39;
-[Tue Sep 4 19:54:09 IDT 2018] Skip, Next renewal time is: Sat Nov 3 16:34:19 UTC 2018
-[Tue Sep 4 19:54:09 IDT 2018] Add &#39;--force&#39; to force to renew.
-[Tue Sep 4 19:54:09 IDT 2018] Skipped *.your-domain.tld
-[Tue Sep 4 19:54:09 IDT 2018] ===End cron===
+<p>add this:</p>
+<div class="codehilite"><pre><span></span><span class="m">0</span>   <span class="m">10</span>  <span class="m">2</span>   *   *   root    /usr/local/share/acme.sh/acme.sh --cron --home /volume1/activeShare/Dropbox/SettingsConfigs/SSL_Certificates
 </pre></div>
 
 <h3 id="done">done<a class="headerlink" href="#done" title="Permanent link">&para;</a></h3>
