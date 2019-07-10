@@ -972,8 +972,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#iperf3_server_container" title="iperf3 Server Container" class="md-nav__link">
-    iperf3 Server Container
+  <a href="#watchtower_-_automating_docker_container_base_image_updates" title="Watchtower - automating Docker container base image updates" class="md-nav__link">
+    Watchtower - automating Docker container base image updates
   </a>
   
 </li>
@@ -1022,6 +1022,13 @@
         <li class="md-nav__item">
   <a href="#zabbix_monitoring_contianer" title="Zabbix Monitoring Contianer" class="md-nav__link">
     Zabbix Monitoring Contianer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iperf3_server_container" title="iperf3 Server Container" class="md-nav__link">
+    iperf3 Server Container
   </a>
   
 </li>
@@ -1674,8 +1681,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#iperf3_server_container" title="iperf3 Server Container" class="md-nav__link">
-    iperf3 Server Container
+  <a href="#watchtower_-_automating_docker_container_base_image_updates" title="Watchtower - automating Docker container base image updates" class="md-nav__link">
+    Watchtower - automating Docker container base image updates
   </a>
   
 </li>
@@ -1728,6 +1735,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#iperf3_server_container" title="iperf3 Server Container" class="md-nav__link">
+    iperf3 Server Container
+  </a>
+  
+</li>
+      
       
       
       
@@ -1754,15 +1768,20 @@
                 
                 
                 <h1 id="docker_containers">Docker Containers<a class="headerlink" href="#docker_containers" title="Permanent link">&para;</a></h1>
-<h2 id="iperf3_server_container">iperf3 Server Container<a class="headerlink" href="#iperf3_server_container" title="Permanent link">&para;</a></h2>
+<h2 id="watchtower_-_automating_docker_container_base_image_updates">Watchtower - automating Docker container base image updates<a class="headerlink" href="#watchtower_-_automating_docker_container_base_image_updates" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
+--name watchtower <span class="se">\</span>
 --restart always <span class="se">\</span>
---name<span class="o">=</span>iperf3-server <span class="se">\</span>
--h iperf <span class="se">\</span>
--p <span class="m">5201</span>:5201 <span class="se">\</span>
--e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
-networkstatic/iperf3:latest -s
+-h watchtower <span class="se">\</span>
+-v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATIONS</span><span class="o">=</span>email <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_EMAIL_FROM</span><span class="o">=</span>Watchtower@gmail.com <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_EMAIL_TO</span><span class="o">=</span>toaddress@gmail.com <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_EMAIL_SERVER</span><span class="o">=</span>smtp.gmail.com <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER</span><span class="o">=</span>fromaddress@gmail.com <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD</span><span class="o">=</span>app_password <span class="se">\</span>
+containrrr/watchtower:latest --cleanup --debug
 </pre></div>
 
 <h2 id="cloudflare-ddns">cloudflare-ddns<a class="headerlink" href="#cloudflare-ddns" title="Permanent link">&para;</a></h2>
@@ -1844,6 +1863,17 @@ oznu/unms:latest
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PHP_TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 zabbix/zabbix-appliance:latest
+</pre></div>
+
+<h2 id="iperf3_server_container">iperf3 Server Container<a class="headerlink" href="#iperf3_server_container" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name<span class="o">=</span>iperf3-server <span class="se">\</span>
+-h iperf <span class="se">\</span>
+-p <span class="m">5201</span>:5201 <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+networkstatic/iperf3:latest -s
 </pre></div>
                 
                   
