@@ -1026,8 +1026,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pi-hole_dns_ad-blocker" title="pi-hole DNS Ad-Blocker" class="md-nav__link">
-    pi-hole DNS Ad-Blocker
+  <a href="#pi-hole_dns_ad-blocker" title="Pi-Hole DNS Ad-Blocker" class="md-nav__link">
+    Pi-Hole DNS Ad-Blocker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonarr" title="Sonarr" class="md-nav__link">
+    Sonarr
   </a>
   
 </li>
@@ -1749,8 +1756,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pi-hole_dns_ad-blocker" title="pi-hole DNS Ad-Blocker" class="md-nav__link">
-    pi-hole DNS Ad-Blocker
+  <a href="#pi-hole_dns_ad-blocker" title="Pi-Hole DNS Ad-Blocker" class="md-nav__link">
+    Pi-Hole DNS Ad-Blocker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonarr" title="Sonarr" class="md-nav__link">
+    Sonarr
   </a>
   
 </li>
@@ -1905,7 +1919,7 @@ networkstatic/iperf3:latest -s
 linuxserver/calibre-web:latest
 </pre></div>
 
-<h2 id="pi-hole_dns_ad-blocker">pi-hole DNS Ad-Blocker<a class="headerlink" href="#pi-hole_dns_ad-blocker" title="Permanent link">&para;</a></h2>
+<h2 id="pi-hole_dns_ad-blocker">Pi-Hole DNS Ad-Blocker<a class="headerlink" href="#pi-hole_dns_ad-blocker" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
@@ -1919,8 +1933,42 @@ linuxserver/calibre-web:latest
 -v /volume1/docker/pihole/pihole/:/etc/pihole <span class="se">\</span>
 -v /volume1/docker/pihole/dnsmasq.d:/etc/dnsmasq.d <span class="se">\</span>
 -v /volume1/docker/pihole/lighttpd:/etc/lighttpd <span class="se">\</span>
---dns<span class="o">=</span><span class="m">1</span>.1.1.1 --dns<span class="o">=</span><span class="m">1</span>.0.0.1 <span class="se">\</span>
+--dns<span class="o">=</span><span class="m">176</span>.103.130.130 --dns<span class="o">=</span><span class="m">176</span>.103.130.131 <span class="se">\</span>
 pihole/pihole:latest
+</pre></div>
+
+<p>Blocklists</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts</a></li>
+<li><a href="https://mirror1.malwaredomains.com/files/justdomains">https://mirror1.malwaredomains.com/files/justdomains</a></li>
+<li><a href="http://sysctl.org/cameleon/hosts">http://sysctl.org/cameleon/hosts</a></li>
+<li><a href="https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist">https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</a></li>
+<li><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt</a></li>
+<li><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt</a></li>
+<li><a href="https://hosts-file.net/ad_servers.txt">https://hosts-file.net/ad_servers.txt</a></li>
+<li><a href="https://smokingwheels.github.io/Pi-hole/allhosts">https://smokingwheels.github.io/Pi-hole/allhosts</a></li>
+<li><a href="https://dbl.oisd.nl/">https://dbl.oisd.nl/</a></li>
+<li><a href="https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt">https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt</a></li>
+<li><a href="https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt">https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt</a></li>
+<li><a href="https://filters.adtidy.org/extension/chromium/filters/14.txt">https://filters.adtidy.org/extension/chromium/filters/14.txt</a></li>
+<li><a href="https://filters.adtidy.org/extension/chromium/filters/10.txt">https://filters.adtidy.org/extension/chromium/filters/10.txt</a></li>
+<li><a href="https://filters.adtidy.org/extension/chromium/filters/11.txt">https://filters.adtidy.org/extension/chromium/filters/11.txt</a></li>
+</ul>
+<h2 id="sonarr">Sonarr<a class="headerlink" href="#sonarr" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name sonarr <span class="se">\</span>
+-h sonarr <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">0</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">0</span> <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-p <span class="m">5056</span>:8990 <span class="se">\</span>
+-p <span class="m">5057</span>:8989 <span class="se">\</span>
+-v /volume1/docker/sonarr:/config <span class="se">\</span>
+-v /volume1/activeShare/Media/TV<span class="se">\ </span>Showes/:/tv <span class="se">\</span>
+-v /volume1/activeShare/Downloads/:/downloads <span class="se">\</span>
+linuxserver/sonarr:latest
 </pre></div>
                 
                   
