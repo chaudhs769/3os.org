@@ -689,6 +689,19 @@
     Remove Old Kernels
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure_yum_to_auto-remove_old_kernels" class="md-nav__link">
+    Configure yum to auto-remove old kernels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1891,6 +1904,19 @@
     Remove Old Kernels
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure_yum_to_auto-remove_old_kernels" class="md-nav__link">
+    Configure yum to auto-remove old kernels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -2085,6 +2111,12 @@ systemctl <span class="nb">enable</span> rpcbind.socket
 <p>If your /boot partition is getting filled, you may wish to automatically remove old kernels. I find the best way to do this is to install the yum utilities package and then use a command to delete all but 2 kernels (just in case there is a problem with the latest one).</p>
 <div class="codehilite"><pre><span></span>sudo yum install yum-utils -y
 sudo package-cleanup --oldkernels --count<span class="o">=</span><span class="m">2</span>
+</pre></div>
+
+<h3 id="configure_yum_to_auto-remove_old_kernels">Configure yum to auto-remove old kernels<a class="headerlink" href="#configure_yum_to_auto-remove_old_kernels" title="Permanent link">&para;</a></h3>
+<p>Edit /etc/yum.conf
+Set the limit to desired value</p>
+<div class="codehilite"><pre><span></span><span class="nv">installonly_limit</span><span class="o">=</span><span class="m">2</span>
 </pre></div>
                 
                   
