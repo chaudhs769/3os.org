@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#raspberry_pi_3_tor_access_point_tor-pi" tabindex="1" class="md-skip">
+      <a href="#raspberry_pi_3_tor_access_point_torpi_091119_update" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -546,6 +546,13 @@
         <li class="md-nav__item">
   <a href="#optional_install_monit_service_to_reload_tor_serivce_if_down" class="md-nav__link">
     Optional: Install Monit Service to reload Tor Serivce if Down
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus" class="md-nav__link">
+    Bonus
   </a>
   
 </li>
@@ -1032,6 +1039,13 @@
         <li class="md-nav__item">
   <a href="#optional_install_monit_service_to_reload_tor_serivce_if_down" class="md-nav__link">
     Optional: Install Monit Service to reload Tor Serivce if Down
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus" class="md-nav__link">
+    Bonus
   </a>
   
 </li>
@@ -1825,6 +1839,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bonus" class="md-nav__link">
+    Bonus
+  </a>
+  
+</li>
+      
       
       
       
@@ -1850,12 +1871,12 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/raspberryPi/TOR-Pi.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="raspberry_pi_3_tor_access_point_tor-pi">Raspberry Pi 3 Tor Access Point <small>Tor-Pi</small><a class="headerlink" href="#raspberry_pi_3_tor_access_point_tor-pi" title="Permanent link">&para;</a></h1>
+                <h1 id="raspberry_pi_3_tor_access_point_torpi_091119_update">Raspberry Pi 3 Tor Access Point <small>TorPi</small> (09/11/19 UPDATE)<a class="headerlink" href="#raspberry_pi_3_tor_access_point_torpi_091119_update" title="Permanent link">&para;</a></h1>
 <h2 id="network_flow">Network Flow<a class="headerlink" href="#network_flow" title="Permanent link">&para;</a></h2>
 <p><img alt="Tor-Pi Network Flow" src="../../assets/images/RasperryPi/raspberryPi3TorAccessPoint.png" title="Tor-Pi Network Flow" /></p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Download Rasbian Strech Lite from: <a href="https://www.raspberrypi.org/downloads/raspbian/">raspberrypi.org</a></li>
+<li>Download Raspbian Buster Lite from: <a href="https://www.raspberrypi.org/downloads/raspbian/">raspberrypi.org</a></li>
 <li>Burn Image to SD-Card.</li>
 <li>Boot Raspberry Pi 3.</li>
 </ul>
@@ -1876,19 +1897,24 @@ git clone https://github.com/unixabg/RPI-Wireless-Hotspot.git
 sudo ./install
 </pre></div>
 
-<p>"Y" to agree to terms
-"Y" to use preconfigured DNS
-"Y" to use Unblock-Us DNS servers
-"N" for WiFi defaults
-Type in a new WiFi password (it will be checked)
-Type in a new SSID
-Type in your desired WiFi channel (1, 6, 11)
-Type "N" when asked - "Are you using a rtl871x chipset?"
-Type "N" for chromecast support (unless you plan to use a chromecast w/RasTor)</p>
-<div class="codehilite"><pre><span></span>sudo reboot
-sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade
+<ul>
+<li>"Y" to agree to terms</li>
+<li>"Y" to use preconfigured DNS</li>
+<li>"Y" to use Unblock-Us DNS servers</li>
+<li>"N" for WiFi defaults</li>
+<li>Type in a new WiFi password (it will be checked)</li>
+<li>Type in a new SSID</li>
+<li>Type in your desired WiFi channel (1, 6, 11)</li>
+<li>Type "N" when asked - "Are you using a rtl871x chipset?"</li>
+<li>Type "N" for chromecast support (unless you plan to use a chromecast w/RasTor)</li>
+</ul>
+<p>if you get "Failed to start hostapd.service: Unit hostapd.service is masked." error when installing the script, execute this:</p>
+<div class="codehilite"><pre><span></span>sudo systemctl unmask hostapd
+sudo systemctl <span class="nb">enable</span> hostapd
+sudo systemctl start hostapd
 </pre></div>
 
+<p>reboot before testing thw wifi</p>
 <h2 id="testing_wifi_hotspot">Testing Wifi Hotspot<a class="headerlink" href="#testing_wifi_hotspot" title="Permanent link">&para;</a></h2>
 <p>Connect to new SSID with a Phone and check if you have full Internet Connection.</p>
 <h2 id="installing_tor_service">Installing Tor Service<a class="headerlink" href="#installing_tor_service" title="Permanent link">&para;</a></h2>
@@ -1901,9 +1927,9 @@ sudo nano /etc/tor/torrc
 VirtualAddrNetwork <span class="m">10</span>.192.0.0/10
 AutomapHostsSuffixes .onion,.exit
 AutomapHostsOnResolve <span class="m">1</span>
-TransPort <span class="m">9040</span>
+TransPort <span class="m">192</span>.168.42.1:9040
 TransListenAddress <span class="m">192</span>.168.42.1
-DNSPort <span class="m">53</span>
+DNSPort <span class="m">192</span>.168.42.1:53
 DNSListenAddress <span class="m">192</span>.168.42.1
 </pre></div>
 
@@ -1953,8 +1979,16 @@ sudo nano /etc/monit/monitrc
 </pre></div>
 
 <p>Reload and add Monit to startup:</p>
-<div class="codehilite"><pre><span></span>sudo monit reload
-sudo update-rc.d monit <span class="nb">enable</span>
+<div class="codehilite"><pre><span></span>systemctl restart monit
+systemctl <span class="nb">enable</span> monit
+</pre></div>
+
+<h2 id="bonus">Bonus<a class="headerlink" href="#bonus" title="Permanent link">&para;</a></h2>
+<p>Chnage Exit Ip every 10 sec
+add this to the end of /etc/tor/torrc</p>
+<div class="codehilite"><pre><span></span>CircuitBuildTimeout <span class="m">10</span>
+LearnCircuitBuildTimeout <span class="m">0</span>
+MaxCircuitDirtiness <span class="m">10</span>
 </pre></div>
                 
                   
