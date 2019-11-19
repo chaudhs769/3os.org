@@ -26,8 +26,8 @@ audio:not([controls]) {
   display: none;
 }
 html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 60%;
+  -webkit-text-size-adjust: 60%;
 }
 button,
 html,
@@ -368,9 +368,9 @@ textarea {
   text-align: center;
 }
 input {
-  font-size: 48px;
+  font-size: 36px;
   text-align: center;
-  width: 100%;
+  width: 80%;
   margin: 10px 0;
 }
 button {
