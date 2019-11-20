@@ -811,6 +811,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#change_the_launchpad_grid_layout" class="md-nav__link">
+    Change the Launchpad Grid Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable_stricthostkeychecking_in_ssh" class="md-nav__link">
     Disable StrictHostKeyChecking in SSH
   </a>
@@ -1753,6 +1760,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#change_the_launchpad_grid_layout" class="md-nav__link">
+    Change the Launchpad Grid Layout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disable_stricthostkeychecking_in_ssh" class="md-nav__link">
     Disable StrictHostKeyChecking in SSH
   </a>
@@ -1912,6 +1926,14 @@ killall Finder
 <p>Enable Icons:</p>
 <div class="codehilite"><pre><span></span>defaults write com.apple.finder CreateDesktop <span class="nb">true</span>
 killall Finder
+</pre></div>
+
+<h2 id="change_the_launchpad_grid_layout">Change the Launchpad Grid Layout<a class="headerlink" href="#change_the_launchpad_grid_layout" title="Permanent link">&para;</a></h2>
+<p>Change the <em>springboard-columns</em> and <em>springboard-rows</em> values according to your preference</p>
+<div class="codehilite"><pre><span></span>write com.apple.dock springboard-columns -int <span class="m">9</span>
+write com.apple.dock springboard-rows -int <span class="m">7</span>
+write com.apple.dock ResetLaunchPad -bool TRUE
+killall Dock
 </pre></div>
 
 <h2 id="disable_stricthostkeychecking_in_ssh">Disable StrictHostKeyChecking in SSH<a class="headerlink" href="#disable_stricthostkeychecking_in_ssh" title="Permanent link">&para;</a></h2>
