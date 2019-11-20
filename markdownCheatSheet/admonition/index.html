@@ -261,7 +261,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../macOS/macGeneral/" class="md-tabs__link">
+        <a href="../../macOS/general/" class="md-tabs__link">
           macOS
         </a>
       
@@ -775,7 +775,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/macGeneral/" title="General" class="md-nav__link">
+    <a href="../../macOS/general/" title="General" class="md-nav__link">
       General
     </a>
   </li>
@@ -787,8 +787,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/brew/" title="Brew" class="md-nav__link">
-      Brew
+    <a href="../../macOS/ui/" title="UI Tweaks" class="md-nav__link">
+      UI Tweaks
     </a>
   </li>
 
@@ -799,8 +799,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/alfredWorkFlows/" title="Alftred Workflows" class="md-nav__link">
-      Alftred Workflows
+    <a href="../../macOS/system/" title="System Tweaks" class="md-nav__link">
+      System Tweaks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../macOS/applications/" title="Applications Tweaks" class="md-nav__link">
+      Applications Tweaks
     </a>
   </li>
 
@@ -981,18 +993,6 @@
   <li class="md-nav__item">
     <a href="../../development/npm/" title="npm" class="md-nav__link">
       npm
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../development/mongodb/" title="MongoDB" class="md-nav__link">
-      MongoDB
     </a>
   </li>
 
@@ -1456,7 +1456,7 @@
         
           <li class="md-nav__item">
   <a href="#removing_the_title" class="md-nav__link">
-    Removing the title
+    Removing The Title
   </a>
   
 </li>
@@ -1464,6 +1464,13 @@
           <li class="md-nav__item">
   <a href="#embedded_code_blocks" class="md-nav__link">
     Embedded Code Blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collapsible_blocks" class="md-nav__link">
+    Collapsible Blocks
   </a>
   
 </li>
@@ -1761,7 +1768,7 @@
         
           <li class="md-nav__item">
   <a href="#removing_the_title" class="md-nav__link">
-    Removing the title
+    Removing The Title
   </a>
   
 </li>
@@ -1769,6 +1776,13 @@
           <li class="md-nav__item">
   <a href="#embedded_code_blocks" class="md-nav__link">
     Embedded Code Blocks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collapsible_blocks" class="md-nav__link">
+    Collapsible Blocks
   </a>
   
 </li>
@@ -1929,7 +1943,7 @@ massa, nec semper lorem quam in massa.</p>
 nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
 massa, nec semper lorem quam in massa.</p>
 </div>
-<h3 id="removing_the_title">Removing the title<a class="headerlink" href="#removing_the_title" title="Permanent link">&para;</a></h3>
+<h3 id="removing_the_title">Removing The Title<a class="headerlink" href="#removing_the_title" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>!!! note &quot;&quot;
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
@@ -1977,35 +1991,31 @@ massa, nec semper lorem quam in massa.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
 nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
 massa, nec semper lorem quam in massa.</p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span>
+  <span class="n">Employees</span><span class="p">.</span><span class="n">EmployeeID</span><span class="p">,</span>
+  <span class="n">Employees</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+  <span class="n">Employees</span><span class="p">.</span><span class="n">Salary</span><span class="p">,</span>
+  <span class="n">Manager</span><span class="p">.</span><span class="n">Name</span> <span class="k">AS</span> <span class="n">Manager</span>
+<span class="k">FROM</span>
+  <span class="n">Employees</span>
+<span class="k">LEFT</span> <span class="k">JOIN</span>
+  <span class="n">Employees</span> <span class="k">AS</span> <span class="n">Manager</span>
+<span class="k">ON</span>
+  <span class="n">Employees</span><span class="p">.</span><span class="n">ManagerID</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">.</span><span class="n">EmployeeID</span>
+<span class="k">WHERE</span>
+  <span class="n">Employees</span><span class="p">.</span><span class="n">EmployeeID</span> <span class="o">=</span> <span class="s1">&#39;087652&#39;</span><span class="p">;</span>
+</pre></div>
+
+<p>Nunc eu odio eleifend, blandit leo a, volutpat sapien. Phasellus posuere in
+sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.
+Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.</p>
 </div>
-<div class="codehilite"><pre><span></span>    <span class="k">SELECT</span>
-      <span class="n">Employees</span><span class="p">.</span><span class="n">EmployeeID</span><span class="p">,</span>
-      <span class="n">Employees</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
-      <span class="n">Employees</span><span class="p">.</span><span class="n">Salary</span><span class="p">,</span>
-      <span class="n">Manager</span><span class="p">.</span><span class="n">Name</span> <span class="k">AS</span> <span class="n">Manager</span>
-    <span class="k">FROM</span>
-      <span class="n">Employees</span>
-    <span class="k">LEFT</span> <span class="k">JOIN</span>
-      <span class="n">Employees</span> <span class="k">AS</span> <span class="n">Manager</span>
-    <span class="k">ON</span>
-      <span class="n">Employees</span><span class="p">.</span><span class="n">ManagerID</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">.</span><span class="n">EmployeeID</span>
-    <span class="k">WHERE</span>
-      <span class="n">Employees</span><span class="p">.</span><span class="n">EmployeeID</span> <span class="o">=</span> <span class="s1">&#39;087652&#39;</span><span class="p">;</span>
-    <span class="ss">```</span>
-
-<span class="ss">    Nunc eu odio eleifend, blandit leo a, volutpat sapien. Phasellus posuere in</span>
-<span class="ss">    sem ut cursus. Nullam sit amet tincidunt ipsum, sit amet elementum turpis.</span>
-<span class="ss">    Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.</span>
-
-<span class="ss">### Collapsible Blocks</span>
-
-<span class="ss">Example:</span>
-
-<span class="ss">```</span> <span class="n">markdown</span>
-<span class="o">???</span> <span class="n">note</span> <span class="s2">&quot;Phasellus posuere in sem ut cursus&quot;</span>
-    <span class="n">Lorem</span> <span class="n">ipsum</span> <span class="n">dolor</span> <span class="n">sit</span> <span class="n">amet</span><span class="p">,</span> <span class="n">consectetur</span> <span class="n">adipiscing</span> <span class="n">elit</span><span class="p">.</span> <span class="no">Null</span><span class="n">a</span> <span class="n">et</span> <span class="n">euismod</span>
-    <span class="no">null</span><span class="n">a</span><span class="p">.</span> <span class="n">Curabitur</span> <span class="n">feugiat</span><span class="p">,</span> <span class="n">tortor</span> <span class="n">non</span> <span class="n">consequat</span> <span class="n">finibus</span><span class="p">,</span> <span class="n">justo</span> <span class="n">purus</span> <span class="n">auctor</span>
-    <span class="n">massa</span><span class="p">,</span> <span class="n">nec</span> <span class="n">semper</span> <span class="n">lorem</span> <span class="n">quam</span> <span class="k">in</span> <span class="n">massa</span><span class="p">.</span>
+<h3 id="collapsible_blocks">Collapsible Blocks<a class="headerlink" href="#collapsible_blocks" title="Permanent link">&para;</a></h3>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span>??? note &quot;Phasellus posuere in sem ut cursus&quot;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+    massa, nec semper lorem quam in massa.
 </pre></div>
 
 <p><strong>Result:</strong></p>

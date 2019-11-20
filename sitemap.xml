@@ -111,17 +111,22 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/macOS/macGeneral/</loc>
+     <loc>https://3os.org/macOS/general/</loc>
      <lastmod>2019-11-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/macOS/brew/</loc>
+     <loc>https://3os.org/macOS/ui/</loc>
      <lastmod>2019-11-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/macOS/alfredWorkFlows/</loc>
+     <loc>https://3os.org/macOS/system/</loc>
+     <lastmod>2019-11-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://3os.org/macOS/applications/</loc>
      <lastmod>2019-11-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -167,11 +172,6 @@
     </url>
     <url>
      <loc>https://3os.org/development/npm/</loc>
-     <lastmod>2019-11-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://3os.org/development/mongodb/</loc>
      <lastmod>2019-11-20</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -10,10 +10,10 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Development - MongoDB Secure MongoDB Replica Setup">
+        <meta name="description" content="macOS System tweaks and tips for better experience, productivity and workflow and more">
       
       
-        <link rel="canonical" href="https://3os.org/development/mongodb/">
+        <link rel="canonical" href="https://3os.org/macOS/system/">
       
       
         <meta name="author" content="Stas Kosatuhin">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Development - MongoDB</title>
+        <title>macOS System Tweaks</title>
       
     
     
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#mongodb" tabindex="1" class="md-skip">
+      <a href="#macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -142,7 +142,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Development - MongoDB
+                macOS System Tweaks
               
             </span>
           
@@ -261,7 +261,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../macOS/macGeneral/" class="md-tabs__link">
+        <a href="../general/" class="md-tabs__link md-tabs__link--active">
           macOS
         </a>
       
@@ -287,7 +287,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../git/" class="md-tabs__link md-tabs__link--active">
+        <a href="../../development/git/" class="md-tabs__link">
           Development
         </a>
       
@@ -754,10 +754,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       macOS
@@ -775,7 +777,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/macGeneral/" title="General" class="md-nav__link">
+    <a href="../general/" title="General" class="md-nav__link">
       General
     </a>
   </li>
@@ -787,9 +789,128 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/brew/" title="Brew" class="md-nav__link">
-      Brew
+    <a href="../ui/" title="UI Tweaks" class="md-nav__link">
+      UI Tweaks
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        System Tweaks
+      </label>
+    
+    <a href="./" title="System Tweaks" class="md-nav__link md-nav__link--active">
+      System Tweaks
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#import_rsa_keys_to_macos_keychain" class="md-nav__link">
+    Import RSA Keys to macOS Keychain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable_stricthostkeychecking_in_ssh" class="md-nav__link">
+    Disable StrictHostKeyChecking in SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax_highlighting_in_nano_on_mac_os_x" class="md-nav__link">
+    Syntax Highlighting In Nano on Mac OS X
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableenable_sip_system_integrity_protection" class="md-nav__link">
+    Disable/Enable SIP (System Integrity Protection)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running_multi_instances_of_an_application" class="md-nav__link">
+    Running Multi Instances of an Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lunch_firefox_profile_manager_as_application" class="md-nav__link">
+    Lunch Firefox Profile Manager as Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing_rbenv_ruby_send_box_-_ruby_alternative_to_the_one_that_macos_uses" class="md-nav__link">
+    Installing rbenv (ruby send box) - Ruby alternative to the one that macOS uses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_listening_ports_and_programs_and_users_netstat_like" class="md-nav__link">
+    List listening Ports and Programs and Users (netstat like)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flush_dns" class="md-nav__link">
+    Flush DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google_drive_file_sync_fix_for_macos" class="md-nav__link">
+    Google Drive File Sync Fix for macOS
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -799,8 +920,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/alfredWorkFlows/" title="Alftred Workflows" class="md-nav__link">
-      Alftred Workflows
+    <a href="../applications/" title="Applications Tweaks" class="md-nav__link">
+      Applications Tweaks
     </a>
   </li>
 
@@ -874,12 +995,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
       Development
@@ -897,7 +1016,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../git/" title="Git" class="md-nav__link">
+    <a href="../../development/git/" title="Git" class="md-nav__link">
       Git
     </a>
   </li>
@@ -928,7 +1047,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/dockerGeneral/" title="General" class="md-nav__link">
+    <a href="../../development/docker/dockerGeneral/" title="General" class="md-nav__link">
       General
     </a>
   </li>
@@ -940,7 +1059,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/dockerContainers/" title="Containers" class="md-nav__link">
+    <a href="../../development/docker/dockerContainers/" title="Containers" class="md-nav__link">
       Containers
     </a>
   </li>
@@ -957,7 +1076,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../python/" title="Python" class="md-nav__link">
+    <a href="../../development/python/" title="Python" class="md-nav__link">
       Python
     </a>
   </li>
@@ -969,7 +1088,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ruby/" title="Ruby" class="md-nav__link">
+    <a href="../../development/ruby/" title="Ruby" class="md-nav__link">
       Ruby
     </a>
   </li>
@@ -981,85 +1100,9 @@
 
 
   <li class="md-nav__item">
-    <a href="../npm/" title="npm" class="md-nav__link">
+    <a href="../../development/npm/" title="npm" class="md-nav__link">
       npm
     </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        MongoDB
-      </label>
-    
-    <a href="./" title="MongoDB" class="md-nav__link md-nav__link--active">
-      MongoDB
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#secure_mongodb_replica_setup" class="md-nav__link">
-    Secure MongoDB Replica Setup
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#server_setup" class="md-nav__link">
-    Server Setup
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#initiate_connection" class="md-nav__link">
-    Initiate Connection
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" class="md-nav__link md-nav__link--active">
-            Comments
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1641,29 +1684,72 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#secure_mongodb_replica_setup" class="md-nav__link">
-    Secure MongoDB Replica Setup
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#server_setup" class="md-nav__link">
-    Server Setup
+  <a href="#import_rsa_keys_to_macos_keychain" class="md-nav__link">
+    Import RSA Keys to macOS Keychain
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#initiate_connection" class="md-nav__link">
-    Initiate Connection
+      
+        <li class="md-nav__item">
+  <a href="#disable_stricthostkeychecking_in_ssh" class="md-nav__link">
+    Disable StrictHostKeyChecking in SSH
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#syntax_highlighting_in_nano_on_mac_os_x" class="md-nav__link">
+    Syntax Highlighting In Nano on Mac OS X
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disableenable_sip_system_integrity_protection" class="md-nav__link">
+    Disable/Enable SIP (System Integrity Protection)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running_multi_instances_of_an_application" class="md-nav__link">
+    Running Multi Instances of an Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lunch_firefox_profile_manager_as_application" class="md-nav__link">
+    Lunch Firefox Profile Manager as Application
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing_rbenv_ruby_send_box_-_ruby_alternative_to_the_one_that_macos_uses" class="md-nav__link">
+    Installing rbenv (ruby send box) - Ruby alternative to the one that macOS uses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_listening_ports_and_programs_and_users_netstat_like" class="md-nav__link">
+    List listening Ports and Programs and Users (netstat like)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flush_dns" class="md-nav__link">
+    Flush DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google_drive_file_sync_fix_for_macos" class="md-nav__link">
+    Google Drive File Sync Fix for macOS
+  </a>
   
 </li>
       
@@ -1689,111 +1775,167 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/development/mongodb.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/macOS/system.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="mongodb">MongoDB<a class="headerlink" href="#mongodb" title="Permanent link">&para;</a></h1>
-<h2 id="secure_mongodb_replica_setup">Secure MongoDB Replica Setup<a class="headerlink" href="#secure_mongodb_replica_setup" title="Permanent link">&para;</a></h2>
-<p>ssh to server1
-edit <code>/etc/hosts</code> to contain other two servers server2, server3<br />
-repeat action for all servers respectively</p>
-<h3 id="server_setup">Server Setup<a class="headerlink" href="#server_setup" title="Permanent link">&para;</a></h3>
-<p>ssh to server</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> <span class="o">&amp;&amp;</span>
-openssl rand -base64 <span class="m">756</span> &gt; keyfile <span class="o">&amp;&amp;</span>
-chmod <span class="m">400</span> keyfile
-
-scp keyfile user@server2:~/
-scp keyfile user@server3:~/
-
-sudo chown mongodb:mongodb keyfile
-sudo mv keyfile /var/lib/mongodb/
+                <h1 id="macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow">macOS System Tweaks and Guides for Better Experience, Productivity and Workflow<a class="headerlink" href="#macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow" title="Permanent link">&para;</a></h1>
+<h2 id="import_rsa_keys_to_macos_keychain">Import RSA Keys to macOS Keychain<a class="headerlink" href="#import_rsa_keys_to_macos_keychain" title="Permanent link">&para;</a></h2>
+<p>Copy your id_rsa, id_rsa.pub to <em>~/.ssh/</em> folder</p>
+<p>Step 1 - Store the key in the keychain
+Just do this once:</p>
+<div class="codehilite"><pre><span></span>ssh-add -K ~/.ssh/<span class="o">[</span>your-private-key<span class="o">]</span>
 </pre></div>
 
-<p>edit <code>/etc/mongod.conf</code></p>
-<p>Replace <em>#security</em> with:</p>
-<div class="codehilite"><pre><span></span>#security:
-  #keyFile: /var/lib/mongodb/keyfile
+<p>Enter your key passphrase, and you won't be asked for it again.</p>
+<p>(If you're on a pre-Sierra version of OSX, you're done, Step 2 is not required.)</p>
+<p>Step 2 - Configure SSH to always use the keychain
+It seems that OSX Sierra removed the convenient behavior of persisting your keys between logins, and the update to ssh no longer uses the keychain by default. Because of this, you will get prompted to enter the passphrase for a key after you upgrade, and again after each restart.</p>
+<p>The solution is fairly simple, and is outlined in this github thread comment. Here's how you set it up:</p>
+<p>Ensure you've completed Step 1 above to store the key in the keychain.</p>
+<p>If you haven't already, create an ~/.ssh/config file. In other words, in the .ssh directory in your home dir, make a file called config.</p>
+<p>In that .ssh/config file, add the following lines:</p>
+<div class="codehilite"><pre><span></span>Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
 </pre></div>
 
-<p>Replace <em>#replication</em> with:</p>
-<div class="codehilite"><pre><span></span>replication:
-  replSetName: rs0              (or whatever name you want)
+<p>Change ~/.ssh/id_rsa to the actual filename of your private key. If you have other private keys in your ~.ssh directory, also add an IdentityFile line for each of them. For example, I have one additional line that reads IdentityFile ~/.ssh/id_ed25519 for a 2<sup>nd</sup> private key.</p>
+<p>The UseKeychain yes is the key part, which tells SSH to look in your OSX keychain for the key passphrase.</p>
+<p>That's it! Next time you load any ssh connection, it will try the private keys you've specified, and it will look for their passphrase in the OSX keychain. No passphrase typing required.</p>
+<h2 id="disable_stricthostkeychecking_in_ssh">Disable StrictHostKeyChecking in SSH<a class="headerlink" href="#disable_stricthostkeychecking_in_ssh" title="Permanent link">&para;</a></h2>
+<p>To disable strict host checking on OS X for the current user,
+create or edit ~/.ssh/ssh_config and add the following lines:</p>
+<div class="codehilite"><pre><span></span>   StrictHostKeyChecking no
 </pre></div>
 
-<p>Save edits and exit</p>
-<div class="codehilite"><pre><span></span>sudo systemctl restart mongod.service
+<h2 id="syntax_highlighting_in_nano_on_mac_os_x">Syntax Highlighting In Nano on Mac OS X<a class="headerlink" href="#syntax_highlighting_in_nano_on_mac_os_x" title="Permanent link">&para;</a></h2>
+<p>Install Nano from homebrew
+Create <em>nanorc</em> file with the syntax below</p>
+<div class="codehilite"><pre><span></span>brew install nano
+nano ~/.nanorc
 </pre></div>
 
-<p>ssh to server2,server3 and repeat the <a href="#server_setup">Server Setup</a> section</p>
-<h3 id="initiate_connection">Initiate Connection<a class="headerlink" href="#initiate_connection" title="Permanent link">&para;</a></h3>
-<p>ssh to server1</p>
-<div class="codehilite"><pre><span></span>mongo
-&gt; rs.initiate<span class="o">()</span>
-&gt; rs.add<span class="o">(</span><span class="s1">&#39;server2:27017&#39;</span><span class="o">)</span>
-&gt; rs.add<span class="o">(</span><span class="s1">&#39;server3:27017&#39;</span><span class="o">)</span>
+<p>nanorc:</p>
+<div class="codehilite"><pre><span></span>include /usr/local/share/nano/asm.nanorc
+include /usr/local/share/nano/awk.nanorc
+include /usr/local/share/nano/c.nanorc
+include /usr/local/share/nano/cmake.nanorc
+include /usr/local/share/nano/css.nanorc
+include /usr/local/share/nano/debian.nanorc
+include /usr/local/share/nano/fortran.nanorc
+include /usr/local/share/nano/gentoo.nanorc
+include /usr/local/share/nano/groff.nanorc
+include /usr/local/share/nano/html.nanorc
+include /usr/local/share/nano/java.nanorc
+include /usr/local/share/nano/makefile.nanorc
+include /usr/local/share/nano/man.nanorc
+include /usr/local/share/nano/mgp.nanorc
+include /usr/local/share/nano/mutt.nanorc
+include /usr/local/share/nano/nanorc.nanorc
+include /usr/local/share/nano/objc.nanorc
+include /usr/local/share/nano/ocaml.nanorc
+include /usr/local/share/nano/patch.nanorc
+include /usr/local/share/nano/perl.nanorc
+include /usr/local/share/nano/php.nanorc
+include /usr/local/share/nano/pov.nanorc
+include /usr/local/share/nano/python.nanorc
+include /usr/local/share/nano/ruby.nanorc
+include /usr/local/share/nano/sh.nanorc
+include /usr/local/share/nano/tcl.nanorc
+include /usr/local/share/nano/tex.nanorc
 </pre></div>
 
-<p>Now one of the servers should be the PRIMARY and others should be SECONDARY</p>
-<p>On the same server, edit <code>/etc/mongod.conf</code></p>
-<p>Replace:</p>
-<div class="codehilite"><pre><span></span>#security:
-  #keyFile: /var/lib/mongodb/keyfile
+<p>Save &amp; Exit</p>
+<div class="codehilite"><pre><span></span><span class="nb">source</span> ~/.zshrc
 </pre></div>
 
-<p>with:</p>
-<div class="codehilite"><pre><span></span>security:
-  keyFile: /var/lib/mongodb/keyfile
+<h2 id="disableenable_sip_system_integrity_protection">Disable/Enable SIP (System Integrity Protection)<a class="headerlink" href="#disableenable_sip_system_integrity_protection" title="Permanent link">&para;</a></h2>
+<p>Reboot your Mac into Recovery Mode by restarting your computer and holding down <strong>Command+R</strong> until the Apple logo appears on your screen.<br />
+Click <em>Utilities &gt; Terminal.</em><br />
+In the Terminal window, type in:</p>
+<p>Status:</p>
+<div class="codehilite"><pre><span></span>csrutil status
 </pre></div>
 
-<p>Save edits and exit</p>
-<div class="codehilite"><pre><span></span>sudo systemctl restart mongod.service
+<p>Disable:</p>
+<div class="codehilite"><pre><span></span>csrutil disable
 </pre></div>
 
-<p>ssh to server2, server3 and repeat the <a href="#initiate_connection">Initiate Connection</a> section</p>
-<p>again one of the servers should be the PRIMARY and others should be SECONDARY</p>
-<p>ssh to the PRIMARY server</p>
-<div class="codehilite"><pre><span></span>mongo
-&gt; use admin
-&gt; db.createUser<span class="o">({</span>user: <span class="s2">&quot;yourUsernameHere&quot;</span>, pwd: <span class="s2">&quot;yourPasswordHere&quot;</span>, roles: <span class="o">[{</span>role: <span class="s2">&quot;userAdminAnyDatabase&quot;</span>, db: <span class="s2">&quot;admin&quot;</span><span class="o">}</span>, <span class="o">{</span>role: <span class="s2">&quot;clusterAdmin&quot;</span>, db: <span class="s2">&quot;admin&quot;</span><span class="o">}]})</span>
-&gt; use myDB
-&gt; db.createUser<span class="o">({</span>user: <span class="s2">&quot;databaseUsernameHere&quot;</span>, pwd: <span class="s2">&quot;databasePasswordHere&quot;</span>, roles: <span class="o">[{</span>role: <span class="s2">&quot;readWrite&quot;</span>, db: <span class="s2">&quot;myDB&quot;</span><span class="o">}]})</span>
+<p>Enable:</p>
+<div class="codehilite"><pre><span></span>csrutil <span class="nb">enable</span>
 </pre></div>
 
-<p>ssh to SECONDARY</p>
-<div class="codehilite"><pre><span></span>mongo
-&gt; rs.slaveOk<span class="o">()</span>
+<p>Press Enter and restart your Mac.</p>
+<h2 id="running_multi_instances_of_an_application">Running Multi Instances of an Application<a class="headerlink" href="#running_multi_instances_of_an_application" title="Permanent link">&para;</a></h2>
+<p>Launch the Script Editor choose temporary folder</p>
+<p>Copy the command to be executed to the Script Editor</p>
+<div class="codehilite"><pre><span></span><span class="k">do</span> shell script <span class="s2">&quot;open -n &lt;path to application&gt;&quot;</span>
 </pre></div>
 
-<p>ssh to other SECONDARY</p>
-<div class="codehilite"><pre><span></span>mongo
-&gt; rs.slaveOk<span class="o">()</span>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>do shell script "open -n /Applications/Visual Studio Code.app/"</p>
+</div>
+<p>File &gt; Export</p>
+<p>Use the following settings:</p>
+<ul>
+<li>Save As: <strong>Your New Application Name</strong></li>
+<li>Where: <strong>Applications</strong></li>
+<li>File Format: <strong>Application</strong></li>
+</ul>
+<p><ins>Change The Icon of Your New Application:</ins></p>
+<p>In <strong>Finder</strong> got to <strong>Applications</strong> folder.
+Right Click on the new <strong>Your New Application</strong> application we just created and click <strong>Get Info</strong>.
+Drug the original application icon (or any other) to the  in the left corner of the "get info" menu.</p>
+<h2 id="lunch_firefox_profile_manager_as_application">Lunch Firefox Profile Manager as Application<a class="headerlink" href="#lunch_firefox_profile_manager_as_application" title="Permanent link">&para;</a></h2>
+<p>Launch the Script Editor choose temporary folder</p>
+<p>Copy the command to be executed to the Script Editor</p>
+<div class="codehilite"><pre><span></span><span class="k">do</span> shell script <span class="s2">&quot;/Applications/Firefox.app/Contents/MacOS/firefox -ProfileManager &amp;&gt; /dev/null &amp;&quot;</span>
 </pre></div>
 
-<hr />
-<p>to verify everything was done correctly</p>
-<p>ssh to PRIMARY</p>
-<div class="codehilite"><pre><span></span>mongo
-&gt; use admin
-&gt; db.auth<span class="o">(</span><span class="s2">&quot;yourUsernameHere&quot;</span>, <span class="s2">&quot;yourPasswordHere&quot;</span><span class="o">)</span>
-<span class="m">1</span>
-&gt; use myDB
-&gt; db.auth<span class="o">(</span><span class="s2">&quot;databaseUsernameHere&quot;</span>, <span class="s2">&quot;databasePasswordHere&quot;</span><span class="o">)</span>
-<span class="m">1</span>
-&gt; <span class="k">for</span> <span class="o">(</span>var <span class="nv">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> i&lt;<span class="o">=</span> <span class="m">10</span><span class="p">;</span> i++<span class="o">)</span> db.replicaTestCollection.insert<span class="o">(</span> <span class="o">{</span> x : i <span class="o">}</span> <span class="o">)</span>
-WriteResult<span class="o">({</span> <span class="s2">&quot;nInserted&quot;</span> : <span class="m">1</span> <span class="o">})</span>
-&gt; <span class="nb">exit</span>
+<p>File &gt; Export</p>
+<p>Use the following settings:</p>
+<ul>
+<li>Save As: <strong>Firefox Profile Manager</strong></li>
+<li>Where: <strong>Applications</strong></li>
+<li>File Format: <strong>Application</strong></li>
+</ul>
+<p><ins>Change The Icon of Your New Firefox Profile Manager Application:</ins></p>
+<p>In <strong>Finder</strong> got to <strong>Applications</strong> folder.
+Right Click on the new <strong>Firefox Profile Manager</strong> application we just created and click <strong>Get Info</strong>.
+Drug the original application to the icon in the left corner of the "get info" menu.</p>
+<h2 id="installing_rbenv_ruby_send_box_-_ruby_alternative_to_the_one_that_macos_uses">Installing rbenv (ruby send box) - Ruby alternative to the one that macOS uses<a class="headerlink" href="#installing_rbenv_ruby_send_box_-_ruby_alternative_to_the_one_that_macos_uses" title="Permanent link">&para;</a></h2>
+<p>Install rbenv with brew</p>
+<div class="codehilite"><pre><span></span>brew install rbenv
 </pre></div>
 
-<p>ssh to any SECONDARY</p>
-<div class="codehilite"><pre><span></span>&gt; use myDB
-&gt; db.auth<span class="o">(</span><span class="s2">&quot;databaseUsernameHere&quot;</span>, <span class="s2">&quot;databasePasswordHere&quot;</span><span class="o">)</span>
-<span class="m">1</span>
-&gt; db.replicaTestCollection.count<span class="o">()</span>
-<span class="m">11</span>
+<p>Add eval <code>"$(rbenv init -)"</code> to the end of <code>~/.zshrc</code> or <code>~/.bash_profile</code></p>
+<p>Install a ruby version</p>
+<div class="codehilite"><pre><span></span>rbenv install <span class="m">2</span>.3.1
 </pre></div>
 
-<p>Credit to <a href="https://github.com/bergerg" title="github.com/bergerg">bergerg</a> for this guide.</p>
+<p>Select a ruby version by rbenv</p>
+<div class="codehilite"><pre><span></span>rbenv global <span class="m">2</span>.3.1
+</pre></div>
+
+<p>Open a new terminal window</p>
+<p>Verify that the right gem folder is being used with <code>gem env home</code>(should report something in your user folder not system wide)</p>
+<h2 id="list_listening_ports_and_programs_and_users_netstat_like">List listening Ports and Programs and Users <em>(netstat like)</em><a class="headerlink" href="#list_listening_ports_and_programs_and_users_netstat_like" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sudo lsof -i -P <span class="p">|</span> grep -i <span class="s2">&quot;listen&quot;</span>
+</pre></div>
+
+<h2 id="flush_dns">Flush DNS<a class="headerlink" href="#flush_dns" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sudo killall -HUP mDNSResponder<span class="p">;</span>sudo killall mDNSResponderHelper<span class="p">;</span>sudo dscacheutil -flushcache
+</pre></div>
+
+<h2 id="google_drive_file_sync_fix_for_macos">Google Drive File Sync Fix for macOS<a class="headerlink" href="#google_drive_file_sync_fix_for_macos" title="Permanent link">&para;</a></h2>
+<p>quit Google Drive</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Google
+mv DriveFS DriveFS.old
+</pre></div>
+
+<p>relaunch Google Drive</p>
                 
                   
                 
@@ -1806,9 +1948,9 @@ WriteResult<span class="o">({</span> <span class="s2">&quot;nInserted&quot;</spa
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://3os.org/development/mongodb/";
+      this.page.url = "https://3os.org/macOS/system/";
       this.page.identifier =
-        "development/mongodb/";
+        "macOS/system/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -1830,7 +1972,7 @@ WriteResult<span class="o">({</span> <span class="s2">&quot;nInserted&quot;</spa
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../npm/" title="npm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ui/" title="UI Tweaks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1839,19 +1981,19 @@ WriteResult<span class="o">({</span> <span class="s2">&quot;nInserted&quot;</spa
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                npm
+                UI Tweaks
               </span>
             </div>
           </a>
         
         
-          <a href="../../windows/windowsGeneral/" title="Windows General" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../applications/" title="Applications Tweaks" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Windows General
+                Applications Tweaks
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
