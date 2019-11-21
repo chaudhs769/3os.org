@@ -1747,6 +1747,7 @@ killall Finder
 </pre></div>
 
 <h2 id="change_the_launchpad_grid_layout">Change the Launchpad Grid Layout<a class="headerlink" href="#change_the_launchpad_grid_layout" title="Permanent link">&para;</a></h2>
+<p><img src="/assets/images/macOS/launchpad.jpg" ></p>
 <p>Change the <em>springboard-columns</em> and <em>springboard-rows</em> values according to your preference</p>
 <div class="codehilite"><pre><span></span>write com.apple.dock springboard-columns -int <span class="m">9</span>
 write com.apple.dock springboard-rows -int <span class="m">7</span>
@@ -1754,6 +1755,8 @@ write com.apple.dock ResetLaunchPad -bool TRUE
 killall Dock
 </pre></div>
 
+<p>Result:
+src/assets/images/macOS/launchpad.jpg</p>
 <h2 id="reset_launchpad_icons_sort">Reset Launchpad Icons Sort<a class="headerlink" href="#reset_launchpad_icons_sort" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>defaults write com.apple.dock ResetLaunchPad -bool true<span class="p">;</span> killall Dock
 </pre></div>
