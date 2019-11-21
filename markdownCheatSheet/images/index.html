@@ -1428,6 +1428,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#embedding_images_with_html_tags" class="md-nav__link">
+    Embedding Images With HTML Tags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#embedding_images" class="md-nav__link">
     Embedding Images
   </a>
@@ -1635,6 +1642,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#embedding_images_with_html_tags" class="md-nav__link">
+    Embedding Images With HTML Tags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#embedding_images" class="md-nav__link">
     Embedding Images
   </a>
@@ -1683,6 +1697,27 @@
                 <h1 id="images">Images<a class="headerlink" href="#images" title="Permanent link">&para;</a></h1>
 <p>Images have a similar syntax to <a href="../links/" title="links markdowns">links</a> but include a preceding exclamation point.<br />
 <mark>All images will render in original size if not specified otherwise.</mark></p>
+<h2 id="embedding_images_with_html_tags">Embedding Images With HTML Tags<a class="headerlink" href="#embedding_images_with_html_tags" title="Permanent link">&para;</a></h2>
+<p>Place an image with <strong>Reference</strong> link at center of the page from link:</p>
+<div class="codehilite"><pre><span></span>&lt;div style=&quot;width:50%; margin:0 auto&quot;&gt;
+   &lt;img src=&quot;https://octodex.github.com/images/minion.png&quot; alt=&quot;image with reference link&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+
+<p><strong>Result:</strong>
+<div style="width:50%; margin:0 auto">
+   <img src="https://octodex.github.com/images/minion.png" alt="image with reference link">
+</div></p>
+<p>Place an image with <strong>Relative</strong> link at center of the page from link:</p>
+<div class="codehilite"><pre><span></span>&lt;div style=&quot;width:80%; margin:0 auto&quot;&gt;
+   &lt;img src=&quot;/assets/images/example/minion500x500.png&quot; alt=&quot;image with relative link&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+
+<p><strong>Result:</strong>
+<div style="width:80%; margin:0 auto">
+   <img src="https://octodex.github.com/images/minion.png" alt="minion">
+</div></p>
 <h2 id="embedding_images">Embedding Images<a class="headerlink" href="#embedding_images" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>![minion](https://octodex.github.com/images/minion.png)
 </pre></div>
@@ -1699,23 +1734,23 @@
 <p><strong>Result:</strong><br />
 <img src="https://octodex.github.com/images/minion.png" width=200></p>
 <h2 id="inline_image_with_text">Inline Image With Text<a class="headerlink" href="#inline_image_with_text" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>Inline ![minion](../assets/images/example/minion100x100.png) With Relative Link
+<div class="codehilite"><pre><span></span>Inline ![minion](/assets/images/example/minion100x100.png) With Relative Link
 
 Inline &lt;img src=&quot;https://octodex.github.com/images/minion.png&quot; width=50&gt; With Reference Link
 </pre></div>
 
 <p><strong>Result:</strong><br />
-Inline <img alt="minion" src="../../assets/images/example/minion100x100.png" /> With Relative Link</p>
+Inline <img alt="minion" src="/assets/images/example/minion100x100.png" /> With Relative Link</p>
 <p>Inline <img src="https://octodex.github.com/images/minion.png" width=50> With Reference Link</p>
 <h2 id="block_quotes_with_image">Block Quotes with Image<a class="headerlink" href="#block_quotes_with_image" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>&gt; :camera: __Figure Title__  
-&gt; ![minion](../assets/images/example/minion500x500.png)
+&gt; ![minion](/assets/images/example/minion500x500.png)
 </pre></div>
 
 <p><strong>Result:</strong>  </p>
 <blockquote>
 <p><img alt="📷" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/1f4f7.svg" title=":camera:" /> <strong>Figure Title</strong><br />
-<img alt="minion" src="../../assets/images/example/minion500x500.png" /></p>
+<img alt="minion" src="/assets/images/example/minion500x500.png" /></p>
 </blockquote>
                 
                   
