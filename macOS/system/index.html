@@ -849,6 +849,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#force_language_change_on_iterm_focus_to_english" class="md-nav__link">
+    Force Language Change on iTerm Focus to English
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disableenable_sip_system_integrity_protection" class="md-nav__link">
     Disable/Enable SIP (System Integrity Protection)
   </a>
@@ -1705,6 +1712,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#force_language_change_on_iterm_focus_to_english" class="md-nav__link">
+    Force Language Change on iTerm Focus to English
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#disableenable_sip_system_integrity_protection" class="md-nav__link">
     Disable/Enable SIP (System Integrity Protection)
   </a>
@@ -1778,7 +1792,8 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/macOS/system.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow">macOS System Tweaks and Guides for Better Experience, Productivity and Workflow<a class="headerlink" href="#macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow" title="Permanent link">&para;</a></h1>
+                <p><link rel="stylesheet" href="/assets/CSS/roundedCorners.css"></p>
+<h1 id="macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow">macOS System Tweaks and Guides for Better Experience, Productivity and Workflow<a class="headerlink" href="#macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow" title="Permanent link">&para;</a></h1>
 <h2 id="import_rsa_keys_to_macos_keychain">Import RSA Keys to macOS Keychain<a class="headerlink" href="#import_rsa_keys_to_macos_keychain" title="Permanent link">&para;</a></h2>
 <p>Copy your id_rsa, id_rsa.pub to <em>~/.ssh/</em> folder</p>
 <p>Step 1 - Store the key in the keychain
@@ -1849,6 +1864,18 @@ include /usr/local/share/nano/tex.nanorc
 <p>Save &amp; Exit</p>
 <div class="codehilite"><pre><span></span><span class="nb">source</span> ~/.zshrc
 </pre></div>
+
+<h2 id="force_language_change_on_iterm_focus_to_english">Force Language Change on iTerm Focus to English<a class="headerlink" href="#force_language_change_on_iterm_focus_to_english" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Install <strong>KeyBoard Maestro</strong></li>
+<li>Create a group in <strong>Groups</strong> section. I named my <strong>Personal</strong></li>
+<li>Now create a macro with the name <strong>Set iTerm Application Language.</strong></li>
+<li>Add another trigger -&gt; <strong>This application</strong> -&gt; Select <strong>iTerm</strong> -&gt; Select <strong>Active</strong> -&gt; Repeating every <strong>1 seconds</strong>.</li>
+<li>Add <strong>New Action</strong> -&gt; Select <strong>Set KeyBoard Layout</strong> -&gt; Select the keyboard layout (i.e., language preference).</li>
+</ul>
+<div style="width:100%; margin:0 auto">
+   <img src="/assets/images/macOS/itermToUS.jpg" alt="mac image">
+</div>
 
 <h2 id="disableenable_sip_system_integrity_protection">Disable/Enable SIP (System Integrity Protection)<a class="headerlink" href="#disableenable_sip_system_integrity_protection" title="Permanent link">&para;</a></h2>
 <p>Reboot your Mac into Recovery Mode by restarting your computer and holding down <strong>Command+R</strong> until the Apple logo appears on your screen.<br />
