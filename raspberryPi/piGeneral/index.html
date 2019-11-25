@@ -883,15 +883,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic_configuration" class="md-nav__link">
-    Basic  Configuration
+  <a href="#basic_raspbian_configuration" class="md-nav__link">
+    Basic Raspbian Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#update_os" class="md-nav__link">
-    Update OS
+  <a href="#update_raspbian_os" class="md-nav__link">
+    Update Raspbian OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install_fish_shell_on_raspbian" class="md-nav__link">
+    Install Fish Shell on Raspbian
   </a>
   
 </li>
@@ -1724,15 +1731,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic_configuration" class="md-nav__link">
-    Basic  Configuration
+  <a href="#basic_raspbian_configuration" class="md-nav__link">
+    Basic Raspbian Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#update_os" class="md-nav__link">
-    Update OS
+  <a href="#update_raspbian_os" class="md-nav__link">
+    Update Raspbian OS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install_fish_shell_on_raspbian" class="md-nav__link">
+    Install Fish Shell on Raspbian
   </a>
   
 </li>
@@ -1844,19 +1858,26 @@
                   <a href="https://github.com/fire1ce/3os.org/edit/master/src/raspberryPi/piGeneral.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <p><link rel="stylesheet" href="/assets/CSS/roundedCorners.css"></p>
-<h1 id="raspberry_pi_tips_tricks">Raspberry Pi Tips &amp; Tricks<a class="headerlink" href="#raspberry_pi_tips_tricks" title="Permanent link">&para;</a></h1>
+                <h1 id="raspberry_pi_tips_tricks">Raspberry Pi Tips &amp; Tricks<a class="headerlink" href="#raspberry_pi_tips_tricks" title="Permanent link">&para;</a></h1>
 <h2 id="default_user_and_password_after_installation">Default User and Password After Installation<a class="headerlink" href="#default_user_and_password_after_installation" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>User: pi
 Password: raspberry
 </pre></div>
 
-<h2 id="basic_configuration">Basic  Configuration<a class="headerlink" href="#basic_configuration" title="Permanent link">&para;</a></h2>
+<h2 id="basic_raspbian_configuration">Basic Raspbian Configuration<a class="headerlink" href="#basic_raspbian_configuration" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo raspi-config
 </pre></div>
 
-<h2 id="update_os">Update OS<a class="headerlink" href="#update_os" title="Permanent link">&para;</a></h2>
+<h2 id="update_raspbian_os">Update Raspbian OS<a class="headerlink" href="#update_raspbian_os" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade -y
+</pre></div>
+
+<h2 id="install_fish_shell_on_raspbian">Install Fish Shell on Raspbian<a class="headerlink" href="#install_fish_shell_on_raspbian" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:fish-shell/release-2
+sudo apt-get update
+sudo apt-get install fish
+sudo usermod -s /usr/bin/fish pi
 </pre></div>
 
 <h2 id="install_oh-my-zsh_on_raspbian">Install Oh-My-Zsh on Raspbian<a class="headerlink" href="#install_oh-my-zsh_on_raspbian" title="Permanent link">&para;</a></h2>
