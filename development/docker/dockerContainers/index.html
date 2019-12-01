@@ -1969,22 +1969,25 @@ joshuaavalon/cloudflare-ddns:latest
 </pre></div>
 
 <h2 id="ubiquiti_unifi_controller_on_synology_nas">Ubiquiti Unifi Controller On Synology NAS<a class="headerlink" href="#ubiquiti_unifi_controller_on_synology_nas" title="Permanent link">&para;</a></h2>
-<p>based on <em>jacobalberty/unifi:latest</em> image for Synology NAS</p>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 --name<span class="o">=</span>unifi-controller <span class="se">\</span>
---net<span class="o">=</span>host <span class="se">\</span>
 -h unifi <span class="se">\</span>
--v /volume1/docker/unifi:/var/lib/unifi <span class="se">\</span>
+-e <span class="nv">MEM_LIMIT</span><span class="o">=</span>1024M  <span class="se">\</span>
+-v /volume1/docker/unifi:/config <span class="se">\</span>
 -p <span class="m">8080</span>:8080/tcp <span class="se">\</span>
 -p <span class="m">8081</span>:8081/tcp <span class="se">\</span>
 -p <span class="m">8443</span>:8443/tcp <span class="se">\</span>
 -p <span class="m">8843</span>:8843/tcp <span class="se">\</span>
 -p <span class="m">8880</span>:8880/tcp <span class="se">\</span>
 -p <span class="m">3478</span>:3478/udp <span class="se">\</span>
+-p <span class="m">10001</span>:10001/udp <span class="se">\</span>
+-p <span class="m">6789</span>:6789 <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
-jacobalberty/unifi:latest
+linuxserver/unifi-controller:latest
 </pre></div>
 
 <h2 id="ubiquiti_unms_controller_on_synology_nas">Ubiquiti UNMS Controller On Synology NAS<a class="headerlink" href="#ubiquiti_unms_controller_on_synology_nas" title="Permanent link">&para;</a></h2>
