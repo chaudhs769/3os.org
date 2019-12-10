@@ -528,6 +528,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#service_statusstartstopenabling_on_boot" class="md-nav__link">
+    Service Status/Start/Stop/Enabling On Boot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run_script_on_boot_-_crontab" class="md-nav__link">
     Run Script On Boot - Crontab
   </a>
@@ -672,6 +679,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../centos8/" title="Centos 8" class="md-nav__link">
+      Centos 8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../ubuntu/" title="Ubuntu" class="md-nav__link">
       Ubuntu
     </a>
@@ -721,13 +740,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9">
     
-    <label class="md-nav__link" for="nav-5-8">
+    <label class="md-nav__link" for="nav-5-9">
       Guides
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-8">
+      <label class="md-nav__title" for="nav-5-9">
         Guides
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -769,13 +788,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
     
-    <label class="md-nav__link" for="nav-5-9">
+    <label class="md-nav__link" for="nav-5-10">
       Linux Services
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-9">
+      <label class="md-nav__title" for="nav-5-10">
         Linux Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1724,6 +1743,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#service_statusstartstopenabling_on_boot" class="md-nav__link">
+    Service Status/Start/Stop/Enabling On Boot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run_script_on_boot_-_crontab" class="md-nav__link">
     Run Script On Boot - Crontab
   </a>
@@ -1847,6 +1873,13 @@
                 
                 
                 <h1 id="linux_general_topics">Linux General Topics<a class="headerlink" href="#linux_general_topics" title="Permanent link">&para;</a></h1>
+<h2 id="service_statusstartstopenabling_on_boot">Service Status/Start/Stop/Enabling On Boot<a class="headerlink" href="#service_statusstartstopenabling_on_boot" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>systemctl status httpd
+systemctl start httpd
+systemctl stop httpd
+systemctl <span class="nb">enable</span> httpd
+</pre></div>
+
 <h2 id="run_script_on_boot_-_crontab">Run Script On Boot - Crontab<a class="headerlink" href="#run_script_on_boot_-_crontab" title="Permanent link">&para;</a></h2>
 <p>Only add sudo if your script needs superuser privileges. Then add this to your crontab:</p>
 <div class="codehilite"><pre><span></span><span class="o">(</span>sudo<span class="o">)</span> crontab -e
