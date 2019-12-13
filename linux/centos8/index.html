@@ -605,6 +605,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#numbers_of_kernels_to_keep" class="md-nav__link">
+    Numbers of Kernels to Keep
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure_yum_to_auto-remove_old_kernels" class="md-nav__link">
+    Configure yum to auto-remove old kernels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove_virbr0_and_lxcbr0_interfaces" class="md-nav__link">
+    Remove virbr0 and lxcbr0 Interfaces
+  </a>
+  
+</li>
+      
       
       
       
@@ -1721,6 +1748,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#numbers_of_kernels_to_keep" class="md-nav__link">
+    Numbers of Kernels to Keep
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configure_yum_to_auto-remove_old_kernels" class="md-nav__link">
+    Configure yum to auto-remove old kernels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove_virbr0_and_lxcbr0_interfaces" class="md-nav__link">
+    Remove virbr0 and lxcbr0 Interfaces
+  </a>
+  
+</li>
+      
       
       
       
@@ -1800,6 +1854,21 @@ systemctl <span class="nb">enable</span> docker
 <div class="codehilite"><pre><span></span>dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf update
 dnf install -y htop
+</pre></div>
+
+<h2 id="numbers_of_kernels_to_keep">Numbers of Kernels to Keep<a class="headerlink" href="#numbers_of_kernels_to_keep" title="Permanent link">&para;</a></h2>
+<p><strong>Mininum is 2</strong></p>
+<div class="codehilite"><pre><span></span>dnf install -y dnf-utils
+</pre></div>
+
+<h3 id="configure_yum_to_auto-remove_old_kernels">Configure yum to auto-remove old kernels<a class="headerlink" href="#configure_yum_to_auto-remove_old_kernels" title="Permanent link">&para;</a></h3>
+<p>Edit /etc/yum.conf
+Set the limit to desired value</p>
+<div class="codehilite"><pre><span></span><span class="nv">installonly_limit</span><span class="o">=</span><span class="m">2</span>
+</pre></div>
+
+<h2 id="remove_virbr0_and_lxcbr0_interfaces">Remove virbr0 and lxcbr0 Interfaces<a class="headerlink" href="#remove_virbr0_and_lxcbr0_interfaces" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>chkconfig libvirtd off
 </pre></div>
                 
                   
