@@ -2010,7 +2010,7 @@ Thu Dec <span class="m">28</span> <span class="m">14</span>:35:42 UTC <span clas
 </pre></div>
 
 <p>Generate a Diffie-Hellman (DH) key file and place it in the /config/auth directory. This Will take some time...</p>
-<div class="codehilite"><pre><span></span>openssl dhparam -out /config/auth/dh.pem -2 <span class="m">2048</span>
+<div class="codehilite"><pre><span></span>openssl dhparam -out /config/auth/dh.pem -2 <span class="m">4096</span>
 </pre></div>
 
 <p>Change the current directory.</p>
@@ -2018,7 +2018,7 @@ Thu Dec <span class="m">28</span> <span class="m">14</span>:35:42 UTC <span clas
 </pre></div>
 
 <p>Generate a root certificate (replace <secret> with your desired passphrase).</p>
-<div class="codehilite"><pre><span></span>./CA.sh -newca
+<div class="codehilite"><pre><span></span>./CA.pl -newca
 </pre></div>
 
 <p>exmaple:</p>
@@ -2037,7 +2037,7 @@ cp demoCA/private/cakey.pem /config/auth
 </pre></div>
 
 <p>Generate the server certificate.</p>
-<div class="codehilite"><pre><span></span>./CA.sh -newreq
+<div class="codehilite"><pre><span></span>./CA.pl -newreq
 </pre></div>
 
 <p>exmaple:</p>
@@ -2049,7 +2049,8 @@ Organizational Unit Name: <code>Support</code>
 Common Name: <code>server</code>
 Email Address: <code>support@ubnt.com</code></p>
 <p>Sign the server certificate.</p>
-<div class="codehilite"><pre><span></span>./CA.sh -sign
+<p>if you want to change the certificate expiration day use: export <strong>default_days="3650"</strong> with the value of days you desire</p>
+<div class="codehilite"><pre><span></span>./CA.pl -sign
 </pre></div>
 
 <p>Move and rename the server certificate + key to the /config/auth directory.</p>
@@ -2058,21 +2059,21 @@ mv newkey.pem /config/auth/server.key
 </pre></div>
 
 <p>Generate, sign and move the client1 certificates.</p>
-<div class="codehilite"><pre><span></span>./CA.sh -newreq
+<div class="codehilite"><pre><span></span>./CA.pl -newreq
 </pre></div>
 
 <p>Common Name: client1</p>
-<div class="codehilite"><pre><span></span>./CA.sh -sign
+<div class="codehilite"><pre><span></span>./CA.pl -sign
 mv newcert.pem /config/auth/client1.pem
 mv newkey.pem /config/auth/client1.key
 </pre></div>
 
 <p>(Optional) Repeat the process for client2.</p>
-<div class="codehilite"><pre><span></span>./CA.sh -newreq
+<div class="codehilite"><pre><span></span>./CA.pl -newreq
 </pre></div>
 
 <p>Common Name: client2</p>
-<div class="codehilite"><pre><span></span>./CA.sh -sign
+<div class="codehilite"><pre><span></span>./CA.pl -sign
 mv newcert.pem /config/auth/client2.pem
 mv newkey.pem /config/auth/client2.key
 </pre></div>
