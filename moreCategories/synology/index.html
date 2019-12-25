@@ -1286,49 +1286,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script" class="md-nav__link">
-    Automated SSL Using Let's Encrypt, CloudFlare API, acme.sh Script
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating_the_certificate" class="md-nav__link">
-    Creating the Certificate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring_certificate_renewal_by_etccrontab" class="md-nav__link">
-    Configuring Certificate Renewal by /etc/crontab
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#done" class="md-nav__link">
-    done
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloudflare_ddns" class="md-nav__link">
-    CloudFlare DDNS
+  <a href="#disable_dsm_listening_on_80443_ports" class="md-nav__link">
+    Disable DSM Listening on 80,443 Ports
   </a>
   
 </li>
@@ -1714,49 +1673,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script" class="md-nav__link">
-    Automated SSL Using Let's Encrypt, CloudFlare API, acme.sh Script
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creating_the_certificate" class="md-nav__link">
-    Creating the Certificate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring_certificate_renewal_by_etccrontab" class="md-nav__link">
-    Configuring Certificate Renewal by /etc/crontab
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#done" class="md-nav__link">
-    done
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloudflare_ddns" class="md-nav__link">
-    CloudFlare DDNS
+  <a href="#disable_dsm_listening_on_80443_ports" class="md-nav__link">
+    Disable DSM Listening on 80,443 Ports
   </a>
   
 </li>
@@ -1831,104 +1749,10 @@ sudo apt-get install qemu-guest-agent
 <div class="codehilite"><pre><span></span>dnf install -y qemu-guest-agent
 </pre></div>
 
-<h2 id="automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script">Automated SSL Using Let's Encrypt, CloudFlare API, acme.sh Script<a class="headerlink" href="#automated_ssl_using_lets_encrypt_cloudflare_api_acmesh_script" title="Permanent link">&para;</a></h2>
-<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
-<p>Synology ssh enabled and sudo permission
-Cloudflare API key</p>
-<p>ssh to synology nas</p>
-<div class="codehilite"><pre><span></span>sudo -i
-wget https://github.com/Neilpang/acme.sh/archive/master.tar.gz
-tar xvf master.tar.gz
-<span class="nb">cd</span> acme.sh-master/
-./acme.sh --install --nocron --home /usr/local/share/acme.sh --accountemail <span class="s2">&quot;email@example.com&quot;</span>
-</pre></div>
+<h2 id="disable_dsm_listening_on_80443_ports">Disable DSM Listening on 80,443 Ports<a class="headerlink" href="#disable_dsm_listening_on_80443_ports" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>sed -i -e <span class="s1">&#39;s/80/81/&#39;</span> -e <span class="s1">&#39;s/443/444/&#39;</span> /usr/syno/share/nginx/server.mustache /usr/syno/share/nginx/DSM.mustache /usr/syno/share/nginx/WWWService.mustache
 
-<p>CF_Key= <code>your cloudflare Global API key</code>
-CF_Email= <code>your cloudflare email account</code>
-CERT_DOMAIN= <code>your domain managed on cloudflare dns</code>, you can use wilde card domain like <code>*.your-domain.tld</code></p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">CF_Key</span><span class="o">=</span><span class="s2">&quot;MY_SECRET_KEY_SUCH_SECRET&quot;</span>
-<span class="nb">export</span> <span class="nv">CF_Email</span><span class="o">=</span><span class="s2">&quot;myEmail@example.com&quot;</span>
-<span class="nb">export</span> <span class="nv">CERT_DOMAIN</span><span class="o">=</span><span class="s2">&quot;*.your-domain.tld&quot;</span>
-<span class="nb">export</span> <span class="nv">CERT_DNS</span><span class="o">=</span><span class="s2">&quot;dns_cf&quot;</span>
-</pre></div>
-
-<p>This Will Generate, Sing and install the Certificate</p>
-<h3 id="creating_the_certificate">Creating the Certificate<a class="headerlink" href="#creating_the_certificate" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> /usr/local/share/acme.sh
-./acme.sh --issue -d <span class="s2">&quot;</span><span class="nv">$CERT_DOMAIN</span><span class="s2">&quot;</span> --dns <span class="s2">&quot;</span><span class="nv">$CERT_DNS</span><span class="s2">&quot;</span> <span class="se">\</span>
-      --certpath /usr/syno/etc/certificate/system/default/cert.pem <span class="se">\</span>
-      --keypath /usr/syno/etc/certificate/system/default/privkey.pem <span class="se">\</span>
-      --fullchainpath /usr/syno/etc/certificate/system/default/fullchain.pem <span class="se">\</span>
-      --capath /usr/syno/etc/certificate/system/default/chain.pem <span class="se">\</span>
-      --reloadcmd <span class="s2">&quot;cp -a /usr/syno/etc/certificate/system/default/* `find /usr/syno/etc/certificate/_archive/ -maxdepth 1 -mindepth 1 -type d` &amp;&amp; /usr/syno/sbin/synoservicectl --reload nginx&quot;</span> <span class="se">\</span>
-      --dnssleep <span class="m">20</span> <span class="se">\</span>
-      --config-home <span class="s2">&quot;/volume1/activeShare/Dropbox/SettingsConfigs/SSL_Certificates&quot;</span>
-</pre></div>
-
-<h3 id="configuring_certificate_renewal_by_etccrontab">Configuring Certificate Renewal by /etc/crontab<a class="headerlink" href="#configuring_certificate_renewal_by_etccrontab" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>vi /etc/crontab
-</pre></div>
-
-<p>add this:</p>
-<div class="codehilite"><pre><span></span><span class="m">0</span>   <span class="m">10</span>  <span class="m">2</span>   *   *   root    /usr/local/share/acme.sh/acme.sh --cron --home /volume1/activeShare/Dropbox/SettingsConfigs/SSL_Certificates
-</pre></div>
-
-<h3 id="done">done<a class="headerlink" href="#done" title="Permanent link">&para;</a></h3>
-<h2 id="cloudflare_ddns">CloudFlare DDNS<a class="headerlink" href="#cloudflare_ddns" title="Permanent link">&para;</a></h2>
-<p>based on this <a href="https://github.com/joshuaavalon/SynologyCloudflareDDNS">SynologyCloudflareDDNS</a></p>
-<p>Ssh to synology nas as root
-Download cloudflareddns.sh from this repository to /sbin/cloudflaredns.sh</p>
-<div class="codehilite"><pre><span></span>wget https://raw.githubusercontent.com/joshuaavalon/SynologyCloudflareDDNS/master/cloudflareddns.sh -O /sbin/cloudflaredns.sh
-chmod +x /sbin/cloudflaredns.sh
-</pre></div>
-
-<p>Edit Synology's DDNS service config:</p>
-<div class="codehilite"><pre><span></span>vi /etc.defaults/ddns_provider.conf
-</pre></div>
-
-<p>Add this to the config</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span>Cloudflare<span class="o">]</span>
-        <span class="nv">modulepath</span><span class="o">=</span>/sbin/cloudflaredns.sh
-        <span class="nv">queryurl</span><span class="o">=</span>https://www.cloudflare.com/
-</pre></div>
-
-<p>Go to your cloudflare account
-Go to your domain overview page and get the Zone ID.
-Go to DNS zone and create A record you want to use for the DDNS with any IP address (just for the recored creation)
-Go to your account setting page and get API Key.
-Get record id using Cloudflare API.</p>
-<p>Run this. You need to replace with [] with your parameter.</p>
-<div class="codehilite"><pre><span></span>curl -X GET <span class="s2">&quot;https://api.cloudflare.com/client/v4/zones/[Zone ID]/dns_records&quot;</span> <span class="se">\</span>
-     -H <span class="s2">&quot;X-Auth-Email: [Email]&quot;</span> <span class="se">\</span>
-     -H <span class="s2">&quot;X-Auth-Key: [API Key]&quot;</span> <span class="se">\</span>
-     -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
-</pre></div>
-
-<p>You will Get information acout your Zone in the response. Look for <code>ID</code> Recored you created before.</p>
-<div class="codehilite"><pre><span></span>vi /sbin/cloudflaredns.sh
-</pre></div>
-
-<p>chnage <strong>RECID</strong>, <strong>ZONE_ID</strong> with the values you got before.</p>
-<p>exmaple:</p>
-<div class="codehilite"><pre><span></span><span class="nv">__RECTYPE__</span><span class="o">=</span><span class="s2">&quot;A&quot;</span>
-<span class="nv">__RECID__</span><span class="o">=</span><span class="s2">&quot;f3690c72ef24a964936f78760d62a3e1&quot;</span>
-<span class="nv">__ZONE_ID__</span><span class="o">=</span><span class="s2">&quot;2ffb4915izhe84e5974b0dec74fcd4f2&quot;</span>
-<span class="nv">__TTL__</span><span class="o">=</span><span class="s2">&quot;1&quot;</span>
-<span class="nv">__PROXY__</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
-</pre></div>
-
-<p><strong><code>__PROXY__ true/false depandes on your usage</code></strong></p>
-<p>Login to your DSM
-Go to Control Panel &gt; External Access &gt; DDNS &gt; Add
-Select Cloudflare as service provider. Enter your domain as hostname, your Cloudflare account as Username/Email, and API key as Password/Key</p>
-<p>At the console:</p>
-<div class="codehilite"><pre><span></span>tail -f /var/log/cloudflareddns.log
-</pre></div>
-
-<p>Click Test Connection
-You shoud see somthing like that at the console:</p>
-<div class="codehilite"><pre><span></span>cloudflaredns.sh <span class="o">(</span><span class="m">7</span><span class="o">)</span>: Updating with <span class="m">185</span>.185.185.185...
-cloudflaredns.sh <span class="o">(</span><span class="m">7</span><span class="o">)</span>: Status: good
+synoservicecfg --restart nginx
 </pre></div>
                 
                   
