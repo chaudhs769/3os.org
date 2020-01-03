@@ -1305,8 +1305,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disableupdate_etchosts_file_on_edgerouter" class="md-nav__link">
-    Disable/Update /etc/hosts file on EdgeRouter
+  <a href="#disable_update_etchosts_file_on_edgerouter" class="md-nav__link">
+    Disable, Update /etc/hosts file on EdgeRouter
   </a>
   
 </li>
@@ -1755,8 +1755,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disableupdate_etchosts_file_on_edgerouter" class="md-nav__link">
-    Disable/Update /etc/hosts file on EdgeRouter
+  <a href="#disable_update_etchosts_file_on_edgerouter" class="md-nav__link">
+    Disable, Update /etc/hosts file on EdgeRouter
   </a>
   
 </li>
@@ -1944,21 +1944,26 @@ commit <span class="p">;</span> save
 commit <span class="p">;</span> save
 </pre></div>
 
-<h2 id="disableupdate_etchosts_file_on_edgerouter">Disable/Update /etc/hosts file on EdgeRouter<a class="headerlink" href="#disableupdate_etchosts_file_on_edgerouter" title="Permanent link">&para;</a></h2>
-<p>Disable:</p>
+<h2 id="disable_update_etchosts_file_on_edgerouter">Disable, Update /etc/hosts file on EdgeRouter<a class="headerlink" href="#disable_update_etchosts_file_on_edgerouter" title="Permanent link">&para;</a></h2>
+<p>Disable Auto DHCP hots:</p>
 <div class="codehilite"><pre><span></span>configure
-<span class="nb">set</span> service dns forwarding options no-hosts
-commit
-save
+<span class="nb">set</span> service dhcp-server hostfile-update disablecommit
+commit <span class="p">;</span> save
 </pre></div>
 
-<p>Update:</p>
-<div class="codehilite"><pre><span></span><span class="nb">set</span> service dhcp-server hostfile-update disable
-commit
-<span class="nb">set</span> service dhcp-server hostfile-update <span class="nb">enable</span>
-commit
-cat /etc/hosts
-save
+<p>Update the Host File Manually:</p>
+<div class="codehilite"><pre><span></span>configure
+<span class="nb">set</span> system static-host-mapping host-name mydomain.com inet <span class="m">192</span>.168.1.10
+commit <span class="p">;</span> save
+</pre></div>
+
+<p>Show DNS Forwarding </p>
+<div class="codehilite"><pre><span></span>configure
+show service dns forwarding
+</pre></div>
+
+<p>Show Hosts Config</p>
+<div class="codehilite"><pre><span></span>cat /etc/hosts
 </pre></div>
 
 <h2 id="guest_wifi_with_ubiquiti_edgerouter_and_unifi_access_points">Guest Wifi With Ubiquiti EdgeRouter and Unifi Access Points<a class="headerlink" href="#guest_wifi_with_ubiquiti_edgerouter_and_unifi_access_points" title="Permanent link">&para;</a></h2>

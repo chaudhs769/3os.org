@@ -1016,25 +1016,12 @@
     cloudflare-ddns
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#running_the_container" class="md-nav__link">
-    Running the Container
+      
+        <li class="md-nav__item">
+  <a href="#cloudflared-dns-proxy" class="md-nav__link">
+    cloudflared-dns-proxy
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1789,25 +1776,12 @@
     cloudflare-ddns
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#running_the_container" class="md-nav__link">
-    Running the Container
+      
+        <li class="md-nav__item">
+  <a href="#cloudflared-dns-proxy" class="md-nav__link">
+    cloudflared-dns-proxy
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1953,31 +1927,32 @@ containrrr/watchtower:latest --cleanup --debug
 </pre></div>
 
 <h2 id="cloudflare-ddns">cloudflare-ddns<a class="headerlink" href="#cloudflare-ddns" title="Permanent link">&para;</a></h2>
-<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<ul>
-<li>ZONE: Domain, e.g. example.com.</li>
-<li>HOST: DNS record to be updated, e.g. example.com, subdomain.example.com.</li>
-<li>EMAIL: Cloudflare Email.</li>
-<li>API: Cloudflare API key.</li>
-<li>TTL: (OPTIONAL) Time to live for DNS record. Value of 1 is 'automatic'. Min value:120; Max value:2147483647. Default: 1</li>
-<li>PROXY: (OPTIONAL) Whether the record is receiving the performance and security benefits of Cloudflare. true to enable; false to disable. Default: true</li>
-<li>FORCE_CREATE: (OPTIONAL) When set, a record will be created if one does not exist already.</li>
-<li>RUNONCE: (OPTIONAL) When set, only a single update is attempted, and the script exists without setting up a cron process.</li>
-</ul>
-<h3 id="running_the_container">Running the Container<a class="headerlink" href="#running_the_container" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
--h cloudflareddns <span class="se">\</span>
+-h cloudflare-ddns <span class="se">\</span>
 --restart always <span class="se">\</span>
 --name<span class="o">=</span>cloudflare-ddns <span class="se">\</span>
--e <span class="nv">ZONE</span><span class="o">=</span>example.com <span class="se">\</span>
--e <span class="nv">HOST</span><span class="o">=</span>example.com <span class="se">\</span>
--e <span class="nv">EMAIL</span><span class="o">=</span>example@example.com <span class="se">\</span>
--e <span class="nv">API</span><span class="o">=</span><span class="m">1111111111111111</span> <span class="se">\</span>
--e <span class="nv">TTL</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
--e <span class="nv">PROXY</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+-v /volume1/docker/cloudflare-ddns/config.yaml:/app/config.yaml <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
-joshuaavalon/cloudflare-ddns:latest
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+joshava/cloudflare-ddns:latest
+</pre></div>
+
+<h2 id="cloudflared-dns-proxy">cloudflared-dns-proxy<a class="headerlink" href="#cloudflared-dns-proxy" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+--name<span class="o">=</span>cloudflare-dns-proxy <span class="se">\</span>
+-h cloudflare-dns-proxy <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+-p <span class="m">11054</span>:54/tcp <span class="se">\</span>
+-p <span class="m">11054</span>:54/udp <span class="se">\</span>
+-e <span class="nv">DNS1</span><span class="o">=</span><span class="m">1</span>.1.1.1 <span class="se">\</span>
+-e <span class="nv">DNS2</span><span class="o">=</span><span class="m">8</span>.8.8.8 <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+visibilityspots/cloudflared:latest
 </pre></div>
 
 <h2 id="ubiquiti_unifi_controller_on_synology_nas">Ubiquiti Unifi Controller On Synology NAS<a class="headerlink" href="#ubiquiti_unifi_controller_on_synology_nas" title="Permanent link">&para;</a></h2>
@@ -2052,12 +2027,14 @@ networkstatic/iperf3:latest -s
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
 --name<span class="o">=</span>calibre-web <span class="se">\</span>
--h calibre <span class="se">\</span>
--e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
--e <span class="nv">DOCKER_MODS</span><span class="o">=</span>linuxserver/calibre-web:calibre <span class="se">\</span>
--p <span class="m">5071</span>:8083 <span class="se">\</span>
+-h calibre-web <span class="se">\</span>
+-p <span class="m">11501</span>:8083 <span class="se">\</span>
 -v /volume1/docker/calibre/config:/config <span class="se">\</span>
 -v /volume1/docker/calibre/books:/books <span class="se">\</span>
+-e <span class="nv">DOCKER_MODS</span><span class="o">=</span>linuxserver/calibre-web:calibre <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 linuxserver/calibre-web:latest
 </pre></div>
 
@@ -2065,14 +2042,17 @@ linuxserver/calibre-web:latest
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
---name pihole <span class="se">\</span>
--h pihole <span class="se">\</span>
--p <span class="m">53</span>:53/tcp -p <span class="m">53</span>:53/udp <span class="se">\</span>
--p <span class="m">5053</span>:80 <span class="se">\</span>
--e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+--name pi-hole <span class="se">\</span>
+-h pi-hole <span class="se">\</span>
+-p <span class="m">53</span>:53/tcp <span class="se">\</span>
+-p <span class="m">53</span>:53/udp <span class="se">\</span>
+-p <span class="m">11500</span>:80 <span class="se">\</span>
 -v /volume1/docker/pihole/pihole/:/etc/pihole <span class="se">\</span>
 -v /volume1/docker/pihole/dnsmasq.d:/etc/dnsmasq.d <span class="se">\</span>
 -v /volume1/docker/pihole/lighttpd:/etc/lighttpd <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 --dns<span class="o">=</span><span class="m">127</span>.0.0.1 --dns<span class="o">=</span><span class="m">1</span>.1.1.1 <span class="se">\</span>
 pihole/pihole:latest
 </pre></div>
