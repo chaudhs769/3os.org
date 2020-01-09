@@ -161,12 +161,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://3os.org/development/docker/dockerGeneral/</loc>
-     <lastmod>2020-01-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://3os.org/development/docker/dockerContainers/</loc>
+     <loc>https://3os.org/development/dockerGeneral/</loc>
      <lastmod>2020-01-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -182,6 +177,11 @@
     </url>
     <url>
      <loc>https://3os.org/development/npm/</loc>
+     <lastmod>2020-01-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://3os.org/development/dockerContainers/</loc>
      <lastmod>2020-01-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
