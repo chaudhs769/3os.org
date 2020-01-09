@@ -1123,6 +1123,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#joal_-_torrent_fake_seedings" class="md-nav__link">
+    Joal - Torrent Fake Seedings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#homebridge_-_container_for_apple_homekit_integration" class="md-nav__link">
     HomeBridge - Container for Apple HomeKit Integration
   </a>
@@ -1883,6 +1890,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#joal_-_torrent_fake_seedings" class="md-nav__link">
+    Joal - Torrent Fake Seedings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#homebridge_-_container_for_apple_homekit_integration" class="md-nav__link">
     HomeBridge - Container for Apple HomeKit Integration
   </a>
@@ -2151,6 +2165,21 @@ linuxserver/bazarr:latest
  linuxserver/ombi:latest
 </pre></div>
 
+<h2 id="joal_-_torrent_fake_seedings">Joal - Torrent Fake Seedings<a class="headerlink" href="#joal_-_torrent_fake_seedings" title="Permanent link">&para;</a></h2>
+<p>docker run \
+-d \
+--name joal \
+--restart always \
+-h joal \
+-e TZ=Asia/Jerusalem \
+-e _JAVA_OPTIONS='-Djava.net.preferIPv6Addresses=true' \
+-v /volume1/docker/joal:/joal/torrents/ \
+--name="joal" s8n02/joal \
+--joal-conf="/joal" \
+--spring.main.web-environment=true \
+--server.port="9000" \
+--joal.ui.path.prefix="joal" \
+--joal.ui.secret-token="joal123"</p>
 <h2 id="homebridge_-_container_for_apple_homekit_integration">HomeBridge - Container for Apple HomeKit Integration<a class="headerlink" href="#homebridge_-_container_for_apple_homekit_integration" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
