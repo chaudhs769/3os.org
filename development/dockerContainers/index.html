@@ -1910,18 +1910,20 @@ linuxserver/calibre-web:latest
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
---name pi-hole <span class="se">\</span>
--h pi-hole <span class="se">\</span>
+--name pihole <span class="se">\</span>
+-h pihole <span class="se">\</span>
 -p <span class="m">53</span>:53/tcp <span class="se">\</span>
 -p <span class="m">53</span>:53/udp <span class="se">\</span>
--p <span class="m">11500</span>:80 <span class="se">\</span>
--v /volume1/docker/pihole/pihole/:/etc/pihole <span class="se">\</span>
--v /volume1/docker/pihole/dnsmasq.d:/etc/dnsmasq.d <span class="se">\</span>
--v /volume1/docker/pihole/lighttpd:/etc/lighttpd <span class="se">\</span>
+-p <span class="m">67</span>:67/udp <span class="se">\</span>
+-p <span class="m">80</span>:80/tcp <span class="se">\</span>
+-p <span class="m">443</span>:443/tcp <span class="se">\</span>
+-v /root/pihole/pihole/:/etc/pihole <span class="se">\</span>
+-v /root/pihole/dnsmasq.d:/etc/dnsmasq.d <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
---dns<span class="o">=</span><span class="m">127</span>.0.0.1 --dns<span class="o">=</span><span class="m">1</span>.1.1.1 <span class="se">\</span>
+--dns<span class="o">=</span><span class="m">127</span>.0.0.1 <span class="se">\</span>
+--dns<span class="o">=</span><span class="m">1</span>.1.1.1 <span class="se">\</span>
 pihole/pihole:latest
 </pre></div>
 
@@ -2053,7 +2055,7 @@ linuxserver/ombi:latest
 --name zabbix-appliance <span class="se">\</span>
 --restart always <span class="se">\</span>
 -h zabbix <span class="se">\</span>
--p <span class="m">10051</span>:10051 <span class="se">\</span>
+-p <span class="m">11506</span>:10051 <span class="se">\</span>
 -p <span class="m">5060</span>:80 <span class="se">\</span>
 -v /volume1/docker/zabbix:/var/lib/zabbix <span class="se">\</span>
 -v /volume1/docker/zabbix/mysql:/var/lib/mysql <span class="se">\</span>

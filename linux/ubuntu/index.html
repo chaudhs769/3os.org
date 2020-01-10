@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Linux - Centos 7 how to, guides, examples, and simple usage">
+        <meta name="description" content="ubuntu Linux - Guides, Examples and Usage">
       
       
         <link rel="canonical" href="https://3os.org/linux/ubuntu/">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Linux - Centos 7 Related Topics</title>
+        <title>Linux - ubuntu Linux Guides, Examples and Usage</title>
       
     
     
@@ -142,7 +142,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Linux - Centos 7 Related Topics
+                Linux - ubuntu Linux Guides, Examples and Usage
               
             </span>
           
@@ -574,6 +574,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disable_firewall" class="md-nav__link">
+    Disable Firewall
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#clear_boot_partition_on_ubuntu_when_100" class="md-nav__link">
@@ -1621,6 +1628,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#disable_firewall" class="md-nav__link">
+    Disable Firewall
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#clear_boot_partition_on_ubuntu_when_100" class="md-nav__link">
     Clear BOOT Partition on Ubuntu when 100%
   </a>
@@ -1653,6 +1667,10 @@
                 
                 
                 <h1 id="ubuntu_related_topics">Ubuntu Related Topics<a class="headerlink" href="#ubuntu_related_topics" title="Permanent link">&para;</a></h1>
+<h2 id="disable_firewall">Disable Firewall<a class="headerlink" href="#disable_firewall" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>ufw disable
+</pre></div>
+
 <h2 id="clear_boot_partition_on_ubuntu_when_100">Clear BOOT Partition on Ubuntu when 100%<a class="headerlink" href="#clear_boot_partition_on_ubuntu_when_100" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>dpkg --purge <span class="sb">`</span>dpkg --list<span class="p">|</span>grep <span class="s2">&quot;linux-&quot;</span><span class="p">|</span>grep -v <span class="se">\`</span>uname -r<span class="p">|</span>sed <span class="s1">&#39;s/-generic//g&#39;</span><span class="se">\`</span><span class="p">|</span>cut -d<span class="s2">&quot; &quot;</span> -f3<span class="p">|</span>grep <span class="s2">&quot;[0-9]-&quot;</span><span class="p">|</span>paste -sd <span class="s2">&quot; &quot;</span> -<span class="sb">`</span>
 </pre></div>
