@@ -1941,7 +1941,7 @@ linuxserver/calibre-web:latest
 pihole/pihole:latest
 </pre></div>
 
-<p>Blocklists</p>
+<p>Blocklists:</p>
 <ul>
 <li><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts</a></li>
 <li><a href="https://mirror1.malwaredomains.com/files/justdomains">https://mirror1.malwaredomains.com/files/justdomains</a></li>
@@ -2085,19 +2085,20 @@ zabbix/zabbix-appliance:latest
 </pre></div>
 
 <h2 id="traefik_-_revers_proxy_with_lets_encrypt_and_cloudflare_dns_challenge">Traefik - Revers proxy with Let's Encrypt and Cloudflare DNS Challenge<a class="headerlink" href="#traefik_-_revers_proxy_with_lets_encrypt_and_cloudflare_dns_challenge" title="Permanent link">&para;</a></h2>
-<p>docker run \
--d \
---restart always \
---name=traefik \
--h traefik \
--v /volume1/docker/traefik.3os.re:/etc/traefik/ \
--v /var/run/docker.sock:/var/run/docker.sock \
--p 80:80 \
--p 443:443 \
--e TZ=Asia/Jerusalem \
--e CLOUDFLARE_EMAIL=<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#117;&#100;&#102;&#108;&#97;&#114;&#101;&#64;&#101;&#109;&#97;&#105;&#108;&#46;&#111;&#114;&#103;">&#99;&#108;&#111;&#117;&#100;&#102;&#108;&#97;&#114;&#101;&#64;&#101;&#109;&#97;&#105;&#108;&#46;&#111;&#114;&#103;</a> \
--e CLOUDFLARE_API_KEY=de1782bd0e8d05245f6648d03e1e6e17c \
-traefik:latest</p>
+<div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name<span class="o">=</span>traefik <span class="se">\</span>
+-h traefik <span class="se">\</span>
+-v /volume1/docker/traefik.3os.re:/etc/traefik/ <span class="se">\</span>
+-v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
+-p <span class="m">80</span>:80 <span class="se">\</span>
+-p <span class="m">443</span>:443 <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-e <span class="nv">CLOUDFLARE_EMAIL</span><span class="o">=</span>cloudflare@email.org <span class="se">\</span>
+-e <span class="nv">CLOUDFLARE_API_KEY</span><span class="o">=</span>de1782bd0e8d05245f6648d03e1e6e17c <span class="se">\</span>
+traefik:latest
+</pre></div>
                 
                   
                 
