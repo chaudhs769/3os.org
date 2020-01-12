@@ -1110,6 +1110,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#traefik_-_revers_proxy_with_lets_encrypt_and_cloudflare_dns_challenge" class="md-nav__link">
+    Traefik - Revers proxy with Let's Encrypt and Cloudflare DNS Challenge
+  </a>
+  
+</li>
+      
       
       
       
@@ -1795,6 +1802,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#traefik_-_revers_proxy_with_lets_encrypt_and_cloudflare_dns_challenge" class="md-nav__link">
+    Traefik - Revers proxy with Let's Encrypt and Cloudflare DNS Challenge
+  </a>
+  
+</li>
+      
       
       
       
@@ -2069,6 +2083,21 @@ linuxserver/ombi:latest
 -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 zabbix/zabbix-appliance:latest
 </pre></div>
+
+<h2 id="traefik_-_revers_proxy_with_lets_encrypt_and_cloudflare_dns_challenge">Traefik - Revers proxy with Let's Encrypt and Cloudflare DNS Challenge<a class="headerlink" href="#traefik_-_revers_proxy_with_lets_encrypt_and_cloudflare_dns_challenge" title="Permanent link">&para;</a></h2>
+<p>docker run \
+-d \
+--restart always \
+--name=traefik \
+-h traefik \
+-v /volume1/docker/traefik.3os.re:/etc/traefik/ \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-p 80:80 \
+-p 443:443 \
+-e TZ=Asia/Jerusalem \
+-e CLOUDFLARE_EMAIL=<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#108;&#111;&#117;&#100;&#102;&#108;&#97;&#114;&#101;&#64;&#101;&#109;&#97;&#105;&#108;&#46;&#111;&#114;&#103;">&#99;&#108;&#111;&#117;&#100;&#102;&#108;&#97;&#114;&#101;&#64;&#101;&#109;&#97;&#105;&#108;&#46;&#111;&#114;&#103;</a> \
+-e CLOUDFLARE_API_KEY=de1782bd0e8d05245f6648d03e1e6e17c \
+traefik:latest</p>
                 
                   
                 
