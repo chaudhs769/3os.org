@@ -1954,7 +1954,7 @@ pihole/pihole:latest
 -p <span class="m">11504</span>:8989 <span class="se">\</span>
 -v /volume1/docker/sonarr:/config <span class="se">\</span>
 -v /volume1/activeShare/Media/TV<span class="se">\ </span>Showes/:/tv <span class="se">\</span>
--v /volume1/activeShare/Downloads/:/downloads <span class="se">\</span>
+-v /volume1/activeShare/DownloadStation/:/downloads <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
@@ -1970,7 +1970,7 @@ linuxserver/sonarr:latest
 -p <span class="m">11505</span>:7878 <span class="se">\</span>
 -v /volume1/docker/radarr:/config <span class="se">\</span>
 -v /volume1/activeShare/Media/Movies:/movies <span class="se">\</span>
--v /volume1/activeShare/Downloads:/downloads <span class="se">\</span>
+-v /volume1/activeShare/DownloadStation:/downloads <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
@@ -1985,7 +1985,7 @@ linuxserver/radarr:latest
 -h jackett <span class="se">\</span>
 -p <span class="m">11501</span>:9117 <span class="se">\</span>
 -v /volume1/docker/jackett:/config <span class="se">\</span>
--v /volume1/activeShare/Downloads:/downloads <span class="se">\</span>
+-v /volume1/activeShare/DownloadStation:/downloads <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
