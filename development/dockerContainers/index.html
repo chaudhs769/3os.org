@@ -2047,17 +2047,16 @@ linuxserver/ombi:latest
 <h2 id="joal_-_torrent_fake_seedings">Joal - Torrent Fake Seedings<a class="headerlink" href="#joal_-_torrent_fake_seedings" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>docker run <span class="se">\</span>
 -d <span class="se">\</span>
---name joal <span class="se">\</span>
+--name<span class="o">=</span><span class="s2">&quot;joal&quot;</span> <span class="se">\</span>
 --restart always <span class="se">\</span>
 -h joal <span class="se">\</span>
--e <span class="nv">_JAVA_OPTIONS</span><span class="o">=</span><span class="s1">&#39;-Djava.net.preferIPv6Addresses=true&#39;</span> <span class="se">\</span>
--v /volume1/docker/joal/torrents:/joal/torrents/ <span class="se">\</span>
--v /volume1/docker/joal/config.json:/joal/config.json <span class="se">\</span>
+-p <span class="m">11506</span>:9000 <span class="se">\</span>
+-v /volume1/docker/joal:/data <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
---name<span class="o">=</span><span class="s2">&quot;joal&quot;</span> s8n02/joal:latest <span class="se">\</span>
---joal-conf<span class="o">=</span><span class="s2">&quot;/joal&quot;</span> <span class="se">\</span>
+anthonyraymond/joal:latest <span class="se">\</span>
+--joal-conf<span class="o">=</span><span class="s2">&quot;/data&quot;</span> <span class="se">\</span>
 --spring.main.web-environment<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
 --server.port<span class="o">=</span><span class="s2">&quot;9000&quot;</span> <span class="se">\</span>
 --joal.ui.path.prefix<span class="o">=</span><span class="s2">&quot;joal&quot;</span> <span class="se">\</span>
