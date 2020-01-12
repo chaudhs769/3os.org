@@ -1762,11 +1762,20 @@ pip install virtualenv
 
 <p>Create Virtualenv for Your Project</p>
 <div class="codehilite"><pre><span></span><span class="nb">cd</span> project_folder
-virtualenv venv
+virtualenv 
+</pre></div>
+
+<p>Delete Virtualenv for Your Project</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> project_folder
+rm -rf venv
 </pre></div>
 
 <p>Activate Virtualenv at Project's Folder</p>
 <div class="codehilite"><pre><span></span>pipenv shell
+</pre></div>
+
+<p>Installing Requirements</p>
+<div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 
 <h2 id="pip_update">Pip Update<a class="headerlink" href="#pip_update" title="Permanent link">&para;</a></h2>
