@@ -1870,10 +1870,11 @@ net.ipv6.conf.default.disable_ipv6 <span class="o">=</span> <span class="m">1</s
 </pre></div>
 
 <h2 id="docker_ce_installation_on_centos_8">Docker CE Installation on CentOS 8<a class="headerlink" href="#docker_ce_installation_on_centos_8" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>dnf config-manager --add-repo<span class="o">=</span>https://download.docker.com/linux/centos/docker-ce.repo
-dnf install -y docker-ce --nobest
+<div class="codehilite"><pre><span></span>dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+sudo dnf install docker-ce
 systemctl start docker
 systemctl <span class="nb">enable</span> docker
+systemctl status docker
 </pre></div>
 
 <h2 id="nodejs_and_npm_stable_installation">NodeJS and NPM Stable Installation<a class="headerlink" href="#nodejs_and_npm_stable_installation" title="Permanent link">&para;</a></h2>
