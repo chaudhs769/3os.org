@@ -10,10 +10,10 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Collocation of Guide, Technical knowledge, Security, Examples, Tips, at any operating system">
+        <meta name="description" content="Pi-hole, DNS ads, tracking blocking on Ubuntu with DNS over HTTP, list of blacklist">
       
       
-        <link rel="canonical" href="https://3os.org/moreCategories/gmailMarkAsRead/">
+        <link rel="canonical" href="https://3os.org/guides/pihole_dns/">
       
       
         <meta name="author" content="Stas Kosatuhin">
@@ -38,15 +38,15 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
-        <title>Gmail Mark As Read Script - 3os.org</title>
+        <title>Pi-hole on Ubuntu with DNS over HTTP</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,12 +57,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto :300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto :300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto ","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#gmail_mark_archived_mail_as_read" tabindex="1" class="md-skip">
+      <a href="#pi-hole_as_dns_server_with_dns_over_https_work_in_progress" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -142,7 +142,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Gmail Mark As Read Script
+                Pi-hole on Ubuntu with DNS over HTTP
               
             </span>
           
@@ -235,8 +235,8 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../guides/BetterTerminal/" class="md-tabs__link">
-          Guides
+        <a href="../BetterTerminal/" class="md-tabs__link md-tabs__link--active">
+          Guides & Tools
         </a>
       
     </li>
@@ -315,19 +315,6 @@
       
         <a href="../../penTesting/general/" class="md-tabs__link">
           Penetration-Testing
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../generalLinks/" class="md-tabs__link md-tabs__link--active">
-          More...
         </a>
       
     </li>
@@ -430,17 +417,19 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Guides
+      Guides & Tools
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Guides
+        Guides & Tools
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -451,8 +440,77 @@
 
 
   <li class="md-nav__item">
-    <a href="../../guides/BetterTerminal/" title="Better Terminal Experience" class="md-nav__link">
+    <a href="../BetterTerminal/" title="Better Terminal Experience" class="md-nav__link">
       Better Terminal Experience
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Pi-Hole With DNS Over HTTPS" class="md-nav__link md-nav__link--active">
+      Pi-Hole With DNS Over HTTPS
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../synology/" title="Synology DSM" class="md-nav__link">
+      Synology DSM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wifiQrGenerator/" title="Wifi QR Image Generator" class="md-nav__link">
+      Wifi QR Image Generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ubiquiti/" title="Ubiquiti EdgeRouter & Unifi" class="md-nav__link">
+      Ubiquiti EdgeRouter & Unifi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gmailMarkAsRead/" title="Gmail Markas Read" class="md-nav__link">
+      Gmail Markas Read
     </a>
   </li>
 
@@ -465,6 +523,18 @@
   <li class="md-nav__item">
     <a href="../../raspberryPi/TOR-Pi/" title="Raspberry Pi 3 Tor Access Point" class="md-nav__link">
       Raspberry Pi 3 Tor Access Point
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../usefulLinks_Tools/" title="Useful Links & Tools" class="md-nav__link">
+      Useful Links & Tools
     </a>
   </li>
 
@@ -1138,183 +1208,16 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
     <label class="md-nav__link" for="nav-11">
-      More...
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
-        More...
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../generalLinks/" title="General" class="md-nav__link">
-      General
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-2" type="checkbox" id="nav-11-2">
-    
-    <label class="md-nav__link" for="nav-11-2">
-      Browsers Extensions
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-11-2">
-        Browsers Extensions
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../browsers/chromeExtensions/" title="Chrome" class="md-nav__link">
-      Chrome
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../browsers/firefoxExtentions/" title="Firefox" class="md-nav__link">
-      Firefox
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../synology/" title="Synology DSM" class="md-nav__link">
-      Synology DSM
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ubiquiti/" title="Ubiquiti Networks EdgeRouter & Unifi" class="md-nav__link">
-      Ubiquiti Networks EdgeRouter & Unifi
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../android/" title="Android" class="md-nav__link">
-      Android
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../wifiQrGenerator/" title="WiFi QR Generator" class="md-nav__link">
-      WiFi QR Generator
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../homebridge/" title="Homebridge" class="md-nav__link">
-      Homebridge
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Gmail Mark As Read Script" class="md-nav__link md-nav__link--active">
-      Gmail Mark As Read Script
-    </a>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
-    
-    <label class="md-nav__link" for="nav-12">
       Markdown CheatSheet
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
+      <label class="md-nav__title" for="nav-11">
         Markdown CheatSheet
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1459,13 +1362,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-12" type="checkbox" id="nav-12-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-12" type="checkbox" id="nav-11-12">
     
-    <label class="md-nav__link" for="nav-12-12">
+    <label class="md-nav__link" for="nav-11-12">
       Embed External Sources
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-12">
+      <label class="md-nav__title" for="nav-11-12">
         Embed External Sources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1531,13 +1434,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12-14" type="checkbox" id="nav-12-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-14" type="checkbox" id="nav-11-14">
     
-    <label class="md-nav__link" for="nav-12-14">
+    <label class="md-nav__link" for="nav-11-14">
       Extra
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-14">
+      <label class="md-nav__title" for="nav-11-14">
         Extra
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1592,39 +1495,26 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/moreCategories/gmailMarkAsRead.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/fire1ce/3os.org/edit/master/src/guides/pihole_dns.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="gmail_mark_archived_mail_as_read">Gmail Mark Archived Mail as Read<a class="headerlink" href="#gmail_mark_archived_mail_as_read" title="Permanent link">&para;</a></h1>
-<ol>
-<li>
-<p>Head to script.google.com to start a script.</p>
-</li>
-<li>
-<p>Choose to create a script for Gmail in the little popup.</p>
-</li>
-<li>
-<p>Delete all the sample code it gives you.</p>
-</li>
-<li>
-<p>Replace it with this (written using the API reference):</p>
-</li>
-</ol>
-<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">markArchivedAsRead</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">threads</span> <span class="o">=</span> <span class="nx">GmailApp</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="s2">&quot;label:unread -label:inbox&quot;</span><span class="p">);</span>
-  <span class="nx">GmailApp</span><span class="p">.</span><span class="nx">markThreadsRead</span><span class="p">(</span><span class="nx">threads</span><span class="p">);</span>
-<span class="p">}</span>
+                <p><link rel="stylesheet" href="/assets/CSS/roundedCorners.css"></p>
+<h1 id="pi-hole_as_dns_server_with_dns_over_https_work_in_progress">Pi-hole as DNS Server with DNS over HTTPS (Work In Progress)<a class="headerlink" href="#pi-hole_as_dns_server_with_dns_over_https_work_in_progress" title="Permanent link">&para;</a></h1>
+<p>My Setup:</p>
+<div style="width:80%; margin:0 auto">
+   <img src="/assets/images/guides/pi-hole/pi-hole_setup.jpg" alt="network flow">
+</div>
+
+<p>Requirements</p>
+<div class="codehilite"><pre><span></span>apt-get install curl
 </pre></div>
 
-<p>Save the project with File &gt; Save.</p>
-<p>Add a new version using File &gt; Manage Versions and enter "initial version" then submit that.</p>
-<p>Do a test run using Run &gt; markArchivedAsRead and be sure and authorize the app when it asks you to.</p>
-<p>Add a new trigger using Resource &gt; Current Project's Triggers and choose to run the above function every minute (or hour or day or whatever if you want to be nice to Google's servers).</p>
-<p>Save the script again and exit. Don't worry, it will keep running.</p>
-<p>And you're done. It will continue to run every minute until you stop it. How awesome is that?</p>
-<p>Update: Some people are reporting an error which says "This operation can only be applied to at most 100 threads. (line 3, file "Code")". To fix this, you have to manually do a search for "is:unread" and mark all of them as read before running the script, so that it starts with a clean slate. The script can only process 100 threads per run, so if you give it more than 100 on the first run, that'll obviously bust it.</p>
+<p>Debug</p>
+<div class="codehilite"><pre><span></span>pihole -d
+</pre></div>
                 
                   
+                
                 
               
               
@@ -1635,9 +1525,9 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://3os.org/moreCategories/gmailMarkAsRead/";
+      this.page.url = "https://3os.org/guides/pihole_dns/";
       this.page.identifier =
-        "moreCategories/gmailMarkAsRead/";
+        "guides/pihole_dns/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -1659,7 +1549,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../homebridge/" title="Homebridge" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../BetterTerminal/" title="Better Terminal Experience" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1668,19 +1558,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Homebridge
+                Better Terminal Experience
               </span>
             </div>
           </a>
         
         
-          <a href="../../markdownCheatSheet/welcome/" title="Welcome" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../synology/" title="Synology DSM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Welcome
+                Synology DSM
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1723,7 +1613,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
