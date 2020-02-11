@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#centos_8" tabindex="1" class="md-skip">
+      <a href="#centos_8" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://3os.org/" title="3os.org" class="md-header-nav__button md-logo">
+        <a href="https://3os.org/" title="3os.org" aria-label="3os.org" class="md-header-nav__button md-logo">
           
             <i class="md-icon">donut_small</i>
           
@@ -156,7 +156,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1710,103 +1710,103 @@
                 <h1 id="centos_8">CentOS 8<a class="headerlink" href="#centos_8" title="Permanent link">&para;</a></h1>
 <h2 id="set_up_automatic_updates_for_centos_8">Set Up Automatic Updates for CentOS 8<a class="headerlink" href="#set_up_automatic_updates_for_centos_8" title="Permanent link">&para;</a></h2>
 <p>DNF-automatic RPM package. The package provides a DNF component that starts automatically.</p>
-<div class="codehilite"><pre><span></span>dnf install -y dnf-automatic
-</pre></div>
+<div class="codehilite"><pre><span></span><code>dnf install -y dnf-automatic
+</code></pre></div>
 
 <p>Configuring the dnf-automatic updates.</p>
-<div class="codehilite"><pre><span></span>nano /etc/dnf/automatic.conf
-</pre></div>
+<div class="codehilite"><pre><span></span><code>nano /etc/dnf/automatic.conf
+</code></pre></div>
 
 <p>Configuration this setting:</p>
-<div class="codehilite"><pre><span></span>apply_updates = yes
-</pre></div>
+<div class="codehilite"><pre><span></span><code>apply_updates = yes
+</code></pre></div>
 
 <p>Finally, you can now run dnf-automatic, execute the following command to schedule DNF automatic updates for your CentOS 8</p>
-<div class="codehilite"><pre><span></span>systemctl <span class="nb">enable</span> --now dnf-automatic.timer
-</pre></div>
+<div class="codehilite"><pre><span></span><code>systemctl <span class="nb">enable</span> --now dnf-automatic.timer
+</code></pre></div>
 
 <h2 id="stop_and_disable_firewall_on_centos_8">Stop and Disable Firewall on CentOS 8<a class="headerlink" href="#stop_and_disable_firewall_on_centos_8" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>systemctl stop firewalld
+<div class="codehilite"><pre><span></span><code>systemctl stop firewalld
 systemctl disable firewalld
-</pre></div>
+</code></pre></div>
 
 <h2 id="disable_selinux_on_centos_7">Disable SELinux on CentOS 7<a class="headerlink" href="#disable_selinux_on_centos_7" title="Permanent link">&para;</a></h2>
 <p>change <strong>SELINUX=enforcing</strong> to <strong>SELINUX=disabled</strong></p>
-<div class="codehilite"><pre><span></span>sudo nano /etc/selinux/config
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo nano /etc/selinux/config
+</code></pre></div>
 
 <p>reboot.</p>
 <p>Check status</p>
-<div class="codehilite"><pre><span></span>sestatus
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sestatus
+</code></pre></div>
 
 <h2 id="disable_ipv6_on_centos_8">Disable IPv6 on CentOS 8<a class="headerlink" href="#disable_ipv6_on_centos_8" title="Permanent link">&para;</a></h2>
 <p>Append below lines in /etc/sysctl.conf:</p>
-<div class="codehilite"><pre><span></span>net.ipv6.conf.all.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
+<div class="codehilite"><pre><span></span><code>net.ipv6.conf.all.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
 net.ipv6.conf.default.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
-</pre></div>
+</code></pre></div>
 
 <p>To make the settings affective, execute :</p>
-<div class="codehilite"><pre><span></span>sysctl -p
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sysctl -p
+</code></pre></div>
 
 <h2 id="python_23_installation_on_centos_8">Python &#8532; Installation on CentOS 8<a class="headerlink" href="#python_23_installation_on_centos_8" title="Permanent link">&para;</a></h2>
 <p>Python 2</p>
-<div class="codehilite"><pre><span></span>dnf install python2
-</pre></div>
+<div class="codehilite"><pre><span></span><code>dnf install python2
+</code></pre></div>
 
 <p>Python 3</p>
-<div class="codehilite"><pre><span></span>dnf install python3
-</pre></div>
+<div class="codehilite"><pre><span></span><code>dnf install python3
+</code></pre></div>
 
 <p>Set Default Python Version</p>
 <p>Python 2</p>
-<div class="codehilite"><pre><span></span>alternatives --set python /usr/bin/python2
-</pre></div>
+<div class="codehilite"><pre><span></span><code>alternatives --set python /usr/bin/python2
+</code></pre></div>
 
 <p>Python 3</p>
-<div class="codehilite"><pre><span></span>alternatives --set python /usr/bin/python3
-</pre></div>
+<div class="codehilite"><pre><span></span><code>alternatives --set python /usr/bin/python3
+</code></pre></div>
 
 <p>Remove the unversioned python</p>
-<div class="codehilite"><pre><span></span>alternatives --auto python
-</pre></div>
+<div class="codehilite"><pre><span></span><code>alternatives --auto python
+</code></pre></div>
 
 <h2 id="docker_ce_installation_on_centos_8">Docker CE Installation on CentOS 8<a class="headerlink" href="#docker_ce_installation_on_centos_8" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
+<div class="codehilite"><pre><span></span><code>dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
 sudo dnf install docker-ce
 systemctl start docker
 systemctl <span class="nb">enable</span> docker
 systemctl status docker
-</pre></div>
+</code></pre></div>
 
 <h2 id="nodejs_and_npm_stable_installation">NodeJS and NPM Stable Installation<a class="headerlink" href="#nodejs_and_npm_stable_installation" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>dnf install -y nodejs
+<div class="codehilite"><pre><span></span><code>dnf install -y nodejs
 npm install -g n
 n stable
 node -v
-</pre></div>
+</code></pre></div>
 
 <h2 id="htop_installation_centos_8">Htop Installation CentOS 8<a class="headerlink" href="#htop_installation_centos_8" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+<div class="codehilite"><pre><span></span><code>dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf update
 dnf install -y htop
-</pre></div>
+</code></pre></div>
 
 <h2 id="numbers_of_kernels_to_keep">Numbers of Kernels to Keep<a class="headerlink" href="#numbers_of_kernels_to_keep" title="Permanent link">&para;</a></h2>
 <p><strong>Mininum is 2</strong></p>
-<div class="codehilite"><pre><span></span>dnf install -y dnf-utils
-</pre></div>
+<div class="codehilite"><pre><span></span><code>dnf install -y dnf-utils
+</code></pre></div>
 
 <h3 id="configure_yum_to_auto-remove_old_kernels">Configure yum to auto-remove old kernels<a class="headerlink" href="#configure_yum_to_auto-remove_old_kernels" title="Permanent link">&para;</a></h3>
 <p>Edit /etc/yum.conf
 Set the limit to desired value</p>
-<div class="codehilite"><pre><span></span><span class="nv">installonly_limit</span><span class="o">=</span><span class="m">2</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nv">installonly_limit</span><span class="o">=</span><span class="m">2</span>
+</code></pre></div>
 
 <h2 id="remove_virbr0_and_lxcbr0_interfaces">Remove virbr0 and lxcbr0 Interfaces<a class="headerlink" href="#remove_virbr0_and_lxcbr0_interfaces" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>chkconfig libvirtd off
-</pre></div>
+<div class="codehilite"><pre><span></span><code>chkconfig libvirtd off
+</code></pre></div>
                 
                   
                 
@@ -1885,20 +1885,20 @@ Set the limit to desired value</p>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/fire1ce" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/fire1ce" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://linkedin.com/in/stas-kosatuhin" class="md-footer-social__link fa fa-linkedin"></a>
+      <a href="https://linkedin.com/in/stas-kosatuhin" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
     
-      <a href="https://www.facebook.com/3os.org" class="md-footer-social__link fa fa-facebook"></a>
+      <a href="https://www.facebook.com/3os.org" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
     
   </div>
 
@@ -1908,7 +1908,7 @@ Set the limit to desired value</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

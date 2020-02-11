@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow" tabindex="1" class="md-skip">
+      <a href="#macos_system_tweaks_and_guides_for_better_experience_productivity_and_workflow" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://3os.org/" title="3os.org" class="md-header-nav__button md-logo">
+        <a href="https://3os.org/" title="3os.org" aria-label="3os.org" class="md-header-nav__button md-logo">
           
             <i class="md-icon">donut_small</i>
           
@@ -156,7 +156,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1715,8 +1715,8 @@
 <p>Copy your id_rsa, id_rsa.pub to <em>~/.ssh/</em> folder</p>
 <p>Step 1 - Store the key in the keychain
 Just do this once:</p>
-<div class="codehilite"><pre><span></span>ssh-add -K ~/.ssh/<span class="o">[</span>your-private-key<span class="o">]</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh-add -K ~/.ssh/<span class="o">[</span>your-private-key<span class="o">]</span>
+</code></pre></div>
 
 <p>Enter your key passphrase, and you won't be asked for it again.</p>
 <p>(If you're on a pre-Sierra version of OSX, you're done, Step 2 is not required.)</p>
@@ -1726,11 +1726,11 @@ It seems that OSX Sierra removed the convenient behavior of persisting your keys
 <p>Ensure you've completed Step 1 above to store the key in the keychain.</p>
 <p>If you haven't already, create an ~/.ssh/config file. In other words, in the .ssh directory in your home dir, make a file called config.</p>
 <p>In that .ssh/config file, add the following lines:</p>
-<div class="codehilite"><pre><span></span>Host *
+<div class="codehilite"><pre><span></span><code>Host *
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
-</pre></div>
+</code></pre></div>
 
 <p>Change ~/.ssh/id_rsa to the actual filename of your private key. If you have other private keys in your ~.ssh directory, also add an IdentityFile line for each of them. For example, I have one additional line that reads IdentityFile ~/.ssh/id_ed25519 for a 2<sup>nd</sup> private key.</p>
 <p>The UseKeychain yes is the key part, which tells SSH to look in your OSX keychain for the key passphrase.</p>
@@ -1738,22 +1738,22 @@ It seems that OSX Sierra removed the convenient behavior of persisting your keys
 <h2 id="disable_stricthostkeychecking_in_ssh">Disable StrictHostKeyChecking in SSH<a class="headerlink" href="#disable_stricthostkeychecking_in_ssh" title="Permanent link">&para;</a></h2>
 <p>To disable strict host checking on OS X for the current user,
 create or edit ~/.ssh/ssh_config and add the following lines:</p>
-<div class="codehilite"><pre><span></span>   StrictHostKeyChecking no
-</pre></div>
+<div class="codehilite"><pre><span></span><code>   StrictHostKeyChecking no
+</code></pre></div>
 
 <h2 id="set_macos_hostname_via_cli">Set macOS Hostname via CLI<a class="headerlink" href="#set_macos_hostname_via_cli" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo scutil --set HostName &lt;NewHostNameHere&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo scutil --set HostName &lt;NewHostNameHere&gt;
+</code></pre></div>
 
 <h2 id="syntax_highlighting_in_nano_on_mac_os_x">Syntax Highlighting In Nano on Mac OS X<a class="headerlink" href="#syntax_highlighting_in_nano_on_mac_os_x" title="Permanent link">&para;</a></h2>
 <p>Install Nano from homebrew
 Create <em>nanorc</em> file with the syntax below</p>
-<div class="codehilite"><pre><span></span>brew install nano
+<div class="codehilite"><pre><span></span><code>brew install nano
 nano ~/.nanorc
-</pre></div>
+</code></pre></div>
 
 <p>nanorc:</p>
-<div class="codehilite"><pre><span></span>include /usr/local/share/nano/asm.nanorc
+<div class="codehilite"><pre><span></span><code>include /usr/local/share/nano/asm.nanorc
 include /usr/local/share/nano/awk.nanorc
 include /usr/local/share/nano/c.nanorc
 include /usr/local/share/nano/cmake.nanorc
@@ -1780,11 +1780,11 @@ include /usr/local/share/nano/ruby.nanorc
 include /usr/local/share/nano/sh.nanorc
 include /usr/local/share/nano/tcl.nanorc
 include /usr/local/share/nano/tex.nanorc
-</pre></div>
+</code></pre></div>
 
 <p>Save &amp; Exit</p>
-<div class="codehilite"><pre><span></span><span class="nb">source</span> ~/.zshrc
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span> ~/.zshrc
+</code></pre></div>
 
 <h2 id="force_language_change_on_iterm_focus_to_english">Force Language Change on iTerm Focus to English<a class="headerlink" href="#force_language_change_on_iterm_focus_to_english" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1803,23 +1803,23 @@ include /usr/local/share/nano/tex.nanorc
 Click <em>Utilities &gt; Terminal.</em><br />
 In the Terminal window, type in:</p>
 <p>Status:</p>
-<div class="codehilite"><pre><span></span>csrutil status
-</pre></div>
+<div class="codehilite"><pre><span></span><code>csrutil status
+</code></pre></div>
 
 <p>Disable:</p>
-<div class="codehilite"><pre><span></span>csrutil disable
-</pre></div>
+<div class="codehilite"><pre><span></span><code>csrutil disable
+</code></pre></div>
 
 <p>Enable:</p>
-<div class="codehilite"><pre><span></span>csrutil <span class="nb">enable</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>csrutil <span class="nb">enable</span>
+</code></pre></div>
 
 <p>Press Enter and restart your Mac.</p>
 <h2 id="running_multi_instances_of_an_application">Running Multi Instances of an Application<a class="headerlink" href="#running_multi_instances_of_an_application" title="Permanent link">&para;</a></h2>
 <p>Launch the Script Editor choose temporary folder</p>
 <p>Copy the command to be executed to the Script Editor</p>
-<div class="codehilite"><pre><span></span><span class="k">do</span> shell script <span class="s2">&quot;open -n &lt;path to application&gt;&quot;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">do</span> shell script <span class="s2">&quot;open -n &lt;path to application&gt;&quot;</span>
+</code></pre></div>
 
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -1839,8 +1839,8 @@ Drug the original application icon (or any other) to the  in the left corner of 
 <h2 id="lunch_firefox_profile_manager_as_application">Lunch Firefox Profile Manager as Application<a class="headerlink" href="#lunch_firefox_profile_manager_as_application" title="Permanent link">&para;</a></h2>
 <p>Launch the Script Editor choose temporary folder</p>
 <p>Copy the command to be executed to the Script Editor</p>
-<div class="codehilite"><pre><span></span><span class="k">do</span> shell script <span class="s2">&quot;/Applications/Firefox.app/Contents/MacOS/firefox -ProfileManager &amp;&gt; /dev/null &amp;&quot;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">do</span> shell script <span class="s2">&quot;/Applications/Firefox.app/Contents/MacOS/firefox -ProfileManager &amp;&gt; /dev/null &amp;&quot;</span>
+</code></pre></div>
 
 <p>File &gt; Export</p>
 <p>Use the following settings:</p>
@@ -1855,33 +1855,33 @@ Right Click on the new <strong>Firefox Profile Manager</strong> application we j
 Drug the original application to the icon in the left corner of the "get info" menu.</p>
 <h2 id="installing_rbenv_ruby_send_box_-_ruby_alternative_to_the_one_that_macos_uses">Installing rbenv (ruby send box) - Ruby alternative to the one that macOS uses<a class="headerlink" href="#installing_rbenv_ruby_send_box_-_ruby_alternative_to_the_one_that_macos_uses" title="Permanent link">&para;</a></h2>
 <p>Install rbenv with brew</p>
-<div class="codehilite"><pre><span></span>brew install rbenv
-</pre></div>
+<div class="codehilite"><pre><span></span><code>brew install rbenv
+</code></pre></div>
 
 <p>Add eval <code>"$(rbenv init -)"</code> to the end of <code>~/.zshrc</code> or <code>~/.bash_profile</code></p>
 <p>Install a ruby version</p>
-<div class="codehilite"><pre><span></span>rbenv install <span class="m">2</span>.3.1
-</pre></div>
+<div class="codehilite"><pre><span></span><code>rbenv install <span class="m">2</span>.3.1
+</code></pre></div>
 
 <p>Select a ruby version by rbenv</p>
-<div class="codehilite"><pre><span></span>rbenv global <span class="m">2</span>.3.1
-</pre></div>
+<div class="codehilite"><pre><span></span><code>rbenv global <span class="m">2</span>.3.1
+</code></pre></div>
 
 <p>Open a new terminal window</p>
 <p>Verify that the right gem folder is being used with <code>gem env home</code>(should report something in your user folder not system wide)</p>
 <h2 id="list_listening_ports_and_programs_and_users_netstat_like">List listening Ports and Programs and Users <em>(netstat like)</em><a class="headerlink" href="#list_listening_ports_and_programs_and_users_netstat_like" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo lsof -i -P <span class="p">|</span> grep -i <span class="s2">&quot;listen&quot;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo lsof -i -P <span class="p">|</span> grep -i <span class="s2">&quot;listen&quot;</span>
+</code></pre></div>
 
 <h2 id="flush_dns">Flush DNS<a class="headerlink" href="#flush_dns" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo killall -HUP mDNSResponder<span class="p">;</span>sudo killall mDNSResponderHelper<span class="p">;</span>sudo dscacheutil -flushcache
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo killall -HUP mDNSResponder<span class="p">;</span>sudo killall mDNSResponderHelper<span class="p">;</span>sudo dscacheutil -flushcache
+</code></pre></div>
 
 <h2 id="google_drive_file_sync_fix_for_macos">Google Drive File Sync Fix for macOS<a class="headerlink" href="#google_drive_file_sync_fix_for_macos" title="Permanent link">&para;</a></h2>
 <p>quit Google Drive</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Google
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> ~/Library/Application<span class="se">\ </span>Support/Google
 mv DriveFS DriveFS.old
-</pre></div>
+</code></pre></div>
 
 <p>relaunch Google Drive</p>
                 
@@ -1962,20 +1962,20 @@ mv DriveFS DriveFS.old
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/fire1ce" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/fire1ce" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://linkedin.com/in/stas-kosatuhin" class="md-footer-social__link fa fa-linkedin"></a>
+      <a href="https://linkedin.com/in/stas-kosatuhin" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
     
-      <a href="https://www.facebook.com/3os.org" class="md-footer-social__link fa fa-facebook"></a>
+      <a href="https://www.facebook.com/3os.org" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
     
   </div>
 
@@ -1985,7 +1985,7 @@ mv DriveFS DriveFS.old
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

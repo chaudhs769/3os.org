@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#ubiquiti_networks_-_edgerouter_unifi_unms" tabindex="1" class="md-skip">
+      <a href="#ubiquiti_networks_-_edgerouter_unifi_unms" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://3os.org/" title="3os.org" class="md-header-nav__button md-logo">
+        <a href="https://3os.org/" title="3os.org" aria-label="3os.org" class="md-header-nav__button md-logo">
           
             <i class="md-icon">donut_small</i>
           
@@ -156,7 +156,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1750,33 +1750,33 @@
                 <p><link rel="stylesheet" href="/assets/CSS/roundedCorners.css"></p>
 <h1 id="ubiquiti_networks_-_edgerouter_unifi_unms">Ubiquiti Networks - EdgeRouter, Unifi, UNMS<a class="headerlink" href="#ubiquiti_networks_-_edgerouter_unifi_unms" title="Permanent link">&para;</a></h1>
 <h2 id="edgerouter_-_clear_dns_forwarding_cache_via_ssh_call">EdgeRouter - Clear DNS Forwarding Cache via SSH Call<a class="headerlink" href="#edgerouter_-_clear_dns_forwarding_cache_via_ssh_call" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>ssh user@192.168.1.1 <span class="s1">&#39;sudo /opt/vyatta/bin/sudo-users/vyatta-op-dns-forwarding.pl --clear-cache&#39;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ssh user@192.168.1.1 <span class="s1">&#39;sudo /opt/vyatta/bin/sudo-users/vyatta-op-dns-forwarding.pl --clear-cache&#39;</span>
+</code></pre></div>
 
 <h2 id="edgerouter_-_ssh_via_rsa_keys">EdgeRouter - SSH via RSA keys<a class="headerlink" href="#edgerouter_-_ssh_via_rsa_keys" title="Permanent link">&para;</a></h2>
 <p>SSH to the Edge Router:
 Copy the public key to /tmp folder</p>
 <p>Run:</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 loadkey <span class="o">[</span>your user<span class="o">]</span> /tmp/id_rsa.pub
-</pre></div>
+</code></pre></div>
 
 <p>Check that the keys are working by opening new session</p>
 <p>Disable Password Authentication</p>
-<div class="codehilite"><pre><span></span><span class="nb">set</span> service ssh disable-password-authentication
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span> service ssh disable-password-authentication
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Done.</p>
 <p>Enable Password Authentication if needed.</p>
-<div class="codehilite"><pre><span></span>delete service ssh disable-password-authentication
-</pre></div>
+<div class="codehilite"><pre><span></span><code>delete service ssh disable-password-authentication
+</code></pre></div>
 
 <h2 id="hardening_edgerouter">Hardening EdgeRouter<a class="headerlink" href="#hardening_edgerouter" title="Permanent link">&para;</a></h2>
 <p>This will change the GUI to port 8443, disable old cyphers, Only will listen on internal Network.
 assuming your EdgeRouter IP is 192.168.1.1, if not change it accordingly.</p>
 <p>SSH to the Edge Router</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 <span class="nb">set</span> service gui listen-address <span class="m">192</span>.168.1.1
 <span class="nb">set</span> service gui https-port <span class="m">8443</span>
 <span class="nb">set</span> service gui older-ciphers disable
@@ -1784,31 +1784,31 @@ assuming your EdgeRouter IP is 192.168.1.1, if not change it accordingly.</p>
 <span class="nb">set</span> service ssh protocol-version v2
 <span class="nb">set</span> service ubnt-discover disable
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <h2 id="hardware_offloading">Hardware Offloading<a class="headerlink" href="#hardware_offloading" title="Permanent link">&para;</a></h2>
 <p>For <strong>Devices: ER-X / ER-X-SFP / EP-R6</strong>
 Enable <em>hwnat</em> and <em>ipsec</em> offloading.</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 
 <span class="nb">set</span> system offload hwnat <span class="nb">enable</span>
 <span class="nb">set</span> system offload ipsec <span class="nb">enable</span>
 
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Disable <em>hwnat</em> and <em>ipsec</em> offloading.</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 
 <span class="nb">set</span> system offload hwnat disable
 <span class="nb">set</span> system offload ipsec disable
 
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>For <strong>Devices: ER-4 / ER-6P / ERLite-3 / ERPoE-5 / ER-8 / ERPro-8 / EP-R8 / ER-8-XG</strong>
 Enable IPv4/IPv6 and ipsec offloading.</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 
 <span class="nb">set</span> system offload ipv4 forwarding <span class="nb">enable</span>
 <span class="nb">set</span> system offload ipv4 gre <span class="nb">enable</span>
@@ -1822,10 +1822,10 @@ Enable IPv4/IPv6 and ipsec offloading.</p>
 <span class="nb">set</span> system offload ipsec <span class="nb">enable</span>
 
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Disable IPv4/IPv6 and ipsec offloading.</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 
 <span class="nb">set</span> system offload ipv4 forwarding disable
 <span class="nb">set</span> system offload ipv4 gre disable
@@ -1839,29 +1839,29 @@ commit <span class="p">;</span> save
 <span class="nb">set</span> system offload ipsec disable
 
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <h2 id="disable_update_etchosts_file_on_edgerouter">Disable, Update /etc/hosts file on EdgeRouter<a class="headerlink" href="#disable_update_etchosts_file_on_edgerouter" title="Permanent link">&para;</a></h2>
 <p>Disable Auto DHCP hots:</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 <span class="nb">set</span> service dhcp-server hostfile-update disablecommit
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Update the Host File Manually:</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 <span class="nb">set</span> system static-host-mapping host-name mydomain.com inet <span class="m">192</span>.168.1.10
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Show DNS Forwarding </p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 show service dns forwarding
-</pre></div>
+</code></pre></div>
 
 <p>Show Hosts Config</p>
-<div class="codehilite"><pre><span></span>cat /etc/hosts
-</pre></div>
+<div class="codehilite"><pre><span></span><code>cat /etc/hosts
+</code></pre></div>
 
 <h2 id="guest_wifi_with_ubiquiti_edgerouter_and_unifi_access_points">Guest Wifi With Ubiquiti EdgeRouter and Unifi Access Points<a class="headerlink" href="#guest_wifi_with_ubiquiti_edgerouter_and_unifi_access_points" title="Permanent link">&para;</a></h2>
 <h3 id="edgerouter_configuration">EdgeRouter Configuration<a class="headerlink" href="#edgerouter_configuration" title="Permanent link">&para;</a></h3>
@@ -1903,25 +1903,25 @@ Enter bandwidth limits that are appropriate for your Internet Speed. I used 6000
 <p>For the purpose of this article, it is assumed that the routing and interface configurations are already in place and that reachability has been tested.</p>
 <p>ssh to the EdgeRouter</p>
 <p>Make sure that the date/time is set correctly on the EdgeRouter.</p>
-<div class="codehilite"><pre><span></span>show date
+<div class="codehilite"><pre><span></span><code>show date
 Thu Dec <span class="m">28</span> <span class="m">14</span>:35:42 UTC <span class="m">2017</span>
-</pre></div>
+</code></pre></div>
 
 <p>Log in as the root user.</p>
-<div class="codehilite"><pre><span></span>sudo su
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo su
+</code></pre></div>
 
 <p>Generate a Diffie-Hellman (DH) key file and place it in the /config/auth directory. This Will take some time...</p>
-<div class="codehilite"><pre><span></span>openssl dhparam -out /config/auth/dh.pem -2 <span class="m">4096</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>openssl dhparam -out /config/auth/dh.pem -2 <span class="m">4096</span>
+</code></pre></div>
 
 <p>Change the current directory.</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> /usr/lib/ssl/misc
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> /usr/lib/ssl/misc
+</code></pre></div>
 
 <p>Generate a root certificate (replace <secret> with your desired passphrase).</p>
-<div class="codehilite"><pre><span></span>./CA.pl -newca
-</pre></div>
+<div class="codehilite"><pre><span></span><code>./CA.pl -newca
+</code></pre></div>
 
 <p>exmaple:</p>
 <p>PEM Passphrase: <secret>
@@ -1934,13 +1934,13 @@ Common Name: <code>root</code>
 Email Address: <code>support@ubnt.com</code></p>
 <p><strong><code>NOTE: The Common Name needs to be unique for all certificates.</code></strong></p>
 <p>Copy the newly created certificate + key to the /config/auth directory.</p>
-<div class="codehilite"><pre><span></span>cp demoCA/cacert.pem /config/auth
+<div class="codehilite"><pre><span></span><code>cp demoCA/cacert.pem /config/auth
 cp demoCA/private/cakey.pem /config/auth
-</pre></div>
+</code></pre></div>
 
 <p>Generate the server certificate.</p>
-<div class="codehilite"><pre><span></span>./CA.pl -newreq
-</pre></div>
+<div class="codehilite"><pre><span></span><code>./CA.pl -newreq
+</code></pre></div>
 
 <p>exmaple:</p>
 <p>Country Name: <code>US</code>
@@ -1952,37 +1952,37 @@ Common Name: <code>server</code>
 Email Address: <code>support@ubnt.com</code></p>
 <p>Sign the server certificate.</p>
 <p>if you want to change the certificate expiration day use: export <strong>default_days="3650"</strong> with the value of days you desire</p>
-<div class="codehilite"><pre><span></span>./CA.pl -sign
-</pre></div>
+<div class="codehilite"><pre><span></span><code>./CA.pl -sign
+</code></pre></div>
 
 <p>Move and rename the server certificate + key to the /config/auth directory.</p>
-<div class="codehilite"><pre><span></span>mv newcert.pem /config/auth/server.pem
+<div class="codehilite"><pre><span></span><code>mv newcert.pem /config/auth/server.pem
 mv newkey.pem /config/auth/server.key
-</pre></div>
+</code></pre></div>
 
 <p>Generate, sign and move the client1 certificates.</p>
-<div class="codehilite"><pre><span></span>./CA.pl -newreq
-</pre></div>
+<div class="codehilite"><pre><span></span><code>./CA.pl -newreq
+</code></pre></div>
 
 <p>Common Name: client1</p>
-<div class="codehilite"><pre><span></span>./CA.pl -sign
+<div class="codehilite"><pre><span></span><code>./CA.pl -sign
 mv newcert.pem /config/auth/client1.pem
 mv newkey.pem /config/auth/client1.key
-</pre></div>
+</code></pre></div>
 
 <p>(Optional) Repeat the process for client2.</p>
-<div class="codehilite"><pre><span></span>./CA.pl -newreq
-</pre></div>
+<div class="codehilite"><pre><span></span><code>./CA.pl -newreq
+</code></pre></div>
 
 <p>Common Name: client2</p>
-<div class="codehilite"><pre><span></span>./CA.pl -sign
+<div class="codehilite"><pre><span></span><code>./CA.pl -sign
 mv newcert.pem /config/auth/client2.pem
 mv newkey.pem /config/auth/client2.key
-</pre></div>
+</code></pre></div>
 
 <p>Verify the contents of the /config/auth directory.</p>
-<div class="codehilite"><pre><span></span>ls -l /config/auth
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ls -l /config/auth
+</code></pre></div>
 
 <p>You should have those files:</p>
 <ul>
@@ -1997,39 +1997,39 @@ mv newkey.pem /config/auth/client2.key
 <li>server.pem</li>
 </ul>
 <p>Remove the password from the client + server keys. This allows the clients to connect using only the provided certificate.</p>
-<div class="codehilite"><pre><span></span>openssl rsa -in /config/auth/server.key -out /config/auth/server-no-pass.key
+<div class="codehilite"><pre><span></span><code>openssl rsa -in /config/auth/server.key -out /config/auth/server-no-pass.key
 openssl rsa -in /config/auth/client1.key -out /config/auth/client1-no-pass.key
 openssl rsa -in /config/auth/client2.key -out /config/auth/client2-no-pass.key
-</pre></div>
+</code></pre></div>
 
 <p>Overwrite the existing keys with the no-pass versions.</p>
-<div class="codehilite"><pre><span></span>mv /config/auth/server-no-pass.key /config/auth/server.key
+<div class="codehilite"><pre><span></span><code>mv /config/auth/server-no-pass.key /config/auth/server.key
 mv /config/auth/client1-no-pass.key /config/auth/client1.key
 mv /config/auth/client2-no-pass.key /config/auth/client2.key
-</pre></div>
+</code></pre></div>
 
 <p>Return to operational mode.</p>
-<div class="codehilite"><pre><span></span><span class="nb">exit</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">exit</span>
+</code></pre></div>
 
 <p>Enter configuration mode.</p>
-<div class="codehilite"><pre><span></span>configure
-</pre></div>
+<div class="codehilite"><pre><span></span><code>configure
+</code></pre></div>
 
 <p>If EdgeRouter's Interface is on port 433, you must change it.</p>
-<div class="codehilite"><pre><span></span><span class="nb">set</span> service gui https-port <span class="m">8443</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span> service gui https-port <span class="m">8443</span>
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Add a firewall rule for the OpenVPN traffic to the local firewall policy.</p>
-<div class="codehilite"><pre><span></span><span class="nb">set</span> firewall name WAN_LOCAL rule <span class="m">30</span> action accept
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span> firewall name WAN_LOCAL rule <span class="m">30</span> action accept
 <span class="nb">set</span> firewall name WAN_LOCAL rule <span class="m">30</span> description OpenVPN
 <span class="nb">set</span> firewall name WAN_LOCAL rule <span class="m">30</span> destination port <span class="m">443</span>
 <span class="nb">set</span> firewall name WAN_LOCAL rule <span class="m">30</span> protocol tcp
-</pre></div>
+</code></pre></div>
 
 <p>Configure the OpenVPN virtual tunnel interface.</p>
-<div class="codehilite"><pre><span></span><span class="nb">set</span> interfaces openvpn vtun0 mode server
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span> interfaces openvpn vtun0 mode server
 <span class="nb">set</span> interfaces openvpn vtun0 server subnet <span class="m">172</span>.16.1.0/24
 <span class="nb">set</span> interfaces openvpn vtun0 server push-route <span class="m">192</span>.168.1.0/24
 <span class="nb">set</span> interfaces openvpn vtun0 server name-server <span class="m">192</span>.168.1.1
@@ -2039,20 +2039,20 @@ edit interfaces openvpn vtun0
 <span class="nb">set</span> openvpn-option <span class="s2">&quot;--push redirect-gateway&quot;</span>
 <span class="nb">set</span> protocol tcp-passive
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Link the server certificate/keys and DH key to the virtual tunnel interface.</p>
-<div class="codehilite"><pre><span></span><span class="nb">set</span> interfaces openvpn vtun0 tls ca-cert-file /config/auth/cacert.pem
+<div class="codehilite"><pre><span></span><code><span class="nb">set</span> interfaces openvpn vtun0 tls ca-cert-file /config/auth/cacert.pem
 <span class="nb">set</span> interfaces openvpn vtun0 tls cert-file /config/auth/server.pem
 <span class="nb">set</span> interfaces openvpn vtun0 tls key-file /config/auth/server.key
 <span class="nb">set</span> interfaces openvpn vtun0 tls dh-file /config/auth/dh.pem
 commit <span class="p">;</span> save
-</pre></div>
+</code></pre></div>
 
 <p>Add DNS forwarding to the new vlan vtun0 to get DNS resolving.</p>
 <p><img alt="DNS" src="/assets/images/ubiquiti/guestWifi/14.DNS_F.png" /></p>
 <h3 id="exmaple_for_clinetopvn_config">Exmaple for clinet.opvn Config<a class="headerlink" href="#exmaple_for_clinetopvn_config" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>client
+<div class="codehilite"><pre><span></span><code>client
 dev tun
 proto udp
 remote &lt;server-ip or hostname&gt; <span class="m">443</span>
@@ -2065,33 +2065,33 @@ verb <span class="m">3</span>
 ca cacert.pem
 cert client1.pem
 key client1.key
-</pre></div>
+</code></pre></div>
 
 <h2 id="edgerouter_free_up_space_by_cleaning_old_firmware">EdgeRouter Free Up space by Cleaning Old Firmware<a class="headerlink" href="#edgerouter_free_up_space_by_cleaning_old_firmware" title="Permanent link">&para;</a></h2>
 <p>ssh to the EdgeRouter:</p>
-<div class="codehilite"><pre><span></span>delete system image
-</pre></div>
+<div class="codehilite"><pre><span></span><code>delete system image
+</code></pre></div>
 
 <h2 id="speedtest_cli_on_edge_router">SpeedTest Cli on Edge Router<a class="headerlink" href="#speedtest_cli_on_edge_router" title="Permanent link">&para;</a></h2>
 <p>ssh to the Edge Router.<br />
 installation:</p>
-<div class="codehilite"><pre><span></span>curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+<div class="codehilite"><pre><span></span><code>curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 chmod +x speedtest-cli
-</pre></div>
+</code></pre></div>
 
 <p>run from the same directory:</p>
-<div class="codehilite"><pre><span></span>./speedtest-cli --no-pre-allocate
-</pre></div>
+<div class="codehilite"><pre><span></span><code>./speedtest-cli --no-pre-allocate
+</code></pre></div>
 
 <p>based on <a href="https://github.com/sivel/speedtest-cli" title="speedtest-cli">https://github.com/sivel/speedtest-cli</a></p>
 <h2 id="enable_netflow_on_edgerouter_to_unms">Enable NetFlow on EdgeRouter to UNMS<a class="headerlink" href="#enable_netflow_on_edgerouter_to_unms" title="Permanent link">&para;</a></h2>
 <p>The most suitable place to enable NetFlow is your Default gateway router. UNMS supports NetFlow version 5 and 9. UNMS only record flow data for IP ranges defined below. Whenever UNMS receives any data from a router, the status of NetFlow changes to <code>Active</code>.</p>
 <p>To show interfaces and pick the right interface:\</p>
-<div class="codehilite"><pre><span></span>show interfaces
-</pre></div>
+<div class="codehilite"><pre><span></span><code>show interfaces
+</code></pre></div>
 
 <p>Example configuration for EdgeRouter:</p>
-<div class="codehilite"><pre><span></span>configure
+<div class="codehilite"><pre><span></span><code>configure
 <span class="nb">set</span> system flow-accounting interface pppoe0
 <span class="nb">set</span> system flow-accounting ingress-capture post-dnat
 <span class="nb">set</span> system flow-accounting disable-memory-table
@@ -2109,7 +2109,7 @@ chmod +x speedtest-cli
 <span class="nb">set</span> system flow-accounting netflow timeout udp <span class="m">60</span>
 commit
 save
-</pre></div>
+</code></pre></div>
 
 <p>10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,100.64.0.0/10</p>
                 
@@ -2190,20 +2190,20 @@ save
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/fire1ce" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/fire1ce" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://linkedin.com/in/stas-kosatuhin" class="md-footer-social__link fa fa-linkedin"></a>
+      <a href="https://linkedin.com/in/stas-kosatuhin" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
     
-      <a href="https://www.facebook.com/3os.org" class="md-footer-social__link fa fa-facebook"></a>
+      <a href="https://www.facebook.com/3os.org" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
     
   </div>
 
@@ -2213,7 +2213,7 @@ save
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

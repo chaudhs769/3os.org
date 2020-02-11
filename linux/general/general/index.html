@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#linux_general_topics" tabindex="1" class="md-skip">
+      <a href="#linux_general_topics" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://3os.org/" title="3os.org" class="md-header-nav__button md-logo">
+        <a href="https://3os.org/" title="3os.org" aria-label="3os.org" class="md-header-nav__button md-logo">
           
             <i class="md-icon">donut_small</i>
           
@@ -156,7 +156,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1753,134 +1753,134 @@
                 
                 <h1 id="linux_general_topics">Linux General Topics<a class="headerlink" href="#linux_general_topics" title="Permanent link">&para;</a></h1>
 <h2 id="service_statusstartstopenabling_on_boot">Service Status/Start/Stop/Enabling On Boot<a class="headerlink" href="#service_statusstartstopenabling_on_boot" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>systemctl status httpd
+<div class="codehilite"><pre><span></span><code>systemctl status httpd
 systemctl start httpd
 systemctl stop httpd
 systemctl <span class="nb">enable</span> httpd
-</pre></div>
+</code></pre></div>
 
 <h2 id="run_script_on_boot_-_crontab">Run Script On Boot - Crontab<a class="headerlink" href="#run_script_on_boot_-_crontab" title="Permanent link">&para;</a></h2>
 <p>Only add sudo if your script needs superuser privileges. Then add this to your crontab:</p>
-<div class="codehilite"><pre><span></span><span class="o">(</span>sudo<span class="o">)</span> crontab -e
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>sudo<span class="o">)</span> crontab -e
+</code></pre></div>
 
 <p>Add to the end of the Cront tab:</p>
-<div class="codehilite"><pre><span></span>@reboot /path/to/script.sh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>@reboot /path/to/script.sh
+</code></pre></div>
 
 <h2 id="redirect_output_to_a_file_and_stdout_with_tee">Redirect Output to a File and Stdout With <em>tee</em><a class="headerlink" href="#redirect_output_to_a_file_and_stdout_with_tee" title="Permanent link">&para;</a></h2>
 <p>The command you want is named <code>tee</code>:</p>
-<div class="codehilite"><pre><span></span>foo <span class="p">|</span> tee output.file
-</pre></div>
+<div class="codehilite"><pre><span></span><code>foo <span class="p">|</span> tee output.file
+</code></pre></div>
 
 <p>For example, if you only care about stdout:</p>
-<div class="codehilite"><pre><span></span>ls -a <span class="p">|</span> tee output.file
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ls -a <span class="p">|</span> tee output.file
+</code></pre></div>
 
 <p>If you want to include stderr, do:</p>
-<div class="codehilite"><pre><span></span>program <span class="o">[</span>arguments...<span class="o">]</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee outfile
-</pre></div>
+<div class="codehilite"><pre><span></span><code>program <span class="o">[</span>arguments...<span class="o">]</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee outfile
+</code></pre></div>
 
 <p>2&gt;&amp;1 redirects channel 2 (stderr/standard error) into channel 1 (stdout/standard output), such that both is written as stdout. It is also directed to the given output file as of the tee command.</p>
 <p>Furthermore, if you want to append to the log file, use tee -a as:</p>
-<div class="codehilite"><pre><span></span>program <span class="o">[</span>arguments...<span class="o">]</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee -a outfile
-</pre></div>
+<div class="codehilite"><pre><span></span><code>program <span class="o">[</span>arguments...<span class="o">]</span> <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee -a outfile
+</code></pre></div>
 
 <h2 id="add_permanent_path_to_application">Add Permanent Path to Application<a class="headerlink" href="#add_permanent_path_to_application" title="Permanent link">&para;</a></h2>
 <p>First find the location of the Application/Service:</p>
-<div class="codehilite"><pre><span></span>find / -name ApplicationName
-</pre></div>
+<div class="codehilite"><pre><span></span><code>find / -name ApplicationName
+</code></pre></div>
 
 <p>Go to the path where the application is located</p>
-<div class="codehilite"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;../../../ApplicationName&quot;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> <span class="s2">&quot;../../../ApplicationName&quot;</span>
+</code></pre></div>
 
 <p>Run this command for ZSH:</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;&#39;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s1">&#39;:$PATH&quot;&#39;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;&#39;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s1">&#39;:$PATH&quot;&#39;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
+</code></pre></div>
 
 <p>Run this command for "Bash Profile":</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;&#39;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s1">&#39;:$PATH&quot;&#39;</span> &gt;&gt; ~/.profile <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.profile
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;&#39;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s1">&#39;:$PATH&quot;&#39;</span> &gt;&gt; ~/.profile <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.profile
+</code></pre></div>
 
 <p>Run this command for "Bash":</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;&#39;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s1">&#39;:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;&#39;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s1">&#39;:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
+</code></pre></div>
 
 <h2 id="create_symbolic_links">Create Symbolic Links<a class="headerlink" href="#create_symbolic_links" title="Permanent link">&para;</a></h2>
 <p>To create a symbolic link in Unix/Linux, at the terminal prompt, enter:</p>
-<div class="codehilite"><pre><span></span>ln -s source_file target_file
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ln -s source_file target_file
+</code></pre></div>
 
 <p>to remove symbolic link use the <code>rm</code> command on the link</p>
 <h2 id="update_time_zone">Update Time Zone<a class="headerlink" href="#update_time_zone" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo dpkg-reconfigure tzdata
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo dpkg-reconfigure tzdata
+</code></pre></div>
 
 <h2 id="disable_ipv6">Disable IPv6<a class="headerlink" href="#disable_ipv6" title="Permanent link">&para;</a></h2>
 <p>For current session:</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv6/conf/&lt;interface-name&gt;/disable_ipv6
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv6/conf/&lt;interface-name&gt;/disable_ipv6
 <span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv6/conf/eth0/disable_ipv6
-</pre></div>
+</code></pre></div>
 
 <p>Permanent:</p>
 <p>edit /etc/sysctl.conf and add to the end of the config</p>
-<div class="codehilite"><pre><span></span>net.ipv6.conf.all.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>net.ipv6.conf.all.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
+</code></pre></div>
 
 <p>Save. Then run:</p>
-<div class="codehilite"><pre><span></span>sudo sysctl -p /etc/sysctl.conf
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo sysctl -p /etc/sysctl.conf
+</code></pre></div>
 
 <h2 id="max_connections_on_linux">Max connections on Linux<a class="headerlink" href="#max_connections_on_linux" title="Permanent link">&para;</a></h2>
 <p>Add to /etc/sysctl.conf:</p>
-<div class="codehilite"><pre><span></span>fs.file-max <span class="o">=</span> <span class="m">70000</span>
+<div class="codehilite"><pre><span></span><code>fs.file-max <span class="o">=</span> <span class="m">70000</span>
 net.ipv4.tcp_tw_recycle<span class="o">=</span><span class="m">0</span>
 net.ipv4.tcp_fin_timeout <span class="o">=</span> <span class="m">10</span>
 net.ipv4.ip_local_port_range <span class="o">=</span> <span class="m">15000</span> <span class="m">61000</span>
 net.core.somaxconn <span class="o">=</span> <span class="m">1024</span>
 net.core.netdev_max_backlog <span class="o">=</span> <span class="m">2000</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="rescan_drives_for_the_os">Rescan Drives for the OS<a class="headerlink" href="#rescan_drives_for_the_os" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;- - -&quot;</span> &gt; /sys/class/scsi_host/host0/scan
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;- - -&quot;</span> &gt; /sys/class/scsi_host/host0/scan
 <span class="nb">echo</span> <span class="m">1</span> &gt; /sys/class/scsi_device/2<span class="se">\:</span><span class="m">0</span><span class="se">\:</span><span class="m">0</span><span class="se">\:</span><span class="m">0</span>/device/rescan
-</pre></div>
+</code></pre></div>
 
 <h2 id="find_ptr_owner_-_reversal_look_up">Find PTR Owner - Reversal Look Up<a class="headerlink" href="#find_ptr_owner_-_reversal_look_up" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>dig <span class="m">0</span>.168.192.in-addr.arpa. NS
-</pre></div>
+<div class="codehilite"><pre><span></span><code>dig <span class="m">0</span>.168.192.in-addr.arpa. NS
+</code></pre></div>
 
 <h2 id="fix_locales">Fix Locales<a class="headerlink" href="#fix_locales" title="Permanent link">&para;</a></h2>
 <p>For bash shell run:</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export LC_ALL=C&quot;</span> &gt;&gt; ~/.profile <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.profile
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;export LC_ALL=C&quot;</span> &gt;&gt; ~/.profile <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.profile
+</code></pre></div>
 
 <p>For zsh shell run:</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export LC_ALL=C&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;export LC_ALL=C&quot;</span> &gt;&gt; ~/.zshrc <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zshrc
+</code></pre></div>
 
 <h2 id="open_last_edited_file">Open Last Edited File<a class="headerlink" href="#open_last_edited_file" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>less <span class="sb">`</span>ls -dx1tr /usr/local/cpanel/logs/cpbackup/*<span class="p">|</span>tail -1<span class="sb">`</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>less <span class="sb">`</span>ls -dx1tr /usr/local/cpanel/logs/cpbackup/*<span class="p">|</span>tail -1<span class="sb">`</span>
+</code></pre></div>
 
 <h2 id="kill_process_that_runs_more_than_x_time">Kill Process That Runs More Than X Time<a class="headerlink" href="#kill_process_that_runs_more_than_x_time" title="Permanent link">&para;</a></h2>
 <p>Kill cgi after 30 secs:</p>
-<div class="codehilite"><pre><span></span><span class="k">for</span> i in <span class="sb">`</span>ps -eo pid,etime,cmd<span class="p">|</span>grep cgi<span class="p">|</span>awk <span class="s1">&#39;$2 &gt; &quot;00:30&quot; {print $1}&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nb">kill</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> i in <span class="sb">`</span>ps -eo pid,etime,cmd<span class="p">|</span>grep cgi<span class="p">|</span>awk <span class="s1">&#39;$2 &gt; &quot;00:30&quot; {print $1}&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nb">kill</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
 
 <h2 id="update_date_and_time_on_linux_server">Update Date and Time on Linux Server<a class="headerlink" href="#update_date_and_time_on_linux_server" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo ntpd -qg<span class="p">;</span> sudo hwclock -w
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo ntpd -qg<span class="p">;</span> sudo hwclock -w
+</code></pre></div>
 
 <h2 id="generate_csr_with_openssl">Generate CSR with OpenSSL<a class="headerlink" href="#generate_csr_with_openssl" title="Permanent link">&para;</a></h2>
 <p>Generate key:</p>
-<div class="codehilite"><pre><span></span>openssl genrsa -out private.key <span class="m">2048</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>openssl genrsa -out private.key <span class="m">2048</span>
+</code></pre></div>
 
 <p>Generate CSR:</p>
-<div class="codehilite"><pre><span></span>openssl req -new -sha256 -key private.key -out mycsr.csr
-</pre></div>
+<div class="codehilite"><pre><span></span><code>openssl req -new -sha256 -key private.key -out mycsr.csr
+</code></pre></div>
                 
                   
                 
@@ -1959,20 +1959,20 @@ net.core.netdev_max_backlog <span class="o">=</span> <span class="m">2000</span>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/fire1ce" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/fire1ce" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://linkedin.com/in/stas-kosatuhin" class="md-footer-social__link fa fa-linkedin"></a>
+      <a href="https://linkedin.com/in/stas-kosatuhin" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
     
-      <a href="https://www.facebook.com/3os.org" class="md-footer-social__link fa fa-facebook"></a>
+      <a href="https://www.facebook.com/3os.org" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
     
   </div>
 
@@ -1982,7 +1982,7 @@ net.core.netdev_max_backlog <span class="o">=</span> <span class="m">2000</span>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

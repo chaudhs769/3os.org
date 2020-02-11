@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#raspberry_pi_3_tor_access_point_torpi_091119_update" tabindex="1" class="md-skip">
+      <a href="#raspberry_pi_3_tor_access_point_torpi_091119_update" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -125,7 +125,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://3os.org/" title="3os.org" class="md-header-nav__button md-logo">
+        <a href="https://3os.org/" title="3os.org" aria-label="3os.org" class="md-header-nav__button md-logo">
           
             <i class="md-icon">donut_small</i>
           
@@ -156,7 +156,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1803,22 +1803,22 @@
 <li>Burn Image to SD-Card.</li>
 <li>Boot Raspberry Pi 3.</li>
 </ul>
-<div class="codehilite"><pre><span></span>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade <span class="o">&amp;&amp;</span> sudo apt-get install git
+<div class="codehilite"><pre><span></span><code>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade <span class="o">&amp;&amp;</span> sudo apt-get install git
 sudo raspi-config
-</pre></div>
+</code></pre></div>
 
 <p>Change User Password within the Config Interface
 Enable SSH In Interface Options</p>
-<div class="codehilite"><pre><span></span>sudo reboot
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo reboot
+</code></pre></div>
 
 <h2 id="wifi_hotspot_configuration">Wifi Hotspot Configuration<a class="headerlink" href="#wifi_hotspot_configuration" title="Permanent link">&para;</a></h2>
 <p>SSH TO Raspberry Pi 3</p>
-<div class="codehilite"><pre><span></span>ssh pi@raspberry_host
+<div class="codehilite"><pre><span></span><code>ssh pi@raspberry_host
 git clone https://github.com/unixabg/RPI-Wireless-Hotspot.git
 <span class="nb">cd</span> RPI-Wireless-Hotspot
 sudo ./install
-</pre></div>
+</code></pre></div>
 
 <ul>
 <li>"Y" to agree to terms</li>
@@ -1832,21 +1832,21 @@ sudo ./install
 <li>Type "N" for chromecast support (unless you plan to use a chromecast w/RasTor)</li>
 </ul>
 <p>if you get "Failed to start hostapd.service: Unit hostapd.service is masked." error when installing the script, execute this:</p>
-<div class="codehilite"><pre><span></span>sudo systemctl unmask hostapd
+<div class="codehilite"><pre><span></span><code>sudo systemctl unmask hostapd
 sudo systemctl <span class="nb">enable</span> hostapd
 sudo systemctl start hostapd
-</pre></div>
+</code></pre></div>
 
 <p>reboot before testing thw wifi</p>
 <h2 id="testing_wifi_hotspot">Testing Wifi Hotspot<a class="headerlink" href="#testing_wifi_hotspot" title="Permanent link">&para;</a></h2>
 <p>Connect to new SSID with a Phone and check if you have full Internet Connection.</p>
 <h2 id="installing_tor_service">Installing Tor Service<a class="headerlink" href="#installing_tor_service" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo apt-get install tor
+<div class="codehilite"><pre><span></span><code>sudo apt-get install tor
 sudo nano /etc/tor/torrc
-</pre></div>
+</code></pre></div>
 
 <p>Add the following just below the first set of comments:</p>
-<div class="codehilite"><pre><span></span>Log notice file /var/log/tor/notices.log
+<div class="codehilite"><pre><span></span><code>Log notice file /var/log/tor/notices.log
 VirtualAddrNetwork <span class="m">10</span>.192.0.0/10
 AutomapHostsSuffixes .onion,.exit
 AutomapHostsOnResolve <span class="m">1</span>
@@ -1854,65 +1854,65 @@ TransPort <span class="m">192</span>.168.42.1:9040
 TransListenAddress <span class="m">192</span>.168.42.1
 DNSPort <span class="m">192</span>.168.42.1:53
 DNSListenAddress <span class="m">192</span>.168.42.1
-</pre></div>
+</code></pre></div>
 
 <h2 id="configure_iptables">Configure iptables<a class="headerlink" href="#configure_iptables" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo iptables -F <span class="o">&amp;&amp;</span> sudo iptables -t nat -F
+<div class="codehilite"><pre><span></span><code>sudo iptables -F <span class="o">&amp;&amp;</span> sudo iptables -t nat -F
 sudo iptables -t nat -A PREROUTING -i wlan0 -p udp --dport <span class="m">53</span> -j REDIRECT --to-ports <span class="m">53</span>
 sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --syn -j REDIRECT --to-ports <span class="m">9040</span>
-</pre></div>
+</code></pre></div>
 
 <p>Check iptables routes:</p>
-<div class="codehilite"><pre><span></span>sudo iptables -t nat -L
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo iptables -t nat -L
+</code></pre></div>
 
 <p>if all routs looks like about run this command:</p>
-<div class="codehilite"><pre><span></span>sudo sh -c <span class="s2">&quot;iptables-save &gt; /etc/iptables.ipv4.nat&quot;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo sh -c <span class="s2">&quot;iptables-save &gt; /etc/iptables.ipv4.nat&quot;</span>
+</code></pre></div>
 
 <h2 id="create_log_file">Create log file<a class="headerlink" href="#create_log_file" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo touch /var/log/tor/notices.log
+<div class="codehilite"><pre><span></span><code>sudo touch /var/log/tor/notices.log
 sudo chown debian-tor /var/log/tor/notices.log <span class="o">&amp;&amp;</span> sudo chmod <span class="m">644</span> /var/log/tor/notices.log
-</pre></div>
+</code></pre></div>
 
 <h2 id="testing_and_finishes">Testing and finishes<a class="headerlink" href="#testing_and_finishes" title="Permanent link">&para;</a></h2>
 <p>Start TOR service:</p>
-<div class="codehilite"><pre><span></span>sudo service tor start
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo service tor start
+</code></pre></div>
 
 <p>Check to see if the service is running:</p>
-<div class="codehilite"><pre><span></span>sudo service tor status
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo service tor status
+</code></pre></div>
 
 <p>Run TOR Service at Boot:</p>
-<div class="codehilite"><pre><span></span>sudo update-rc.d tor <span class="nb">enable</span>
+<div class="codehilite"><pre><span></span><code>sudo update-rc.d tor <span class="nb">enable</span>
 sudo reboot
-</pre></div>
+</code></pre></div>
 
 <p>Test for TOR service is running after reboot, connect to the TOR WIFI.</p>
 <h2 id="optional_install_monit_service_to_reload_tor_serivce_if_down">Optional: Install Monit Service to reload Tor Serivce if Down<a class="headerlink" href="#optional_install_monit_service_to_reload_tor_serivce_if_down" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo apt-get install monit
+<div class="codehilite"><pre><span></span><code>sudo apt-get install monit
 sudo nano /etc/monit/monitrc
-</pre></div>
+</code></pre></div>
 
 <p>Add those lines to the end of the config:</p>
-<div class="codehilite"><pre><span></span>check process gdm with pidfile /var/run/tor/tor.pid
+<div class="codehilite"><pre><span></span><code>check process gdm with pidfile /var/run/tor/tor.pid
    start <span class="nv">program</span> <span class="o">=</span> <span class="s2">&quot;/etc/init.d/tor start&quot;</span>
    stop <span class="nv">program</span> <span class="o">=</span> <span class="s2">&quot;/etc/init.d/tor stop&quot;</span>
-</pre></div>
+</code></pre></div>
 
 <p>Reload and add Monit to startup:</p>
-<div class="codehilite"><pre><span></span>systemctl restart monit
+<div class="codehilite"><pre><span></span><code>systemctl restart monit
 systemctl <span class="nb">enable</span> monit
-</pre></div>
+</code></pre></div>
 
 <h2 id="bonus">Bonus<a class="headerlink" href="#bonus" title="Permanent link">&para;</a></h2>
 <p>Chnage Exit Ip every 10 sec
 add this to the end of /etc/tor/torrc</p>
-<div class="codehilite"><pre><span></span>CircuitBuildTimeout <span class="m">10</span>
+<div class="codehilite"><pre><span></span><code>CircuitBuildTimeout <span class="m">10</span>
 LearnCircuitBuildTimeout <span class="m">0</span>
 MaxCircuitDirtiness <span class="m">10</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -1991,20 +1991,20 @@ MaxCircuitDirtiness <span class="m">10</span>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/fire1ce" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/fire1ce" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
     
-      <a href="https://linkedin.com/in/stas-kosatuhin" class="md-footer-social__link fa fa-linkedin"></a>
+      <a href="https://linkedin.com/in/stas-kosatuhin" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
     
-      <a href="https://www.facebook.com/3os.org" class="md-footer-social__link fa fa-facebook"></a>
+      <a href="https://www.facebook.com/3os.org" target="_blank" rel="noopener" title="facebook" class="md-footer-social__link fa fa-facebook"></a>
     
   </div>
 
@@ -2014,7 +2014,7 @@ MaxCircuitDirtiness <span class="m">10</span>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
