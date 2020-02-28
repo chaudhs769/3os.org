@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -642,8 +642,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disable_ipv6" class="md-nav__link">
-    Disable IPv6
+  <a href="#disable_ipv6_persistent" class="md-nav__link">
+    Disable IPv6 Persistent
   </a>
   
 </li>
@@ -718,58 +718,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9">
     
     <label class="md-nav__link" for="nav-5-9">
-      Guides
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-9">
-        Guides
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../linuxGuides/ResizeRootPartitionWithoutReboot/" title="Resize Root PartitionWithout Reboot" class="md-nav__link">
-      Resize Root PartitionWithout Reboot
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../linuxGuides/zshOnSteroids/" title="Installing Oh My zsh" class="md-nav__link">
-      Installing Oh My zsh
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
-    
-    <label class="md-nav__link" for="nav-5-10">
       Linux Services
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-10">
+      <label class="md-nav__title" for="nav-5-9">
         Linux Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1545,8 +1497,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disable_ipv6" class="md-nav__link">
-    Disable IPv6
+  <a href="#disable_ipv6_persistent" class="md-nav__link">
+    Disable IPv6 Persistent
   </a>
   
 </li>
@@ -1588,22 +1540,23 @@
 <div class="codehilite"><pre><span></span><code>ufw disable
 </code></pre></div>
 
-<h2 id="disable_ipv6">Disable IPv6<a class="headerlink" href="#disable_ipv6" title="Permanent link">&para;</a></h2>
-<p>add to the end of /etc/sysctl.conf</p>
-<div class="codehilite"><pre><span></span><code>net.ipv6.conf.all.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
-net.ipv6.conf.default.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
-net.ipv6.conf.lo.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
+<h2 id="disable_ipv6_persistent">Disable IPv6 Persistent<a class="headerlink" href="#disable_ipv6_persistent" title="Permanent link">&para;</a></h2>
+<p>Disable IPv6 using GRUB
+Perform the following steps with root privileges to disable IPv6 in Ubuntu 18.04/16.04 Permanently using grub method.</p>
+<p>Edit:</p>
+<div class="codehilite"><pre><span></span><code>/etc/default/grub
 </code></pre></div>
 
-<p>Run:</p>
-<div class="codehilite"><pre><span></span><code>sudo sysctl -p
+<p>Modify <em>GRUB_CMDLINE_LINUX</em> and <em>GRUB_CMDLINE_LINUX_DEFAULT</em> to append ipv6.disable=1:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&quot;ipv6.disable=1&quot;</span>
+<span class="nv">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;ipv6.disable=1&quot;</span>
 </code></pre></div>
 
-<p>Reboot. To test run</p>
-<div class="codehilite"><pre><span></span><code>cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+<p>Update the grub configuration:</p>
+<div class="codehilite"><pre><span></span><code>update-grub
 </code></pre></div>
 
-<p>If it reports ‘1′ means you have disabled IPV6.</p>
+<p>Reboot the server</p>
 <h2 id="clear_boot_partition_on_ubuntu_when_100">Clear BOOT Partition on Ubuntu when 100%<a class="headerlink" href="#clear_boot_partition_on_ubuntu_when_100" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>dpkg --purge <span class="sb">`</span>dpkg --list<span class="p">|</span>grep <span class="s2">&quot;linux-&quot;</span><span class="p">|</span>grep -v <span class="se">\`</span>uname -r<span class="p">|</span>sed <span class="s1">&#39;s/-generic//g&#39;</span><span class="se">\`</span><span class="p">|</span>cut -d<span class="s2">&quot; &quot;</span> -f3<span class="p">|</span>grep <span class="s2">&quot;[0-9]-&quot;</span><span class="p">|</span>paste -sd <span class="s2">&quot; &quot;</span> -<span class="sb">`</span>
 </code></pre></div>
@@ -1710,7 +1663,7 @@ net.ipv6.conf.lo.disable_ipv6 <span class="o">=</span> <span class="m">1</span>
     
       <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

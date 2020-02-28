@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -622,8 +622,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update_time_zone" class="md-nav__link">
-    Update Time Zone
+  <a href="#set_the_timezone" class="md-nav__link">
+    Set the Timezone
   </a>
   
 </li>
@@ -802,58 +802,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9">
     
     <label class="md-nav__link" for="nav-5-9">
-      Guides
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-9">
-        Guides
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../linuxGuides/ResizeRootPartitionWithoutReboot/" title="Resize Root PartitionWithout Reboot" class="md-nav__link">
-      Resize Root PartitionWithout Reboot
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../linuxGuides/zshOnSteroids/" title="Installing Oh My zsh" class="md-nav__link">
-      Installing Oh My zsh
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
-    
-    <label class="md-nav__link" for="nav-5-10">
       Linux Services
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-10">
+      <label class="md-nav__title" for="nav-5-9">
         Linux Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1657,8 +1609,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update_time_zone" class="md-nav__link">
-    Update Time Zone
+  <a href="#set_the_timezone" class="md-nav__link">
+    Set the Timezone
   </a>
   
 </li>
@@ -1813,8 +1765,14 @@ systemctl <span class="nb">enable</span> httpd
 </code></pre></div>
 
 <p>to remove symbolic link use the <code>rm</code> command on the link</p>
-<h2 id="update_time_zone">Update Time Zone<a class="headerlink" href="#update_time_zone" title="Permanent link">&para;</a></h2>
+<h2 id="set_the_timezone">Set the Timezone<a class="headerlink" href="#set_the_timezone" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>sudo dpkg-reconfigure tzdata
+</code></pre></div>
+
+<p><strong>or</strong></p>
+<p>Set the timezone</p>
+<p>To set the timezone of your system clock do the following:</p>
+<div class="codehilite"><pre><span></span><code>cp /usr/share/zoneinfo/Israel /etc/localtime
 </code></pre></div>
 
 <h2 id="disable_ipv6">Disable IPv6<a class="headerlink" href="#disable_ipv6" title="Permanent link">&para;</a></h2>
@@ -1984,7 +1942,7 @@ net.core.netdev_max_backlog <span class="o">=</span> <span class="m">2000</span>
     
       <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       

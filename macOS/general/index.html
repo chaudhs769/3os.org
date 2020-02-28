@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-\.]+">
       
       <link rel="shortcut icon" href="/assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
@@ -658,58 +658,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-9" type="checkbox" id="nav-5-9">
     
     <label class="md-nav__link" for="nav-5-9">
-      Guides
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-9">
-        Guides
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../linux/linuxGuides/ResizeRootPartitionWithoutReboot/" title="Resize Root PartitionWithout Reboot" class="md-nav__link">
-      Resize Root PartitionWithout Reboot
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../linux/linuxGuides/zshOnSteroids/" title="Installing Oh My zsh" class="md-nav__link">
-      Installing Oh My zsh
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-10" type="checkbox" id="nav-5-10">
-    
-    <label class="md-nav__link" for="nav-5-10">
       Linux Services
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-10">
+      <label class="md-nav__title" for="nav-5-9">
         Linux Services
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -878,6 +830,26 @@
   <a href="#categories" class="md-nav__link">
     Categories
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homebrew_tips" class="md-nav__link">
+    HomeBrew Tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uninstall_brew_package_and_dependencies" class="md-nav__link">
+    Uninstall brew package and dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1530,6 +1502,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homebrew_tips" class="md-nav__link">
+    HomeBrew Tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uninstall_brew_package_and_dependencies" class="md-nav__link">
+    Uninstall brew package and dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1568,6 +1560,19 @@
 <li><a href="/macOS/system/">System Tweaks</a></li>
 <li><a href="/macOS/applications/">Applications Tweaks</a></li>
 </ul>
+<h2 id="homebrew_tips">HomeBrew Tips<a class="headerlink" href="#homebrew_tips" title="Permanent link">&para;</a></h2>
+<h3 id="uninstall_brew_package_and_dependencies">Uninstall brew package and dependencies<a class="headerlink" href="#uninstall_brew_package_and_dependencies" title="Permanent link">&para;</a></h3>
+<p>Remove package's dependencies (does not remove package):</p>
+<div class="codehilite"><pre><span></span><code>brew deps <span class="o">[</span>FORMULA<span class="o">]</span> <span class="p">|</span> xargs brew remove --ignore-dependencies
+</code></pre></div>
+
+<p>Remove package:</p>
+<div class="codehilite"><pre><span></span><code>brew remove <span class="o">[</span>FORMULA<span class="o">]</span>
+</code></pre></div>
+
+<p>Reinstall missing libraries:</p>
+<div class="codehilite"><pre><span></span><code>brew missing <span class="p">|</span> cut -d: -f2 <span class="p">|</span> sort <span class="p">|</span> uniq <span class="p">|</span> xargs brew install
+</code></pre></div>
                 
                   
                 
@@ -1671,7 +1676,7 @@
     
       <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
