@@ -1066,8 +1066,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pi-hole_dns_ad-blocker" class="md-nav__link">
-    Pi-Hole DNS Ad-Blocker
+  <a href="#homebridge" class="md-nav__link">
+    HomeBridge
   </a>
   
 </li>
@@ -1602,8 +1602,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pi-hole_dns_ad-blocker" class="md-nav__link">
-    Pi-Hole DNS Ad-Blocker
+  <a href="#homebridge" class="md-nav__link">
+    HomeBridge
   </a>
   
 </li>
@@ -1775,44 +1775,22 @@ networkstatic/iperf3:latest -s
 linuxserver/calibre-web:latest
 </code></pre></div>
 
-<h2 id="pi-hole_dns_ad-blocker">Pi-Hole DNS Ad-Blocker<a class="headerlink" href="#pi-hole_dns_ad-blocker" title="Permanent link">&para;</a></h2>
+<h2 id="homebridge">HomeBridge<a class="headerlink" href="#homebridge" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
---name pihole <span class="se">\</span>
--h pihole <span class="se">\</span>
--p <span class="m">53</span>:53/tcp <span class="se">\</span>
--p <span class="m">53</span>:53/udp <span class="se">\</span>
--p <span class="m">67</span>:67/udp <span class="se">\</span>
--p <span class="m">80</span>:80/tcp <span class="se">\</span>
--p <span class="m">443</span>:443/tcp <span class="se">\</span>
--v /root/pihole/pihole/:/etc/pihole <span class="se">\</span>
--v /root/pihole/dnsmasq.d:/etc/dnsmasq.d <span class="se">\</span>
+--net<span class="o">=</span>host <span class="se">\</span>
+--name<span class="o">=</span>homebridge <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
 -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
---dns<span class="o">=</span><span class="m">127</span>.0.0.1 <span class="se">\</span>
---dns<span class="o">=</span><span class="m">1</span>.1.1.1 <span class="se">\</span>
-pihole/pihole:latest
+-e <span class="nv">HOMEBRIDGE_CONFIG_UI</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-e <span class="nv">HOMEBRIDGE_CONFIG_UI_PORT</span><span class="o">=</span><span class="m">11507</span> <span class="se">\</span>
+-e <span class="nv">HOMEBRIDGE_INSECURE</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+-v /volume1/docker/homebridge:/homebridge <span class="se">\</span>
+oznu/homebridge
 </code></pre></div>
 
-<p>Blocklists:</p>
-<ul>
-<li><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts</a></li>
-<li><a href="https://mirror1.malwaredomains.com/files/justdomains">https://mirror1.malwaredomains.com/files/justdomains</a></li>
-<li><a href="http://sysctl.org/cameleon/hosts">http://sysctl.org/cameleon/hosts</a></li>
-<li><a href="https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist">https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist</a></li>
-<li><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt</a></li>
-<li><a href="https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt">https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt</a></li>
-<li><a href="https://hosts-file.net/ad_servers.txt">https://hosts-file.net/ad_servers.txt</a></li>
-<li><a href="https://smokingwheels.github.io/Pi-hole/allhosts">https://smokingwheels.github.io/Pi-hole/allhosts</a></li>
-<li><a href="https://dbl.oisd.nl/">https://dbl.oisd.nl/</a></li>
-<li><a href="https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt">https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt</a></li>
-<li><a href="https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt">https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt</a></li>
-<li><a href="https://filters.adtidy.org/extension/chromium/filters/14.txt">https://filters.adtidy.org/extension/chromium/filters/14.txt</a></li>
-<li><a href="https://filters.adtidy.org/extension/chromium/filters/10.txt">https://filters.adtidy.org/extension/chromium/filters/10.txt</a></li>
-<li><a href="https://filters.adtidy.org/extension/chromium/filters/11.txt">https://filters.adtidy.org/extension/chromium/filters/11.txt</a></li>
-</ul>
 <h2 id="sonarr_-_container_to_auto_download_tv_shows">Sonarr - Container to Auto Download TV Shows<a class="headerlink" href="#sonarr_-_container_to_auto_download_tv_shows" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
 -d <span class="se">\</span>
