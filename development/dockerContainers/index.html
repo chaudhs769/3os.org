@@ -1031,8 +1031,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#watchtower_-_automating_docker_updates_container" class="md-nav__link">
-    Watchtower - Automating Docker Updates Container
+  <a href="#watchtower_-_automating_docker_updates_container_with_slack_notifications" class="md-nav__link">
+    Watchtower - Automating Docker Updates Container (With Slack Notifications)
   </a>
   
 </li>
@@ -1124,6 +1124,27 @@
         <li class="md-nav__item">
   <a href="#traefik_-_revers_proxy_with_lets_encrypt_and_cloudflare_dns_challenge" class="md-nav__link">
     Traefik - Revers proxy with Let's Encrypt and Cloudflare DNS Challenge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    Jellyfin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magicmirror_server" class="md-nav__link">
+    MagicMirror (Server)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slack_synology_notifications_docker" class="md-nav__link">
+    Slack Synology Notifications Docker
   </a>
   
 </li>
@@ -1567,8 +1588,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#watchtower_-_automating_docker_updates_container" class="md-nav__link">
-    Watchtower - Automating Docker Updates Container
+  <a href="#watchtower_-_automating_docker_updates_container_with_slack_notifications" class="md-nav__link">
+    Watchtower - Automating Docker Updates Container (With Slack Notifications)
   </a>
   
 </li>
@@ -1664,6 +1685,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    Jellyfin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#magicmirror_server" class="md-nav__link">
+    MagicMirror (Server)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slack_synology_notifications_docker" class="md-nav__link">
+    Slack Synology Notifications Docker
+  </a>
+  
+</li>
+      
       
       
       
@@ -1690,15 +1732,20 @@
                 
                 
                 <h1 id="docker_containers">Docker Containers<a class="headerlink" href="#docker_containers" title="Permanent link">&para;</a></h1>
-<h2 id="watchtower_-_automating_docker_updates_container">Watchtower - Automating Docker Updates Container<a class="headerlink" href="#watchtower_-_automating_docker_updates_container" title="Permanent link">&para;</a></h2>
+<h2 id="watchtower_-_automating_docker_updates_container_with_slack_notifications">Watchtower - Automating Docker Updates Container (With Slack Notifications)<a class="headerlink" href="#watchtower_-_automating_docker_updates_container_with_slack_notifications" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
 -d <span class="se">\</span>
 --restart always <span class="se">\</span>
 --name watchtower <span class="se">\</span>
 -h watchtower <span class="se">\</span>
 -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATIONS</span><span class="o">=</span>slack <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL</span><span class="o">=</span><span class="s2">&quot;https://hooks.slack.com/services/YOURLINK&quot;</span> <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER</span><span class="o">=</span>watchtower-oscar <span class="se">\</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_SLACK_CHANNEL</span><span class="o">=</span><span class="c1">#notifications \</span>
+-e <span class="nv">WATCHTOWER_NOTIFICATION_SLACK_ICON_EMOJI</span><span class="o">=</span>:wrench: <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
-containrrr/watchtower:latest --cleanup --debug
+containrrr/watchtower:latest --schedule <span class="s1">&#39;0 0 4 * * *&#39;</span> --cleanup
 </code></pre></div>
 
 <h2 id="cloudflare-ddns">cloudflare-ddns<a class="headerlink" href="#cloudflare-ddns" title="Permanent link">&para;</a></h2>
@@ -1930,6 +1977,51 @@ zabbix/zabbix-appliance:latest
 -e <span class="nv">CLOUDFLARE_EMAIL</span><span class="o">=</span>cloudflare@email.org <span class="se">\</span>
 -e <span class="nv">CLOUDFLARE_API_KEY</span><span class="o">=</span>de1782bd0e8d05245f6648d03e1e6e17c <span class="se">\</span>
 traefik:latest
+</code></pre></div>
+
+<h2 id="jellyfin">Jellyfin<a class="headerlink" href="#jellyfin" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--net<span class="o">=</span>host <span class="se">\</span>
+--name<span class="o">=</span>jellyfin <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-v /root/jellyfin/config:/config <span class="se">\</span>
+-v /root/jellyfin/cache:/cache <span class="se">\</span>
+-v /mnt/media:/media <span class="se">\</span>
+ jellyfin/jellyfin
+</code></pre></div>
+
+<h2 id="magicmirror_server">MagicMirror (Server)<a class="headerlink" href="#magicmirror_server" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name magic_mirror <span class="se">\</span>
+-h magic_mirror <span class="se">\</span>
+-p <span class="m">11508</span>:8080 <span class="se">\</span>
+-v /volume1/docker/magic_mirror/config:/opt/magic_mirror/config <span class="se">\</span>
+-v /volume1/docker/magic_mirror/modules:/opt/magic_mirror/modules <span class="se">\</span>
+-v /volume1/docker/magic_mirror/css:/opt/magic_mirror/css <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+bastilimbach/docker-magicmirror
+</code></pre></div>
+
+<h2 id="slack_synology_notifications_docker">Slack Synology Notifications Docker<a class="headerlink" href="#slack_synology_notifications_docker" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
+-d <span class="se">\</span>
+-p <span class="m">11509</span>:8080 <span class="se">\</span>
+--restart always <span class="se">\</span>
+--name synology-notifications <span class="se">\</span>
+-h synology-notifications <span class="se">\</span>
+-e <span class="nv">API_KEY</span><span class="o">=</span><span class="s1">&#39;hpwQuP3HHmdT9rsj3nvwgUK6xr7n7vPm&#39;</span> <span class="se">\</span>
+-e <span class="nv">SLACK_WEBHOOK</span><span class="o">=</span><span class="s1">&#39;https://hooks.slack.com/services/URL&#39;</span> <span class="se">\</span>
+-e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
+-e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+-e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
+ryancurrah/synology-notifications:latest
 </code></pre></div>
                 
                   
