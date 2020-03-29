@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="Docker useful Containers">
+        <meta name="description" content="Useful Docker Containers for personal home use">
       
       
         <link rel="canonical" href="https://3os.org/development/dockerContainers/">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Docker useful Containers</title>
+        <title>Useful Docker Containers for personal home use</title>
       
     
     
@@ -62,8 +62,8 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto :300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto ","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
@@ -142,7 +142,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Docker useful Containers
+                Useful Docker Containers for personal home use
               
             </span>
           
@@ -1925,12 +1925,12 @@ linuxserver/ombi:latest
 </code></pre></div>
 
 <h2 id="joal_-_torrent_fake_seedings">Joal - Torrent Fake Seedings<a class="headerlink" href="#joal_-_torrent_fake_seedings" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>docker run <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code> run <span class="se">\</span>
 -d <span class="se">\</span>
 --name<span class="o">=</span><span class="s2">&quot;joal&quot;</span> <span class="se">\</span>
 --restart always <span class="se">\</span>
 -h joal <span class="se">\</span>
--p <span class="m">11506</span>:9000 <span class="se">\</span>
+-p <span class="m">11506</span>:11506 <span class="se">\</span>
 -v /volume1/docker/joal:/data <span class="se">\</span>
 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Jerusalem <span class="se">\</span>
 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
@@ -1938,7 +1938,7 @@ linuxserver/ombi:latest
 anthonyraymond/joal:latest <span class="se">\</span>
 --joal-conf<span class="o">=</span><span class="s2">&quot;/data&quot;</span> <span class="se">\</span>
 --spring.main.web-environment<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
---server.port<span class="o">=</span><span class="s2">&quot;9000&quot;</span> <span class="se">\</span>
+--server.port<span class="o">=</span><span class="s2">&quot;11506&quot;</span> <span class="se">\</span>
 --joal.ui.path.prefix<span class="o">=</span><span class="s2">&quot;joal&quot;</span> <span class="se">\</span>
 --joal.ui.secret-token<span class="o">=</span><span class="s2">&quot;joal&quot;</span>
 </code></pre></div>
