@@ -136,10 +136,6 @@
      <lastmod>2020-05-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://3os.org/guides/BetterTerminal/</loc>
-     <lastmod>2020-05-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://3os.org/raspberryPi/piGeneral/</loc>
      <lastmod>2020-05-05</lastmod>
      <changefreq>daily</changefreq>
@@ -248,19 +244,7 @@
      <lastmod>2020-05-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://3os.org/markdownCheatSheet/embedGists/</loc>
-     <lastmod>2020-05-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://3os.org/markdownCheatSheet/embedYouTubeVideos/</loc>
-     <lastmod>2020-05-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://3os.org/markdownCheatSheet/embedLucidChart/</loc>
-     <lastmod>2020-05-05</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://3os.org/markdownCheatSheet/template/</loc>
+     <loc>https://3os.org/markdownCheatSheet/embedExternalSources/</loc>
      <lastmod>2020-05-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
