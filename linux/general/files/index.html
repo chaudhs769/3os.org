@@ -15,8 +15,7 @@
                   doesn't, the page title (or respectively site name) is used
                   as the main headline.
                 --> <!-- Content --> <h1 id=linux_files_handling>Linux Files Handling<a class=headerlink href=#linux_files_handling title="Permanent link">🔗</a></h1> <h2 id=ncurses_disk_usage>NCurses Disk Usage<a class=headerlink href=#ncurses_disk_usage title="Permanent link">🔗</a></h2> <p>Ncdu is a disk usage analyzer with an ncurses interface.</p> <div class=highlight><pre><span></span><code>apt-get install ncdu
-</code></pre></div> <h2 id=smb_mount_with_autofs>SMB Mount With autofs<a class=headerlink href=#smb_mount_with_autofs title="Permanent link">🔗</a></h2> <div class=highlight><pre><span></span><code>yum install autofs samba-client samba-common cifs-utils
-touch /etc/auto.cifs
+</code></pre></div> <h2 id=smb_mount_with_autofs>SMB Mount With autofs<a class=headerlink href=#smb_mount_with_autofs title="Permanent link">🔗</a></h2> <p>install autofs cifs-utils</p> <div class=highlight><pre><span></span><code>touch /etc/auto.cifs
 nano /etc/auto.cifs
 </code></pre></div> <p>Add this to the file: ("media" - is any name for your mount)</p> <div class=highlight><pre><span></span><code>media    -fstype<span class=o>=</span>cifs,rw,noperm,vers<span class=o>=</span><span class=m>3</span>.0,credentials<span class=o>=</span>/etc/.credentials.txt    ://oscar.3os.re/ActiveShare/Media
 </code></pre></div> <p>Exit and save:</p> <div class=highlight><pre><span></span><code>touch /etc/.credentials.txt
