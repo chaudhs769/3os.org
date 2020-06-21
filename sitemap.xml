@@ -1,267 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://3os.org/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/BetterTerminal/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/pihole_dns/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/wifiQrGenerator/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/gmailMarkAsRead/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/raspberryPi/TOR-Pi/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/usefulLinks_Tools/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/synology/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/ubiquiti/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/guides/proxmox/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/general/general/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/SSH_Service_Security/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/centos7/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/centos8/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/ubuntu/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/general/files/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/general/memorySwap/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/lvm/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/cpanel/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/csf/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/nginx/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/apache/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/sophos/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/wordpress/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/esxi/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/plesk/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/linux/services/postfix/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/macOS/general/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/macOS/ui/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/macOS/system/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/macOS/applications/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/macOS/brewup/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/macOS/pythonTheRightWay/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/raspberryPi/piGeneral/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/raspberryPi/TOR-Pi/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/raspberryPi/MagicMirror/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/development/git/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/development/dockerGeneral/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/development/python/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/development/ruby/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/development/npm/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/development/dockerContainers/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/windows/windowsGeneral/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/windows/windowsGuides/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/penTesting/general/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/penTesting/kaliLinux/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/penTesting/iddGenerator/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/penTesting/clickJacking/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/penTesting/htpasswd_Generator/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/penTesting/androidPT/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/welcome/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/headings/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/emphasis/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/lineBreaks/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/lists/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/tables/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/links/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/images/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/admonition/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/blockQuotes/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/emoji/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/embedExternalSources/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/markdownCheatSheet/metaData/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/about/about/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/about/donation/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://3os.org/about/license/</loc>
-     <lastmod>2020-06-15</lastmod>
+     <lastmod>2020-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
