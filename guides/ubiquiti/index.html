@@ -21,10 +21,10 @@ loadkey <span class=o>[</span>your user<span class=o>]</span> /tmp/id_rsa.pub
 commit <span class=p>;</span> save
 </code></pre></div> <p>Done.</p> <p>Enable Password Authentication if needed.</p> <div class=highlight><pre><span></span><code>delete service ssh disable-password-authentication
 </code></pre></div> <h2 id=hardening_edgerouter>Hardening EdgeRouter<a class=headerlink href=#hardening_edgerouter title="Permanent link">🔗</a></h2> <p>This will change the GUI to port 8443, disable old cyphers, Only will listen on internal Network. assuming your EdgeRouter IP is 192.168.1.1, if not change it accordingly.</p> <p>SSH to the Edge Router</p> <div class=highlight><pre><span></span><code>configure
-<span class=nb>set</span> service gui listen-address <span class=m>192</span>.168.1.1
+<span class=nb>set</span> service gui listen-address <span class=m>192</span>.168.100.1
 <span class=nb>set</span> service gui https-port <span class=m>8443</span>
 <span class=nb>set</span> service gui older-ciphers disable
-<span class=nb>set</span> service ssh listen-address <span class=m>192</span>.168.1.1
+<span class=nb>set</span> service ssh listen-address <span class=m>192</span>.168.100.1
 <span class=nb>set</span> service ssh protocol-version v2
 <span class=nb>set</span> service ubnt-discover disable
 commit <span class=p>;</span> save
@@ -112,10 +112,10 @@ commit <span class=p>;</span> save
 <span class=nb>set</span> firewall name WAN_LOCAL rule <span class=m>30</span> description OpenVPN
 <span class=nb>set</span> firewall name WAN_LOCAL rule <span class=m>30</span> destination port <span class=m>443</span>
 <span class=nb>set</span> firewall name WAN_LOCAL rule <span class=m>30</span> protocol tcp
-</code></pre></div> <p>Configure the OpenVPN virtual tunnel interface.</p> <div class=highlight><pre><span></span><code><span class=nb>set</span> interfaces openvpn vtun0 mode server
+</code></pre></div> <p>Configure the OpenVPN virtual tunnel interface. push-route - the router for vpn connection name-server - default gateway of the route above</p> <div class=highlight><pre><span></span><code><span class=nb>set</span> interfaces openvpn vtun0 mode server
 <span class=nb>set</span> interfaces openvpn vtun0 server subnet <span class=m>172</span>.16.1.0/24
-<span class=nb>set</span> interfaces openvpn vtun0 server push-route <span class=m>192</span>.168.1.0/24
-<span class=nb>set</span> interfaces openvpn vtun0 server name-server <span class=m>192</span>.168.1.1
+<span class=nb>set</span> interfaces openvpn vtun0 server push-route <span class=m>192</span>.168.100.0/24
+<span class=nb>set</span> interfaces openvpn vtun0 server name-server <span class=m>192</span>.168.100.1
 <span class=nb>set</span> interfaces openvpn vtun0 openvpn-option --duplicate-cn
 <span class=nb>set</span> interfaces openvpn vtun0 local-port <span class=m>443</span>
 edit interfaces openvpn vtun0
