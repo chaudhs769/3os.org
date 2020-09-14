@@ -53,9 +53,9 @@
     Etiam ipsum quam, mattis in purus vitae, lacinia fermentum enim.
 </code></pre></div> <p><strong>Result:</strong></p> <div class="admonition note"> <p class=admonition-title>Note</p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.</p> <div class=highlight><pre><span></span><code><span class=k>SELECT</span>
   <span class=n>Employees</span><span class=p>.</span><span class=n>EmployeeID</span><span class=p>,</span>
-  <span class=n>Employees</span><span class=p>.</span><span class=n>Name</span><span class=p>,</span>
+  <span class=n>Employees</span><span class=p>.</span><span class=k>Name</span><span class=p>,</span>
   <span class=n>Employees</span><span class=p>.</span><span class=n>Salary</span><span class=p>,</span>
-  <span class=n>Manager</span><span class=p>.</span><span class=n>Name</span> <span class=k>AS</span> <span class=n>Manager</span>
+  <span class=n>Manager</span><span class=p>.</span><span class=k>Name</span> <span class=k>AS</span> <span class=n>Manager</span>
 <span class=k>FROM</span>
   <span class=n>Employees</span>
 <span class=k>LEFT</span> <span class=k>JOIN</span>
